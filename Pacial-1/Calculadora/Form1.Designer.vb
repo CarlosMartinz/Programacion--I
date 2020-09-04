@@ -74,9 +74,9 @@ Partial Class Form1
         '
         'butconver
         '
-        Me.butconver.Location = New System.Drawing.Point(153, 204)
+        Me.butconver.Location = New System.Drawing.Point(153, 172)
         Me.butconver.Name = "butconver"
-        Me.butconver.Size = New System.Drawing.Size(75, 23)
+        Me.butconver.Size = New System.Drawing.Size(100, 34)
         Me.butconver.TabIndex = 6
         Me.butconver.Text = "Convertir"
         Me.butconver.UseVisualStyleBackColor = True
@@ -210,9 +210,9 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(158, 209)
+        Me.Button2.Location = New System.Drawing.Point(150, 178)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.Size = New System.Drawing.Size(106, 45)
         Me.Button2.TabIndex = 0
         Me.Button2.Text = "Convertir"
         Me.Button2.UseVisualStyleBackColor = True
