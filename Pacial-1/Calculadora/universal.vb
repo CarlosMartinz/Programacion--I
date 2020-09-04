@@ -2,7 +2,7 @@
 
     Dim unidad, result, resultado As Integer
 
-    Public Property enviounidad
+    Public Property envio_de_unidad
         Set(valor)
             unidad = valor
         End Set
@@ -10,7 +10,7 @@
             Return unidad
         End Get
     End Property
-    Public Function rcantidad(cap() As String)
+    Public Function cantidad(cap() As String)
         Dim i As SByte
         i = 1
         For Each e In cap

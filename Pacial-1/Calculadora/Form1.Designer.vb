@@ -24,13 +24,13 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.univ = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.butconver = New System.Windows.Forms.Button()
         Me.txtresult = New System.Windows.Forms.TextBox()
         Me.txtcant = New System.Windows.Forms.TextBox()
         Me.txtunid = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblresp = New System.Windows.Forms.Label()
+        Me.lblunid = New System.Windows.Forms.Label()
+        Me.lblcant = New System.Windows.Forms.Label()
         Me.area = New System.Windows.Forms.TabPage()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -57,13 +57,13 @@ Partial Class Form1
         '
         'univ
         '
-        Me.univ.Controls.Add(Me.Button1)
+        Me.univ.Controls.Add(Me.butconver)
         Me.univ.Controls.Add(Me.txtresult)
         Me.univ.Controls.Add(Me.txtcant)
         Me.univ.Controls.Add(Me.txtunid)
-        Me.univ.Controls.Add(Me.Label3)
-        Me.univ.Controls.Add(Me.Label2)
-        Me.univ.Controls.Add(Me.Label1)
+        Me.univ.Controls.Add(Me.lblresp)
+        Me.univ.Controls.Add(Me.lblunid)
+        Me.univ.Controls.Add(Me.lblcant)
         Me.univ.Location = New System.Drawing.Point(4, 22)
         Me.univ.Name = "univ"
         Me.univ.Padding = New System.Windows.Forms.Padding(3)
@@ -72,14 +72,14 @@ Partial Class Form1
         Me.univ.Text = "Universal"
         Me.univ.UseVisualStyleBackColor = True
         '
-        'Button1
+        'butconver
         '
-        Me.Button1.Location = New System.Drawing.Point(153, 204)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Convertir"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.butconver.Location = New System.Drawing.Point(153, 204)
+        Me.butconver.Name = "butconver"
+        Me.butconver.Size = New System.Drawing.Size(75, 23)
+        Me.butconver.TabIndex = 6
+        Me.butconver.Text = "Convertir"
+        Me.butconver.UseVisualStyleBackColor = True
         '
         'txtresult
         '
@@ -102,32 +102,32 @@ Partial Class Form1
         Me.txtunid.Size = New System.Drawing.Size(100, 20)
         Me.txtunid.TabIndex = 3
         '
-        'Label3
+        'lblresp
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(30, 95)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(61, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Respuesta:"
+        Me.lblresp.AutoSize = True
+        Me.lblresp.Location = New System.Drawing.Point(30, 95)
+        Me.lblresp.Name = "lblresp"
+        Me.lblresp.Size = New System.Drawing.Size(61, 13)
+        Me.lblresp.TabIndex = 2
+        Me.lblresp.Text = "Respuesta:"
         '
-        'Label2
+        'lblunid
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(216, 37)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(55, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Unidades:"
+        Me.lblunid.AutoSize = True
+        Me.lblunid.Location = New System.Drawing.Point(216, 37)
+        Me.lblunid.Name = "lblunid"
+        Me.lblunid.Size = New System.Drawing.Size(55, 13)
+        Me.lblunid.TabIndex = 1
+        Me.lblunid.Text = "Unidades:"
         '
-        'Label1
+        'lblcant
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(30, 34)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(52, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Cantidad:"
+        Me.lblcant.AutoSize = True
+        Me.lblcant.Location = New System.Drawing.Point(30, 34)
+        Me.lblcant.Name = "lblcant"
+        Me.lblcant.Size = New System.Drawing.Size(52, 13)
+        Me.lblcant.TabIndex = 0
+        Me.lblcant.Text = "Cantidad:"
         '
         'area
         '
@@ -237,13 +237,13 @@ Partial Class Form1
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents univ As TabPage
     Friend WithEvents area As TabPage
-    Friend WithEvents Button1 As Button
+    Friend WithEvents butconver As Button
     Friend WithEvents txtresult As TextBox
     Friend WithEvents txtcant As TextBox
     Friend WithEvents txtunid As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblresp As Label
+    Friend WithEvents lblunid As Label
+    Friend WithEvents lblcant As Label
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label7 As Label
