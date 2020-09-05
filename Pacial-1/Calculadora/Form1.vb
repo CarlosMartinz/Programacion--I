@@ -30,6 +30,7 @@
                 Next
 
                 txtcant.Text = cont
+                txtunid.Text = 1
 
             End If
 

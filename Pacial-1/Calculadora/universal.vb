@@ -16,6 +16,7 @@
         For Each e In cap
             If i = 1 Then
                 result = e
+
             End If
             If i = 2 Then
                 resultado = e
