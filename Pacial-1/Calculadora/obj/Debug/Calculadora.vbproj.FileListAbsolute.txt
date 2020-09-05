@@ -22,3 +22,15 @@ C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Pacial-1\Calculadora\obj
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Pacial-1\Calculadora\obj\Debug\Calculadora.exe
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Pacial-1\Calculadora\obj\Debug\Calculadora.xml
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Pacial-1\Calculadora\obj\Debug\Calculadora.pdb
+C:\Users\core i7\source\repos\Programacion--I\Pacial-1\Calculadora\bin\Debug\Calculadora.exe.config
+C:\Users\core i7\source\repos\Programacion--I\Pacial-1\Calculadora\bin\Debug\Calculadora.exe
+C:\Users\core i7\source\repos\Programacion--I\Pacial-1\Calculadora\bin\Debug\Calculadora.pdb
+C:\Users\core i7\source\repos\Programacion--I\Pacial-1\Calculadora\bin\Debug\Calculadora.xml
+C:\Users\core i7\source\repos\Programacion--I\Pacial-1\Calculadora\obj\Debug\Calculadora.vbprojAssemblyReference.cache
+C:\Users\core i7\source\repos\Programacion--I\Pacial-1\Calculadora\obj\Debug\Calculadora.Form1.resources
+C:\Users\core i7\source\repos\Programacion--I\Pacial-1\Calculadora\obj\Debug\Calculadora.Resources.resources
+C:\Users\core i7\source\repos\Programacion--I\Pacial-1\Calculadora\obj\Debug\Calculadora.vbproj.GenerateResource.cache
+C:\Users\core i7\source\repos\Programacion--I\Pacial-1\Calculadora\obj\Debug\Calculadora.vbproj.CoreCompileInputs.cache
+C:\Users\core i7\source\repos\Programacion--I\Pacial-1\Calculadora\obj\Debug\Calculadora.exe
+C:\Users\core i7\source\repos\Programacion--I\Pacial-1\Calculadora\obj\Debug\Calculadora.xml
+C:\Users\core i7\source\repos\Programacion--I\Pacial-1\Calculadora\obj\Debug\Calculadora.pdb
