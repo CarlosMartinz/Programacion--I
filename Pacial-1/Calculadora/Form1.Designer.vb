@@ -32,14 +32,14 @@ Partial Class Form1
         Me.lblunid = New System.Windows.Forms.Label()
         Me.lblcant = New System.Windows.Forms.Label()
         Me.area = New System.Windows.Forms.TabPage()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.cboArea2 = New System.Windows.Forms.ComboBox()
+        Me.cboArea1 = New System.Windows.Forms.ComboBox()
+        Me.lblA = New System.Windows.Forms.Label()
+        Me.lblDe = New System.Windows.Forms.Label()
+        Me.lblRespuesta = New System.Windows.Forms.Label()
+        Me.lblCantidad = New System.Windows.Forms.Label()
+        Me.txtCantArea = New System.Windows.Forms.TextBox()
+        Me.btnConvertir = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.univ.SuspendLayout()
         Me.area.SuspendLayout()
@@ -131,14 +131,14 @@ Partial Class Form1
         '
         'area
         '
-        Me.area.Controls.Add(Me.ComboBox2)
-        Me.area.Controls.Add(Me.ComboBox1)
-        Me.area.Controls.Add(Me.Label7)
-        Me.area.Controls.Add(Me.Label6)
-        Me.area.Controls.Add(Me.Label5)
-        Me.area.Controls.Add(Me.Label4)
-        Me.area.Controls.Add(Me.TextBox4)
-        Me.area.Controls.Add(Me.Button2)
+        Me.area.Controls.Add(Me.cboArea2)
+        Me.area.Controls.Add(Me.cboArea1)
+        Me.area.Controls.Add(Me.lblA)
+        Me.area.Controls.Add(Me.lblDe)
+        Me.area.Controls.Add(Me.lblRespuesta)
+        Me.area.Controls.Add(Me.lblCantidad)
+        Me.area.Controls.Add(Me.txtCantArea)
+        Me.area.Controls.Add(Me.btnConvertir)
         Me.area.Location = New System.Drawing.Point(4, 22)
         Me.area.Name = "area"
         Me.area.Padding = New System.Windows.Forms.Padding(3)
@@ -147,75 +147,77 @@ Partial Class Form1
         Me.area.Text = "Area(Superficie)"
         Me.area.UseVisualStyleBackColor = True
         '
-        'ComboBox2
+        'cboArea2
         '
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(251, 84)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox2.TabIndex = 7
+        Me.cboArea2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboArea2.FormattingEnabled = True
+        Me.cboArea2.Items.AddRange(New Object() {"", "Pie Cuadrado", "Vara Cuadrada", "Yarda Cuadrada", "Metro Cuadrado", "Tareas", "Manzana", "Hectárea"})
+        Me.cboArea2.Location = New System.Drawing.Point(251, 84)
+        Me.cboArea2.Name = "cboArea2"
+        Me.cboArea2.Size = New System.Drawing.Size(121, 21)
+        Me.cboArea2.TabIndex = 7
         '
-        'ComboBox1
+        'cboArea1
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(54, 84)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 6
+        Me.cboArea1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboArea1.FormattingEnabled = True
+        Me.cboArea1.Items.AddRange(New Object() {"", "Pie Cuadrado", "Vara Cuadrada", "Yarda Cuadrada", "Metro Cuadrado", "Tareas", "Manzana", "Hectárea"})
+        Me.cboArea1.Location = New System.Drawing.Point(54, 84)
+        Me.cboArea1.Name = "cboArea1"
+        Me.cboArea1.Size = New System.Drawing.Size(121, 21)
+        Me.cboArea1.TabIndex = 6
         '
-        'Label7
+        'lblA
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(203, 87)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(13, 13)
-        Me.Label7.TabIndex = 5
-        Me.Label7.Text = "a"
+        Me.lblA.AutoSize = True
+        Me.lblA.Location = New System.Drawing.Point(203, 87)
+        Me.lblA.Name = "lblA"
+        Me.lblA.Size = New System.Drawing.Size(13, 13)
+        Me.lblA.TabIndex = 5
+        Me.lblA.Text = "a"
         '
-        'Label6
+        'lblDe
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(27, 87)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(21, 13)
-        Me.Label6.TabIndex = 4
-        Me.Label6.Text = "De"
+        Me.lblDe.AutoSize = True
+        Me.lblDe.Location = New System.Drawing.Point(27, 87)
+        Me.lblDe.Name = "lblDe"
+        Me.lblDe.Size = New System.Drawing.Size(21, 13)
+        Me.lblDe.TabIndex = 4
+        Me.lblDe.Text = "De"
         '
-        'Label5
+        'lblRespuesta
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(220, 26)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(13, 13)
-        Me.Label5.TabIndex = 3
-        Me.Label5.Text = "?"
+        Me.lblRespuesta.AutoSize = True
+        Me.lblRespuesta.Location = New System.Drawing.Point(203, 26)
+        Me.lblRespuesta.Name = "lblRespuesta"
+        Me.lblRespuesta.Size = New System.Drawing.Size(13, 13)
+        Me.lblRespuesta.TabIndex = 3
+        Me.lblRespuesta.Text = "?"
         '
-        'Label4
+        'lblCantidad
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(27, 26)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(52, 13)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Cantidad:"
+        Me.lblCantidad.AutoSize = True
+        Me.lblCantidad.Location = New System.Drawing.Point(27, 26)
+        Me.lblCantidad.Name = "lblCantidad"
+        Me.lblCantidad.Size = New System.Drawing.Size(52, 13)
+        Me.lblCantidad.TabIndex = 2
+        Me.lblCantidad.Text = "Cantidad:"
         '
-        'TextBox4
+        'txtCantArea
         '
-        Me.TextBox4.Location = New System.Drawing.Point(85, 23)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox4.TabIndex = 1
+        Me.txtCantArea.Location = New System.Drawing.Point(85, 23)
+        Me.txtCantArea.Name = "txtCantArea"
+        Me.txtCantArea.Size = New System.Drawing.Size(100, 20)
+        Me.txtCantArea.TabIndex = 1
         '
-        'Button2
+        'btnConvertir
         '
-        Me.Button2.Location = New System.Drawing.Point(150, 178)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(106, 45)
-        Me.Button2.TabIndex = 0
-        Me.Button2.Text = "Convertir"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnConvertir.Location = New System.Drawing.Point(150, 178)
+        Me.btnConvertir.Name = "btnConvertir"
+        Me.btnConvertir.Size = New System.Drawing.Size(106, 45)
+        Me.btnConvertir.TabIndex = 0
+        Me.btnConvertir.Text = "Convertir"
+        Me.btnConvertir.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -244,12 +246,12 @@ Partial Class Form1
     Friend WithEvents lblresp As Label
     Friend WithEvents lblunid As Label
     Friend WithEvents lblcant As Label
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents cboArea2 As ComboBox
+    Friend WithEvents cboArea1 As ComboBox
+    Friend WithEvents lblA As Label
+    Friend WithEvents lblDe As Label
+    Friend WithEvents lblRespuesta As Label
+    Friend WithEvents lblCantidad As Label
+    Friend WithEvents txtCantArea As TextBox
+    Friend WithEvents btnConvertir As Button
 End Class
