@@ -3,8 +3,8 @@
     Dim unidad, result, resultado As Integer
 
     Public Property envio_de_unidad
-        Set(valor)
-            unidad = valor
+        Set(valor1)
+            unidad = valor1
         End Set
         Get
             Return unidad
@@ -24,6 +24,5 @@
         Next
         Return ((unidad * result) + resultado)
     End Function
-
 
 End Class
