@@ -22,26 +22,17 @@ Partial Class FormPrincipal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FacturaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MantenimientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistrarUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeReservacionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarSesionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FacturaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TicketToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CreditoFiscalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MantenimientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.FacturaciónToolStripMenuItem, Me.MantenimientoToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(881, 24)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ArchivoToolStripMenuItem
         '
@@ -49,19 +40,6 @@ Partial Class FormPrincipal
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
         Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
-        '
-        'FacturaciónToolStripMenuItem
-        '
-        Me.FacturaciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TicketToolStripMenuItem, Me.CreditoFiscalToolStripMenuItem})
-        Me.FacturaciónToolStripMenuItem.Name = "FacturaciónToolStripMenuItem"
-        Me.FacturaciónToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
-        Me.FacturaciónToolStripMenuItem.Text = "Facturación"
-        '
-        'MantenimientoToolStripMenuItem
-        '
-        Me.MantenimientoToolStripMenuItem.Name = "MantenimientoToolStripMenuItem"
-        Me.MantenimientoToolStripMenuItem.Size = New System.Drawing.Size(101, 20)
-        Me.MantenimientoToolStripMenuItem.Text = "Mantenimiento"
         '
         'RegistrarUsuarioToolStripMenuItem
         '
@@ -83,19 +61,41 @@ Partial Class FormPrincipal
         Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
         Me.CerrarSesionToolStripMenuItem.Text = "Cerrar sesion"
         '
+        'FacturaciónToolStripMenuItem
+        '
+        Me.FacturaciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TicketToolStripMenuItem, Me.CreditoFiscalToolStripMenuItem})
+        Me.FacturaciónToolStripMenuItem.Name = "FacturaciónToolStripMenuItem"
+        Me.FacturaciónToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
+        Me.FacturaciónToolStripMenuItem.Text = "Facturación"
+        '
         'TicketToolStripMenuItem
         '
         Me.TicketToolStripMenuItem.Name = "TicketToolStripMenuItem"
         Me.TicketToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1
-        Me.TicketToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.TicketToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.TicketToolStripMenuItem.Text = "Ticket"
         '
         'CreditoFiscalToolStripMenuItem
         '
         Me.CreditoFiscalToolStripMenuItem.Name = "CreditoFiscalToolStripMenuItem"
         Me.CreditoFiscalToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2
-        Me.CreditoFiscalToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CreditoFiscalToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.CreditoFiscalToolStripMenuItem.Text = "Credito fiscal"
+        '
+        'MantenimientoToolStripMenuItem
+        '
+        Me.MantenimientoToolStripMenuItem.Name = "MantenimientoToolStripMenuItem"
+        Me.MantenimientoToolStripMenuItem.Size = New System.Drawing.Size(101, 20)
+        Me.MantenimientoToolStripMenuItem.Text = "Mantenimiento"
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.FacturaciónToolStripMenuItem, Me.MantenimientoToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(881, 24)
+        Me.MenuStrip1.TabIndex = 0
+        Me.MenuStrip1.Text = "MenuStrip1"
         '
         'FormPrincipal
         '
@@ -105,7 +105,7 @@ Partial Class FormPrincipal
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FormPrincipal"
-        Me.Text = " "
+        Me.Text = " Principal"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -113,13 +113,13 @@ Partial Class FormPrincipal
 
     End Sub
 
-    Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents FacturaciónToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MantenimientoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RegistrarUsuarioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RegistroDeReservacionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CerrarSesionToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FacturaciónToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TicketToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CreditoFiscalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MantenimientoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MenuStrip1 As MenuStrip
 End Class
