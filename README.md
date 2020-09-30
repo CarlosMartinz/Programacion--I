@@ -1,2 +1,2 @@
-# PracticasUGB
-Programación Computacional I
+# Programación Computacional I
+
