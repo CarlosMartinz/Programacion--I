@@ -52,6 +52,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -73,23 +74,47 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormLogin.Designer.vb">
+    <Compile Include="CapaDiseño\FormLogin.Designer.vb">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.vb">
+    <Compile Include="CapaDiseño\FormLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPrincipal.vb">
+    <Compile Include="CapaDiseño\FormPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPrincipal.Designer.vb">
+    <Compile Include="CapaDiseño\FormPrincipal.Designer.vb">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSucursal.Designer.vb">
-      <DependentUpon>FormSucursal.vb</DependentUpon>
+    <Compile Include="CapaDiseño\FormHotel.Designer.vb">
+      <DependentUpon>FormHotel.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSucursal.vb">
+    <Compile Include="CapaDiseño\FormHotel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaDiseño\Registro\FormCategorias.Designer.vb">
+      <DependentUpon>FormCategorias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CapaDiseño\Registro\FormCategorias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaDiseño\Registro\FormHabitRegistro.Designer.vb">
+      <DependentUpon>FormHabitRegistro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CapaDiseño\Registro\FormHabitRegistro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaDiseño\Registro\FormRegistroPro.Designer.vb">
+      <DependentUpon>FormRegistroPro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CapaDiseño\Registro\FormRegistroPro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaDiseño\Registro\FormRegistroUsuario.Designer.vb">
+      <DependentUpon>FormRegistroUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CapaDiseño\Registro\FormRegistroUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -109,14 +134,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormLogin.resx">
+    <EmbeddedResource Include="CapaDiseño\FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPrincipal.resx">
+    <EmbeddedResource Include="CapaDiseño\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSucursal.resx">
-      <DependentUpon>FormSucursal.vb</DependentUpon>
+    <EmbeddedResource Include="CapaDiseño\FormHotel.resx">
+      <DependentUpon>FormHotel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaDiseño\Registro\FormRegistroUsuario.resx">
+      <DependentUpon>FormRegistroUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

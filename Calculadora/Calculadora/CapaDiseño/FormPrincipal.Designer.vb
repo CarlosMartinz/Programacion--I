@@ -45,8 +45,8 @@ Partial Class FormPrincipal
         '
         Me.RegistrarUsuarioToolStripMenuItem.Name = "RegistrarUsuarioToolStripMenuItem"
         Me.RegistrarUsuarioToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3
-        Me.RegistrarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
-        Me.RegistrarUsuarioToolStripMenuItem.Text = "Registrar usuario"
+        Me.RegistrarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
+        Me.RegistrarUsuarioToolStripMenuItem.Text = "Registro general usuarios"
         Me.RegistrarUsuarioToolStripMenuItem.ToolTipText = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'RegistroDeReservacionToolStripMenuItem
@@ -103,6 +103,7 @@ Partial Class FormPrincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(881, 464)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FormPrincipal"
         Me.Text = " Principal"
