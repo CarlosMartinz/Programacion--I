@@ -21,10 +21,12 @@ Public Class db_conexion
 
         miCommand.Connection = miConexion
 
-        miCommand.CommandText = "select Usuarios.idUsuario, Datos.Nombre, Datos.DUI, Contactos.telefono, Contactos.email 
+        'traedatos de la tabla usuarios y relacionada
+        miCommand.CommandText = "select Usuarios.idUsuario, Datos.Nombre, Datos.DUI, Contactos.Email, Contactos.Telefono, Login.Usuario, Login.Password
             from Usuarios 
-            inner join Contactos on(Contactos.idContacto=Usuarios.idContacto) 
-            inner join Datos on(Datos.idDato=Usuarios.idDato) "
+            inner join Contactos on(Contactos.idContactos=Usuarios.idContacto) 
+            inner join Datos on(Datos.idDatos=Usuarios.idDato)
+            inner join Login on(Login.idLogin=Usuarios.idLogin)"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Usuarios")
 
@@ -34,8 +36,9 @@ Public Class db_conexion
     'metodo de parametros (conecta con los campos)
     Private Sub parametrizacion()
         miCommand.Parameters.Add("@idU", SqlDbType.Int).Value = 0
-        miCommand.Parameters.Add("@nomU", SqlDbType.Int).Value = ""
-        miCommand.Parameters.Add("@doc", SqlDbType.Int).Value = ""
+        miCommand.Parameters.Add("@nom", SqlDbType.Int).Value = ""
+        miCommand.Parameters.Add("@dui", SqlDbType.Int).Value = ""
+        miCommand.Parameters.Add("@idD", SqlDbType.Int).Value = ""
         miCommand.Parameters.Add("@tel", SqlDbType.Int).Value = ""
         miCommand.Parameters.Add("@ema", SqlDbType.Int).Value = ""
         miCommand.Parameters.Add("@idC", SqlDbType.Int).Value = ""
@@ -47,7 +50,7 @@ Public Class db_conexion
         Select Case accion
             Case "nuevo"
                 sql = "INSERT INTO Usuarios 
-                       (nombreUsuario,numDocuemnto,telefono,email) VALUES(@nomU,@doc,@tel,@ema)"
+                       (Nombre,DUI,Telefono,Email) VALUES(@nom,@dui,@tel,@ema)"
             Case "modificar"
                 sql = "UPDATE Usuarios SET nombreUsuario=@nomU, numDocuemnto=@doc, telefono=@tel, email=@ema"
             Case "eliminar"
@@ -55,8 +58,8 @@ Public Class db_conexion
         End Select
         miCommand.Parameters("@idU").Value = datos(0)
         If accion IsNot "eliminar" Then
-            miCommand.Parameters("@nomU").Value = datos(1)
-            miCommand.Parameters("@doc").Value = datos(2)
+            miCommand.Parameters("@nom").Value = datos(1)
+            miCommand.Parameters("@dui").Value = datos(2)
             miCommand.Parameters("@tel").Value = datos(3)
             miCommand.Parameters("@ema").Value = datos(4)
             miCommand.Parameters("@idN").Value = datos(5)
