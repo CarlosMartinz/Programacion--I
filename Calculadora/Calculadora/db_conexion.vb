@@ -22,11 +22,12 @@ Public Class db_conexion
         miCommand.Connection = miConexion
 
         'traedatos de la tabla usuarios y relacionada
-        miCommand.CommandText = "select Usuarios.idUsuario, Datos.Nombre, Datos.DUI, Contactos.Email, Contactos.Telefono, Login.Usuario, Login.Password
+        miCommand.CommandText = "select Usuarios.Nombre, Usuarios.DUI, Contactos.Email, 
+                                 Contactos.Telefono, Login.Usuario, Login.Password, NivelAcceso.Acceso             
             from Usuarios 
-            inner join Contactos on(Contactos.idContactos=Usuarios.idContacto) 
-            inner join Datos on(Datos.idDatos=Usuarios.idDato)
-            inner join Login on(Login.idLogin=Usuarios.idLogin)"
+            inner join Contactos on(Contactos.idContactos=Usuarios.idContacto)
+            inner join Login on(Login.idLogin=Usuarios.idLogin)
+            inner join NivelAcceso on(Usuarios.Acceso=NivelAcceso.idNivel)"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Usuarios")
 
