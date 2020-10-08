@@ -25,3 +25,6 @@ C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormLogin.resources
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormHotel.resources
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormRegistroUsuario.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\db_Hotel.mdf
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\db_Hotel_log.ldf
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaUsuario.resources

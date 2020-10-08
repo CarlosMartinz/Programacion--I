@@ -52,13 +52,13 @@ Partial Class FormPrincipal
         'RegistroDeReservacionToolStripMenuItem
         '
         Me.RegistroDeReservacionToolStripMenuItem.Name = "RegistroDeReservacionToolStripMenuItem"
-        Me.RegistroDeReservacionToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
+        Me.RegistroDeReservacionToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
         Me.RegistroDeReservacionToolStripMenuItem.Text = "Registro de reservacion"
         '
         'CerrarSesionToolStripMenuItem
         '
         Me.CerrarSesionToolStripMenuItem.Name = "CerrarSesionToolStripMenuItem"
-        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
+        Me.CerrarSesionToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
         Me.CerrarSesionToolStripMenuItem.Text = "Cerrar sesion"
         '
         'FacturaciónToolStripMenuItem
