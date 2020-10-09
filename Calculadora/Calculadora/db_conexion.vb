@@ -23,7 +23,7 @@ Public Class db_conexion
         miCommand.Connection = miConexion
 
         miCommand.CommandText = "select Usuarios.Nombre, Usuarios.DUI, Contactos.Email, 
-                                 Contactos.Telefono, Login.Usuario, Login.Password, NivelAcceso.Acceso             
+                                 Contactos.Telefono, Login.Usuario, Login.Password, NivelAcceso.Acceso    
             from Usuarios 
             inner join Contactos on(Contactos.idContactos=Usuarios.idContacto)
             inner join Login on(Login.idLogin=Usuarios.idLogin)
