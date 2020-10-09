@@ -6,4 +6,8 @@
         form.Show()
     End Sub
 
+    Private Sub RegistroDeReservacionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroDeReservacionToolStripMenuItem.Click
+        Dim objReservacion As New FormReservacion
+        objReservacion.ShowDialog()
+    End Sub
 End Class

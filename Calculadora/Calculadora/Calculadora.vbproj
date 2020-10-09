@@ -138,6 +138,12 @@
     <Compile Include="CapaDiseño\Registro\FormRegistroUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CapaDiseño\Registro\FormReservacion.Designer.vb">
+      <DependentUpon>FormReservacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CapaDiseño\Registro\FormReservacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="db_conexion.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CapaDiseño\Registro\FormRegistroUsuario.resx">
       <DependentUpon>FormRegistroUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaDiseño\Registro\FormReservacion.resx">
+      <DependentUpon>FormReservacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
