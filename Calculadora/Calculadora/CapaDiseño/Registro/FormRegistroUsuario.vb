@@ -10,7 +10,7 @@
     End Sub
 
     Sub obtenerDatos()
-        dataTable = objConexion.obtenerDatos().Tables("Usuarios")
+        dataTable = objConexion.obtenerDatosUsuarios().Tables("Usuarios")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idUsuario")}
         mostrarDatos()
     End Sub

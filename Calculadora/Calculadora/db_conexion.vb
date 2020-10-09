@@ -6,6 +6,7 @@ Public Class db_conexion
     Dim miCommand As New SqlCommand 'Ejecutar consultas o sentencias SQL.
     Dim miAdapter As New SqlDataAdapter 'Es un intermediario entre la fuente de datos y la aplicacion... como un puente 
     Dim ds As New DataSet 'Representa una copia de la arquitectura (tablas, campos, indices, llaves, relaciones, datos, etc) de la BD en memoria
+    Dim sql As String
 
     'conecta con la base de datos
     Public Sub New()
@@ -15,19 +16,32 @@ Public Class db_conexion
 
         miConexion.Open()
     End Sub
-
-    Public Function obtenerDatos()
+    'traedatos de la tabla usuarios y relacionada
+    Public Function obtenerDatosUsuarios()
         ds.Clear()
 
         miCommand.Connection = miConexion
 
-        'traedatos de la tabla usuarios y relacionada
         miCommand.CommandText = "select Usuarios.Nombre, Usuarios.DUI, Contactos.Email, 
                                  Contactos.Telefono, Login.Usuario, Login.Password, NivelAcceso.Acceso             
             from Usuarios 
             inner join Contactos on(Contactos.idContactos=Usuarios.idContacto)
             inner join Login on(Login.idLogin=Usuarios.idLogin)
             inner join NivelAcceso on(Usuarios.Acceso=NivelAcceso.idNivel)"
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "Usuarios")
+
+        Return ds
+    End Function
+    'traedatos de la tabla usuarios y relacionada
+    Public Function obtenerDatosNacionalidad()
+        ds.Clear()
+
+        miCommand.Connection = miConexion
+
+        miCommand.CommandText = "select Clientes.Nombre, Clientes.DUI, Contactos.Telefono, Contactos.Email            
+            from Clientes 
+            inner join Nacionalidad on(Nacionalidad.idContactos=Clientes.idContacto)"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Usuarios")
 

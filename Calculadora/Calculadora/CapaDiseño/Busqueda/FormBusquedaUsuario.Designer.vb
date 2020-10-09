@@ -32,12 +32,16 @@ Partial Class FormBusquedaUsuario
         '
         'grdBuscarUsuario
         '
+        Me.grdBuscarUsuario.AllowUserToAddRows = False
+        Me.grdBuscarUsuario.AllowUserToDeleteRows = False
         Me.grdBuscarUsuario.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grdBuscarUsuario.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.grdBuscarUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grdBuscarUsuario.Location = New System.Drawing.Point(12, 53)
         Me.grdBuscarUsuario.Name = "grdBuscarUsuario"
+        Me.grdBuscarUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.grdBuscarUsuario.Size = New System.Drawing.Size(776, 348)
         Me.grdBuscarUsuario.TabIndex = 0
         '
