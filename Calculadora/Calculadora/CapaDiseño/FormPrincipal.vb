@@ -10,4 +10,8 @@
         Dim objReservacion As New FormReservacion
         objReservacion.ShowDialog()
     End Sub
+
+    Private Sub CerrarSesionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesionToolStripMenuItem.Click
+        Close()
+    End Sub
 End Class

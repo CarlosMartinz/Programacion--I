@@ -47,3 +47,4 @@ C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.exe
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.xml
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.pdb
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormReservacion.resources

@@ -25,6 +25,7 @@ Partial Class FormRegistroUsuario
         Me.Usuarios = New System.Windows.Forms.TabControl()
         Me.usuario = New System.Windows.Forms.TabPage()
         Me.grbPosicion = New System.Windows.Forms.GroupBox()
+        Me.lblPosicion = New System.Windows.Forms.Label()
         Me.btnUltimo = New System.Windows.Forms.Button()
         Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.btnAnterior = New System.Windows.Forms.Button()
@@ -67,7 +68,6 @@ Partial Class FormRegistroUsuario
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.lblPosicion = New System.Windows.Forms.Label()
         Me.Usuarios.SuspendLayout()
         Me.usuario.SuspendLayout()
         Me.grbPosicion.SuspendLayout()
@@ -114,6 +114,16 @@ Partial Class FormRegistroUsuario
         Me.grbPosicion.TabIndex = 26
         Me.grbPosicion.TabStop = False
         Me.grbPosicion.Text = "Posicion"
+        '
+        'lblPosicion
+        '
+        Me.lblPosicion.AutoSize = True
+        Me.lblPosicion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPosicion.Location = New System.Drawing.Point(245, 24)
+        Me.lblPosicion.Name = "lblPosicion"
+        Me.lblPosicion.Size = New System.Drawing.Size(44, 16)
+        Me.lblPosicion.TabIndex = 5
+        Me.lblPosicion.Text = "1 de n"
         '
         'btnUltimo
         '
@@ -234,7 +244,7 @@ Partial Class FormRegistroUsuario
         '
         'txtUsuario
         '
-        Me.txtUsuario.Location = New System.Drawing.Point(288, 96)
+        Me.txtUsuario.Location = New System.Drawing.Point(291, 41)
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(212, 20)
         Me.txtUsuario.TabIndex = 19
@@ -242,7 +252,7 @@ Partial Class FormRegistroUsuario
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(285, 135)
+        Me.Label9.Location = New System.Drawing.Point(288, 80)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(61, 13)
         Me.Label9.TabIndex = 22
@@ -257,7 +267,7 @@ Partial Class FormRegistroUsuario
         '
         'txtContra
         '
-        Me.txtContra.Location = New System.Drawing.Point(288, 151)
+        Me.txtContra.Location = New System.Drawing.Point(291, 96)
         Me.txtContra.Name = "txtContra"
         Me.txtContra.Size = New System.Drawing.Size(212, 20)
         Me.txtContra.TabIndex = 21
@@ -281,7 +291,7 @@ Partial Class FormRegistroUsuario
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(285, 80)
+        Me.Label10.Location = New System.Drawing.Point(288, 25)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(43, 13)
         Me.Label10.TabIndex = 20
@@ -323,7 +333,7 @@ Partial Class FormRegistroUsuario
         '
         Me.cboNivelAcceso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboNivelAcceso.FormattingEnabled = True
-        Me.cboNivelAcceso.Location = New System.Drawing.Point(288, 40)
+        Me.cboNivelAcceso.Location = New System.Drawing.Point(291, 149)
         Me.cboNivelAcceso.Name = "cboNivelAcceso"
         Me.cboNivelAcceso.Size = New System.Drawing.Size(212, 21)
         Me.cboNivelAcceso.TabIndex = 10
@@ -340,7 +350,7 @@ Partial Class FormRegistroUsuario
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(285, 24)
+        Me.Label5.Location = New System.Drawing.Point(288, 133)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(84, 13)
         Me.Label5.TabIndex = 11
@@ -518,16 +528,6 @@ Partial Class FormRegistroUsuario
         Me.TextBox13.Name = "TextBox13"
         Me.TextBox13.Size = New System.Drawing.Size(212, 20)
         Me.TextBox13.TabIndex = 12
-        '
-        'lblPosicion
-        '
-        Me.lblPosicion.AutoSize = True
-        Me.lblPosicion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPosicion.Location = New System.Drawing.Point(245, 24)
-        Me.lblPosicion.Name = "lblPosicion"
-        Me.lblPosicion.Size = New System.Drawing.Size(44, 16)
-        Me.lblPosicion.TabIndex = 5
-        Me.lblPosicion.Text = "1 de n"
         '
         'FormRegistroUsuario
         '
