@@ -8,7 +8,8 @@
 
     Private Sub RegistroDeReservacionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroDeReservacionToolStripMenuItem.Click
         Dim objReservacion As New FormReservacion
-        objReservacion.ShowDialog()
+        objReservacion.MdiParent = Me
+        objReservacion.Show()
     End Sub
 
     Private Sub CerrarSesionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesionToolStripMenuItem.Click

@@ -18,11 +18,17 @@
         btnAnterior.Image = System.Drawing.Image.FromFile(Application.StartupPath & "\recursos\imagenes\anterior.png")
         btnSiguiente.Image = System.Drawing.Image.FromFile(Application.StartupPath & "\recursos\imagenes\siguiente.png")
         btnUltimo.Image = System.Drawing.Image.FromFile(Application.StartupPath & "\recursos\imagenes\ultimo.png")
+
     End Sub
 
     Sub obtenerDatosUsuarios()
         dataTable = objConexion.obtenerDatosUsuarios().Tables("Usuarios")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idUsuario")}
+
+        cboNivelAcceso.DataSource = objConexion.obtenerDatosUsuarios().Tables("Usuarios").DefaultView()
+        cboNivelAcceso.DisplayMember = "Acceso"
+        cboNivelAcceso.ValueMember = "Usuarios.Acceso"
+
         mostrarDatosUsuarios()
     End Sub
 
@@ -34,7 +40,7 @@
             txtTelefono.Text = dataTable.Rows(Posicion).ItemArray(3).ToString
             txtUsuario.Text = dataTable.Rows(Posicion).ItemArray(4).ToString
             txtContra.Text = dataTable.Rows(Posicion).ItemArray(5).ToString
-            cboNivelAcceso.Text = dataTable.Rows(Posicion).ItemArray(6).ToString
+            cboNivelAcceso.SelectedValue = dataTable.Rows(Posicion).ItemArray(6).ToString
 
             lblPosicion.Text = Posicion + 1 & " de " & dataTable.Rows.Count
         End If
@@ -47,34 +53,60 @@
             btnNuevo.Text = ","
             btnBuscar.Enabled = False
             btnEliminar.Enabled = False
-            Accion = "NuevoUsuario"
+            Accion = "Nuevo"
+
+            LimpiarDatos()
+            Controles(False)
         Else 'Guardar
-            btnNuevo.Text = "."
-            btnNuevo.Image = System.Drawing.Image.FromFile(Application.StartupPath & "\recursos\imagenes\nuevo.png")
-            btnModificar.Image = System.Drawing.Image.FromFile(Application.StartupPath & "\recursos\imagenes\actualizar.png")
-            btnBuscar.Enabled = True
-            btnEliminar.Enabled = True
+            'Guardar
+            Dim msg = objConexion.mantenimientoDatosUsuario(New String() {
+                Me.Tag, txtNombre.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text, txtUsuario.Text, txtContra.Text,
+                cboNivelAcceso.SelectedValue}, Accion)
+            If msg = "Error" Then
+                MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.",
+                                "Registro de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                btnNuevo.Text = "."
+                btnNuevo.Image = System.Drawing.Image.FromFile(Application.StartupPath & "\recursos\imagenes\nuevo.png")
+                btnModificar.Image = System.Drawing.Image.FromFile(Application.StartupPath & "\recursos\imagenes\actualizar.png")
+                btnBuscar.Enabled = True
+                btnEliminar.Enabled = True
+            End If
         End If
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
-        If btnNuevo.Text = "." Then
+        If btnNuevo.Text = "." Then 'Nuveo
             btnNuevo.Image = System.Drawing.Image.FromFile(Application.StartupPath & "\recursos\imagenes\aceptar.png")
             btnModificar.Image = System.Drawing.Image.FromFile(Application.StartupPath & "\recursos\imagenes\cancelar.png")
             btnNuevo.Text = ","
-            btnBuscar.Enabled = False
-            btnEliminar.Enabled = False
+            Accion = "Actualizar"
+
         Else
             btnNuevo.Text = "."
             btnNuevo.Image = System.Drawing.Image.FromFile(Application.StartupPath & "\recursos\imagenes\nuevo.png")
             btnModificar.Image = System.Drawing.Image.FromFile(Application.StartupPath & "\recursos\imagenes\actualizar.png")
-            btnBuscar.Enabled = True
-            btnEliminar.Enabled = True
         End If
     End Sub
 
+    Private Sub LimpiarDatos()
+        txtContra.Text = ""
+        txtDUI.Text = ""
+        txtEmail.Text = ""
+        txtNombre.Text = ""
+        txtTelefono.Text = ""
+        txtUsuario.Text = ""
+    End Sub
+
+    Private Sub Controles(ByVal Estado As Boolean)
+        grbDatos.Enabled = Not Estado
+        grbPosicion.Enabled = Estado
+        btnEliminar.Enabled = Estado
+        btnBuscar.Enabled = Estado
+    End Sub
+
     Private Sub btnAnterior_Click(sender As Object, e As EventArgs) Handles btnAnterior.Click
-        If Posicion >= 0 Then
+        If Posicion > 0 Then
             Posicion -= 1
             mostrarDatosUsuarios()
         Else
@@ -89,5 +121,15 @@
         Else
             MessageBox.Show("Ya estas en el ultimo registro", "Registro de Clientes", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
+    End Sub
+
+    Private Sub btnPrimero_Click(sender As Object, e As EventArgs) Handles btnPrimero.Click
+        Posicion = 0
+        mostrarDatosUsuarios()
+    End Sub
+
+    Private Sub btnUltimo_Click(sender As Object, e As EventArgs) Handles btnUltimo.Click
+        Posicion = dataTable.Rows.Count - 1
+        mostrarDatosUsuarios()
     End Sub
 End Class
