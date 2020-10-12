@@ -30,12 +30,12 @@ Partial Class FormRegistroUsuario
         Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.btnAnterior = New System.Windows.Forms.Button()
         Me.btnPrimero = New System.Windows.Forms.Button()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.grbEdicion = New System.Windows.Forms.GroupBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.grbDatos = New System.Windows.Forms.GroupBox()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
@@ -71,8 +71,8 @@ Partial Class FormRegistroUsuario
         Me.Usuarios.SuspendLayout()
         Me.usuario.SuspendLayout()
         Me.grbPosicion.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.grbEdicion.SuspendLayout()
+        Me.grbDatos.SuspendLayout()
         Me.clientes.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -92,8 +92,8 @@ Partial Class FormRegistroUsuario
         '
         Me.usuario.BackColor = System.Drawing.Color.Transparent
         Me.usuario.Controls.Add(Me.grbPosicion)
-        Me.usuario.Controls.Add(Me.GroupBox3)
-        Me.usuario.Controls.Add(Me.GroupBox1)
+        Me.usuario.Controls.Add(Me.grbEdicion)
+        Me.usuario.Controls.Add(Me.grbDatos)
         Me.usuario.Location = New System.Drawing.Point(4, 22)
         Me.usuario.Name = "usuario"
         Me.usuario.Padding = New System.Windows.Forms.Padding(3)
@@ -165,18 +165,18 @@ Partial Class FormRegistroUsuario
         Me.btnPrimero.Text = "."
         Me.btnPrimero.UseVisualStyleBackColor = True
         '
-        'GroupBox3
+        'grbEdicion
         '
-        Me.GroupBox3.Controls.Add(Me.btnBuscar)
-        Me.GroupBox3.Controls.Add(Me.btnEliminar)
-        Me.GroupBox3.Controls.Add(Me.btnModificar)
-        Me.GroupBox3.Controls.Add(Me.btnNuevo)
-        Me.GroupBox3.Location = New System.Drawing.Point(6, 331)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(535, 64)
-        Me.GroupBox3.TabIndex = 25
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Edicion"
+        Me.grbEdicion.Controls.Add(Me.btnBuscar)
+        Me.grbEdicion.Controls.Add(Me.btnEliminar)
+        Me.grbEdicion.Controls.Add(Me.btnModificar)
+        Me.grbEdicion.Controls.Add(Me.btnNuevo)
+        Me.grbEdicion.Location = New System.Drawing.Point(6, 331)
+        Me.grbEdicion.Name = "grbEdicion"
+        Me.grbEdicion.Size = New System.Drawing.Size(535, 64)
+        Me.grbEdicion.TabIndex = 25
+        Me.grbEdicion.TabStop = False
+        Me.grbEdicion.Text = "Edicion"
         '
         'btnBuscar
         '
@@ -218,29 +218,29 @@ Partial Class FormRegistroUsuario
         Me.btnNuevo.Text = "."
         Me.btnNuevo.UseVisualStyleBackColor = True
         '
-        'GroupBox1
+        'grbDatos
         '
-        Me.GroupBox1.Controls.Add(Me.txtUsuario)
-        Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.txtNombre)
-        Me.GroupBox1.Controls.Add(Me.txtContra)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.txtDUI)
-        Me.GroupBox1.Controls.Add(Me.Label10)
-        Me.GroupBox1.Controls.Add(Me.TextBox6)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.txtTelefono)
-        Me.GroupBox1.Controls.Add(Me.cboNivelAcceso)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.txtEmail)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 6)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(535, 253)
-        Me.GroupBox1.TabIndex = 23
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Datos Cliente"
+        Me.grbDatos.Controls.Add(Me.txtUsuario)
+        Me.grbDatos.Controls.Add(Me.Label9)
+        Me.grbDatos.Controls.Add(Me.txtNombre)
+        Me.grbDatos.Controls.Add(Me.txtContra)
+        Me.grbDatos.Controls.Add(Me.Label2)
+        Me.grbDatos.Controls.Add(Me.txtDUI)
+        Me.grbDatos.Controls.Add(Me.Label10)
+        Me.grbDatos.Controls.Add(Me.TextBox6)
+        Me.grbDatos.Controls.Add(Me.Label3)
+        Me.grbDatos.Controls.Add(Me.Label7)
+        Me.grbDatos.Controls.Add(Me.txtTelefono)
+        Me.grbDatos.Controls.Add(Me.cboNivelAcceso)
+        Me.grbDatos.Controls.Add(Me.Label6)
+        Me.grbDatos.Controls.Add(Me.Label5)
+        Me.grbDatos.Controls.Add(Me.txtEmail)
+        Me.grbDatos.Location = New System.Drawing.Point(6, 6)
+        Me.grbDatos.Name = "grbDatos"
+        Me.grbDatos.Size = New System.Drawing.Size(535, 253)
+        Me.grbDatos.TabIndex = 23
+        Me.grbDatos.TabStop = False
+        Me.grbDatos.Text = "Datos Cliente"
         '
         'txtUsuario
         '
@@ -248,6 +248,7 @@ Partial Class FormRegistroUsuario
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(212, 20)
         Me.txtUsuario.TabIndex = 19
+        Me.txtUsuario.Text = "ta"
         '
         'Label9
         '
@@ -537,14 +538,15 @@ Partial Class FormRegistroUsuario
         Me.Controls.Add(Me.Usuarios)
         Me.MaximizeBox = False
         Me.Name = "FormRegistroUsuario"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Registro general de usuarios"
         Me.Usuarios.ResumeLayout(False)
         Me.usuario.ResumeLayout(False)
         Me.grbPosicion.ResumeLayout(False)
         Me.grbPosicion.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.grbEdicion.ResumeLayout(False)
+        Me.grbDatos.ResumeLayout(False)
+        Me.grbDatos.PerformLayout()
         Me.clientes.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
@@ -560,7 +562,7 @@ Partial Class FormRegistroUsuario
     Friend WithEvents txtNombre As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents txtDUI As TextBox
-    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents grbEdicion As GroupBox
     Friend WithEvents btnBuscar As Button
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnModificar As Button
@@ -570,7 +572,7 @@ Partial Class FormRegistroUsuario
     Friend WithEvents txtContra As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents grbDatos As GroupBox
     Friend WithEvents Label7 As Label
     Friend WithEvents txtTelefono As TextBox
     Friend WithEvents cboNivelAcceso As ComboBox

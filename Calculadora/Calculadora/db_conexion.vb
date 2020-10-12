@@ -89,23 +89,80 @@ Public Class db_conexion
 
         Return msg
     End Function
-    Private Sub mantenimientoDatosContacto(ByVal datos As String(), ByVal accion As String)
+    Public Function mantenimientoDatosLogin(ByVal Datos As String(), ByVal Accion As String)
         Dim sql, msg As String
-        Select Case accion
-            Case "nuevo"
+        Select Case Accion
+            Case "Nuveo"
                 miCommand.Connection = miConexion
-                miCommand.CommandText = "select MAX(idNivel) AS idNivel from Usuarios"
-                datos(0) = miCommand.ExecuteScalar().ToString()
-
-                sql = "INSERT INTO NivelAcceso (idNivel) VALUES(@idN)"
-            Case "modificar"
-                'sql = "UPDATE NivelAcceso SET telefono=@tel,email=@ema WHERE idPersona=@id"
-            Case "eliminar"
-                sql = "DELETE FROM contactos WHERE idPersona=@id"
+                miCommand.CommandText = "SELECT MAX(idUsuario) AS idUsuario FROM Usuarios"
+                Datos(0) = miCommand.ExecuteScalar().ToString()
+                sql = "INSERT INTO Login(idLogin, usuario, Password) VALUES(@id, @Usuario, @Contra)"
+            Case "Actualizar"
+                sql = "UPDATE Login SET usuario=@Usuario, Password=@Contra WHERE idLogin=@id"
+            Case "Eliminar"
+                sql = "Delete FROM Login WHERE idLogin=@id"
         End Select
-        miCommand.Parameters("@id").Value = datos(0)
-        If accion IsNot "eliminar" Then
-            miCommand.Parameters("@idN").Value = datos(5)
+
+        miCommand.Parameters("@id").Value = Datos(0)
+        If Accion IsNot "Eliminar" Then
+            miCommand.Parameters("@Usuario").Value = Datos(5)
+            miCommand.Parameters("@Contra").Value = Datos(6)
+        End If
+        executeSql(sql)
+    End Function
+    Public Function mantenimientoDatosUsuario(ByVal Datos As String(), ByVal Accion As String)
+        Dim sql, msg As String
+        Select Case Accion
+            Case "Nuveo"
+                sql = "INSERT INTO Usuarios (Nombre, DUI, Acceso) VALUES(@Nombre, @Dui, @Acces)"
+            Case "Actualizar"
+                sql = "UPDATE Usuarios SET Nombre=@Nombre, DUI=@Dui, Acceso=@Acces WHERE idUsuario=@id"
+            Case "Eliminar"
+                sql = "Delete FROM Usuarios WHERE idUsuarios=@id"
+        End Select
+
+        miCommand.Parameters("@id").Value = Datos(0)
+        If Accion IsNot "Eliminar" Then
+            miCommand.Parameters("@Nombre").Value = Datos(1)
+            miCommand.Parameters("@Dui").Value = Datos(2)
+            miCommand.Parameters("@Tel").Value = Datos(3)
+            miCommand.Parameters("@Email").Value = Datos(4)
+            miCommand.Parameters("@Usuario").Value = Datos(5)
+            miCommand.Parameters("@Contra").Value = Datos(6)
+            miCommand.Parameters("@Acces").Value = Datos(7)
+        Else
+            mantenimientoDatosContacto(Datos, Accion)
+            mantenimientoDatosLogin(Datos, Accion)
+        End If
+
+        If (executeSql(sql) > 0) Then
+            If Accion IsNot "Eliminar" Then
+                mantenimientoDatosUsuario(Datos, Accion)
+                mantenimientoDatosLogin(Datos, Accion)
+            End If
+            msg = "Exito"
+        Else
+            msg = "Error"
+        End If
+    End Function
+    Private Sub mantenimientoDatosContacto(ByVal Datos As String(), ByVal Accion As String)
+        Dim sql, msg As String
+        Select Case Accion
+            Case "Nuveo"
+                miCommand.Connection = miConexion
+                miCommand.CommandText = "SELECT MAX(idUsuario) AS idUsuario FROM Usuarios"
+                Datos(0) = miCommand.ExecuteScalar().ToString()
+                sql = "INSERT INTO Contactos(idContactos, email, telefono) VALUES(@id, @Email, @Tel)"
+            Case "Actualizar"
+                sql = "UPDATE Contactos SET email=@Email, telefono=@Tel WHERE idContactos=@id"
+            Case "Eliminar"
+                sql = "Delete FROM Login WHERE idLogin=@id"
+        End Select
+
+        miCommand.Parameters("@id").Value = Datos(0)
+        If Accion IsNot "Eliminar" Then
+            miCommand.Parameters("@Tel").Value = Datos(3)
+            miCommand.Parameters("@Email").Value = Datos(4)
         End If
         executeSql(sql)
     End Sub

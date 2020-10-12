@@ -320,6 +320,7 @@ Partial Class FormReservacion
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "FormReservacion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reservaciones"
         Me.grbNavegacion.ResumeLayout(False)
         Me.grbNavegacion.PerformLayout()
