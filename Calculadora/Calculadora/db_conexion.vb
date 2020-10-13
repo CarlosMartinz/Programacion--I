@@ -8,6 +8,7 @@ Public Class db_conexion
     Dim ds As New DataSet 'Representa una copia de la arquitectura (tablas, campos, indices, llaves, relaciones, datos, etc) de la BD en memoria
     Dim sql As String
 
+
     'conecta con la base de datos
     Public Sub New()
         Dim cadenaConexion As String
@@ -15,6 +16,7 @@ Public Class db_conexion
         miConexion.ConnectionString = cadenaConexion
 
         miConexion.Open()
+        parametrizacion()
     End Sub
     'traedatos de la tabla usuarios y relacionada
     Public Function obtenerDatosUsuarios()
@@ -22,7 +24,7 @@ Public Class db_conexion
 
         miCommand.Connection = miConexion
 
-        miCommand.CommandText = "select Usuarios.Nombre, Usuarios.DUI, Contactos.Email, 
+        miCommand.CommandText = "select Usuarios.idUsuario, Usuarios.Nombre, Usuarios.DUI, Contactos.Email, 
                                  Contactos.Telefono, Login.Usuario, Login.Password, NivelAcceso.Acceso    
             from Usuarios 
             inner join Contactos on(Contactos.idContactos=Usuarios.idContacto)
@@ -50,13 +52,14 @@ Public Class db_conexion
 
     'metodo de parametros (conecta con los campos)
     Private Sub parametrizacion()
-        miCommand.Parameters.Add("@idU", SqlDbType.Int).Value = 0
-        miCommand.Parameters.Add("@nom", SqlDbType.Int).Value = ""
-        miCommand.Parameters.Add("@dui", SqlDbType.Int).Value = ""
-        miCommand.Parameters.Add("@idD", SqlDbType.Int).Value = ""
-        miCommand.Parameters.Add("@tel", SqlDbType.Int).Value = ""
-        miCommand.Parameters.Add("@ema", SqlDbType.Int).Value = ""
-        miCommand.Parameters.Add("@idC", SqlDbType.Int).Value = ""
+        miCommand.Parameters.Add("@id", SqlDbType.Int).Value = 0
+        miCommand.Parameters.Add("@Nombre", SqlDbType.Char).Value = ""
+        miCommand.Parameters.Add("@Dui", SqlDbType.Int).Value = 0
+        miCommand.Parameters.Add("@Tel", SqlDbType.Int).Value = 0
+        miCommand.Parameters.Add("@Email", SqlDbType.Char).Value = ""
+        miCommand.Parameters.Add("@Usuario", SqlDbType.Char).Value = ""
+        miCommand.Parameters.Add("@Contra", SqlDbType.Char).Value = ""
+        miCommand.Parameters.Add("@Acces", SqlDbType.Char).Value = ""
     End Sub
 
     'CRUD

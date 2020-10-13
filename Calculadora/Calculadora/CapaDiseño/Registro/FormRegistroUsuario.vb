@@ -34,13 +34,14 @@
 
     Sub mostrarDatosUsuarios()
         If dataTable.Rows.Count > 0 Then
-            txtNombre.Text = dataTable.Rows(Posicion).ItemArray(0).ToString()
-            txtDUI.Text = dataTable.Rows(Posicion).ItemArray(1).ToString()
-            txtEmail.Text = dataTable.Rows(Posicion).ItemArray(2).ToString
-            txtTelefono.Text = dataTable.Rows(Posicion).ItemArray(3).ToString
-            txtUsuario.Text = dataTable.Rows(Posicion).ItemArray(4).ToString
-            txtContra.Text = dataTable.Rows(Posicion).ItemArray(5).ToString
-            cboNivelAcceso.SelectedValue = dataTable.Rows(Posicion).ItemArray(6).ToString
+            Me.Tag = dataTable.Rows(Posicion).ItemArray(0).ToString()
+            txtNombre.Text = dataTable.Rows(Posicion).ItemArray(1).ToString()
+            txtDUI.Text = dataTable.Rows(Posicion).ItemArray(2).ToString()
+            txtEmail.Text = dataTable.Rows(Posicion).ItemArray(3).ToString
+            txtTelefono.Text = dataTable.Rows(Posicion).ItemArray(4).ToString
+            txtUsuario.Text = dataTable.Rows(Posicion).ItemArray(5).ToString
+            txtContra.Text = dataTable.Rows(Posicion).ItemArray(6).ToString
+            cboNivelAcceso.SelectedValue = dataTable.Rows(Posicion).ItemArray(7).ToString
 
             lblPosicion.Text = Posicion + 1 & " de " & dataTable.Rows.Count
         End If
@@ -60,7 +61,7 @@
         Else 'Guardar
             'Guardar
             Dim msg = objConexion.mantenimientoDatosUsuario(New String() {
-                Me.Tag, txtNombre.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text, txtUsuario.Text, txtContra.Text,
+                "", txtNombre.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text, txtUsuario.Text, txtContra.Text,
                 cboNivelAcceso.SelectedValue}, Accion)
             If msg = "Error" Then
                 MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.",
