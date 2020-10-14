@@ -11,7 +11,7 @@ Public Class db_conexion
         miConexion.ConnectionString = cadenaConexion
 
         miConexion.Open()
-        'parametrizacion()
+        parametrizacion()
     End Sub
     'traedatos de la tabla usuarios y relacionada
     Public Function obtenerDatosUsuarios()
@@ -38,17 +38,17 @@ Public Class db_conexion
     Private Sub parametrizacion()
         'Tabla Usuarios
         miCommand.Parameters.Add("@idU", SqlDbType.Int).Value = 0
-        miCommand.Parameters.Add("@nombre", SqlDbType.Char).Value = ""
-        miCommand.Parameters.Add("@dui", SqlDbType.Int).Value = ""
-        miCommand.Parameters.Add("@acceso", SqlDbType.Char).Value = ""
+        miCommand.Parameters.Add("@nombre", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@dui", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@acceso", SqlDbType.VarChar).Value = ""
 
         'Tabla Contactos
-        miCommand.Parameters.Add("@telefono", SqlDbType.Int).Value = 0
-        miCommand.Parameters.Add("@email", SqlDbType.Char).Value = ""
+        miCommand.Parameters.Add("@telefono", SqlDbType.VarChar).Value = 0
+        miCommand.Parameters.Add("@email", SqlDbType.VarChar).Value = ""
 
         'Tabla Login
-        miCommand.Parameters.Add("@usuario", SqlDbType.Char).Value = ""
-        miCommand.Parameters.Add("@contra", SqlDbType.Char).Value = ""
+        miCommand.Parameters.Add("@usuario", SqlDbType.NChar).Value = ""
+        miCommand.Parameters.Add("@contra", SqlDbType.NChar).Value = ""
     End Sub
 
     'CRUD
