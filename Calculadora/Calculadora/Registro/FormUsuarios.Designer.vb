@@ -34,6 +34,7 @@ Partial Class FormUsuarios
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.grbDatos = New System.Windows.Forms.GroupBox()
+        Me.txtdescripcion = New System.Windows.Forms.TextBox()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
@@ -49,7 +50,6 @@ Partial Class FormUsuarios
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtEmail = New System.Windows.Forms.TextBox()
-        Me.txtdescripcion = New System.Windows.Forms.TextBox()
         Me.grbPosicion.SuspendLayout()
         Me.grbEdicion.SuspendLayout()
         Me.grbDatos.SuspendLayout()
@@ -197,6 +197,14 @@ Partial Class FormUsuarios
         Me.grbDatos.TabStop = False
         Me.grbDatos.Text = "Datos Cliente"
         '
+        'txtdescripcion
+        '
+        Me.txtdescripcion.Enabled = False
+        Me.txtdescripcion.Location = New System.Drawing.Point(291, 202)
+        Me.txtdescripcion.Name = "txtdescripcion"
+        Me.txtdescripcion.Size = New System.Drawing.Size(212, 20)
+        Me.txtdescripcion.TabIndex = 23
+        '
         'txtUsuario
         '
         Me.txtUsuario.Location = New System.Drawing.Point(291, 41)
@@ -317,14 +325,6 @@ Partial Class FormUsuarios
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(212, 20)
         Me.txtEmail.TabIndex = 12
-        '
-        'txtdescripcion
-        '
-        Me.txtdescripcion.Enabled = False
-        Me.txtdescripcion.Location = New System.Drawing.Point(291, 202)
-        Me.txtdescripcion.Name = "txtdescripcion"
-        Me.txtdescripcion.Size = New System.Drawing.Size(212, 20)
-        Me.txtdescripcion.TabIndex = 23
         '
         'FormUsuarios
         '

@@ -23,11 +23,11 @@ Partial Class FormBusquedaUsuarios
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.grdBuscarUsuario = New System.Windows.Forms.DataGridView()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grdBuscarUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
@@ -41,16 +41,16 @@ Partial Class FormBusquedaUsuarios
         Me.Button1.Text = "Cancelar"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'grdBuscarUsuario
         '
-        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.grdBuscarUsuario.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 32)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(723, 345)
-        Me.DataGridView1.TabIndex = 1
+        Me.grdBuscarUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grdBuscarUsuario.Location = New System.Drawing.Point(12, 32)
+        Me.grdBuscarUsuario.Name = "grdBuscarUsuario"
+        Me.grdBuscarUsuario.Size = New System.Drawing.Size(723, 345)
+        Me.grdBuscarUsuario.TabIndex = 1
         '
         'TextBox1
         '
@@ -66,9 +66,9 @@ Partial Class FormBusquedaUsuarios
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Label1"
+        Me.Label1.Text = "Buscar"
         '
         'Button2
         '
@@ -89,18 +89,18 @@ Partial Class FormBusquedaUsuarios
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.grdBuscarUsuario)
         Me.Controls.Add(Me.Button1)
         Me.Name = "FormBusquedaUsuarios"
         Me.Text = "FormBusquedaUsuarios"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grdBuscarUsuario, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Button1 As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents grdBuscarUsuario As DataGridView
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Button2 As Button
