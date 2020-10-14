@@ -3,12 +3,13 @@
     Dim dataTable As New DataTable
     Dim Accion As String = "Nuevo"
     Dim Posicion As Integer = 0
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Dim form As New FormBusquedaUsuario
         form.Show()
     End Sub
     Private Sub FormRegistroUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         obtenerDatosUsuarios()
+        grbDatos.Enabled = False
         btnNuevo.Image = System.Drawing.Image.FromFile(Application.StartupPath & "\recursos\imagenes\nuevo.png")
         btnModificar.Image = System.Drawing.Image.FromFile(Application.StartupPath & "\recursos\imagenes\actualizar.png")
         btnEliminar.Image = System.Drawing.Image.FromFile(Application.StartupPath & "\recursos\imagenes\eliminar.png")
@@ -61,8 +62,8 @@
         Else 'Guardar
             'Guardar
             Dim msg = objConexion.mantenimientoDatosUsuario(New String() {
-                "", txtNombre.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text, txtUsuario.Text, txtContra.Text,
-                cboNivelAcceso.SelectedValue}, Accion)
+                Me.Tag, txtNombre.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text, txtUsuario.Text, txtContra.Text,
+                cboNivelAcceso.SelectedValue.ToString()}, Accion)
             If msg = "Error" Then
                 MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.",
                                 "Registro de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -77,16 +78,18 @@
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
-        If btnNuevo.Text = "." Then 'Nuveo
+        If btnNuevo.Text = "." Then 'Actualizar
             btnNuevo.Image = System.Drawing.Image.FromFile(Application.StartupPath & "\recursos\imagenes\aceptar.png")
             btnModificar.Image = System.Drawing.Image.FromFile(Application.StartupPath & "\recursos\imagenes\cancelar.png")
             btnNuevo.Text = ","
             Accion = "Actualizar"
+            Controles(False)
 
         Else
             btnNuevo.Text = "."
             btnNuevo.Image = System.Drawing.Image.FromFile(Application.StartupPath & "\recursos\imagenes\nuevo.png")
             btnModificar.Image = System.Drawing.Image.FromFile(Application.StartupPath & "\recursos\imagenes\actualizar.png")
+            obtenerDatosUsuarios()
         End If
     End Sub
 
@@ -132,5 +135,15 @@
     Private Sub btnUltimo_Click(sender As Object, e As EventArgs) Handles btnUltimo.Click
         Posicion = dataTable.Rows.Count - 1
         mostrarDatosUsuarios()
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If (MessageBox.Show("¿Estas seguro que deseas eliminar este registro?", "Gegistro Usuarios", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+            objConexion.mantenimientoDatosUsuario(New String() {Me.Tag}, "Eliminar")
+            If Posicion > 0 Then
+                Posicion -= 1
+            End If
+            obtenerDatosUsuarios()
+        End If
     End Sub
 End Class
