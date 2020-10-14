@@ -7,12 +7,11 @@ Public Class db_conexion
     'conecta con la base de datos
     Public Sub New()
         Dim cadenaConexion As String
-        cadenaConexion =
-            "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db_Hotel.mdf;Integrated Security=True"
+        cadenaConexion = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db_Hotel.mdf;Integrated Security=True"
         miConexion.ConnectionString = cadenaConexion
 
         miConexion.Open()
-        parametrizacion()
+        'parametrizacion()
     End Sub
     'traedatos de la tabla usuarios y relacionada
     Public Function obtenerDatosUsuarios()
