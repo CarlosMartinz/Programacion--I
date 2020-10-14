@@ -9,8 +9,8 @@
     End Sub
 
     Sub obtenerDatosUsuarios()
-        DataTable = objConexion.obtenerDatosUsuarios().Tables("Usuarios")
-        DataTable.PrimaryKey = New DataColumn() {DataTable.Columns("idUsuario")}
+        dataTable = objConexion.obtenerDatosUsuarios().Tables("Usuarios")
+        dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idUsuario")}
 
         cboNivelAcceso.DataSource = objConexion.obtenerDatosUsuarios().Tables("NivelAcceso").DefaultView()
         cboNivelAcceso.DisplayMember = "Acceso"
@@ -39,5 +39,48 @@
 
     Private Sub FormUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         obtenerDatosUsuarios()
+    End Sub
+    Private Sub HabDescontroles(ByVal estado As Boolean)
+        'grbDatos.Enabled = Not estado
+        'grbNavegacion.Enabled = estado
+        btnEliminar.Enabled = estado
+        btnModificar.Enabled = estado
+        btnBuscar.Enabled = estado
+    End Sub
+    Private Sub limpiarDatosCliente()
+        txtNombre.Text = ""
+        txtDUI.Text = ""
+        txtEmail.Text = ""
+        txtTelefono.Text = ""
+        txtUsuario.Text = ""
+        txtContra.Text = ""
+    End Sub
+    Sub obtenerDatos()
+        dataTable = objConexion.obtenerDatosUsuarios().Tables("Usuarios")
+        dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idUsuario")}
+        mostrarDatosUsuarios()
+    End Sub
+    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        If btnNuevo.Text = "Nuevo" Then 'Nuevo
+            btnNuevo.Text = "Guardar"
+            btnModificar.Text = "Cancelar"
+            Accion = "nuevo"
+
+            HabDescontroles(False)
+            limpiarDatosCliente()
+        Else 'Guardar
+            Dim msg = objConexion.mantenimientoDatosUsuarios(New String() {
+                Me.Tag, txtNombre.Text, txtDUI.Text, txtEmail.Text, txtTelefono.Text, txtUsuario.Text, txtContra.Text, cboNivelAcceso.Text
+            }, Accion)
+            If msg = "error" Then
+                MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Clientes",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                obtenerDatos()
+                HabDescontroles(True)
+                btnNuevo.Text = "Nuevo"
+                btnModificar.Text = "Modificar"
+            End If
+        End If
     End Sub
 End Class
