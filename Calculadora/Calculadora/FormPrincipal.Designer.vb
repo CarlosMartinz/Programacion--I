@@ -27,10 +27,10 @@ Partial Class FormPrincipal
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpresaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReservacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistrosDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeHabitacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReservacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -53,7 +53,7 @@ Partial Class FormPrincipal
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'EmpresaToolStripMenuItem
@@ -68,12 +68,6 @@ Partial Class FormPrincipal
         Me.RegistrosToolStripMenuItem.Name = "RegistrosToolStripMenuItem"
         Me.RegistrosToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
         Me.RegistrosToolStripMenuItem.Text = "Registros"
-        '
-        'ReservacionesToolStripMenuItem
-        '
-        Me.ReservacionesToolStripMenuItem.Name = "ReservacionesToolStripMenuItem"
-        Me.ReservacionesToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
-        Me.ReservacionesToolStripMenuItem.Text = "Reservaciones"
         '
         'RegistroDeUsuariosToolStripMenuItem
         '
@@ -95,6 +89,12 @@ Partial Class FormPrincipal
         Me.RegistroDeHabitacionesToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.H), System.Windows.Forms.Keys)
         Me.RegistroDeHabitacionesToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
         Me.RegistroDeHabitacionesToolStripMenuItem.Text = "Registro de habitaciones"
+        '
+        'ReservacionesToolStripMenuItem
+        '
+        Me.ReservacionesToolStripMenuItem.Name = "ReservacionesToolStripMenuItem"
+        Me.ReservacionesToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
+        Me.ReservacionesToolStripMenuItem.Text = "Reservaciones"
         '
         'FormPrincipal
         '

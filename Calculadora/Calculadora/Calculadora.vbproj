@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Busqueda\FormBusquedaClientes.Designer.vb">
+      <DependentUpon>FormBusquedaClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda\FormBusquedaClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormPrincipal.Designer.vb">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
     </Compile>
@@ -95,6 +101,24 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Registro\FormClientes.designer.vb">
+      <DependentUpon>FormClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\FormClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro\FormHabitaciones.Designer.vb">
+      <DependentUpon>FormHabitaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\FormHabitaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro\FormReservaciones.Designer.vb">
+      <DependentUpon>FormReservaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\FormReservaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Registro\FormUsuarios.Designer.vb">
       <DependentUpon>FormUsuarios.vb</DependentUpon>
     </Compile>
@@ -103,6 +127,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Busqueda\FormBusquedaClientes.resx">
+      <DependentUpon>FormBusquedaClientes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +138,12 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro\FormClientes.resx">
+      <DependentUpon>FormClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro\FormUsuarios.resx">
+      <DependentUpon>FormUsuarios.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -131,8 +164,6 @@
       <Name>CapaDatos</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Busqueda\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
