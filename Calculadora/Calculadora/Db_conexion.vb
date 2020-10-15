@@ -52,8 +52,8 @@ Public Class db_conexion
             Case "nuevo"
                 sql = "INSERT INTO Usuarios (Nombre,DUI,Telefono,Email,Acceso,Usuario,Password) 
                                       VALUES(@nombre,@dui,@telefono,@email,@acceso,@usuario,@contra)"
-            Case "modificar"
-                sql = "UPDATE Usuarios SET Nombre=@nombre, DUI=@dui, Telefono=@ Acceso=@acceso"
+            Case "actualizar"
+                sql = "UPDATE Usuarios SET Nombre=@nombre,DUI=@dui,Telefono=@telefono,Email=@email,Acceso=@acceso,Usuario=@usuario,Password=@contra WHERE idUsuario=@idU"
             Case "eliminar"
                 sql = "DELETE FROM Usuarios WHERE idUsuario=@idU"
         End Select
