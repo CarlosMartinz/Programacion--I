@@ -1,8 +1,0 @@
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\CapaDatos\bin\Debug\netstandard2.0\CapaDatos.deps.json
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\CapaDatos\bin\Debug\netstandard2.0\CapaDatos.dll
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\CapaDatos\bin\Debug\netstandard2.0\CapaDatos.pdb
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\CapaDatos\obj\Debug\netstandard2.0\CapaDatos.AssemblyInfoInputs.cache
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\CapaDatos\obj\Debug\netstandard2.0\CapaDatos.AssemblyInfo.vb
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\CapaDatos\obj\Debug\netstandard2.0\CapaDatos.vbproj.CoreCompileInputs.cache
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\CapaDatos\obj\Debug\netstandard2.0\CapaDatos.dll
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\CapaDatos\obj\Debug\netstandard2.0\CapaDatos.pdb

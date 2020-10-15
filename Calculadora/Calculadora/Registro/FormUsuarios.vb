@@ -8,9 +8,9 @@
         dataTable = objConexion.obtenerDatosUsuarios().Tables("Usuarios")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idUsuario")}
 
-        cboNivelAcceso.DataSource = objConexion.obtenerDatosUsuarios().Tables("NivelAcceso").DefaultView()
-        cboNivelAcceso.DisplayMember = "Acceso"
-        cboNivelAcceso.ValueMember = "NivelAcceso.Acceso"
+        'cboNivelAcceso.DataSource = objConexion.obtenerDatosUsuarios().Tables("NivelAcceso").DefaultView()
+        'cboNivelAcceso.DisplayMember = "Acceso"
+        'cboNivelAcceso.ValueMember = "NivelAcceso.Acceso"
 
         'cboNacionalidad.DataSource = objConexion.obtenerDatosUsuarios().Tables("Nacionalidad").DefaultView()
         'cboNacionalidad.DisplayMember = "Nacionalidad"

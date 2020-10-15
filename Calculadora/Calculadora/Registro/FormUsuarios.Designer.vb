@@ -200,9 +200,10 @@ Partial Class FormUsuarios
         'txtdescripcion
         '
         Me.txtdescripcion.Enabled = False
-        Me.txtdescripcion.Location = New System.Drawing.Point(291, 202)
+        Me.txtdescripcion.Location = New System.Drawing.Point(291, 186)
+        Me.txtdescripcion.Multiline = True
         Me.txtdescripcion.Name = "txtdescripcion"
-        Me.txtdescripcion.Size = New System.Drawing.Size(212, 20)
+        Me.txtdescripcion.Size = New System.Drawing.Size(212, 53)
         Me.txtdescripcion.TabIndex = 23
         '
         'txtUsuario
