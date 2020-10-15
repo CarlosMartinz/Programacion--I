@@ -19,11 +19,7 @@ Public Class db_conexion
 
         miCommand.Connection = miConexion
 
-        miCommand.CommandText = "select Usuarios.idUsuario, Usuarios.Nombre, Usuarios.DUI, Contactos.Email, 
-                                 Contactos.Telefono, Usuarios.Usuario, Usuarios.Password, NivelAcceso.Acceso    
-            from Usuarios 
-            inner join Contactos on(Contactos.idUsuario=Usuarios.idUsuario)
-            inner join NivelAcceso on(Usuarios.Acceso=NivelAcceso.Acceso)"
+        miCommand.CommandText = "select * from Usuarios"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Usuarios")
 
@@ -49,7 +45,6 @@ Public Class db_conexion
         miCommand.Parameters.Add("@usuario", SqlDbType.NChar).Value = ""
         miCommand.Parameters.Add("@contra", SqlDbType.NChar).Value = ""
     End Sub
-
     'CRUD
     Public Function mantenimientoDatosUsuarios(ByVal datos As String(), ByVal accion As String)
         Dim sql, msg As String

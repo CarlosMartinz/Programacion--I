@@ -4,8 +4,7 @@
     Dim Accion As String = "Nuevo"
     Dim Posicion As Integer = 0
     Private Sub btnUltimo_Click(sender As Object, e As EventArgs) Handles btnUltimo.Click
-        Dim form As New FormBusquedaUsuarios
-        form.Show()
+
     End Sub
 
     Sub obtenerDatosUsuarios()
@@ -41,7 +40,7 @@
         obtenerDatosUsuarios()
     End Sub
     Private Sub HabDescontroles(ByVal estado As Boolean)
-        'grbDatos.Enabled = Not estado
+        grbDatos.Enabled = Not estado
         'grbNavegacion.Enabled = estado
         btnEliminar.Enabled = estado
         btnModificar.Enabled = estado
@@ -70,7 +69,7 @@
             limpiarDatosCliente()
         Else 'Guardar
             Dim msg = objConexion.mantenimientoDatosUsuarios(New String() {
-                Me.Tag, txtNombre.Text, txtDUI.Text, txtEmail.Text, txtTelefono.Text, txtUsuario.Text, txtContra.Text, cboNivelAcceso.Text
+                Me.Tag, txtNombre.Text, txtDUI.Text, txtEmail.Text, txtTelefono.Text, txtUsuario.Text, txtContra.Text, cboNivelAcceso.SelectedValue
             }, Accion)
             If msg = "error" Then
                 MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Clientes",
@@ -82,5 +81,9 @@
                 btnModificar.Text = "Modificar"
             End If
         End If
+    End Sub
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Dim form As New FormBusquedaUsuarios
+        form.Show()
     End Sub
 End Class
