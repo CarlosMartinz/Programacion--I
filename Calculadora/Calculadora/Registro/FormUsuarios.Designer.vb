@@ -86,7 +86,7 @@ Partial Class FormUsuarios
         Me.btnUltimo.Name = "btnUltimo"
         Me.btnUltimo.Size = New System.Drawing.Size(75, 46)
         Me.btnUltimo.TabIndex = 3
-        Me.btnUltimo.Text = "."
+        Me.btnUltimo.Text = ">|"
         Me.btnUltimo.UseVisualStyleBackColor = True
         '
         'btnSiguiente
@@ -96,7 +96,7 @@ Partial Class FormUsuarios
         Me.btnSiguiente.Name = "btnSiguiente"
         Me.btnSiguiente.Size = New System.Drawing.Size(75, 46)
         Me.btnSiguiente.TabIndex = 2
-        Me.btnSiguiente.Text = "."
+        Me.btnSiguiente.Text = ">"
         Me.btnSiguiente.UseVisualStyleBackColor = True
         '
         'btnAnterior
@@ -106,7 +106,7 @@ Partial Class FormUsuarios
         Me.btnAnterior.Name = "btnAnterior"
         Me.btnAnterior.Size = New System.Drawing.Size(90, 46)
         Me.btnAnterior.TabIndex = 1
-        Me.btnAnterior.Text = "."
+        Me.btnAnterior.Text = "<"
         Me.btnAnterior.UseVisualStyleBackColor = True
         '
         'btnPrimero
@@ -116,7 +116,7 @@ Partial Class FormUsuarios
         Me.btnPrimero.Name = "btnPrimero"
         Me.btnPrimero.Size = New System.Drawing.Size(75, 46)
         Me.btnPrimero.TabIndex = 0
-        Me.btnPrimero.Text = "."
+        Me.btnPrimero.Text = "|<"
         Me.btnPrimero.UseVisualStyleBackColor = True
         '
         'grbEdicion
@@ -139,7 +139,7 @@ Partial Class FormUsuarios
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(75, 46)
         Me.btnBuscar.TabIndex = 3
-        Me.btnBuscar.Text = "."
+        Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'btnEliminar
@@ -149,7 +149,7 @@ Partial Class FormUsuarios
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(75, 46)
         Me.btnEliminar.TabIndex = 2
-        Me.btnEliminar.Text = "."
+        Me.btnEliminar.Text = "Borrar"
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'btnModificar
@@ -159,7 +159,7 @@ Partial Class FormUsuarios
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(90, 46)
         Me.btnModificar.TabIndex = 1
-        Me.btnModificar.Text = "."
+        Me.btnModificar.Text = "Actualizar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
         'btnNuevo
@@ -169,7 +169,7 @@ Partial Class FormUsuarios
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(75, 46)
         Me.btnNuevo.TabIndex = 0
-        Me.btnNuevo.Text = "."
+        Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
         '
         'grbDatos
@@ -337,6 +337,7 @@ Partial Class FormUsuarios
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormUsuarios"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormUsuarios"
         Me.grbPosicion.ResumeLayout(False)
         Me.grbPosicion.PerformLayout()
