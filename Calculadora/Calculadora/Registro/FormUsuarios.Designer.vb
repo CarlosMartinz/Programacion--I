@@ -279,7 +279,7 @@ Partial Class FormUsuarios
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(17, 186)
+        Me.Label7.Location = New System.Drawing.Point(17, 133)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(49, 13)
         Me.Label7.TabIndex = 15
@@ -287,7 +287,7 @@ Partial Class FormUsuarios
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(20, 202)
+        Me.txtTelefono.Location = New System.Drawing.Point(20, 150)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(212, 20)
         Me.txtTelefono.TabIndex = 14
@@ -304,7 +304,7 @@ Partial Class FormUsuarios
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(17, 134)
+        Me.Label6.Location = New System.Drawing.Point(17, 186)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(32, 13)
         Me.Label6.TabIndex = 13
@@ -321,7 +321,7 @@ Partial Class FormUsuarios
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(20, 150)
+        Me.txtEmail.Location = New System.Drawing.Point(20, 202)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(212, 20)
         Me.txtEmail.TabIndex = 12

@@ -69,7 +69,7 @@
             limpiarDatosCliente()
         Else 'Guardar
             Dim msg = objConexion.mantenimientoDatosUsuarios(New String() {
-                Me.Tag, txtNombre.Text, txtDUI.Text, txtEmail.Text, txtTelefono.Text, txtUsuario.Text, txtContra.Text, cboNivelAcceso.SelectedValue
+                Me.Tag, txtNombre.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text, cboNivelAcceso.SelectedValue, txtUsuario.Text, txtContra.Text
             }, Accion)
             If msg = "error" Then
                 MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Clientes",
