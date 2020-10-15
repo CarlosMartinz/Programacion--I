@@ -74,9 +74,9 @@ Public Class db_conexion
             'mantenimientoDatosContactos(datos, accion)
         End If
         If (executeSql(sql) > 0) Then
-            If accion IsNot "eliminar" Then
-                'mantenimientoDatosContactos(datos, accion)
-            End If
+            'If accion IsNot "eliminar" Then
+            '    'mantenimientoDatosContactos(datos, accion)
+            'End If
             msg = "exito"
         Else
             msg = "error"
