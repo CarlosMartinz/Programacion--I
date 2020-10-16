@@ -14,9 +14,9 @@
     End Sub
 
     Private Sub FiltrarDatosUsuario(ByVal Valor As String)
-        Dim bs As BindingSource
+        Dim bs As New BindingSource()
         bs.DataSource = grdBuscarUsuario.DataSource
-        bs.Filter = "idUsuario like '%" & Valor & "%' or Nombre like '%" & Valor & "%'"
+        bs.Filter = "Nombre like '%" & Valor & "%' or DUI like '%" & Valor & "%' or Telefono like '%" & Valor & "%' or Email like'%" & Valor & "%' or Acceso like '%" & Valor & "%' or Usuario like '%" & Valor & "%' or Password like '%" & Valor & "%'"
         grdBuscarUsuario.DataSource = bs
     End Sub
 
@@ -27,7 +27,7 @@
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         idU = 0
         Close()
     End Sub

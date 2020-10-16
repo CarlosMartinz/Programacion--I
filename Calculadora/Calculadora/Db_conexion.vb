@@ -50,11 +50,11 @@ Public Class db_conexion
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
-                sql = "INSERT INTO Usuarios (Nombre,DUI,Telefono,Email,Acceso,Usuario,Password) VALUES ('" + datos(1) + "','" + datos(2) + "','" + datos(3) + "','" + datos(4) + "','" + datos(5) + "','" + datos(6) + "',,'" + datos(7) + "')"
+                sql = "INSERT INTO Usuarios (Nombre,DUI,Telefono,Email,Acceso,Usuario,Password) VALUES ('" + datos(1) + "','" + datos(2) + "','" + datos(3) + "','" + datos(4) + "','" + datos(5) + "','" + datos(6) + "','" + datos(7) + "')"
             Case "actualizar"
-                sql = "UPDATE Usuarios SET Nombre=@nombre,DUI=@dui,Telefono=@telefono,Email=@email,Acceso=@acceso,Usuario=@usuario,Password=@contra WHERE idUsuario=@idU"
+                sql = "UPDATE Usuarios SET Nombre='" + datos(1) + "',DUI='" + datos(2) + "',Telefono='" + datos(3) + "',Email='" + datos(4) + "',Acceso='" + datos(5) + "',Usuario='" + datos(6) + "',Password='" + datos(7) + "' WHERE idUsuario='" + datos(0) + "'"
             Case "eliminar"
-                sql = "DELETE FROM Usuarios WHERE idUsuario=@idU"
+                sql = "DELETE FROM Usuarios WHERE idUsuario=" + datos(0)
         End Select
         If (executeSql(sql) > 0) Then
             msg = "exito"
