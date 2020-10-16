@@ -195,7 +195,7 @@ Partial Class FormUsuarios
         Me.grbDatos.Size = New System.Drawing.Size(535, 253)
         Me.grbDatos.TabIndex = 27
         Me.grbDatos.TabStop = False
-        Me.grbDatos.Text = "Datos Cliente"
+        Me.grbDatos.Text = "DatosUusario"
         '
         'txtdescripcion
         '
