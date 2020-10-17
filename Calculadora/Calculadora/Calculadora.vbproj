@@ -167,6 +167,9 @@
     <EmbeddedResource Include="Registro\FormClientes.resx">
       <DependentUpon>FormClientes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Registro\FormHabitaciones.resx">
+      <DependentUpon>FormHabitaciones.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registro\FormUsuarios.resx">
       <DependentUpon>FormUsuarios.vb</DependentUpon>
     </EmbeddedResource>
