@@ -1,6 +1,6 @@
 ﻿Public Class FormBusquedaUsuarios
     Dim objConexion As New db_conexion
-    Public _idU As Integer
+    Public idU As Integer
     Private Sub FormBusquedaUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         grdBuscarUsuario.DataSource = objConexion.obtenerDatosUsuarios().Tables("Usuarios").DefaultView
     End Sub
@@ -9,15 +9,14 @@
         SeleccionUsuario()
     End Sub
     Private Sub SeleccionUsuario()
-        _idU = grdBuscarUsuario.CurrentRow.Cells("idUsuario").Value.ToString()
+        idU = grdBuscarUsuario.CurrentRow.Cells("idUsuario").Value.ToString()
         Close()
     End Sub
 
     Private Sub FiltrarDatosUsuario(ByVal Valor As String)
         Dim bs As New BindingSource()
         bs.DataSource = grdBuscarUsuario.DataSource
-        bs.Filter = "Nombre like '%" & Valor & "%' or DUI Like '%" & Valor & "%'"
-        '& Valor & "%' or Telefono like '%" & Valor & "%' or Email like'%" & Valor & "%' or Acceso like '%" & Valor & "%' or Usuario like '%" & Valor & "%' or Password like '%" & Valor & "%'"
+        bs.Filter = "Nombre like '%" & Valor & "%' or DUI like '%" & Valor & "%' or Telefono like '%" & Valor & "%' or Email like'%" & Valor & "%' or Acceso like '%" & Valor & "%' or Usuario like '%" & Valor & "%' or Password like '%" & Valor & "%'"
         grdBuscarUsuario.DataSource = bs
     End Sub
 
@@ -29,7 +28,7 @@
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        _idU = 0
+        idU = 0
         Close()
     End Sub
 End Class

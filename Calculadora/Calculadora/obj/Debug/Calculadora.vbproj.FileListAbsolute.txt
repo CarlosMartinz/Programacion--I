@@ -14,6 +14,7 @@ C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\Calculadora.exe
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\Calculadora.pdb
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\Calculadora.xml
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.vbprojAssemblyReference.cache
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormPrincipal.resources
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.Resources.resources
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.vbproj.GenerateResource.cache
@@ -45,4 +46,3 @@ C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.exe
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.xml
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.pdb
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormHabitaciones.resources

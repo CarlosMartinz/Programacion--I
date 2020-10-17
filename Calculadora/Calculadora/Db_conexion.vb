@@ -13,27 +13,21 @@ Public Class db_conexion
         miConexion.ConnectionString = cadenaConexion
 
         miConexion.Open()
-        parametrizacion()
+        'parametrizacion()
     End Sub
 
     'metodo de parametros (conecta con los campos)
-    Private Sub parametrizacion()
-        'Tabla Usuarios
-        miCommand.Parameters.Add("@idU", SqlDbType.Int).Value = 0
-        miCommand.Parameters.Add("@nombre", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@dui", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@telefono", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@email", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@acceso", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@usuario", SqlDbType.NChar).Value = ""
-        miCommand.Parameters.Add("@contra", SqlDbType.NChar).Value = ""
-
-        'Tabla de Tipo de Habitacion
-        miCommand.Parameters.Add("@idTH", SqlDbType.Int).Value = 0
-        miCommand.Parameters.Add("@tipohab", SqlDbType.NChar).Value = ""
-        miCommand.Parameters.Add("@cant", SqlDbType.NChar).Value = ""
-        miCommand.Parameters.Add("@precio", SqlDbType.Float).Value = ""
-    End Sub
+    'Private Sub parametrizacion()
+    '    'Tabla Usuarios
+    '    miCommand.Parameters.Add("@idU", SqlDbType.Int).Value = 0
+    '    miCommand.Parameters.Add("@nombre", SqlDbType.VarChar).Value = ""
+    '    miCommand.Parameters.Add("@dui", SqlDbType.VarChar).Value = ""
+    '    miCommand.Parameters.Add("@telefono", SqlDbType.VarChar).Value = ""
+    '    miCommand.Parameters.Add("@email", SqlDbType.VarChar).Value = ""
+    '    miCommand.Parameters.Add("@acceso", SqlDbType.VarChar).Value = ""
+    '    miCommand.Parameters.Add("@usuario", SqlDbType.NChar).Value = ""
+    '    miCommand.Parameters.Add("@contra", SqlDbType.NChar).Value = ""
+    'End Sub
 
     'traedatos de la tabla usuarios y relacionada
     Public Function obtenerDatosUsuarios()
@@ -49,35 +43,7 @@ Public Class db_conexion
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "NivelAcceso")
 
-        miCommand.CommandText = "select * from TipHabitacion"
-        miAdapter.SelectCommand = miCommand
-        miAdapter.Fill(ds, "TipHabitacion")
-
         Return ds
-    End Function
-
-    Public Function mantenimientoDatosTipoHabitacion(ByVal datos As String(), ByVal accion As String)
-        Dim sql, msg As String
-        Select Case accion
-            Case "nuevo"
-                sql = "INSERT INTO TipHabitacion (descripcion,capacidad,precio) VALUES (@tipohab,@cant,@precio)"
-            Case "modificar"
-                sql = "UPDATE categorias SET categoria=@cat WHERE idCategoria=@id"
-            Case "eliminar"
-                sql = "DELETE FROM categorias WHERE idCategoria=@id"
-        End Select
-        miCommand.Parameters("@idTH").Value = datos(0)
-        If accion IsNot "eliminar" Then
-            miCommand.Parameters("@tipohab").Value = datos(1)
-            miCommand.Parameters("@cant").Value = datos(2)
-            miCommand.Parameters("@precio").Value = datos(3)
-        End If
-        If executeSql(sql) > 0 Then
-            msg = "exito"
-        Else
-            msg = "error"
-        End If
-        Return msg
     End Function
 
     Public Function mantenimientoDatosUsuarios(ByVal datos As String(), ByVal accion As String)
