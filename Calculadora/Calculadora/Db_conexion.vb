@@ -97,6 +97,25 @@ Public Class db_conexion
         Return msg
     End Function
 
+    Public Function mantenimientoDatosTipoHabitacion(ByVal datos As String(), ByVal accion As String)
+        Dim sql, msg As String
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT INTO TipoHabitacion (tipo,capacidad,precio) VALUES ('" + datos(1) + "','" + datos(2) + "','" + datos(3) + "')"
+            Case "actualizar"
+                sql = "UPDATE TipoHabitacion SET tipo='" + datos(1) + "',capacidad='" + datos(2) + "',precio='" + datos(3) + "' WHERE idTipoHabitacion='" + datos(0) + "'"
+            Case "eliminar"
+                sql = "DELETE FROM TipoHabitacion WHERE idTipoHabitacion=" + datos(0)
+        End Select
+        If (executeSql(sql) > 0) Then
+            msg = "exito"
+        Else
+            msg = "error"
+        End If
+
+        Return msg
+    End Function
+
     'CRUD
     'Public Function mantenimientoDatosUsuarios(ByVal datos As String(), ByVal accion As String)
     '    Dim sql, msg As String

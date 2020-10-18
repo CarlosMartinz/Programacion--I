@@ -24,23 +24,23 @@ Partial Class FormHabitaciones
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Habitaciones = New System.Windows.Forms.TabPage()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.brHabitacionNueva = New System.Windows.Forms.GroupBox()
         Me.txtcodigohabitacion = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lblRegistroHabitaciones = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnUltimo = New System.Windows.Forms.Button()
+        Me.btnSiguiente = New System.Windows.Forms.Button()
+        Me.btnAnterior = New System.Windows.Forms.Button()
+        Me.btnPrimero = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnNuevo = New System.Windows.Forms.Button()
         Me.Tipo = New System.Windows.Forms.TabPage()
-        Me.grbDatos = New System.Windows.Forms.GroupBox()
+        Me.grbDatosTipoHab = New System.Windows.Forms.GroupBox()
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtcapacidad = New System.Windows.Forms.TextBox()
@@ -48,8 +48,8 @@ Partial Class FormHabitaciones
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtprecio = New System.Windows.Forms.TextBox()
-        Me.grbNavegacion = New System.Windows.Forms.GroupBox()
-        Me.lblRegistrosCategoria = New System.Windows.Forms.Label()
+        Me.grbNavegacionTipoHab = New System.Windows.Forms.GroupBox()
+        Me.lblRegistroTipoHab = New System.Windows.Forms.Label()
         Me.btnUltimoCategoria = New System.Windows.Forms.Button()
         Me.btnSiguienteCategoria = New System.Windows.Forms.Button()
         Me.btnAnteriorCategoria = New System.Windows.Forms.Button()
@@ -94,12 +94,12 @@ Partial Class FormHabitaciones
         Me.Button24 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.Habitaciones.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.brHabitacionNueva.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.Tipo.SuspendLayout()
-        Me.grbDatos.SuspendLayout()
-        Me.grbNavegacion.SuspendLayout()
+        Me.grbDatosTipoHab.SuspendLayout()
+        Me.grbNavegacionTipoHab.SuspendLayout()
         Me.grbEdicion.SuspendLayout()
         Me.piso.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -126,7 +126,7 @@ Partial Class FormHabitaciones
         'Habitaciones
         '
         Me.Habitaciones.BackColor = System.Drawing.Color.Transparent
-        Me.Habitaciones.Controls.Add(Me.GroupBox1)
+        Me.Habitaciones.Controls.Add(Me.brHabitacionNueva)
         Me.Habitaciones.Controls.Add(Me.GroupBox2)
         Me.Habitaciones.Controls.Add(Me.GroupBox3)
         Me.Habitaciones.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
@@ -137,17 +137,17 @@ Partial Class FormHabitaciones
         Me.Habitaciones.TabIndex = 0
         Me.Habitaciones.Text = "Nueva habitacion"
         '
-        'GroupBox1
+        'brHabitacionNueva
         '
-        Me.GroupBox1.Controls.Add(Me.txtcodigohabitacion)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
-        Me.GroupBox1.Location = New System.Drawing.Point(7, 7)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(552, 135)
-        Me.GroupBox1.TabIndex = 31
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Habitacion nueva"
+        Me.brHabitacionNueva.Controls.Add(Me.txtcodigohabitacion)
+        Me.brHabitacionNueva.Controls.Add(Me.Label1)
+        Me.brHabitacionNueva.Controls.Add(Me.TextBox3)
+        Me.brHabitacionNueva.Location = New System.Drawing.Point(7, 7)
+        Me.brHabitacionNueva.Name = "brHabitacionNueva"
+        Me.brHabitacionNueva.Size = New System.Drawing.Size(552, 135)
+        Me.brHabitacionNueva.TabIndex = 31
+        Me.brHabitacionNueva.TabStop = False
+        Me.brHabitacionNueva.Text = "Habitacion nueva"
         '
         'txtcodigohabitacion
         '
@@ -176,10 +176,10 @@ Partial Class FormHabitaciones
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.lblRegistroHabitaciones)
-        Me.GroupBox2.Controls.Add(Me.Button1)
-        Me.GroupBox2.Controls.Add(Me.Button2)
-        Me.GroupBox2.Controls.Add(Me.Button3)
-        Me.GroupBox2.Controls.Add(Me.Button4)
+        Me.GroupBox2.Controls.Add(Me.btnUltimo)
+        Me.GroupBox2.Controls.Add(Me.btnSiguiente)
+        Me.GroupBox2.Controls.Add(Me.btnAnterior)
+        Me.GroupBox2.Controls.Add(Me.btnPrimero)
         Me.GroupBox2.Location = New System.Drawing.Point(7, 146)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(1)
         Me.GroupBox2.Name = "GroupBox2"
@@ -199,56 +199,56 @@ Partial Class FormHabitaciones
         Me.lblRegistroHabitaciones.TabIndex = 4
         Me.lblRegistroHabitaciones.Text = "x de n"
         '
-        'Button1
+        'btnUltimo
         '
-        Me.Button1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(173, 19)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(41, 39)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = ">|"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnUltimo.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUltimo.Location = New System.Drawing.Point(173, 19)
+        Me.btnUltimo.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnUltimo.Name = "btnUltimo"
+        Me.btnUltimo.Size = New System.Drawing.Size(41, 39)
+        Me.btnUltimo.TabIndex = 3
+        Me.btnUltimo.Text = ">|"
+        Me.btnUltimo.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnSiguiente
         '
-        Me.Button2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(134, 19)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(41, 39)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = ">"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnSiguiente.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSiguiente.Location = New System.Drawing.Point(134, 19)
+        Me.btnSiguiente.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnSiguiente.Name = "btnSiguiente"
+        Me.btnSiguiente.Size = New System.Drawing.Size(41, 39)
+        Me.btnSiguiente.TabIndex = 2
+        Me.btnSiguiente.Text = ">"
+        Me.btnSiguiente.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnAnterior
         '
-        Me.Button3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(42, 19)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(41, 39)
-        Me.Button3.TabIndex = 1
-        Me.Button3.Text = "<"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnAnterior.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAnterior.Location = New System.Drawing.Point(42, 19)
+        Me.btnAnterior.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnAnterior.Name = "btnAnterior"
+        Me.btnAnterior.Size = New System.Drawing.Size(41, 39)
+        Me.btnAnterior.TabIndex = 1
+        Me.btnAnterior.Text = "<"
+        Me.btnAnterior.UseVisualStyleBackColor = True
         '
-        'Button4
+        'btnPrimero
         '
-        Me.Button4.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(2, 19)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(41, 39)
-        Me.Button4.TabIndex = 0
-        Me.Button4.Text = "|<"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btnPrimero.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrimero.Location = New System.Drawing.Point(2, 19)
+        Me.btnPrimero.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnPrimero.Name = "btnPrimero"
+        Me.btnPrimero.Size = New System.Drawing.Size(41, 39)
+        Me.btnPrimero.TabIndex = 0
+        Me.btnPrimero.Text = "|<"
+        Me.btnPrimero.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.Button5)
-        Me.GroupBox3.Controls.Add(Me.Button6)
-        Me.GroupBox3.Controls.Add(Me.Button7)
-        Me.GroupBox3.Controls.Add(Me.Button8)
+        Me.GroupBox3.Controls.Add(Me.btnBuscar)
+        Me.GroupBox3.Controls.Add(Me.btnEliminar)
+        Me.GroupBox3.Controls.Add(Me.btnModificar)
+        Me.GroupBox3.Controls.Add(Me.btnNuevo)
         Me.GroupBox3.Location = New System.Drawing.Point(246, 146)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(1)
         Me.GroupBox3.Name = "GroupBox3"
@@ -258,55 +258,55 @@ Partial Class FormHabitaciones
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Edicion"
         '
-        'Button5
+        'btnBuscar
         '
-        Me.Button5.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(237, 19)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(75, 39)
-        Me.Button5.TabIndex = 8
-        Me.Button5.Text = "Buscar"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.btnBuscar.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.Location = New System.Drawing.Point(237, 19)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(75, 39)
+        Me.btnBuscar.TabIndex = 8
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = True
         '
-        'Button6
+        'btnEliminar
         '
-        Me.Button6.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(158, 19)
-        Me.Button6.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(80, 39)
-        Me.Button6.TabIndex = 7
-        Me.Button6.Text = "Eliminar"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.btnEliminar.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.Location = New System.Drawing.Point(158, 19)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(80, 39)
+        Me.btnEliminar.TabIndex = 7
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
         '
-        'Button7
+        'btnModificar
         '
-        Me.Button7.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Location = New System.Drawing.Point(69, 19)
-        Me.Button7.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(90, 39)
-        Me.Button7.TabIndex = 6
-        Me.Button7.Text = "Modificar"
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.btnModificar.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.Location = New System.Drawing.Point(69, 19)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(90, 39)
+        Me.btnModificar.TabIndex = 6
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
         '
-        'Button8
+        'btnNuevo
         '
-        Me.Button8.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.Location = New System.Drawing.Point(2, 19)
-        Me.Button8.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(68, 39)
-        Me.Button8.TabIndex = 5
-        Me.Button8.Text = "Nuevo"
-        Me.Button8.UseVisualStyleBackColor = True
+        Me.btnNuevo.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNuevo.Location = New System.Drawing.Point(2, 19)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(68, 39)
+        Me.btnNuevo.TabIndex = 5
+        Me.btnNuevo.Text = "Nuevo"
+        Me.btnNuevo.UseVisualStyleBackColor = True
         '
         'Tipo
         '
         Me.Tipo.BackColor = System.Drawing.Color.Transparent
-        Me.Tipo.Controls.Add(Me.grbDatos)
-        Me.Tipo.Controls.Add(Me.grbNavegacion)
+        Me.Tipo.Controls.Add(Me.grbDatosTipoHab)
+        Me.Tipo.Controls.Add(Me.grbNavegacionTipoHab)
         Me.Tipo.Controls.Add(Me.grbEdicion)
         Me.Tipo.ForeColor = System.Drawing.Color.Black
         Me.Tipo.Location = New System.Drawing.Point(4, 22)
@@ -316,21 +316,21 @@ Partial Class FormHabitaciones
         Me.Tipo.TabIndex = 1
         Me.Tipo.Text = "Tipo de habitaciones"
         '
-        'grbDatos
+        'grbDatosTipoHab
         '
-        Me.grbDatos.Controls.Add(Me.txtdescripcion)
-        Me.grbDatos.Controls.Add(Me.Label2)
-        Me.grbDatos.Controls.Add(Me.txtcapacidad)
-        Me.grbDatos.Controls.Add(Me.TextBox6)
-        Me.grbDatos.Controls.Add(Me.Label3)
-        Me.grbDatos.Controls.Add(Me.Label7)
-        Me.grbDatos.Controls.Add(Me.txtprecio)
-        Me.grbDatos.Location = New System.Drawing.Point(6, 6)
-        Me.grbDatos.Name = "grbDatos"
-        Me.grbDatos.Size = New System.Drawing.Size(552, 187)
-        Me.grbDatos.TabIndex = 28
-        Me.grbDatos.TabStop = False
-        Me.grbDatos.Text = "Datos tipos de habitaciones"
+        Me.grbDatosTipoHab.Controls.Add(Me.txtdescripcion)
+        Me.grbDatosTipoHab.Controls.Add(Me.Label2)
+        Me.grbDatosTipoHab.Controls.Add(Me.txtcapacidad)
+        Me.grbDatosTipoHab.Controls.Add(Me.TextBox6)
+        Me.grbDatosTipoHab.Controls.Add(Me.Label3)
+        Me.grbDatosTipoHab.Controls.Add(Me.Label7)
+        Me.grbDatosTipoHab.Controls.Add(Me.txtprecio)
+        Me.grbDatosTipoHab.Location = New System.Drawing.Point(6, 6)
+        Me.grbDatosTipoHab.Name = "grbDatosTipoHab"
+        Me.grbDatosTipoHab.Size = New System.Drawing.Size(552, 187)
+        Me.grbDatosTipoHab.TabIndex = 28
+        Me.grbDatosTipoHab.TabStop = False
+        Me.grbDatosTipoHab.Text = "Datos tipos de habitaciones"
         '
         'txtdescripcion
         '
@@ -387,31 +387,31 @@ Partial Class FormHabitaciones
         Me.txtprecio.Size = New System.Drawing.Size(410, 20)
         Me.txtprecio.TabIndex = 14
         '
-        'grbNavegacion
+        'grbNavegacionTipoHab
         '
-        Me.grbNavegacion.Controls.Add(Me.lblRegistrosCategoria)
-        Me.grbNavegacion.Controls.Add(Me.btnUltimoCategoria)
-        Me.grbNavegacion.Controls.Add(Me.btnSiguienteCategoria)
-        Me.grbNavegacion.Controls.Add(Me.btnAnteriorCategoria)
-        Me.grbNavegacion.Controls.Add(Me.btnPrimeroCategoria)
-        Me.grbNavegacion.Location = New System.Drawing.Point(4, 197)
-        Me.grbNavegacion.Margin = New System.Windows.Forms.Padding(1)
-        Me.grbNavegacion.Name = "grbNavegacion"
-        Me.grbNavegacion.Padding = New System.Windows.Forms.Padding(1)
-        Me.grbNavegacion.Size = New System.Drawing.Size(237, 68)
-        Me.grbNavegacion.TabIndex = 30
-        Me.grbNavegacion.TabStop = False
-        Me.grbNavegacion.Text = "Navegacion"
+        Me.grbNavegacionTipoHab.Controls.Add(Me.lblRegistroTipoHab)
+        Me.grbNavegacionTipoHab.Controls.Add(Me.btnUltimoCategoria)
+        Me.grbNavegacionTipoHab.Controls.Add(Me.btnSiguienteCategoria)
+        Me.grbNavegacionTipoHab.Controls.Add(Me.btnAnteriorCategoria)
+        Me.grbNavegacionTipoHab.Controls.Add(Me.btnPrimeroCategoria)
+        Me.grbNavegacionTipoHab.Location = New System.Drawing.Point(4, 197)
+        Me.grbNavegacionTipoHab.Margin = New System.Windows.Forms.Padding(1)
+        Me.grbNavegacionTipoHab.Name = "grbNavegacionTipoHab"
+        Me.grbNavegacionTipoHab.Padding = New System.Windows.Forms.Padding(1)
+        Me.grbNavegacionTipoHab.Size = New System.Drawing.Size(237, 68)
+        Me.grbNavegacionTipoHab.TabIndex = 30
+        Me.grbNavegacionTipoHab.TabStop = False
+        Me.grbNavegacionTipoHab.Text = "Navegacion"
         '
-        'lblRegistrosCategoria
+        'lblRegistroTipoHab
         '
-        Me.lblRegistrosCategoria.AutoSize = True
-        Me.lblRegistrosCategoria.Location = New System.Drawing.Point(86, 34)
-        Me.lblRegistrosCategoria.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
-        Me.lblRegistrosCategoria.Name = "lblRegistrosCategoria"
-        Me.lblRegistrosCategoria.Size = New System.Drawing.Size(36, 13)
-        Me.lblRegistrosCategoria.TabIndex = 4
-        Me.lblRegistrosCategoria.Text = "x de n"
+        Me.lblRegistroTipoHab.AutoSize = True
+        Me.lblRegistroTipoHab.Location = New System.Drawing.Point(86, 34)
+        Me.lblRegistroTipoHab.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.lblRegistroTipoHab.Name = "lblRegistroTipoHab"
+        Me.lblRegistroTipoHab.Size = New System.Drawing.Size(36, 13)
+        Me.lblRegistroTipoHab.TabIndex = 4
+        Me.lblRegistroTipoHab.Text = "x de n"
         '
         'btnUltimoCategoria
         '
@@ -890,16 +890,16 @@ Partial Class FormHabitaciones
         Me.Text = "FormHabitaciones"
         Me.TabControl1.ResumeLayout(False)
         Me.Habitaciones.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.brHabitacionNueva.ResumeLayout(False)
+        Me.brHabitacionNueva.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.Tipo.ResumeLayout(False)
-        Me.grbDatos.ResumeLayout(False)
-        Me.grbDatos.PerformLayout()
-        Me.grbNavegacion.ResumeLayout(False)
-        Me.grbNavegacion.PerformLayout()
+        Me.grbDatosTipoHab.ResumeLayout(False)
+        Me.grbDatosTipoHab.PerformLayout()
+        Me.grbNavegacionTipoHab.ResumeLayout(False)
+        Me.grbNavegacionTipoHab.PerformLayout()
         Me.grbEdicion.ResumeLayout(False)
         Me.piso.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
@@ -919,23 +919,23 @@ Partial Class FormHabitaciones
 
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents Habitaciones As TabPage
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents brHabitacionNueva As GroupBox
     Friend WithEvents txtcodigohabitacion As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents lblRegistroHabitaciones As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents btnUltimo As Button
+    Friend WithEvents btnSiguiente As Button
+    Friend WithEvents btnAnterior As Button
+    Friend WithEvents btnPrimero As Button
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button8 As Button
+    Friend WithEvents btnBuscar As Button
+    Friend WithEvents btnEliminar As Button
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents btnNuevo As Button
     Friend WithEvents Tipo As TabPage
-    Friend WithEvents grbDatos As GroupBox
+    Friend WithEvents grbDatosTipoHab As GroupBox
     Friend WithEvents txtdescripcion As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents txtcapacidad As TextBox
@@ -943,8 +943,8 @@ Partial Class FormHabitaciones
     Friend WithEvents Label3 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents txtprecio As TextBox
-    Friend WithEvents grbNavegacion As GroupBox
-    Friend WithEvents lblRegistrosCategoria As Label
+    Friend WithEvents grbNavegacionTipoHab As GroupBox
+    Friend WithEvents lblRegistroTipoHab As Label
     Friend WithEvents btnUltimoCategoria As Button
     Friend WithEvents btnSiguienteCategoria As Button
     Friend WithEvents btnAnteriorCategoria As Button
