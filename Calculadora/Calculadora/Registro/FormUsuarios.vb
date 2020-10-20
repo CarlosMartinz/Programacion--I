@@ -127,8 +127,8 @@
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Dim objBuscarUsuario As New FormBusquedaUsuarios
         objBuscarUsuario.Show()
-        If objBuscarUsuario.idU > 0 Then
-            Posicion = dataTable.Rows.IndexOf(dataTable.Rows.Find(objBuscarUsuario.idU))
+        If objBuscarUsuario._idU > 0 Then
+            Posicion = dataTable.Rows.IndexOf(dataTable.Rows.Find(objBuscarUsuario._idU))
             mostrarDatosUsuarios()
         End If
     End Sub

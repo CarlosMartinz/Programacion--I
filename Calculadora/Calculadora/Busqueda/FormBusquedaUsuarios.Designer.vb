@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormBusquedaUsuarios
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,17 @@ Partial Class FormBusquedaUsuarios
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.grdBuscarUsuario = New System.Windows.Forms.DataGridView()
+        Me.UsuariosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Db_HotelDataSet = New Calculadora.db_HotelDataSet()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnSeleccionar = New System.Windows.Forms.Button()
+        Me.UsuariosTableAdapter = New Calculadora.db_HotelDataSetTableAdapters.UsuariosTableAdapter()
         Me.idUsuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DUI = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -36,6 +40,8 @@ Partial Class FormBusquedaUsuarios
         Me.Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Password = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.grdBuscarUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UsuariosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Db_HotelDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnCancelar
@@ -51,6 +57,8 @@ Partial Class FormBusquedaUsuarios
         '
         'grdBuscarUsuario
         '
+        Me.grdBuscarUsuario.AllowUserToAddRows = False
+        Me.grdBuscarUsuario.AllowUserToDeleteRows = False
         Me.grdBuscarUsuario.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -58,8 +66,19 @@ Partial Class FormBusquedaUsuarios
         Me.grdBuscarUsuario.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idUsuario, Me.Nombre, Me.DUI, Me.Telefono, Me.Email, Me.Acceso, Me.Usuario, Me.Password})
         Me.grdBuscarUsuario.Location = New System.Drawing.Point(12, 32)
         Me.grdBuscarUsuario.Name = "grdBuscarUsuario"
+        Me.grdBuscarUsuario.ReadOnly = True
         Me.grdBuscarUsuario.Size = New System.Drawing.Size(723, 345)
         Me.grdBuscarUsuario.TabIndex = 1
+        '
+        'UsuariosBindingSource
+        '
+        Me.UsuariosBindingSource.DataMember = "Usuarios"
+        Me.UsuariosBindingSource.DataSource = Me.Db_HotelDataSet
+        '
+        'Db_HotelDataSet
+        '
+        Me.Db_HotelDataSet.DataSetName = "db_HotelDataSet"
+        Me.Db_HotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'txtBuscar
         '
@@ -90,57 +109,66 @@ Partial Class FormBusquedaUsuarios
         Me.btnSeleccionar.Text = "Seleccionar"
         Me.btnSeleccionar.UseVisualStyleBackColor = True
         '
+        'UsuariosTableAdapter
+        '
+        Me.UsuariosTableAdapter.ClearBeforeFill = True
+        '
         'idUsuario
         '
         Me.idUsuario.DataPropertyName = "idUsuario"
         Me.idUsuario.HeaderText = "ID"
         Me.idUsuario.Name = "idUsuario"
+        Me.idUsuario.ReadOnly = True
         Me.idUsuario.Visible = False
-        Me.idUsuario.Width = 50
         '
         'Nombre
         '
         Me.Nombre.DataPropertyName = "Nombre"
-        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.HeaderText = "NOMBRE"
         Me.Nombre.Name = "Nombre"
-        Me.Nombre.Width = 150
+        Me.Nombre.ReadOnly = True
         '
         'DUI
         '
         Me.DUI.DataPropertyName = "DUI"
         Me.DUI.HeaderText = "DUI"
         Me.DUI.Name = "DUI"
+        Me.DUI.ReadOnly = True
         '
         'Telefono
         '
         Me.Telefono.DataPropertyName = "Telefono"
-        Me.Telefono.HeaderText = "Telefono"
+        Me.Telefono.HeaderText = "TELEFONO"
         Me.Telefono.Name = "Telefono"
+        Me.Telefono.ReadOnly = True
         '
         'Email
         '
         Me.Email.DataPropertyName = "Email"
-        Me.Email.HeaderText = "Email"
+        Me.Email.HeaderText = "EMAIL"
         Me.Email.Name = "Email"
+        Me.Email.ReadOnly = True
         '
         'Acceso
         '
         Me.Acceso.DataPropertyName = "Acceso"
-        Me.Acceso.HeaderText = "Acceso"
+        Me.Acceso.HeaderText = "ACCESO"
         Me.Acceso.Name = "Acceso"
-        Me.Acceso.Width = 75
+        Me.Acceso.ReadOnly = True
         '
         'Usuario
         '
         Me.Usuario.DataPropertyName = "Usuario"
-        Me.Usuario.HeaderText = "Usuario"
+        Me.Usuario.HeaderText = "USUARIO"
         Me.Usuario.Name = "Usuario"
+        Me.Usuario.ReadOnly = True
         '
         'Password
         '
         Me.Password.DataPropertyName = "Password"
-        Me.Password.HeaderText = "Password"
+        Me.Password.HeaderText = "CONTRASEÑA"
         Me.Password.Name = "Password"
+        Me.Password.ReadOnly = True
         '
         'FormBusquedaUsuarios
         '
@@ -155,6 +183,8 @@ Partial Class FormBusquedaUsuarios
         Me.Name = "FormBusquedaUsuarios"
         Me.Text = "FormBusquedaUsuarios"
         CType(Me.grdBuscarUsuario, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UsuariosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Db_HotelDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -165,6 +195,9 @@ Partial Class FormBusquedaUsuarios
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnSeleccionar As Button
+    Friend WithEvents Db_HotelDataSet As db_HotelDataSet
+    Friend WithEvents UsuariosBindingSource As BindingSource
+    Friend WithEvents UsuariosTableAdapter As db_HotelDataSetTableAdapters.UsuariosTableAdapter
     Friend WithEvents idUsuario As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents DUI As DataGridViewTextBoxColumn
