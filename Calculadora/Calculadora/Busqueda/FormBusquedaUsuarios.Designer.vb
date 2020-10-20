@@ -120,6 +120,7 @@ Partial Class FormBusquedaUsuarios
         Me.idUsuario.Name = "idUsuario"
         Me.idUsuario.ReadOnly = True
         Me.idUsuario.Visible = False
+        Me.idUsuario.Width = 50
         '
         'Nombre
         '
@@ -127,6 +128,7 @@ Partial Class FormBusquedaUsuarios
         Me.Nombre.HeaderText = "NOMBRE"
         Me.Nombre.Name = "Nombre"
         Me.Nombre.ReadOnly = True
+        Me.Nombre.Width = 220
         '
         'DUI
         '
@@ -134,6 +136,7 @@ Partial Class FormBusquedaUsuarios
         Me.DUI.HeaderText = "DUI"
         Me.DUI.Name = "DUI"
         Me.DUI.ReadOnly = True
+        Me.DUI.Width = 125
         '
         'Telefono
         '
@@ -141,6 +144,7 @@ Partial Class FormBusquedaUsuarios
         Me.Telefono.HeaderText = "TELEFONO"
         Me.Telefono.Name = "Telefono"
         Me.Telefono.ReadOnly = True
+        Me.Telefono.Width = 140
         '
         'Email
         '
@@ -148,6 +152,7 @@ Partial Class FormBusquedaUsuarios
         Me.Email.HeaderText = "EMAIL"
         Me.Email.Name = "Email"
         Me.Email.ReadOnly = True
+        Me.Email.Width = 150
         '
         'Acceso
         '
@@ -155,6 +160,7 @@ Partial Class FormBusquedaUsuarios
         Me.Acceso.HeaderText = "ACCESO"
         Me.Acceso.Name = "Acceso"
         Me.Acceso.ReadOnly = True
+        Me.Acceso.Width = 120
         '
         'Usuario
         '
