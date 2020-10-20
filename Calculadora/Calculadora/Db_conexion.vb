@@ -13,20 +13,20 @@ Public Class db_conexion
         miConexion.ConnectionString = cadenaConexion
 
         miConexion.Open()
-        'parametrizacion()
+        parametrizacion()
     End Sub
 
     'metodo de parametros (conecta con los campos)
     Private Sub parametrizacion()
         'Tabla Usuarios
-        'miCommand.Parameters.Add("@idU", SqlDbType.Int).Value = 0
-        'miCommand.Parameters.Add("@nombre", SqlDbType.VarChar).Value = ""
-        'miCommand.Parameters.Add("@dui", SqlDbType.VarChar).Value = ""
-        'miCommand.Parameters.Add("@telefono", SqlDbType.VarChar).Value = ""
-        'miCommand.Parameters.Add("@email", SqlDbType.VarChar).Value = ""
-        'miCommand.Parameters.Add("@acceso", SqlDbType.VarChar).Value = ""
-        'miCommand.Parameters.Add("@usuario", SqlDbType.NChar).Value = ""
-        'miCommand.Parameters.Add("@contra", SqlDbType.NChar).Value = ""
+        miCommand.Parameters.Add("@idU", SqlDbType.Int).Value = 0
+        miCommand.Parameters.Add("@nombre", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@dui", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@telefono", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@email", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@acceso", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@usuario", SqlDbType.NChar).Value = ""
+        miCommand.Parameters.Add("@contra", SqlDbType.NChar).Value = ""
 
         'Tabla de tipo de habitaciones
         miCommand.Parameters.Add("@codEdi", SqlDbType.NChar).Value = ""
@@ -55,11 +55,29 @@ Public Class db_conexion
         Return ds
     End Function
     'CRUD
+    Public Function mantenimientoDatosUsuarios(ByVal datos As String(), ByVal accion As String)
+        Dim sql, msg As String
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT INTO Usuarios (Nombre,DUI,Telefono,Email,Acceso,Usuario,Password) VALUES (@nombre,@dui,@telefono,@email,@acceso,@usuario,@telefono)"
+            Case "actualizar"
+                sql = "UPDATE Usuarios SET Nombre='" + datos(1) + "',DUI='" + datos(2) + "',Telefono='" + datos(3) + "',Email='" + datos(4) + "',Acceso='" + datos(5) + "',Usuario='" + datos(6) + "',Password='" + datos(7) + "' WHERE idUsuario='" + datos(0) + "'"
+            Case "eliminar"
+                sql = "DELETE FROM Usuarios WHERE idUsuario=" + datos(0)
+        End Select
+        If (executeSql(sql) > 0) Then
+            msg = "exito"
+        Else
+            msg = "error"
+        End If
+
+        Return msg
+    End Function
     Public Function mantenimientoDatosEdificio(ByVal datos As String(), ByVal accion As String)
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
-                sql = "INSERT INTO Usuarios (codigo,edificio) VALUES (@codEdi,@edificio)"
+                sql = "INSERT INTO Usuarios (codigo,edificio) VALUES (@codEdi,@edificio,@telefono)"
             Case "actualizar"
                 sql = "UPDATE Usuarios SET Nombre=@nombre,DUI=@dui,Telefono=@telefono,Email=@email,Acceso=@acceso,Usuario=@usuario,Password=@contra WHERE idUsuario=@idU"
             Case "eliminar"
@@ -77,26 +95,6 @@ Public Class db_conexion
 
         Return msg
     End Function
-
-    Public Function mantenimientoDatosUsuarios(ByVal datos As String(), ByVal accion As String)
-        Dim sql, msg As String
-        Select Case accion
-            Case "nuevo"
-                sql = "INSERT INTO Usuarios (Nombre,DUI,Telefono,Email,Acceso,Usuario,Password) VALUES ('" + datos(1) + "','" + datos(2) + "','" + datos(3) + "','" + datos(4) + "','" + datos(5) + "','" + datos(6) + "','" + datos(7) + "')"
-            Case "actualizar"
-                sql = "UPDATE Usuarios SET Nombre='" + datos(1) + "',DUI='" + datos(2) + "',Telefono='" + datos(3) + "',Email='" + datos(4) + "',Acceso='" + datos(5) + "',Usuario='" + datos(6) + "',Password='" + datos(7) + "' WHERE idUsuario='" + datos(0) + "'"
-            Case "eliminar"
-                sql = "DELETE FROM Usuarios WHERE idUsuario=" + datos(0)
-        End Select
-        If (executeSql(sql) > 0) Then
-            msg = "exito"
-        Else
-            msg = "error"
-        End If
-
-        Return msg
-    End Function
-
     Public Function mantenimientoDatosTipoHabitacion(ByVal datos As String(), ByVal accion As String)
         Dim sql, msg As String
         Select Case accion

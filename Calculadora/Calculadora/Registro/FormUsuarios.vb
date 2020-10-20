@@ -8,13 +8,9 @@
         dataTable = objConexion.obtenerDatosUsuarios().Tables("Usuarios")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idUsuario")}
 
-        'cboNivelAcceso.DataSource = objConexion.obtenerDatosUsuarios().Tables("NivelAcceso").DefaultView()
-        'cboNivelAcceso.DisplayMember = "Acceso"
-        'cboNivelAcceso.ValueMember = "NivelAcceso.Acceso"
-
-        'cboNacionalidad.DataSource = objConexion.obtenerDatosUsuarios().Tables("Nacionalidad").DefaultView()
-        'cboNacionalidad.DisplayMember = "Nacionalidad"
-        'cboNacionalidad.ValueMember = "Nacionalidad.Nacionalidad"
+        cboNivelAcceso.DataSource = objConexion.obtenerDatosUsuarios().Tables("NivelAcceso").DefaultView()
+        cboNivelAcceso.DisplayMember = "Acceso"
+        cboNivelAcceso.ValueMember = "NivelAcceso.Acceso"
 
         mostrarDatosUsuarios()
     End Sub
@@ -42,7 +38,7 @@
         btnEliminar.Enabled = estado
         btnBuscar.Enabled = estado
     End Sub
-    Private Sub limpiarDatosCliente()
+    Private Sub limpiarDatosUsuario()
         txtNombre.Text = ""
         txtDUI.Text = ""
         txtEmail.Text = ""
@@ -90,13 +86,13 @@
             Accion = "nuevo"
 
             HabDescontroles(False)
-            limpiarDatosCliente()
+            limpiarDatosUsuario()
         Else 'Guardar
             Dim msg = objConexion.mantenimientoDatosUsuarios(New String() {
                 Me.Tag, txtNombre.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text, cboNivelAcceso.SelectedValue, txtUsuario.Text, txtContra.Text
             }, Accion)
             If msg = "error" Then
-                MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Clientes",
+                MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Usuario",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 obtenerDatosUsuarios()
