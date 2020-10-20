@@ -59,18 +59,32 @@ Public Class db_conexion
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
-                sql = "INSERT INTO Usuarios (Nombre,DUI,Telefono,Email,Acceso,Usuario,Password) VALUES (@nombre,@dui,@telefono,@email,@acceso,@usuario,@telefono)"
+                sql = "INSERT INTO Usuarios (Nombre,DUI,Telefono,Email,Acceso,Usuario,Password) VALUES (@nombre,@dui,@telefono,@email,@acceso,@usuario,@contra)"
             Case "actualizar"
-                sql = "UPDATE Usuarios SET Nombre='" + datos(1) + "',DUI='" + datos(2) + "',Telefono='" + datos(3) + "',Email='" + datos(4) + "',Acceso='" + datos(5) + "',Usuario='" + datos(6) + "',Password='" + datos(7) + "' WHERE idUsuario='" + datos(0) + "'"
+                sql = "UPDATE Usuarios SET Nombre=@nombre,DUI=@dui,Telefono=@telefono,Email=@email,Acceso=@acceso,Usuario=@usuario,Password=@contra WHERE idUsuario=@idU"
             Case "eliminar"
-                sql = "DELETE FROM Usuarios WHERE idUsuario=" + datos(0)
+                sql = "DELETE FROM Usuarios WHERE idUsuario=@idU"
         End Select
+        miCommand.Parameters("@idU").Value = datos(0)
+        If accion IsNot "eliminar" Then
+            miCommand.Parameters("@nombre").Value = datos(1)
+            miCommand.Parameters("@dui").Value = datos(2)
+            miCommand.Parameters("@telefono").Value = datos(3)
+            miCommand.Parameters("@email").Value = datos(4)
+            miCommand.Parameters("@acceso").Value = datos(5)
+            miCommand.Parameters("@usuario").Value = datos(6)
+            miCommand.Parameters("@contra").Value = datos(7)
+        Else 'Accion es eliminar
+            ' mantenimientoDatosContacto(datos, accion)
+        End If
         If (executeSql(sql) > 0) Then
+            If accion IsNot "eliminar" Then
+                ' mantenimientoDatosContacto(datos, accion)
+            End If
             msg = "exito"
         Else
             msg = "error"
         End If
-
         Return msg
     End Function
     Public Function mantenimientoDatosEdificio(ByVal datos As String(), ByVal accion As String)
