@@ -72,10 +72,10 @@ Partial Class FormUsuarios
         'lblPosicion
         '
         Me.lblPosicion.AutoSize = True
-        Me.lblPosicion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPosicion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPosicion.Location = New System.Drawing.Point(245, 24)
         Me.lblPosicion.Name = "lblPosicion"
-        Me.lblPosicion.Size = New System.Drawing.Size(44, 16)
+        Me.lblPosicion.Size = New System.Drawing.Size(50, 16)
         Me.lblPosicion.TabIndex = 5
         Me.lblPosicion.Text = "1 de n"
         '
@@ -216,9 +216,10 @@ Partial Class FormUsuarios
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(288, 80)
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(288, 78)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(61, 13)
+        Me.Label9.Size = New System.Drawing.Size(87, 16)
         Me.Label9.TabIndex = 22
         Me.Label9.Text = "Contraseña"
         '
@@ -239,9 +240,10 @@ Partial Class FormUsuarios
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(17, 25)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(17, 23)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(44, 13)
+        Me.Label2.Size = New System.Drawing.Size(63, 16)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Nombre"
         '
@@ -255,9 +257,10 @@ Partial Class FormUsuarios
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(288, 25)
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(288, 23)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(43, 13)
+        Me.Label10.Size = New System.Drawing.Size(62, 16)
         Me.Label10.TabIndex = 20
         Me.Label10.Text = "Usuario"
         '
@@ -271,18 +274,20 @@ Partial Class FormUsuarios
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(17, 80)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(17, 78)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(41, 13)
+        Me.Label3.Size = New System.Drawing.Size(54, 16)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "N° DUI"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(17, 133)
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(17, 131)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(49, 13)
+        Me.Label7.Size = New System.Drawing.Size(70, 16)
         Me.Label7.TabIndex = 15
         Me.Label7.Text = "Telefono"
         '
@@ -305,18 +310,20 @@ Partial Class FormUsuarios
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(17, 186)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(17, 184)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(32, 13)
+        Me.Label6.Size = New System.Drawing.Size(47, 16)
         Me.Label6.TabIndex = 13
         Me.Label6.Text = "Email"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(288, 133)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(288, 131)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(84, 13)
+        Me.Label5.Size = New System.Drawing.Size(121, 16)
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "Nivel de acceso"
         '

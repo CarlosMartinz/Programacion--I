@@ -27,6 +27,14 @@ Partial Class FormBusquedaUsuarios
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnSeleccionar = New System.Windows.Forms.Button()
+        Me.idUsuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DUI = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Email = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Acceso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Password = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.grdBuscarUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -47,6 +55,7 @@ Partial Class FormBusquedaUsuarios
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grdBuscarUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grdBuscarUsuario.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idUsuario, Me.Nombre, Me.DUI, Me.Telefono, Me.Email, Me.Acceso, Me.Usuario, Me.Password})
         Me.grdBuscarUsuario.Location = New System.Drawing.Point(12, 32)
         Me.grdBuscarUsuario.Name = "grdBuscarUsuario"
         Me.grdBuscarUsuario.Size = New System.Drawing.Size(723, 345)
@@ -81,6 +90,58 @@ Partial Class FormBusquedaUsuarios
         Me.btnSeleccionar.Text = "Seleccionar"
         Me.btnSeleccionar.UseVisualStyleBackColor = True
         '
+        'idUsuario
+        '
+        Me.idUsuario.DataPropertyName = "idUsuario"
+        Me.idUsuario.HeaderText = "ID"
+        Me.idUsuario.Name = "idUsuario"
+        Me.idUsuario.Visible = False
+        Me.idUsuario.Width = 50
+        '
+        'Nombre
+        '
+        Me.Nombre.DataPropertyName = "Nombre"
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.Width = 150
+        '
+        'DUI
+        '
+        Me.DUI.DataPropertyName = "DUI"
+        Me.DUI.HeaderText = "DUI"
+        Me.DUI.Name = "DUI"
+        '
+        'Telefono
+        '
+        Me.Telefono.DataPropertyName = "Telefono"
+        Me.Telefono.HeaderText = "Telefono"
+        Me.Telefono.Name = "Telefono"
+        '
+        'Email
+        '
+        Me.Email.DataPropertyName = "Email"
+        Me.Email.HeaderText = "Email"
+        Me.Email.Name = "Email"
+        '
+        'Acceso
+        '
+        Me.Acceso.DataPropertyName = "Acceso"
+        Me.Acceso.HeaderText = "Acceso"
+        Me.Acceso.Name = "Acceso"
+        Me.Acceso.Width = 75
+        '
+        'Usuario
+        '
+        Me.Usuario.DataPropertyName = "Usuario"
+        Me.Usuario.HeaderText = "Usuario"
+        Me.Usuario.Name = "Usuario"
+        '
+        'Password
+        '
+        Me.Password.DataPropertyName = "Password"
+        Me.Password.HeaderText = "Password"
+        Me.Password.Name = "Password"
+        '
         'FormBusquedaUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -104,4 +165,12 @@ Partial Class FormBusquedaUsuarios
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnSeleccionar As Button
+    Friend WithEvents idUsuario As DataGridViewTextBoxColumn
+    Friend WithEvents Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents DUI As DataGridViewTextBoxColumn
+    Friend WithEvents Telefono As DataGridViewTextBoxColumn
+    Friend WithEvents Email As DataGridViewTextBoxColumn
+    Friend WithEvents Acceso As DataGridViewTextBoxColumn
+    Friend WithEvents Usuario As DataGridViewTextBoxColumn
+    Friend WithEvents Password As DataGridViewTextBoxColumn
 End Class
