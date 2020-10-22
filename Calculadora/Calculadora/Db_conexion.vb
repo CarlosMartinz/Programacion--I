@@ -31,6 +31,13 @@ Public Class db_conexion
         'Tabla de tipo de habitaciones
         miCommand.Parameters.Add("@codEdi", SqlDbType.NChar).Value = ""
         miCommand.Parameters.Add("@edificio", SqlDbType.NChar).Value = ""
+
+        'Tabla Cliente
+        miCommand.Parameters.Add("@idCliente", SqlDbType.Int).Value = 0
+        miCommand.Parameters.Add("@NombreCliente", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@DuiCliente", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@TelefonoCliente", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@EmailCliente", SqlDbType.VarChar).Value = ""
     End Sub
 
     'traedatos de la tabla usuarios y relacionada
@@ -51,6 +58,10 @@ Public Class db_conexion
         miCommand.CommandText = "select Acceso from NivelAcceso"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "NivelAcceso")
+
+        miCommand.CommandText = "SELECT * FROM Clientes"
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "Clientes")
 
         Return ds
     End Function
@@ -125,6 +136,36 @@ Public Class db_conexion
             msg = "error"
         End If
 
+        Return msg
+    End Function
+
+    Public Function mantenimientoDatosCliente(ByVal datos As String(), ByVal accion As String)
+        Dim sql, msg As String
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT INTO Clientes (Nombre,DUI,Telefono,Email) VALUES ('" + datos(1) + "','" + datos(2) + "','" + datos(3) + "','" + datos(4) + "')"
+            Case "actualizar"
+                sql = "UPDATE Clientes SET Nombre=@NombreCliente,DUI=@DuiCliente,Telefono=@TelefonoCliente,Email=@EmailCliente WHERE idUsuario=@idCliente"
+            Case "eliminar"
+                sql = "DELETE FROM Cliente WHERE idUsuario=@idCliente"
+        End Select
+        'miCommand.Parameters("@idCliente").Value = datos(0)
+        'If accion IsNot "eliminar" Then
+        '    miCommand.Parameters("@NombreCliente").Value = datos(1)
+        '    miCommand.Parameters("@DuiCliente").Value = datos(2)
+        '    miCommand.Parameters("@TelefonoCliente").Value = datos(3)
+        '    miCommand.Parameters("@EmailCliente").Value = datos(4)
+        'Else 'Accion es eliminar
+        '    ' mantenimientoDatosContacto(datos, accion)
+        'End If
+        If (executeSql(sql) > 0) Then
+            If accion IsNot "eliminar" Then
+                ' mantenimientoDatosContacto(datos, accion)
+            End If
+            msg = "exito"
+        Else
+            msg = "error"
+        End If
         Return msg
     End Function
 
