@@ -30,7 +30,7 @@ Partial Class FormClientes
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtNumDeDoc = New System.Windows.Forms.TextBox()
+        Me.txtDUI = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -59,7 +59,7 @@ Partial Class FormClientes
         Me.grbDatos.Controls.Add(Me.Label3)
         Me.grbDatos.Controls.Add(Me.txtEmail)
         Me.grbDatos.Controls.Add(Me.Label4)
-        Me.grbDatos.Controls.Add(Me.txtNumDeDoc)
+        Me.grbDatos.Controls.Add(Me.txtDUI)
         Me.grbDatos.Controls.Add(Me.Label2)
         Me.grbDatos.Controls.Add(Me.txtNombre)
         Me.grbDatos.Controls.Add(Me.Label1)
@@ -127,12 +127,12 @@ Partial Class FormClientes
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Email"
         '
-        'txtNumDeDoc
+        'txtDUI
         '
-        Me.txtNumDeDoc.Location = New System.Drawing.Point(66, 75)
-        Me.txtNumDeDoc.Name = "txtNumDeDoc"
-        Me.txtNumDeDoc.Size = New System.Drawing.Size(175, 20)
-        Me.txtNumDeDoc.TabIndex = 3
+        Me.txtDUI.Location = New System.Drawing.Point(66, 75)
+        Me.txtDUI.Name = "txtDUI"
+        Me.txtDUI.Size = New System.Drawing.Size(175, 20)
+        Me.txtDUI.TabIndex = 3
         '
         'Label2
         '
@@ -305,7 +305,7 @@ Partial Class FormClientes
     Friend WithEvents Label3 As Label
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtNumDeDoc As TextBox
+    Friend WithEvents txtDUI As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents txtNombre As TextBox
     Friend WithEvents Label1 As Label
