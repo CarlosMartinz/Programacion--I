@@ -36,8 +36,8 @@
     Private Sub HabDescontroles(ByVal estado As Boolean)
         grbDatos.Enabled = Not estado
         grbPosicion.Enabled = estado
-        'btnEliminar.Enabled = estado
-        'btnBuscar.Enabled = estado
+        btnEliminar.Enabled = estado
+        btnBuscar.Enabled = estado
     End Sub
     Private Sub limpiarDatosUsuario()
         txtNombre.Text = ""
