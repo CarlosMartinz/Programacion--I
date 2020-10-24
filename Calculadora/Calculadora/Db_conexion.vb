@@ -20,11 +20,13 @@ Public Class db_conexion
     Private Sub parametrizacion()
         'Tabla Usuarios
         miCommand.Parameters.Add("@idU", SqlDbType.Int).Value = 0
-        miCommand.Parameters.Add("@nombre", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@dui", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@telefono", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@email", SqlDbType.VarChar).Value = ""
         miCommand.Parameters.Add("@acceso", SqlDbType.VarChar).Value = ""
+
+        'Tabla datos
+        miCommand.Parameters.Add("@nombre", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@documento", SqlDbType.NChar).Value = ""
+        miCommand.Parameters.Add("@telefono", SqlDbType.NChar).Value = ""
+        miCommand.Parameters.Add("@email", SqlDbType.VarChar).Value = ""
 
         'Tabla de tipo de login
         miCommand.Parameters.Add("@idL", SqlDbType.Int).Value = 0
@@ -46,9 +48,9 @@ Public Class db_conexion
         miCommand.Connection = miConexion
 
         miCommand.CommandText = "
-            select Usuarios.idUsuario, Usuarios.Nombre, Usuarios.DUI, Usuarios.Telefono, Usuarios.Email, Usuarios.Acceso, Login.Usuario, Login.Password
+            select Usuarios.idUsuario, Usuarios.Acceso, Datos.Nombre, Datos.Documento, Datos.Telefono, Datos.Email, Usuarios.Usuario, Usuarios.Password
             from Usuarios
-                inner join Login on(Login.idPersona=Usuarios.idUsuario)
+                inner join Datos on(Datos.idPersona=Usuarios.idUsuario)
         "
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Usuarios")
@@ -77,27 +79,27 @@ Public Class db_conexion
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
-                sql = "INSERT INTO Usuarios (Nombre,DUI,Telefono,Email,Acceso) VALUES (@nombre,@dui,@telefono,@email,@acceso)"
+                sql = "INSERT INTO Usuarios (Acceso,Usuario,Password) VALUES (@acceso,@usuario,@pass)"
             Case "actualizar"
-                sql = "UPDATE Usuarios SET Nombre=@nombre,DUI=@dui,Telefono=@telefono,Email=@email,Acceso=@acceso WHERE idUsuario=@idU"
+                sql = "UPDATE Usuarios SET Acceso=@acceso, Usuario=@usuario, Password=@pass WHERE idUsuario=@idU"
             Case "eliminar"
                 sql = "DELETE FROM Usuarios WHERE idUsuario=@idU"
         End Select
         miCommand.Parameters("@idU").Value = datos(0)
         If accion IsNot "eliminar" Then
-            miCommand.Parameters("@nombre").Value = datos(1)
-            miCommand.Parameters("@dui").Value = datos(2)
-            miCommand.Parameters("@telefono").Value = datos(3)
-            miCommand.Parameters("@email").Value = datos(4)
-            miCommand.Parameters("@acceso").Value = datos(5)
+            miCommand.Parameters("@acceso").Value = datos(1)
+            miCommand.Parameters("@nombre").Value = datos(2)
+            miCommand.Parameters("@documento").Value = datos(3)
+            miCommand.Parameters("@telefono").Value = datos(4)
+            miCommand.Parameters("@email").Value = datos(5)
             miCommand.Parameters("@usuario").Value = datos(6)
             miCommand.Parameters("@pass").Value = datos(7)
         Else 'Accion es eliminar
-            mantenimientoDatosLogin(datos, accion)
+            mantenimientoDatosDatos(datos, accion)
         End If
         If (executeSql(sql) > 0) Then
             If accion IsNot "eliminar" Then
-                mantenimientoDatosLogin(datos, accion)
+                mantenimientoDatosDatos(datos, accion)
             End If
             msg = "exito"
         Else
@@ -105,7 +107,7 @@ Public Class db_conexion
         End If
         Return msg
     End Function
-    Public Function mantenimientoDatosLogin(ByVal datos As String(), ByVal accion As String)
+    Public Function mantenimientoDatosDatos(ByVal datos As String(), ByVal accion As String)
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
@@ -113,16 +115,18 @@ Public Class db_conexion
                 miCommand.CommandText = "select MAX(idUsuario) AS idUsuario from Usuarios"
                 datos(0) = miCommand.ExecuteScalar().ToString()
 
-                sql = "INSERT INTO Login (idPersona,Usuario,Password) VALUES(@idU,@usuario,@pass)"
+                sql = "INSERT INTO Datos (idPersona,Nombre,Documento,Telefono,Email) VALUES(@idU,@nombre,@documento,@telefono,@email)"
             Case "modificar"
-                sql = "UPDATE Login SET Usuario=@usuario,Password=@pass WHERE idPersona=@idU"
+                sql = "UPDATE Datos SET Nombre=@nombre,Documento=@docmento WHERE idPersona=@idU"
             Case "eliminar"
-                sql = "DELETE FROM Login WHERE idPersona=@idU"
+                sql = "DELETE FROM Datos WHERE idPersona=@idU"
         End Select
         miCommand.Parameters("@idU").Value = datos(0)
         If accion IsNot "eliminar" Then
-            miCommand.Parameters("@usuario").Value = datos(6)
-            miCommand.Parameters("@pass").Value = datos(7)
+            miCommand.Parameters("@nombre").Value = datos(2)
+            miCommand.Parameters("@documento").Value = datos(3)
+            miCommand.Parameters("@telefono").Value = datos(4)
+            miCommand.Parameters("@email").Value = datos(5)
         End If
         executeSql(sql)
     End Function

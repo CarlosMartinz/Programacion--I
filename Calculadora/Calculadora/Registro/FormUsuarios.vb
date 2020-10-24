@@ -19,11 +19,11 @@
     Sub mostrarDatosUsuarios()
         If dataTable.Rows.Count > 0 Then
             Me.Tag = dataTable.Rows(Posicion).ItemArray(0).ToString()
-            txtNombre.Text = dataTable.Rows(Posicion).ItemArray(1).ToString()
-            txtDUI.Text = dataTable.Rows(Posicion).ItemArray(2).ToString()
-            txtTelefono.Text = dataTable.Rows(Posicion).ItemArray(3).ToString()
-            txtEmail.Text = dataTable.Rows(Posicion).ItemArray(4).ToString()
-            cboNivelAcceso.SelectedValue = dataTable.Rows(Posicion).ItemArray(5).ToString()
+            cboNivelAcceso.SelectedValue = dataTable.Rows(Posicion).ItemArray(1).ToString()
+            txtNombre.Text = dataTable.Rows(Posicion).ItemArray(2).ToString()
+            txtDUI.Text = dataTable.Rows(Posicion).ItemArray(3).ToString()
+            txtTelefono.Text = dataTable.Rows(Posicion).ItemArray(4).ToString()
+            txtEmail.Text = dataTable.Rows(Posicion).ItemArray(5).ToString()
             txtUsuario.Text = dataTable.Rows(Posicion).ItemArray(6).ToString()
             txtContra.Text = dataTable.Rows(Posicion).ItemArray(7).ToString()
 
@@ -84,7 +84,7 @@
             limpiarDatosUsuario()
         Else 'Guardar
             Dim msg = objConexion.mantenimientoDatosUsuarios(New String() {
-                Me.Tag, txtNombre.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text, cboNivelAcceso.SelectedValue, txtUsuario.Text, txtContra.Text
+                Me.Tag, cboNivelAcceso.SelectedValue, txtNombre.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text, txtUsuario.Text, txtContra.Text
             }, Accion)
             If msg = "error" Then
                 MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Usuario",
