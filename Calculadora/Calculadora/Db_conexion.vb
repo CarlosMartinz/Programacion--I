@@ -145,18 +145,18 @@ Public Class db_conexion
             Case "nuevo"
                 sql = "INSERT INTO Clientes (Nombre,DUI,Telefono,Email) VALUES ('" + datos(1) + "','" + datos(2) + "','" + datos(3) + "','" + datos(4) + "')"
             Case "actualizar"
-                sql = "UPDATE Clientes SET Nombre=@NombreCliente,DUI=@DuiCliente,Telefono=@TelefonoCliente,Email=@EmailCliente WHERE idUsuario=@idCliente"
+                sql = "UPDATE Clientes SET Nombre='" + datos(1) + "',DUI='" + datos(2) + "',Telefono='" + datos(3) + "',Email='" + datos(4) + "' WHERE idCliente='" + datos(0) + "'"
             Case "eliminar"
-                sql = "DELETE FROM Cliente WHERE idUsuario=@idCliente"
+                sql = "DELETE FROM Clientes WHERE idCliente='" + datos(0) + "'"
         End Select
         'miCommand.Parameters("@idCliente").Value = datos(0)
         'If accion IsNot "eliminar" Then
-        '    miCommand.Parameters("@NombreCliente").Value = datos(1)
-        '    miCommand.Parameters("@DuiCliente").Value = datos(2)
-        '    miCommand.Parameters("@TelefonoCliente").Value = datos(3)
-        '    miCommand.Parameters("@EmailCliente").Value = datos(4)
-        'Else 'Accion es eliminar
-        '    ' mantenimientoDatosContacto(datos, accion)
+        '    miCommand.Parameters("@nombrecliente").Value = datos(1)
+        '    miCommand.Parameters("@duicliente").Value = datos(2)
+        '    miCommand.Parameters("@telefonocliente").Value = datos(3)
+        '    miCommand.Parameters("@emailcliente").Value = datos(4)
+        'Else 'accion es eliminar
+        '    ' mantenimientodatoscontacto(datos, accion)
         'End If
         If (executeSql(sql) > 0) Then
             If accion IsNot "eliminar" Then

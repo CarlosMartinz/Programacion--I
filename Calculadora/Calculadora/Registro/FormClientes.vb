@@ -80,8 +80,7 @@
             HabDescontroles(False)
             LimpiarDatosCliente()
         Else 'Guardar
-            Dim msg = objConexion.mantenimientoDatosCliente(New String() {
-                Me.Tag, txtNombre.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text}, Accion)
+            Dim msg = objConexion.mantenimientoDatosCliente(New String() {Me.Tag, txtNombre.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text}, Accion)
             If msg = "error" Then
                 MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Usuario",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -110,5 +109,21 @@
 
     End Sub
 
-
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If (MessageBox.Show("¿Estas seguro de borrar este registro?", "Registro Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+            objConexion.mantenimientoDatosCliente(New String() {Me.Tag}, "eliminar")
+            If Posicion > 0 Then
+                Posicion -= 1
+            End If
+            ObtenrDatosCliente()
+        End If
+    End Sub
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Dim objBuscarCliente As New FormBusquedaClientes
+        objBuscarCliente.ShowDialog()
+        If objBuscarCliente._idC > 0 Then
+            Posicion = dataTable.Rows.IndexOf(dataTable.Rows.Find(objBuscarCliente._idC))
+            MostrarDatosCliente()
+        End If
+    End Sub
 End Class
