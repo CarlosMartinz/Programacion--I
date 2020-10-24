@@ -25,6 +25,12 @@ Partial Class FormHabitaciones
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Habitaciones = New System.Windows.Forms.TabPage()
         Me.brHabitacionNueva = New System.Windows.Forms.GroupBox()
+        Me.btnMostrarTipo = New System.Windows.Forms.Button()
+        Me.btnMostrarEdificio = New System.Windows.Forms.Button()
+        Me.cboTipo = New System.Windows.Forms.ComboBox()
+        Me.cboEdificio = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.txtcodigohabitacion = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -41,9 +47,9 @@ Partial Class FormHabitaciones
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.Tipo = New System.Windows.Forms.TabPage()
         Me.grbDatosTipoHab = New System.Windows.Forms.GroupBox()
+        Me.txtcapacidad = New System.Windows.Forms.NumericUpDown()
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtcapacidad = New System.Windows.Forms.TextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -61,8 +67,6 @@ Partial Class FormHabitaciones
         Me.btnAgregarTipHabitacion = New System.Windows.Forms.Button()
         Me.piso = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.txtcodedificio = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.txtedificio = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
@@ -72,26 +76,12 @@ Partial Class FormHabitaciones
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Button12 = New System.Windows.Forms.Button()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.Button13 = New System.Windows.Forms.Button()
-        Me.Button14 = New System.Windows.Forms.Button()
-        Me.Button15 = New System.Windows.Forms.Button()
+        Me.btnBuscarEdit = New System.Windows.Forms.Button()
+        Me.btnEliminarEdit = New System.Windows.Forms.Button()
+        Me.btnModificarEdit = New System.Windows.Forms.Button()
         Me.btnAgregarEdificios = New System.Windows.Forms.Button()
-        Me.nivel = New System.Windows.Forms.TabPage()
-        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.txtnivel = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Button17 = New System.Windows.Forms.Button()
-        Me.Button18 = New System.Windows.Forms.Button()
-        Me.Button19 = New System.Windows.Forms.Button()
-        Me.Button20 = New System.Windows.Forms.Button()
-        Me.GroupBox9 = New System.Windows.Forms.GroupBox()
-        Me.Button21 = New System.Windows.Forms.Button()
-        Me.Button22 = New System.Windows.Forms.Button()
-        Me.Button23 = New System.Windows.Forms.Button()
-        Me.Button24 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.Habitaciones.SuspendLayout()
         Me.brHabitacionNueva.SuspendLayout()
@@ -99,16 +89,13 @@ Partial Class FormHabitaciones
         Me.GroupBox3.SuspendLayout()
         Me.Tipo.SuspendLayout()
         Me.grbDatosTipoHab.SuspendLayout()
+        CType(Me.txtcapacidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grbNavegacionTipoHab.SuspendLayout()
         Me.grbEdicion.SuspendLayout()
         Me.piso.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
-        Me.nivel.SuspendLayout()
-        Me.GroupBox7.SuspendLayout()
-        Me.GroupBox8.SuspendLayout()
-        Me.GroupBox9.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -116,11 +103,10 @@ Partial Class FormHabitaciones
         Me.TabControl1.Controls.Add(Me.Habitaciones)
         Me.TabControl1.Controls.Add(Me.Tipo)
         Me.TabControl1.Controls.Add(Me.piso)
-        Me.TabControl1.Controls.Add(Me.nivel)
         Me.TabControl1.Location = New System.Drawing.Point(12, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(573, 298)
+        Me.TabControl1.Size = New System.Drawing.Size(573, 284)
         Me.TabControl1.TabIndex = 32
         '
         'Habitaciones
@@ -133,34 +119,100 @@ Partial Class FormHabitaciones
         Me.Habitaciones.Location = New System.Drawing.Point(4, 22)
         Me.Habitaciones.Name = "Habitaciones"
         Me.Habitaciones.Padding = New System.Windows.Forms.Padding(3)
-        Me.Habitaciones.Size = New System.Drawing.Size(565, 272)
+        Me.Habitaciones.Size = New System.Drawing.Size(565, 258)
         Me.Habitaciones.TabIndex = 0
         Me.Habitaciones.Text = "Nueva habitacion"
         '
         'brHabitacionNueva
         '
+        Me.brHabitacionNueva.Controls.Add(Me.Button2)
+        Me.brHabitacionNueva.Controls.Add(Me.Button1)
+        Me.brHabitacionNueva.Controls.Add(Me.btnMostrarTipo)
+        Me.brHabitacionNueva.Controls.Add(Me.btnMostrarEdificio)
+        Me.brHabitacionNueva.Controls.Add(Me.cboTipo)
+        Me.brHabitacionNueva.Controls.Add(Me.cboEdificio)
+        Me.brHabitacionNueva.Controls.Add(Me.Label5)
+        Me.brHabitacionNueva.Controls.Add(Me.Label4)
         Me.brHabitacionNueva.Controls.Add(Me.txtcodigohabitacion)
         Me.brHabitacionNueva.Controls.Add(Me.Label1)
         Me.brHabitacionNueva.Controls.Add(Me.TextBox3)
         Me.brHabitacionNueva.Location = New System.Drawing.Point(7, 7)
         Me.brHabitacionNueva.Name = "brHabitacionNueva"
-        Me.brHabitacionNueva.Size = New System.Drawing.Size(552, 135)
+        Me.brHabitacionNueva.Size = New System.Drawing.Size(552, 169)
         Me.brHabitacionNueva.TabIndex = 31
         Me.brHabitacionNueva.TabStop = False
         Me.brHabitacionNueva.Text = "Habitacion nueva"
         '
+        'btnMostrarTipo
+        '
+        Me.btnMostrarTipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMostrarTipo.Location = New System.Drawing.Point(388, 129)
+        Me.btnMostrarTipo.Name = "btnMostrarTipo"
+        Me.btnMostrarTipo.Size = New System.Drawing.Size(75, 23)
+        Me.btnMostrarTipo.TabIndex = 26
+        Me.btnMostrarTipo.Text = "Buscar"
+        Me.btnMostrarTipo.UseVisualStyleBackColor = True
+        '
+        'btnMostrarEdificio
+        '
+        Me.btnMostrarEdificio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMostrarEdificio.Location = New System.Drawing.Point(388, 86)
+        Me.btnMostrarEdificio.Name = "btnMostrarEdificio"
+        Me.btnMostrarEdificio.Size = New System.Drawing.Size(75, 23)
+        Me.btnMostrarEdificio.TabIndex = 25
+        Me.btnMostrarEdificio.Text = "Buscar"
+        Me.btnMostrarEdificio.UseVisualStyleBackColor = True
+        '
+        'cboTipo
+        '
+        Me.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboTipo.FormattingEnabled = True
+        Me.cboTipo.Location = New System.Drawing.Point(7, 132)
+        Me.cboTipo.Name = "cboTipo"
+        Me.cboTipo.Size = New System.Drawing.Size(356, 21)
+        Me.cboTipo.TabIndex = 24
+        '
+        'cboEdificio
+        '
+        Me.cboEdificio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboEdificio.FormattingEnabled = True
+        Me.cboEdificio.Location = New System.Drawing.Point(7, 89)
+        Me.cboEdificio.Name = "cboEdificio"
+        Me.cboEdificio.Size = New System.Drawing.Size(356, 21)
+        Me.cboEdificio.TabIndex = 23
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(4, 111)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(146, 18)
+        Me.Label5.TabIndex = 22
+        Me.Label5.Text = "Tipo de habitacion"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(3, 67)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(64, 18)
+        Me.Label4.TabIndex = 20
+        Me.Label4.Text = "Edificio"
+        '
         'txtcodigohabitacion
         '
-        Me.txtcodigohabitacion.Location = New System.Drawing.Point(89, 62)
+        Me.txtcodigohabitacion.Location = New System.Drawing.Point(6, 40)
         Me.txtcodigohabitacion.Name = "txtcodigohabitacion"
-        Me.txtcodigohabitacion.Size = New System.Drawing.Size(410, 20)
+        Me.txtcodigohabitacion.Size = New System.Drawing.Size(357, 20)
         Me.txtcodigohabitacion.TabIndex = 4
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(86, 41)
+        Me.Label1.Location = New System.Drawing.Point(3, 19)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(62, 18)
         Me.Label1.TabIndex = 5
@@ -180,7 +232,7 @@ Partial Class FormHabitaciones
         Me.GroupBox2.Controls.Add(Me.btnSiguiente)
         Me.GroupBox2.Controls.Add(Me.btnAnterior)
         Me.GroupBox2.Controls.Add(Me.btnPrimero)
-        Me.GroupBox2.Location = New System.Drawing.Point(7, 146)
+        Me.GroupBox2.Location = New System.Drawing.Point(7, 180)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(1)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(1)
@@ -249,7 +301,7 @@ Partial Class FormHabitaciones
         Me.GroupBox3.Controls.Add(Me.btnEliminar)
         Me.GroupBox3.Controls.Add(Me.btnModificar)
         Me.GroupBox3.Controls.Add(Me.btnNuevo)
-        Me.GroupBox3.Location = New System.Drawing.Point(246, 146)
+        Me.GroupBox3.Location = New System.Drawing.Point(246, 180)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(1)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(1)
@@ -312,15 +364,15 @@ Partial Class FormHabitaciones
         Me.Tipo.Location = New System.Drawing.Point(4, 22)
         Me.Tipo.Name = "Tipo"
         Me.Tipo.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tipo.Size = New System.Drawing.Size(565, 272)
+        Me.Tipo.Size = New System.Drawing.Size(565, 258)
         Me.Tipo.TabIndex = 1
         Me.Tipo.Text = "Tipo de habitaciones"
         '
         'grbDatosTipoHab
         '
+        Me.grbDatosTipoHab.Controls.Add(Me.txtcapacidad)
         Me.grbDatosTipoHab.Controls.Add(Me.txtdescripcion)
         Me.grbDatosTipoHab.Controls.Add(Me.Label2)
-        Me.grbDatosTipoHab.Controls.Add(Me.txtcapacidad)
         Me.grbDatosTipoHab.Controls.Add(Me.TextBox6)
         Me.grbDatosTipoHab.Controls.Add(Me.Label3)
         Me.grbDatosTipoHab.Controls.Add(Me.Label7)
@@ -331,6 +383,14 @@ Partial Class FormHabitaciones
         Me.grbDatosTipoHab.TabIndex = 28
         Me.grbDatosTipoHab.TabStop = False
         Me.grbDatosTipoHab.Text = "Datos tipos de habitaciones"
+        '
+        'txtcapacidad
+        '
+        Me.txtcapacidad.Location = New System.Drawing.Point(87, 94)
+        Me.txtcapacidad.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
+        Me.txtcapacidad.Name = "txtcapacidad"
+        Me.txtcapacidad.Size = New System.Drawing.Size(410, 20)
+        Me.txtcapacidad.TabIndex = 19
         '
         'txtdescripcion
         '
@@ -344,16 +404,9 @@ Partial Class FormHabitaciones
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(84, 23)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(63, 13)
+        Me.Label2.Size = New System.Drawing.Size(95, 13)
         Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Descripcion"
-        '
-        'txtcapacidad
-        '
-        Me.txtcapacidad.Location = New System.Drawing.Point(87, 94)
-        Me.txtcapacidad.Name = "txtcapacidad"
-        Me.txtcapacidad.Size = New System.Drawing.Size(410, 20)
-        Me.txtcapacidad.TabIndex = 6
+        Me.Label2.Text = "Tipo de habitacion"
         '
         'TextBox6
         '
@@ -525,42 +578,24 @@ Partial Class FormHabitaciones
         Me.piso.Location = New System.Drawing.Point(4, 22)
         Me.piso.Name = "piso"
         Me.piso.Padding = New System.Windows.Forms.Padding(3)
-        Me.piso.Size = New System.Drawing.Size(565, 272)
+        Me.piso.Size = New System.Drawing.Size(565, 258)
         Me.piso.TabIndex = 2
         Me.piso.Text = "Edificio"
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.txtcodedificio)
-        Me.GroupBox4.Controls.Add(Me.Label5)
         Me.GroupBox4.Controls.Add(Me.txtedificio)
         Me.GroupBox4.Controls.Add(Me.Label11)
         Me.GroupBox4.Location = New System.Drawing.Point(6, 3)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(552, 135)
+        Me.GroupBox4.Size = New System.Drawing.Size(552, 129)
         Me.GroupBox4.TabIndex = 34
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Dato edificio"
         '
-        'txtcodedificio
-        '
-        Me.txtcodedificio.Location = New System.Drawing.Point(73, 38)
-        Me.txtcodedificio.Name = "txtcodedificio"
-        Me.txtcodedificio.Size = New System.Drawing.Size(410, 20)
-        Me.txtcodedificio.TabIndex = 8
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(70, 22)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(40, 13)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Codigo"
-        '
         'txtedificio
         '
-        Me.txtedificio.Location = New System.Drawing.Point(73, 93)
+        Me.txtedificio.Location = New System.Drawing.Point(73, 57)
         Me.txtedificio.Name = "txtedificio"
         Me.txtedificio.Size = New System.Drawing.Size(410, 20)
         Me.txtedificio.TabIndex = 10
@@ -568,11 +603,12 @@ Partial Class FormHabitaciones
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(70, 77)
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(70, 39)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(41, 13)
+        Me.Label11.Size = New System.Drawing.Size(133, 15)
         Me.Label11.TabIndex = 11
-        Me.Label11.Text = "Edificio"
+        Me.Label11.Text = "Nombre del edificio"
         '
         'GroupBox5
         '
@@ -646,9 +682,9 @@ Partial Class FormHabitaciones
         '
         'GroupBox6
         '
-        Me.GroupBox6.Controls.Add(Me.Button13)
-        Me.GroupBox6.Controls.Add(Me.Button14)
-        Me.GroupBox6.Controls.Add(Me.Button15)
+        Me.GroupBox6.Controls.Add(Me.btnBuscarEdit)
+        Me.GroupBox6.Controls.Add(Me.btnEliminarEdit)
+        Me.GroupBox6.Controls.Add(Me.btnModificarEdit)
         Me.GroupBox6.Controls.Add(Me.btnAgregarEdificios)
         Me.GroupBox6.Location = New System.Drawing.Point(245, 142)
         Me.GroupBox6.Margin = New System.Windows.Forms.Padding(1)
@@ -659,38 +695,38 @@ Partial Class FormHabitaciones
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Edicion"
         '
-        'Button13
+        'btnBuscarEdit
         '
-        Me.Button13.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button13.Location = New System.Drawing.Point(237, 19)
-        Me.Button13.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(75, 39)
-        Me.Button13.TabIndex = 8
-        Me.Button13.Text = "Buscar"
-        Me.Button13.UseVisualStyleBackColor = True
+        Me.btnBuscarEdit.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarEdit.Location = New System.Drawing.Point(237, 19)
+        Me.btnBuscarEdit.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnBuscarEdit.Name = "btnBuscarEdit"
+        Me.btnBuscarEdit.Size = New System.Drawing.Size(75, 39)
+        Me.btnBuscarEdit.TabIndex = 8
+        Me.btnBuscarEdit.Text = "Buscar"
+        Me.btnBuscarEdit.UseVisualStyleBackColor = True
         '
-        'Button14
+        'btnEliminarEdit
         '
-        Me.Button14.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button14.Location = New System.Drawing.Point(158, 19)
-        Me.Button14.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(80, 39)
-        Me.Button14.TabIndex = 7
-        Me.Button14.Text = "Eliminar"
-        Me.Button14.UseVisualStyleBackColor = True
+        Me.btnEliminarEdit.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminarEdit.Location = New System.Drawing.Point(158, 19)
+        Me.btnEliminarEdit.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnEliminarEdit.Name = "btnEliminarEdit"
+        Me.btnEliminarEdit.Size = New System.Drawing.Size(80, 39)
+        Me.btnEliminarEdit.TabIndex = 7
+        Me.btnEliminarEdit.Text = "Eliminar"
+        Me.btnEliminarEdit.UseVisualStyleBackColor = True
         '
-        'Button15
+        'btnModificarEdit
         '
-        Me.Button15.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button15.Location = New System.Drawing.Point(69, 19)
-        Me.Button15.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(90, 39)
-        Me.Button15.TabIndex = 6
-        Me.Button15.Text = "Modificar"
-        Me.Button15.UseVisualStyleBackColor = True
+        Me.btnModificarEdit.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificarEdit.Location = New System.Drawing.Point(69, 19)
+        Me.btnModificarEdit.Margin = New System.Windows.Forms.Padding(1)
+        Me.btnModificarEdit.Name = "btnModificarEdit"
+        Me.btnModificarEdit.Size = New System.Drawing.Size(90, 39)
+        Me.btnModificarEdit.TabIndex = 6
+        Me.btnModificarEdit.Text = "Modificar"
+        Me.btnModificarEdit.UseVisualStyleBackColor = True
         '
         'btnAgregarEdificios
         '
@@ -703,188 +739,31 @@ Partial Class FormHabitaciones
         Me.btnAgregarEdificios.Text = "Nuevo"
         Me.btnAgregarEdificios.UseVisualStyleBackColor = True
         '
-        'nivel
+        'Button1
         '
-        Me.nivel.BackColor = System.Drawing.Color.Transparent
-        Me.nivel.Controls.Add(Me.GroupBox7)
-        Me.nivel.Controls.Add(Me.GroupBox8)
-        Me.nivel.Controls.Add(Me.GroupBox9)
-        Me.nivel.Location = New System.Drawing.Point(4, 22)
-        Me.nivel.Name = "nivel"
-        Me.nivel.Size = New System.Drawing.Size(565, 272)
-        Me.nivel.TabIndex = 3
-        Me.nivel.Text = "Nivel"
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(471, 86)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 27
+        Me.Button1.Text = "Detalles"
+        Me.Button1.UseVisualStyleBackColor = True
         '
-        'GroupBox7
+        'Button2
         '
-        Me.GroupBox7.Controls.Add(Me.txtnivel)
-        Me.GroupBox7.Controls.Add(Me.Label8)
-        Me.GroupBox7.Controls.Add(Me.TextBox8)
-        Me.GroupBox7.Location = New System.Drawing.Point(8, 4)
-        Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(552, 135)
-        Me.GroupBox7.TabIndex = 37
-        Me.GroupBox7.TabStop = False
-        Me.GroupBox7.Text = "Habitacion nueva"
-        '
-        'txtnivel
-        '
-        Me.txtnivel.Location = New System.Drawing.Point(67, 63)
-        Me.txtnivel.Name = "txtnivel"
-        Me.txtnivel.Size = New System.Drawing.Size(410, 20)
-        Me.txtnivel.TabIndex = 4
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(63, 40)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(47, 20)
-        Me.Label8.TabIndex = 5
-        Me.Label8.Text = "Nivel"
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Location = New System.Drawing.Point(-26, 412)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox8.TabIndex = 18
-        '
-        'GroupBox8
-        '
-        Me.GroupBox8.Controls.Add(Me.Label10)
-        Me.GroupBox8.Controls.Add(Me.Button17)
-        Me.GroupBox8.Controls.Add(Me.Button18)
-        Me.GroupBox8.Controls.Add(Me.Button19)
-        Me.GroupBox8.Controls.Add(Me.Button20)
-        Me.GroupBox8.Location = New System.Drawing.Point(8, 143)
-        Me.GroupBox8.Margin = New System.Windows.Forms.Padding(1)
-        Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Padding = New System.Windows.Forms.Padding(1)
-        Me.GroupBox8.Size = New System.Drawing.Size(226, 68)
-        Me.GroupBox8.TabIndex = 39
-        Me.GroupBox8.TabStop = False
-        Me.GroupBox8.Text = "Navegacion"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(86, 34)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(36, 13)
-        Me.Label10.TabIndex = 4
-        Me.Label10.Text = "x de n"
-        '
-        'Button17
-        '
-        Me.Button17.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button17.Location = New System.Drawing.Point(173, 19)
-        Me.Button17.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button17.Name = "Button17"
-        Me.Button17.Size = New System.Drawing.Size(41, 39)
-        Me.Button17.TabIndex = 3
-        Me.Button17.Text = ">|"
-        Me.Button17.UseVisualStyleBackColor = True
-        '
-        'Button18
-        '
-        Me.Button18.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button18.Location = New System.Drawing.Point(134, 19)
-        Me.Button18.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(41, 39)
-        Me.Button18.TabIndex = 2
-        Me.Button18.Text = ">"
-        Me.Button18.UseVisualStyleBackColor = True
-        '
-        'Button19
-        '
-        Me.Button19.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button19.Location = New System.Drawing.Point(42, 19)
-        Me.Button19.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button19.Name = "Button19"
-        Me.Button19.Size = New System.Drawing.Size(41, 39)
-        Me.Button19.TabIndex = 1
-        Me.Button19.Text = "<"
-        Me.Button19.UseVisualStyleBackColor = True
-        '
-        'Button20
-        '
-        Me.Button20.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button20.Location = New System.Drawing.Point(2, 19)
-        Me.Button20.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button20.Name = "Button20"
-        Me.Button20.Size = New System.Drawing.Size(41, 39)
-        Me.Button20.TabIndex = 0
-        Me.Button20.Text = "|<"
-        Me.Button20.UseVisualStyleBackColor = True
-        '
-        'GroupBox9
-        '
-        Me.GroupBox9.Controls.Add(Me.Button21)
-        Me.GroupBox9.Controls.Add(Me.Button22)
-        Me.GroupBox9.Controls.Add(Me.Button23)
-        Me.GroupBox9.Controls.Add(Me.Button24)
-        Me.GroupBox9.Location = New System.Drawing.Point(247, 143)
-        Me.GroupBox9.Margin = New System.Windows.Forms.Padding(1)
-        Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Padding = New System.Windows.Forms.Padding(1)
-        Me.GroupBox9.Size = New System.Drawing.Size(315, 68)
-        Me.GroupBox9.TabIndex = 38
-        Me.GroupBox9.TabStop = False
-        Me.GroupBox9.Text = "Edicion"
-        '
-        'Button21
-        '
-        Me.Button21.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button21.Location = New System.Drawing.Point(237, 19)
-        Me.Button21.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button21.Name = "Button21"
-        Me.Button21.Size = New System.Drawing.Size(75, 39)
-        Me.Button21.TabIndex = 8
-        Me.Button21.Text = "Buscar"
-        Me.Button21.UseVisualStyleBackColor = True
-        '
-        'Button22
-        '
-        Me.Button22.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button22.Location = New System.Drawing.Point(158, 19)
-        Me.Button22.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button22.Name = "Button22"
-        Me.Button22.Size = New System.Drawing.Size(80, 39)
-        Me.Button22.TabIndex = 7
-        Me.Button22.Text = "Eliminar"
-        Me.Button22.UseVisualStyleBackColor = True
-        '
-        'Button23
-        '
-        Me.Button23.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button23.Location = New System.Drawing.Point(69, 19)
-        Me.Button23.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button23.Name = "Button23"
-        Me.Button23.Size = New System.Drawing.Size(90, 39)
-        Me.Button23.TabIndex = 6
-        Me.Button23.Text = "Modificar"
-        Me.Button23.UseVisualStyleBackColor = True
-        '
-        'Button24
-        '
-        Me.Button24.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button24.Location = New System.Drawing.Point(2, 19)
-        Me.Button24.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button24.Name = "Button24"
-        Me.Button24.Size = New System.Drawing.Size(68, 39)
-        Me.Button24.TabIndex = 5
-        Me.Button24.Text = "Nuevo"
-        Me.Button24.UseVisualStyleBackColor = True
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(471, 129)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 28
+        Me.Button2.Text = "Detalles"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'FormHabitaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(593, 317)
+        Me.ClientSize = New System.Drawing.Size(593, 300)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "FormHabitaciones"
         Me.Text = "FormHabitaciones"
@@ -898,6 +777,7 @@ Partial Class FormHabitaciones
         Me.Tipo.ResumeLayout(False)
         Me.grbDatosTipoHab.ResumeLayout(False)
         Me.grbDatosTipoHab.PerformLayout()
+        CType(Me.txtcapacidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grbNavegacionTipoHab.ResumeLayout(False)
         Me.grbNavegacionTipoHab.PerformLayout()
         Me.grbEdicion.ResumeLayout(False)
@@ -907,12 +787,6 @@ Partial Class FormHabitaciones
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         Me.GroupBox6.ResumeLayout(False)
-        Me.nivel.ResumeLayout(False)
-        Me.GroupBox7.ResumeLayout(False)
-        Me.GroupBox7.PerformLayout()
-        Me.GroupBox8.ResumeLayout(False)
-        Me.GroupBox8.PerformLayout()
-        Me.GroupBox9.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -938,7 +812,6 @@ Partial Class FormHabitaciones
     Friend WithEvents grbDatosTipoHab As GroupBox
     Friend WithEvents txtdescripcion As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents txtcapacidad As TextBox
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label7 As Label
@@ -956,8 +829,6 @@ Partial Class FormHabitaciones
     Friend WithEvents btnAgregarTipHabitacion As Button
     Friend WithEvents piso As TabPage
     Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents txtcodedificio As TextBox
-    Friend WithEvents Label5 As Label
     Friend WithEvents txtedificio As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents GroupBox5 As GroupBox
@@ -967,24 +838,17 @@ Partial Class FormHabitaciones
     Friend WithEvents Button11 As Button
     Friend WithEvents Button12 As Button
     Friend WithEvents GroupBox6 As GroupBox
-    Friend WithEvents Button13 As Button
-    Friend WithEvents Button14 As Button
-    Friend WithEvents Button15 As Button
+    Friend WithEvents btnBuscarEdit As Button
+    Friend WithEvents btnEliminarEdit As Button
+    Friend WithEvents btnModificarEdit As Button
     Friend WithEvents btnAgregarEdificios As Button
-    Friend WithEvents nivel As TabPage
-    Friend WithEvents GroupBox7 As GroupBox
-    Friend WithEvents txtnivel As TextBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents GroupBox8 As GroupBox
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Button17 As Button
-    Friend WithEvents Button18 As Button
-    Friend WithEvents Button19 As Button
-    Friend WithEvents Button20 As Button
-    Friend WithEvents GroupBox9 As GroupBox
-    Friend WithEvents Button21 As Button
-    Friend WithEvents Button22 As Button
-    Friend WithEvents Button23 As Button
-    Friend WithEvents Button24 As Button
+    Friend WithEvents txtcapacidad As NumericUpDown
+    Friend WithEvents cboTipo As ComboBox
+    Friend WithEvents cboEdificio As ComboBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents btnMostrarTipo As Button
+    Friend WithEvents btnMostrarEdificio As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
 End Class

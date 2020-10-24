@@ -4,19 +4,24 @@
     Dim posicion As Integer
     Dim accion As String = "nuevo"
     Sub obtenerDatosTipoHabitacion()
-        'dataTable = objConexion.obtenerDatosUsuarios().Tables("Habitaciones")
-        'dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idHabitaciones")}
+        dataTable = objConexion.obtenerDatosUsuarios().Tables("Habitaciones")
+        dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idHabitaciones")}
+        mostrarDatosHabit()
 
-        dataTable = objConexion.obtenerDatosUsuarios().Tables("TipoHabitacion")
-        dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idTipoHabitacion")}
-        mostrarDatosTipoHab()
+        cboTipo.DataSource = objConexion.obtenerDatosUsuarios().Tables("TipoHabit").DefaultView()
+        cboTipo.DisplayMember = "idTipo"
+        cboTipo.ValueMember = "TipoHabit.idTipo"
+
+        cboTipo.DataSource = objConexion.obtenerDatosUsuarios().Tables("Edificio").DefaultView()
+        cboTipo.DisplayMember = "Edificio"
+        cboTipo.ValueMember = "Edificio"
     End Sub
-    Sub mostrarDatosTipoHab()
+    Sub mostrarDatosHabit()
         If dataTable.Rows.Count > 0 Then
             Me.Tag = dataTable.Rows(posicion).ItemArray(0).ToString() 'ID de tipo de habitacion 
-            txtdescripcion.Text = dataTable.Rows(posicion).ItemArray(1).ToString()
-            txtcapacidad.Text = dataTable.Rows(posicion).ItemArray(2).ToString()
-            txtprecio.Text = dataTable.Rows(posicion).ItemArray(3).ToString()
+            txtcodigohabitacion.Text = dataTable.Rows(posicion).ItemArray(1).ToString()
+            cboEdificio.SelectedValue = dataTable.Rows(posicion).ItemArray(2).ToString()
+            cboTipo.SelectedValue = dataTable.Rows(posicion).ItemArray(3).ToString()
 
             lblRegistroTipoHab.Text = posicion + 1 & " de " & dataTable.Rows.Count
         Else
@@ -40,7 +45,7 @@
             'limpiarDatosCategoria()
         Else 'Guardar
             Dim msg = objConexion.mantenimientoDatosEdificio(New String() {
-                Me.Tag, txtcodedificio.Text, txtedificio.Text
+                Me.Tag, txtcapacidad.Text
             }, accion)
             If msg = "error" Then
                 MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Categorias",
@@ -67,7 +72,7 @@
     Private Sub btnAnteriorCategoria_Click(sender As Object, e As EventArgs) Handles btnAnteriorCategoria.Click
         If posicion > 0 Then
             posicion -= 1
-            mostrarDatosTipoHab()
+            mostrarDatosHabit()
         Else
             MessageBox.Show("Ya se encuentra en el primer registro", "Registro Habitacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
@@ -76,7 +81,7 @@
     Private Sub btnSiguienteCategoria_Click(sender As Object, e As EventArgs) Handles btnSiguienteCategoria.Click
         If posicion < dataTable.Rows.Count - 1 Then
             posicion += 1
-            mostrarDatosTipoHab()
+            mostrarDatosHabit()
         Else
             MessageBox.Show("Ya se encuentra en el ultimo registro", "Registro Habitacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
@@ -84,7 +89,7 @@
 
     Private Sub btnUltimoCategoria_Click(sender As Object, e As EventArgs) Handles btnUltimoCategoria.Click
         posicion = dataTable.Rows.Count - 1
-        mostrarDatosTipoHab()
+        mostrarDatosHabit()
     End Sub
 
     Private Sub btnAgregarTipHabitacion_Click(sender As Object, e As EventArgs) Handles btnAgregarTipHabitacion.Click
@@ -134,5 +139,9 @@
             End If
             obtenerDatosTipoHabitacion()
         End If
+    End Sub
+
+    Private Sub FormHabitaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

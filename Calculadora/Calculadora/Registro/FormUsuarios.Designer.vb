@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormUsuarios
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FormUsuarios
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.grbPosicion = New System.Windows.Forms.GroupBox()
         Me.lblPosicion = New System.Windows.Forms.Label()
@@ -50,12 +50,9 @@ Partial Class FormUsuarios
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtEmail = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtEdad = New System.Windows.Forms.NumericUpDown()
         Me.grbPosicion.SuspendLayout()
         Me.grbEdicion.SuspendLayout()
         Me.grbDatos.SuspendLayout()
-        CType(Me.txtEdad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'grbPosicion
@@ -65,7 +62,7 @@ Partial Class FormUsuarios
         Me.grbPosicion.Controls.Add(Me.btnSiguiente)
         Me.grbPosicion.Controls.Add(Me.btnAnterior)
         Me.grbPosicion.Controls.Add(Me.btnPrimero)
-        Me.grbPosicion.Location = New System.Drawing.Point(12, 323)
+        Me.grbPosicion.Location = New System.Drawing.Point(12, 287)
         Me.grbPosicion.Name = "grbPosicion"
         Me.grbPosicion.Size = New System.Drawing.Size(535, 64)
         Me.grbPosicion.TabIndex = 29
@@ -128,7 +125,7 @@ Partial Class FormUsuarios
         Me.grbEdicion.Controls.Add(Me.btnEliminar)
         Me.grbEdicion.Controls.Add(Me.btnModificar)
         Me.grbEdicion.Controls.Add(Me.btnNuevo)
-        Me.grbEdicion.Location = New System.Drawing.Point(12, 389)
+        Me.grbEdicion.Location = New System.Drawing.Point(12, 353)
         Me.grbEdicion.Name = "grbEdicion"
         Me.grbEdicion.Size = New System.Drawing.Size(535, 64)
         Me.grbEdicion.TabIndex = 28
@@ -177,8 +174,6 @@ Partial Class FormUsuarios
         '
         'grbDatos
         '
-        Me.grbDatos.Controls.Add(Me.txtEdad)
-        Me.grbDatos.Controls.Add(Me.Label1)
         Me.grbDatos.Controls.Add(Me.txtdescripcion)
         Me.grbDatos.Controls.Add(Me.txtUsuario)
         Me.grbDatos.Controls.Add(Me.Label9)
@@ -197,10 +192,10 @@ Partial Class FormUsuarios
         Me.grbDatos.Controls.Add(Me.txtEmail)
         Me.grbDatos.Location = New System.Drawing.Point(12, 12)
         Me.grbDatos.Name = "grbDatos"
-        Me.grbDatos.Size = New System.Drawing.Size(535, 305)
+        Me.grbDatos.Size = New System.Drawing.Size(535, 269)
         Me.grbDatos.TabIndex = 27
         Me.grbDatos.TabStop = False
-        Me.grbDatos.Text = "DatosUusario"
+        Me.grbDatos.Text = "Datos usuario"
         '
         'txtdescripcion
         '
@@ -208,7 +203,7 @@ Partial Class FormUsuarios
         Me.txtdescripcion.Location = New System.Drawing.Point(291, 186)
         Me.txtdescripcion.Multiline = True
         Me.txtdescripcion.Name = "txtdescripcion"
-        Me.txtdescripcion.Size = New System.Drawing.Size(212, 90)
+        Me.txtdescripcion.Size = New System.Drawing.Size(212, 59)
         Me.txtdescripcion.TabIndex = 23
         '
         'txtUsuario
@@ -254,7 +249,7 @@ Partial Class FormUsuarios
         '
         'txtDUI
         '
-        Me.txtDUI.Location = New System.Drawing.Point(20, 150)
+        Me.txtDUI.Location = New System.Drawing.Point(20, 96)
         Me.txtDUI.Name = "txtDUI"
         Me.txtDUI.Size = New System.Drawing.Size(212, 20)
         Me.txtDUI.TabIndex = 6
@@ -280,7 +275,7 @@ Partial Class FormUsuarios
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(17, 132)
+        Me.Label3.Location = New System.Drawing.Point(17, 78)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(54, 16)
         Me.Label3.TabIndex = 7
@@ -290,7 +285,7 @@ Partial Class FormUsuarios
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(17, 185)
+        Me.Label7.Location = New System.Drawing.Point(17, 131)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(70, 16)
         Me.Label7.TabIndex = 15
@@ -298,7 +293,7 @@ Partial Class FormUsuarios
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(20, 204)
+        Me.txtTelefono.Location = New System.Drawing.Point(20, 150)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(212, 20)
         Me.txtTelefono.TabIndex = 14
@@ -316,7 +311,7 @@ Partial Class FormUsuarios
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(17, 238)
+        Me.Label6.Location = New System.Drawing.Point(17, 184)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(47, 16)
         Me.Label6.TabIndex = 13
@@ -334,33 +329,16 @@ Partial Class FormUsuarios
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(20, 256)
+        Me.txtEmail.Location = New System.Drawing.Point(20, 202)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(212, 20)
         Me.txtEmail.TabIndex = 12
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(17, 78)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(45, 16)
-        Me.Label1.TabIndex = 27
-        Me.Label1.Text = "Edad"
-        '
-        'txtEdad
-        '
-        Me.txtEdad.Location = New System.Drawing.Point(20, 97)
-        Me.txtEdad.Name = "txtEdad"
-        Me.txtEdad.Size = New System.Drawing.Size(212, 20)
-        Me.txtEdad.TabIndex = 28
         '
         'FormUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(560, 475)
+        Me.ClientSize = New System.Drawing.Size(560, 424)
         Me.Controls.Add(Me.grbPosicion)
         Me.Controls.Add(Me.grbEdicion)
         Me.Controls.Add(Me.grbDatos)
@@ -374,7 +352,6 @@ Partial Class FormUsuarios
         Me.grbEdicion.ResumeLayout(False)
         Me.grbDatos.ResumeLayout(False)
         Me.grbDatos.PerformLayout()
-        CType(Me.txtEdad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -407,6 +384,4 @@ Partial Class FormUsuarios
     Friend WithEvents Label5 As Label
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents txtdescripcion As TextBox
-    Friend WithEvents txtEdad As NumericUpDown
-    Friend WithEvents Label1 As Label
 End Class

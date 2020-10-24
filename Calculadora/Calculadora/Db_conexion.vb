@@ -41,12 +41,33 @@ Public Class db_conexion
         miCommand.Parameters.Add("@TelefonoCliente", SqlDbType.VarChar).Value = ""
         miCommand.Parameters.Add("@EmailCliente", SqlDbType.VarChar).Value = ""
     End Sub
+    Public Function obtenerDatosCombos()
+        ds.Clear()
 
+        miCommand.Connection = miConexion
+
+        miCommand.CommandText = "select idTipo from TipoHabit"
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "TipoHabit")
+
+        miCommand.CommandText = "select Edificio from Edificio"
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "Edificio")
+        Return ds
+    End Function
     'traedatos de la tabla usuarios y relacionada
     Public Function obtenerDatosUsuarios()
         ds.Clear()
 
         miCommand.Connection = miConexion
+
+        miCommand.CommandText = "select idTipo from TipoHabit"
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "TipoHabit")
+
+        miCommand.CommandText = "select Edificio from Edificio"
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "Edificio")
 
         miCommand.CommandText = "
             select Usuarios.idUsuario, Usuarios.Acceso, Datos.Nombre, Datos.Documento, Datos.Telefono, Datos.Email, Usuarios.Usuario, Usuarios.Password
@@ -56,26 +77,21 @@ Public Class db_conexion
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Usuarios")
 
-        miCommand.CommandText = "
-            select Habitaciones.Codigo, Habitaciones.Edificio, Habitaciones.TipoHabit 
-            from Habitaciones
-                inner join TipoHabit on(TipoHabit.idTipoHabit=Habitaciones.TipoHabit)
-        "
+        'miCommand.CommandText = "
+        '    select Habitaciones.Codigo, Habitaciones.Edificio, Habitaciones.TipoHabit 
+        '    from Habitaciones
+        '        inner join TipoHabit on(TipoHabit.idTipoHabit=Habitaciones.TipoHabit)
+        '"
+        'miAdapter.SelectCommand = miCommand
+        'miAdapter.Fill(ds, "Habitaciones")
+
+        miCommand.CommandText = "select * from Habitaciones"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Habitaciones")
-
-
-        miCommand.CommandText = "select * from TipoHabitacion"
-        miAdapter.SelectCommand = miCommand
-        miAdapter.Fill(ds, "TipoHabitacion")
 
         miCommand.CommandText = "select Acceso from NivelAcceso"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "NivelAcceso")
-
-        miCommand.CommandText = "SELECT * FROM Clientes"
-        miAdapter.SelectCommand = miCommand
-        miAdapter.Fill(ds, "Clientes")
 
         miCommand.CommandText = "SELECT * FROM Clientes"
         miAdapter.SelectCommand = miCommand
