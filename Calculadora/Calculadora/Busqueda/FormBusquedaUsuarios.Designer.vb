@@ -128,15 +128,14 @@ Partial Class FormBusquedaUsuarios
         Me.Nombre.HeaderText = "NOMBRE"
         Me.Nombre.Name = "Nombre"
         Me.Nombre.ReadOnly = True
-        Me.Nombre.Width = 220
+        Me.Nombre.Width = 210
         '
         'DUI
         '
-        Me.DUI.DataPropertyName = "DUI"
-        Me.DUI.HeaderText = "DUI"
+        Me.DUI.DataPropertyName = "Documento"
+        Me.DUI.HeaderText = "Documento"
         Me.DUI.Name = "DUI"
         Me.DUI.ReadOnly = True
-        Me.DUI.Width = 125
         '
         'Telefono
         '
@@ -144,7 +143,7 @@ Partial Class FormBusquedaUsuarios
         Me.Telefono.HeaderText = "TELEFONO"
         Me.Telefono.Name = "Telefono"
         Me.Telefono.ReadOnly = True
-        Me.Telefono.Width = 140
+        Me.Telefono.Width = 125
         '
         'Email
         '

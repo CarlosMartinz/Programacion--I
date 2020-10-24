@@ -24,6 +24,7 @@ Public Class db_conexion
 
         'Tabla datos
         miCommand.Parameters.Add("@nombre", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@edad", SqlDbType.Int).Value = 0
         miCommand.Parameters.Add("@documento", SqlDbType.NChar).Value = ""
         miCommand.Parameters.Add("@telefono", SqlDbType.NChar).Value = ""
         miCommand.Parameters.Add("@email", SqlDbType.VarChar).Value = ""
@@ -55,6 +56,14 @@ Public Class db_conexion
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Usuarios")
 
+        miCommand.CommandText = "
+            select Habitaciones.Codigo, Habitaciones.Edificio, Habitaciones.TipoHabit 
+            from Habitaciones
+                inner join TipoHabit on(TipoHabit.idTipoHabit=Habitaciones.TipoHabit)
+        "
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "Habitaciones")
+
 
         miCommand.CommandText = "select * from TipoHabitacion"
         miAdapter.SelectCommand = miCommand
@@ -74,14 +83,14 @@ Public Class db_conexion
 
         Return ds
     End Function
-    'CRUD
+    'CRUD usuario extension de la relacion con Datos
     Public Function mantenimientoDatosUsuarios(ByVal datos As String(), ByVal accion As String)
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
                 sql = "INSERT INTO Usuarios (Acceso,Usuario,Password) VALUES (@acceso,@usuario,@pass)"
             Case "actualizar"
-                sql = "UPDATE Usuarios SET Acceso=@acceso, Usuario=@usuario, Password=@pass WHERE idUsuario=@idU"
+                sql = "UPDATE Usuarios SET Acceso=@acceso,Usuario=@usuario,Password=@pass WHERE idUsuario=@idU"
             Case "eliminar"
                 sql = "DELETE FROM Usuarios WHERE idUsuario=@idU"
         End Select
@@ -95,11 +104,11 @@ Public Class db_conexion
             miCommand.Parameters("@usuario").Value = datos(6)
             miCommand.Parameters("@pass").Value = datos(7)
         Else 'Accion es eliminar
-            mantenimientoDatosDatos(datos, accion)
+            mantenimientoDatos(datos, accion)
         End If
         If (executeSql(sql) > 0) Then
             If accion IsNot "eliminar" Then
-                mantenimientoDatosDatos(datos, accion)
+                mantenimientoDatos(datos, accion)
             End If
             msg = "exito"
         Else
@@ -107,7 +116,8 @@ Public Class db_conexion
         End If
         Return msg
     End Function
-    Public Function mantenimientoDatosDatos(ByVal datos As String(), ByVal accion As String)
+    'CRUD datos relacion con usuarios y clientes
+    Public Function mantenimientoDatos(ByVal datos As String(), ByVal accion As String)
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
@@ -117,7 +127,7 @@ Public Class db_conexion
 
                 sql = "INSERT INTO Datos (idPersona,Nombre,Documento,Telefono,Email) VALUES(@idU,@nombre,@documento,@telefono,@email)"
             Case "modificar"
-                sql = "UPDATE Datos SET Nombre=@nombre,Documento=@docmento WHERE idPersona=@idU"
+                sql = "UPDATE Datos SET Nombre=@nombre,Documento=@documento,Telefono=@telefono,Email=@email WHERE idPersona=@idU"
             Case "eliminar"
                 sql = "DELETE FROM Datos WHERE idPersona=@idU"
         End Select
@@ -190,15 +200,6 @@ Public Class db_conexion
             Case "eliminar"
                 sql = "DELETE FROM Clientes WHERE idCliente='" + datos(0) + "'"
         End Select
-        'miCommand.Parameters("@idCliente").Value = datos(0)
-        'If accion IsNot "eliminar" Then
-        '    miCommand.Parameters("@nombrecliente").Value = datos(1)
-        '    miCommand.Parameters("@duicliente").Value = datos(2)
-        '    miCommand.Parameters("@telefonocliente").Value = datos(3)
-        '    miCommand.Parameters("@emailcliente").Value = datos(4)
-        'Else 'accion es eliminar
-        '    ' mantenimientodatoscontacto(datos, accion)
-        'End If
         If (executeSql(sql) > 0) Then
             If accion IsNot "eliminar" Then
                 ' mantenimientoDatosContacto(datos, accion)
