@@ -41,26 +41,13 @@ Public Class db_conexion
         miCommand.Parameters.Add("@TelefonoCliente", SqlDbType.VarChar).Value = ""
         miCommand.Parameters.Add("@EmailCliente", SqlDbType.VarChar).Value = ""
     End Sub
-    Public Function obtenerDatosCombos()
-        ds.Clear()
-
-        miCommand.Connection = miConexion
-
-        miCommand.CommandText = "select idTipo from TipoHabit"
-        miAdapter.SelectCommand = miCommand
-        miAdapter.Fill(ds, "TipoHabit")
-
-        miCommand.CommandText = "select Edificio from Edificio"
-        miAdapter.SelectCommand = miCommand
-        miAdapter.Fill(ds, "Edificio")
-        Return ds
-    End Function
     'traedatos de la tabla usuarios y relacionada
     Public Function obtenerDatosUsuarios()
         ds.Clear()
 
         miCommand.Connection = miConexion
 
+        'combobox's
         miCommand.CommandText = "select idTipo from TipoHabit"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "TipoHabit")
@@ -69,6 +56,11 @@ Public Class db_conexion
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Edificio")
 
+        miCommand.CommandText = "select Acceso from NivelAcceso"
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "NivelAcceso")
+
+        'mostrar datos de tablas relacionadas
         miCommand.CommandText = "
             select Usuarios.idUsuario, Usuarios.Acceso, Datos.Nombre, Datos.Documento, Datos.Telefono, Datos.Email, Usuarios.Usuario, Usuarios.Password
             from Usuarios
@@ -77,21 +69,20 @@ Public Class db_conexion
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Usuarios")
 
-        'miCommand.CommandText = "
-        '    select Habitaciones.Codigo, Habitaciones.Edificio, Habitaciones.TipoHabit 
-        '    from Habitaciones
-        '        inner join TipoHabit on(TipoHabit.idTipoHabit=Habitaciones.TipoHabit)
-        '"
-        'miAdapter.SelectCommand = miCommand
-        'miAdapter.Fill(ds, "Habitaciones")
+        miCommand.CommandText = "
+            select Habitaciones.idHabitaciones, Edificio.Edificio, TipoHabit.idTipo,
+            from Habitaciones
+                inner join TipoHabit on(Habitaciones.idHabitaciones=TipoHabit.idTipo)
+                inner join Edificio on (Habitaciones.Edificio=Edificio.Edificio)
+        "
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "Habitaciones")
 
+        'Para CRUD
         miCommand.CommandText = "select * from Habitaciones"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Habitaciones")
 
-        miCommand.CommandText = "select Acceso from NivelAcceso"
-        miAdapter.SelectCommand = miCommand
-        miAdapter.Fill(ds, "NivelAcceso")
 
         miCommand.CommandText = "SELECT * FROM Clientes"
         miAdapter.SelectCommand = miCommand
@@ -156,28 +147,19 @@ Public Class db_conexion
         End If
         executeSql(sql)
     End Function
-
-
-
-
-
-
-
-
-
+    'CRUD edificio relacionada con habitaciones
     Public Function mantenimientoDatosEdificio(ByVal datos As String(), ByVal accion As String)
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
-                sql = "INSERT INTO Usuarios (codigo,edificio) VALUES (@codEdi,@edificio,@telefono)"
+                sql = "INSERT INTO Usuarios (Edificio) VALUES (@edificio)"
             Case "actualizar"
-                sql = "UPDATE Usuarios SET Nombre=@nombre,DUI=@dui,Telefono=@telefono,Email=@email,Acceso=@acceso,Usuario=@usuario,Password=@contra WHERE idUsuario=@idU"
+                sql = "UPDATE Usuarios SET Edificio WHERE Edificio=@edificio"
             Case "eliminar"
                 sql = "DELETE FROM Usuarios WHERE idUsuario=@idU"
         End Select
         If accion IsNot "eliminar" Then
-            miCommand.Parameters("@codEdi").Value = datos(0)
-            miCommand.Parameters("@edificio").Value = datos(1)
+            miCommand.Parameters("@edificio").Value = datos(0)
         End If
         If (executeSql(sql) > 0) Then
             msg = "exito"

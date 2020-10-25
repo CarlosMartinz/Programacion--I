@@ -25,6 +25,8 @@ Partial Class FormHabitaciones
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Habitaciones = New System.Windows.Forms.TabPage()
         Me.brHabitacionNueva = New System.Windows.Forms.GroupBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.btnMostrarTipo = New System.Windows.Forms.Button()
         Me.btnMostrarEdificio = New System.Windows.Forms.Button()
         Me.cboTipo = New System.Windows.Forms.ComboBox()
@@ -80,8 +82,6 @@ Partial Class FormHabitaciones
         Me.btnEliminarEdit = New System.Windows.Forms.Button()
         Me.btnModificarEdit = New System.Windows.Forms.Button()
         Me.btnAgregarEdificios = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.Habitaciones.SuspendLayout()
         Me.brHabitacionNueva.SuspendLayout()
@@ -142,6 +142,26 @@ Partial Class FormHabitaciones
         Me.brHabitacionNueva.TabIndex = 31
         Me.brHabitacionNueva.TabStop = False
         Me.brHabitacionNueva.Text = "Habitacion nueva"
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(471, 129)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 28
+        Me.Button2.Text = "Detalles"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(471, 86)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 27
+        Me.Button1.Text = "Detalles"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'btnMostrarTipo
         '
@@ -402,9 +422,10 @@ Partial Class FormHabitaciones
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(84, 23)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(84, 21)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(95, 13)
+        Me.Label2.Size = New System.Drawing.Size(126, 15)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Tipo de habitacion"
         '
@@ -418,18 +439,20 @@ Partial Class FormHabitaciones
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(84, 78)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(84, 76)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(58, 13)
+        Me.Label3.Size = New System.Drawing.Size(75, 15)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Capacidad"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(84, 131)
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(84, 129)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(37, 13)
+        Me.Label7.Size = New System.Drawing.Size(48, 15)
         Me.Label7.TabIndex = 15
         Me.Label7.Text = "Precio"
         '
@@ -739,31 +762,11 @@ Partial Class FormHabitaciones
         Me.btnAgregarEdificios.Text = "Nuevo"
         Me.btnAgregarEdificios.UseVisualStyleBackColor = True
         '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(471, 86)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 27
-        Me.Button1.Text = "Detalles"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(471, 129)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 28
-        Me.Button2.Text = "Detalles"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'FormHabitaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(593, 300)
+        Me.ClientSize = New System.Drawing.Size(593, 307)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "FormHabitaciones"
         Me.Text = "FormHabitaciones"

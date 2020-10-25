@@ -3,18 +3,23 @@
     Dim dataTable As New DataTable
     Dim posicion As Integer
     Dim accion As String = "nuevo"
+    Private Sub FormHabitaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        obtenerDatosTipoHabitacion()
+    End Sub
     Sub obtenerDatosTipoHabitacion()
         dataTable = objConexion.obtenerDatosUsuarios().Tables("Habitaciones")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idHabitaciones")}
-        mostrarDatosHabit()
 
         cboTipo.DataSource = objConexion.obtenerDatosUsuarios().Tables("TipoHabit").DefaultView()
         cboTipo.DisplayMember = "idTipo"
         cboTipo.ValueMember = "TipoHabit.idTipo"
 
-        cboTipo.DataSource = objConexion.obtenerDatosUsuarios().Tables("Edificio").DefaultView()
-        cboTipo.DisplayMember = "Edificio"
-        cboTipo.ValueMember = "Edificio"
+        cboEdificio.DataSource = objConexion.obtenerDatosUsuarios().Tables("Edificio").DefaultView()
+        cboEdificio.DisplayMember = "Edificio"
+        cboEdificio.ValueMember = "Edificio.Edificio"
+
+        mostrarDatosHabit()
+        mostrarDatosEdificios()
     End Sub
     Sub mostrarDatosHabit()
         If dataTable.Rows.Count > 0 Then
@@ -25,12 +30,23 @@
 
             lblRegistroTipoHab.Text = posicion + 1 & " de " & dataTable.Rows.Count
         Else
-            limpiarDatosHabitaciones()
+            limpiarDatos()
             MessageBox.Show("No hay registros que mostrar", "Registro de Productos", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
-    Private Sub limpiarDatosHabitaciones()
-        txtcapacidad.Text = ""
+    Sub mostrarDatosEdificios()
+        If dataTable.Rows.Count > 0 Then
+            Me.Tag = dataTable.Rows(posicion).ItemArray(0).ToString() 'ID de tipo de habitacion 
+            txtedificio.Text = dataTable.Rows(posicion).ItemArray(4).ToString()
+
+            lblRegistroTipoHab.Text = posicion + 1 & " de " & dataTable.Rows.Count
+        Else
+            limpiarDatos()
+            MessageBox.Show("No hay registros que mostrar", "Registro de Productos", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+    Private Sub limpiarDatos()
+        txtedificio.Text = ""
         txtdescripcion.Text = ""
         txtprecio.Text = ""
     End Sub
@@ -99,7 +115,7 @@
             accion = "nuevo"
 
             ControlesTipoHab(False)
-            limpiarDatosHabitaciones()
+            limpiarDatos()
         Else 'Guardar
             Dim msg = objConexion.mantenimientoDatosTipoHabitacion(New String() {
                 Me.Tag, txtdescripcion.Text, txtcapacidad.Text, txtprecio.Text}, accion)
@@ -141,7 +157,9 @@
         End If
     End Sub
 
-    Private Sub FormHabitaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
 
     End Sub
 End Class
