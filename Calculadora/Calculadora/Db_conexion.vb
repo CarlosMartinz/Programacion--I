@@ -41,6 +41,17 @@ Public Class db_conexion
         miCommand.Parameters.Add("@TelefonoCliente", SqlDbType.VarChar).Value = ""
         miCommand.Parameters.Add("@EmailCliente", SqlDbType.VarChar).Value = ""
     End Sub
+    Public Function obtenerDatosHabit()
+        miCommand.CommandText = "
+            select Habitaciones.idHabitaciones, Edificio.Edificio, TipoHabit.idTipo,
+            from Habitaciones
+                inner join TipoHabit on(Habitaciones.idHabitaciones=TipoHabit.idTipo)
+                inner join Edificio on (Habitaciones.Edificio=Edificio.Edificio)
+        "
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "Habitaciones")
+    End Function
+
     'traedatos de la tabla usuarios y relacionada
     Public Function obtenerDatosUsuarios()
         ds.Clear()
@@ -68,15 +79,6 @@ Public Class db_conexion
         "
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Usuarios")
-
-        miCommand.CommandText = "
-            select Habitaciones.idHabitaciones, Edificio.Edificio, TipoHabit.idTipo,
-            from Habitaciones
-                inner join TipoHabit on(Habitaciones.idHabitaciones=TipoHabit.idTipo)
-                inner join Edificio on (Habitaciones.Edificio=Edificio.Edificio)
-        "
-        miAdapter.SelectCommand = miCommand
-        miAdapter.Fill(ds, "Habitaciones")
 
         'Para CRUD
         miCommand.CommandText = "select * from Habitaciones"
