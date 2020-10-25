@@ -49,7 +49,7 @@ Partial Class FormHabitaciones
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.Tipo = New System.Windows.Forms.TabPage()
         Me.grbDatosTipoHab = New System.Windows.Forms.GroupBox()
-        Me.txtcapacidad = New System.Windows.Forms.NumericUpDown()
+        Me.txtCapacidad = New System.Windows.Forms.TextBox()
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
@@ -89,7 +89,6 @@ Partial Class FormHabitaciones
         Me.GroupBox3.SuspendLayout()
         Me.Tipo.SuspendLayout()
         Me.grbDatosTipoHab.SuspendLayout()
-        CType(Me.txtcapacidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grbNavegacionTipoHab.SuspendLayout()
         Me.grbEdicion.SuspendLayout()
         Me.piso.SuspendLayout()
@@ -390,7 +389,7 @@ Partial Class FormHabitaciones
         '
         'grbDatosTipoHab
         '
-        Me.grbDatosTipoHab.Controls.Add(Me.txtcapacidad)
+        Me.grbDatosTipoHab.Controls.Add(Me.txtCapacidad)
         Me.grbDatosTipoHab.Controls.Add(Me.txtdescripcion)
         Me.grbDatosTipoHab.Controls.Add(Me.Label2)
         Me.grbDatosTipoHab.Controls.Add(Me.TextBox6)
@@ -404,13 +403,12 @@ Partial Class FormHabitaciones
         Me.grbDatosTipoHab.TabStop = False
         Me.grbDatosTipoHab.Text = "Datos tipos de habitaciones"
         '
-        'txtcapacidad
+        'txtCapacidad
         '
-        Me.txtcapacidad.Location = New System.Drawing.Point(87, 94)
-        Me.txtcapacidad.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
-        Me.txtcapacidad.Name = "txtcapacidad"
-        Me.txtcapacidad.Size = New System.Drawing.Size(410, 20)
-        Me.txtcapacidad.TabIndex = 19
+        Me.txtCapacidad.Location = New System.Drawing.Point(87, 94)
+        Me.txtCapacidad.Name = "txtCapacidad"
+        Me.txtCapacidad.Size = New System.Drawing.Size(410, 20)
+        Me.txtCapacidad.TabIndex = 19
         '
         'txtdescripcion
         '
@@ -780,7 +778,6 @@ Partial Class FormHabitaciones
         Me.Tipo.ResumeLayout(False)
         Me.grbDatosTipoHab.ResumeLayout(False)
         Me.grbDatosTipoHab.PerformLayout()
-        CType(Me.txtcapacidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grbNavegacionTipoHab.ResumeLayout(False)
         Me.grbNavegacionTipoHab.PerformLayout()
         Me.grbEdicion.ResumeLayout(False)
@@ -845,7 +842,6 @@ Partial Class FormHabitaciones
     Friend WithEvents btnEliminarEdit As Button
     Friend WithEvents btnModificarEdit As Button
     Friend WithEvents btnAgregarEdificios As Button
-    Friend WithEvents txtcapacidad As NumericUpDown
     Friend WithEvents cboTipo As ComboBox
     Friend WithEvents cboEdificio As ComboBox
     Friend WithEvents Label5 As Label
@@ -854,4 +850,5 @@ Partial Class FormHabitaciones
     Friend WithEvents btnMostrarEdificio As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents txtCapacidad As TextBox
 End Class
