@@ -21,39 +21,23 @@ Public Class db_conexion
         'Tabla Usuarios
         miCommand.Parameters.Add("@idU", SqlDbType.Int).Value = 0
         miCommand.Parameters.Add("@acceso", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@usuario", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@pass", SqlDbType.VarChar).Value = ""
 
-        'Tabla datos
+        'Tabla datos relacion Usuarios
         miCommand.Parameters.Add("@nombre", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@edad", SqlDbType.Int).Value = 0
         miCommand.Parameters.Add("@documento", SqlDbType.NChar).Value = ""
         miCommand.Parameters.Add("@telefono", SqlDbType.NChar).Value = ""
         miCommand.Parameters.Add("@email", SqlDbType.VarChar).Value = ""
 
-        'Tabla de tipo de login
-        miCommand.Parameters.Add("@idL", SqlDbType.Int).Value = 0
-        miCommand.Parameters.Add("@usuario", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@pass", SqlDbType.VarChar).Value = ""
-
-        'Tabla Cliente
-        miCommand.Parameters.Add("@idCliente", SqlDbType.Int).Value = 0
-        miCommand.Parameters.Add("@NombreCliente", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@DuiCliente", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@TelefonoCliente", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@EmailCliente", SqlDbType.VarChar).Value = ""
+        'Tabla Clientes
+        miCommand.Parameters.Add("@idC", SqlDbType.Int).Value = 0
+        miCommand.Parameters.Add("@code", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@nombreC", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@documentoC", SqlDbType.NChar).Value = ""
+        miCommand.Parameters.Add("@telefonoC", SqlDbType.NChar).Value = ""
+        miCommand.Parameters.Add("@emailC", SqlDbType.VarChar).Value = ""
     End Sub
-    Public Function obtenerDatosHabit()
-        ds.Clear()
-        miCommand.Connection = miConexion
-        miCommand.CommandText = "
-            select Habitaciones.idHabitaciones, Edificio.Edificio, TipoHabit.idTipo, TipoHabit.Capacidad, TipoHabit.Precio
-            from Habitaciones
-                inner join TipoHabit on(Habitaciones.idHabitaciones=TipoHabit.idTipo)
-                inner join Edificio on (Habitaciones.Edificio=Edificio.Edificio)
-        "
-        miAdapter.SelectCommand = miCommand
-        miAdapter.Fill(ds, "Habitaciones")
-    End Function
-
     'traedatos de la tabla usuarios y relacionada
     Public Function obtenerDatosUsuarios()
         ds.Clear()
@@ -128,7 +112,7 @@ Public Class db_conexion
         End If
         Return msg
     End Function
-    'CRUD datos relacion con usuarios y clientes
+    'CRUD datos relacion con usuarios 
     Public Function mantenimientoDatos(ByVal datos As String(), ByVal accion As String)
         Dim sql, msg As String
         Select Case accion
@@ -152,67 +136,77 @@ Public Class db_conexion
         End If
         executeSql(sql)
     End Function
-    'CRUD edificio relacionada con habitaciones
-    Public Function mantenimientoDatosEdificio(ByVal datos As String(), ByVal accion As String)
+    'CRUD Clientes extension de la relacion con Datos
+    Public Function mantenimientoDatosClientes(ByVal datos As String(), ByVal accion As String)
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
-                sql = "INSERT INTO Usuarios (Edificio) VALUES (@edificio)"
+                sql = "INSERT INTO Clientes (Codigo,Nombre,Documento,Telefono,Email) VALUES (@code,@nombreC,@documentoC,@telefonoC,@emailC)"
             Case "actualizar"
-                sql = "UPDATE Usuarios SET Edificio WHERE Edificio=@edificio"
+                sql = "UPDATE Clientes SET Codigo=@code WHERE idCliente=@idC"
             Case "eliminar"
-                sql = "DELETE FROM Usuarios WHERE idUsuario=@idU"
+                sql = "DELETE FROM Clientes WHERE idCliente=@idC"
         End Select
+        miCommand.Parameters("@idC").Value = datos(0)
         If accion IsNot "eliminar" Then
-            miCommand.Parameters("@edificio").Value = datos(0)
+            miCommand.Parameters("@code").Value = datos(1)
+            miCommand.Parameters("@nombreC").Value = datos(2)
+            miCommand.Parameters("@documentoC").Value = datos(3)
+            miCommand.Parameters("@telefonoC").Value = datos(4)
+            miCommand.Parameters("@emailC").Value = datos(5)
+        Else 'Accion es eliminar
+            'mantenimientoDatos2(datos, accion)
         End If
         If (executeSql(sql) > 0) Then
-            msg = "exito"
-        Else
-            msg = "error"
-        End If
-
-        Return msg
-    End Function
-    Public Function mantenimientoDatosTipoHabitacion(ByVal datos As String(), ByVal accion As String)
-        Dim sql, msg As String
-        Select Case accion
-            Case "nuevo"
-                sql = "INSERT INTO TipoHabit (idTipo,Capacidad,Precio) VALUES ('" + datos(0) + "','" + datos(1) + "','" + datos(2) + "')"
-            Case "actualizar"
-                sql = "UPDATE TipoHabit SET idTipo='" + datos(0) + "',Capacidad='" + datos(1) + "',Precio='" + datos(2) + "' WHERE idTipo='" + datos(0) + "'"
-            Case "eliminar"
-                sql = "DELETE FROM TipoHabi WHERE idTipo='" + datos(0) + "'"
-        End Select
-        If (executeSql(sql) > 0) Then
-            msg = "exito"
-        Else
-            msg = "error"
-        End If
-
-        Return msg
-    End Function
-
-    Public Function mantenimientoDatosCliente(ByVal datos As String(), ByVal accion As String)
-        Dim sql, msg As String
-        Select Case accion
-            Case "nuevo"
-                sql = "INSERT INTO Clientes (Nombre,DUI,Telefono,Email) VALUES ('" + datos(1) + "','" + datos(2) + "','" + datos(3) + "','" + datos(4) + "')"
-            Case "actualizar"
-                sql = "UPDATE Clientes SET Nombre='" + datos(1) + "',DUI='" + datos(2) + "',Telefono='" + datos(3) + "',Email='" + datos(4) + "' WHERE idCliente='" + datos(0) + "'"
-            Case "eliminar"
-                sql = "DELETE FROM Clientes WHERE idCliente='" + datos(0) + "'"
-        End Select
-        If (executeSql(sql) > 0) Then
-            If accion IsNot "eliminar" Then
-                ' mantenimientoDatosContacto(datos, accion)
-            End If
+            'If accion IsNot "eliminar" Then
+            '    mantenimientoDatos2(datos, accion)
+            'End If
             msg = "exito"
         Else
             msg = "error"
         End If
         Return msg
     End Function
+    ''CRUD edificio relacionada con habitaciones
+    'Public Function mantenimientoDatosEdificio(ByVal datos As String(), ByVal accion As String)
+    '    Dim sql, msg As String
+    '    Select Case accion
+    '        Case "nuevo"
+    '            sql = "INSERT INTO Usuarios (Edificio) VALUES (@edificio)"
+    '        Case "actualizar"
+    '            sql = "UPDATE Usuarios SET Edificio WHERE Edificio=@edificio"
+    '        Case "eliminar"
+    '            sql = "DELETE FROM Usuarios WHERE idUsuario=@idU"
+    '    End Select
+    '    If accion IsNot "eliminar" Then
+    '        miCommand.Parameters("@edificio").Value = datos(0)
+    '    End If
+    '    If (executeSql(sql) > 0) Then
+    '        msg = "exito"
+    '    Else
+    '        msg = "error"
+    '    End If
+
+    '    Return msg
+    'End Function
+    'Public Function mantenimientoDatosTipoHabitacion(ByVal datos As String(), ByVal accion As String)
+    '    Dim sql, msg As String
+    '    Select Case accion
+    '        Case "nuevo"
+    '            sql = "INSERT INTO TipoHabit (idTipo,Capacidad,Precio) VALUES ('" + datos(0) + "','" + datos(1) + "','" + datos(2) + "')"
+    '        Case "actualizar"
+    '            sql = "UPDATE TipoHabit SET idTipo='" + datos(0) + "',Capacidad='" + datos(1) + "',Precio='" + datos(2) + "' WHERE idTipo='" + datos(0) + "'"
+    '        Case "eliminar"
+    '            sql = "DELETE FROM TipoHabi WHERE idTipo='" + datos(0) + "'"
+    '    End Select
+    '    If (executeSql(sql) > 0) Then
+    '        msg = "exito"
+    '    Else
+    '        msg = "error"
+    '    End If
+
+    '    Return msg
+    'End Function
     Private Function executeSql(ByVal sql As String)
         Try
             miCommand.Connection = miConexion

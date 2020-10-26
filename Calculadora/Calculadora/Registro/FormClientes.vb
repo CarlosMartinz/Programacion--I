@@ -17,10 +17,11 @@
     Sub MostrarDatosCliente()
         If dataTable.Rows.Count > 0 Then
             Me.Tag = dataTable.Rows(Posicion).ItemArray(0).ToString()
-            txtNombre.Text = dataTable.Rows(Posicion).ItemArray(1).ToString()
-            txtDUI.Text = dataTable.Rows(Posicion).ItemArray(2).ToString()
-            txtTelefono.Text = dataTable.Rows(Posicion).ItemArray(3).ToString()
-            txtEmail.Text = dataTable.Rows(Posicion).ItemArray(4).ToString()
+            txtcode.Text = dataTable.Rows(Posicion).ItemArray(1).ToString()
+            txtNombre.Text = dataTable.Rows(Posicion).ItemArray(2).ToString()
+            txtDUI.Text = dataTable.Rows(Posicion).ItemArray(3).ToString()
+            txtTelefono.Text = dataTable.Rows(Posicion).ItemArray(4).ToString()
+            txtEmail.Text = dataTable.Rows(Posicion).ItemArray(5).ToString()
 
             lblPosicion.Text = Posicion + 1 & " de " & dataTable.Rows.Count
         Else
@@ -80,7 +81,7 @@
             HabDescontroles(False)
             LimpiarDatosCliente()
         Else 'Guardar
-            Dim msg = objConexion.mantenimientoDatosCliente(New String() {Me.Tag, txtNombre.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text}, Accion)
+            Dim msg = objConexion.mantenimientoDatosClientes(New String() {Me.Tag, txtcode.Text, txtNombre.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text}, Accion)
             If msg = "error" Then
                 MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Usuario",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -111,7 +112,7 @@
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         If (MessageBox.Show("¿Estas seguro de borrar este registro?", "Registro Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
-            objConexion.mantenimientoDatosCliente(New String() {Me.Tag}, "eliminar")
+            objConexion.mantenimientoDatosClientes(New String() {Me.Tag}, "eliminar")
             If Posicion > 0 Then
                 Posicion -= 1
             End If

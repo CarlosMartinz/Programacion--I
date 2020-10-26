@@ -62,18 +62,18 @@
             'HabDescontroles(False)
             'limpiarDatosCategoria()
         Else 'Guardar
-            Dim msg = objConexion.mantenimientoDatosTipoHabitacion(New String() {
-                Me.Tag, txtCapacidad.Text, txtprecio.Text
-            }, accion)
-            If msg = "error" Then
-                MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Categorias",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Else
-                obtenerDatos()
-                'HabDescontroles(True)
-                btnAgregarTipHabitacion.Text = "Nuevo"
-                btnModificarTipHabitacion.Text = "Modificar"
-            End If
+            'Dim msg = objConexion.mantenimientoDatosTipoHabitacion(New String() {
+            '    Me.Tag, txtCapacidad.Text, txtprecio.Text
+            '}, accion)
+            'If msg = "error" Then
+            '    MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Categorias",
+            '                    MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'Else
+            '    obtenerDatos()
+            '    'HabDescontroles(True)
+            '    btnAgregarTipHabitacion.Text = "Nuevo"
+            '    btnModificarTipHabitacion.Text = "Modificar"
+            'End If
         End If
     End Sub
 
@@ -93,13 +93,13 @@
     End Sub
 
     Private Sub btnEliminarTipHabitacion_Click(sender As Object, e As EventArgs) Handles btnEliminarTipHabitacion.Click
-        If (MessageBox.Show("Esta seguro de borrar Este REgistro", "Registro de Habitacion",
-                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
-            objConexion.mantenimientoDatosTipoHabitacion(New String() {Me.Tag}, "eliminar")
-            If posicion > 0 Then
-                posicion -= 1 'Hemos borrado un registro
-            End If
-            obtenerDatos()
-        End If
+        'If (MessageBox.Show("Esta seguro de borrar Este REgistro", "Registro de Habitacion",
+        '                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+        '    objConexion.mantenimientoDatosTipoHabitacion(New String() {Me.Tag}, "eliminar")
+        '    If posicion > 0 Then
+        '        posicion -= 1 'Hemos borrado un registro
+        '    End If
+        '    obtenerDatos()
+        'End If
     End Sub
 End Class

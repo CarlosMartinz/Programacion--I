@@ -23,9 +23,8 @@ Partial Class FormClientes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.grbDatos = New System.Windows.Forms.GroupBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.txtcode = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.cboNacionalidad = New System.Windows.Forms.ComboBox()
         Me.txtTelefono = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtEmail = New System.Windows.Forms.TextBox()
@@ -52,9 +51,8 @@ Partial Class FormClientes
         '
         'grbDatos
         '
-        Me.grbDatos.Controls.Add(Me.TextBox5)
+        Me.grbDatos.Controls.Add(Me.txtcode)
         Me.grbDatos.Controls.Add(Me.Label5)
-        Me.grbDatos.Controls.Add(Me.cboNacionalidad)
         Me.grbDatos.Controls.Add(Me.txtTelefono)
         Me.grbDatos.Controls.Add(Me.Label3)
         Me.grbDatos.Controls.Add(Me.txtEmail)
@@ -65,35 +63,26 @@ Partial Class FormClientes
         Me.grbDatos.Controls.Add(Me.Label1)
         Me.grbDatos.Location = New System.Drawing.Point(12, 12)
         Me.grbDatos.Name = "grbDatos"
-        Me.grbDatos.Size = New System.Drawing.Size(506, 182)
+        Me.grbDatos.Size = New System.Drawing.Size(506, 158)
         Me.grbDatos.TabIndex = 0
         Me.grbDatos.TabStop = False
         Me.grbDatos.Text = "Datos del cliente"
         '
-        'TextBox5
+        'txtcode
         '
-        Me.TextBox5.Location = New System.Drawing.Point(268, 126)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(232, 20)
-        Me.TextBox5.TabIndex = 10
+        Me.txtcode.Location = New System.Drawing.Point(66, 37)
+        Me.txtcode.Name = "txtcode"
+        Me.txtcode.Size = New System.Drawing.Size(175, 20)
+        Me.txtcode.TabIndex = 9
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 128)
+        Me.Label5.Location = New System.Drawing.Point(6, 40)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(69, 13)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Nacionalidad"
-        '
-        'cboNacionalidad
-        '
-        Me.cboNacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboNacionalidad.FormattingEnabled = True
-        Me.cboNacionalidad.Location = New System.Drawing.Point(81, 125)
-        Me.cboNacionalidad.Name = "cboNacionalidad"
-        Me.cboNacionalidad.Size = New System.Drawing.Size(160, 21)
-        Me.cboNacionalidad.TabIndex = 8
+        Me.Label5.Size = New System.Drawing.Size(40, 13)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Codigo"
         '
         'txtTelefono
         '
@@ -129,7 +118,7 @@ Partial Class FormClientes
         '
         'txtDUI
         '
-        Me.txtDUI.Location = New System.Drawing.Point(66, 75)
+        Me.txtDUI.Location = New System.Drawing.Point(66, 122)
         Me.txtDUI.Name = "txtDUI"
         Me.txtDUI.Size = New System.Drawing.Size(175, 20)
         Me.txtDUI.TabIndex = 3
@@ -137,7 +126,7 @@ Partial Class FormClientes
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 78)
+        Me.Label2.Location = New System.Drawing.Point(5, 122)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(55, 13)
         Me.Label2.TabIndex = 2
@@ -145,7 +134,7 @@ Partial Class FormClientes
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(66, 34)
+        Me.txtNombre.Location = New System.Drawing.Point(66, 78)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(175, 20)
         Me.txtNombre.TabIndex = 1
@@ -153,7 +142,7 @@ Partial Class FormClientes
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 37)
+        Me.Label1.Location = New System.Drawing.Point(6, 81)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 0
@@ -165,7 +154,7 @@ Partial Class FormClientes
         Me.grbEdicion.Controls.Add(Me.btnEliminar)
         Me.grbEdicion.Controls.Add(Me.btnModificar)
         Me.grbEdicion.Controls.Add(Me.btnNuevo)
-        Me.grbEdicion.Location = New System.Drawing.Point(12, 270)
+        Me.grbEdicion.Location = New System.Drawing.Point(12, 253)
         Me.grbEdicion.Name = "grbEdicion"
         Me.grbEdicion.Size = New System.Drawing.Size(506, 64)
         Me.grbEdicion.TabIndex = 26
@@ -219,7 +208,7 @@ Partial Class FormClientes
         Me.grbPosicion.Controls.Add(Me.btnSiguiente)
         Me.grbPosicion.Controls.Add(Me.btnAnterior)
         Me.grbPosicion.Controls.Add(Me.btnPrimero)
-        Me.grbPosicion.Location = New System.Drawing.Point(12, 200)
+        Me.grbPosicion.Location = New System.Drawing.Point(12, 181)
         Me.grbPosicion.Name = "grbPosicion"
         Me.grbPosicion.Size = New System.Drawing.Size(506, 64)
         Me.grbPosicion.TabIndex = 27
@@ -280,7 +269,7 @@ Partial Class FormClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(530, 343)
+        Me.ClientSize = New System.Drawing.Size(530, 324)
         Me.Controls.Add(Me.grbPosicion)
         Me.Controls.Add(Me.grbEdicion)
         Me.Controls.Add(Me.grbDatos)
@@ -299,9 +288,6 @@ Partial Class FormClientes
     End Sub
 
     Friend WithEvents grbDatos As GroupBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents cboNacionalidad As ComboBox
     Friend WithEvents txtTelefono As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents txtEmail As TextBox
@@ -321,4 +307,6 @@ Partial Class FormClientes
     Friend WithEvents btnSiguiente As Button
     Friend WithEvents btnAnterior As Button
     Friend WithEvents btnPrimero As Button
+    Friend WithEvents txtcode As TextBox
+    Friend WithEvents Label5 As Label
 End Class
