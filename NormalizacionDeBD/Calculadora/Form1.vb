@@ -22,6 +22,10 @@
     Private Sub GuardarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GuardarToolStripMenuItem.Click
         panelresgis.Visible = False
     End Sub
+
+    Private Sub panelresgis_Paint(sender As Object, e As PaintEventArgs) Handles panelresgis.Paint
+
+    End Sub
 End Class
 
 
