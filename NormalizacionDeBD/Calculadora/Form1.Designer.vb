@@ -143,7 +143,7 @@ Partial Class Form1
         Me.panelresgis.Controls.Add(Me.txtid)
         Me.panelresgis.Controls.Add(Me.ID)
         Me.panelresgis.Controls.Add(Me.MenuStrip1)
-        Me.panelresgis.Location = New System.Drawing.Point(350, 106)
+        Me.panelresgis.Location = New System.Drawing.Point(373, 91)
         Me.panelresgis.Name = "panelresgis"
         Me.panelresgis.Size = New System.Drawing.Size(260, 192)
         Me.panelresgis.TabIndex = 3
