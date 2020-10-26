@@ -42,8 +42,10 @@ Public Class db_conexion
         miCommand.Parameters.Add("@EmailCliente", SqlDbType.VarChar).Value = ""
     End Sub
     Public Function obtenerDatosHabit()
+        ds.Clear()
+        miCommand.Connection = miConexion
         miCommand.CommandText = "
-            select Habitaciones.idHabitaciones, Edificio.Edificio, TipoHabit.idTipo,
+            select Habitaciones.idHabitaciones, Edificio.Edificio, TipoHabit.idTipo, TipoHabit.Capacidad, TipoHabit.Precio
             from Habitaciones
                 inner join TipoHabit on(Habitaciones.idHabitaciones=TipoHabit.idTipo)
                 inner join Edificio on (Habitaciones.Edificio=Edificio.Edificio)
@@ -59,7 +61,7 @@ Public Class db_conexion
         miCommand.Connection = miConexion
 
         'combobox's
-        miCommand.CommandText = "select idTipo from TipoHabit"
+        miCommand.CommandText = "select * from TipoHabit"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "TipoHabit")
 
@@ -89,6 +91,7 @@ Public Class db_conexion
         miCommand.CommandText = "SELECT * FROM Clientes"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Clientes")
+
 
         Return ds
     End Function
@@ -175,11 +178,11 @@ Public Class db_conexion
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
-                sql = "INSERT INTO TipoHabitacion (tipo,capacidad,precio) VALUES ('" + datos(1) + "','" + datos(2) + "','" + datos(3) + "')"
+                sql = "INSERT INTO TipoHabit (idTipo,Capacidad,Precio) VALUES ('" + datos(0) + "','" + datos(1) + "','" + datos(2) + "')"
             Case "actualizar"
-                sql = "UPDATE TipoHabitacion SET tipo='" + datos(1) + "',capacidad='" + datos(2) + "',precio='" + datos(3) + "' WHERE idTipoHabitacion='" + datos(0) + "'"
+                sql = "UPDATE TipoHabit SET idTipo='" + datos(0) + "',Capacidad='" + datos(1) + "',Precio='" + datos(2) + "' WHERE idTipo='" + datos(0) + "'"
             Case "eliminar"
-                sql = "DELETE FROM TipoHabitacion WHERE idTipoHabitacion=" + datos(0)
+                sql = "DELETE FROM TipoHabi WHERE idTipo='" + datos(0) + "'"
         End Select
         If (executeSql(sql) > 0) Then
             msg = "exito"
