@@ -45,26 +45,9 @@ Partial Class FormHabitaciones
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.txtedificio = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.btnBuscarEdit = New System.Windows.Forms.Button()
-        Me.btnEliminarEdit = New System.Windows.Forms.Button()
-        Me.btnModificarEdit = New System.Windows.Forms.Button()
-        Me.btnAgregarEdificios = New System.Windows.Forms.Button()
         Me.brHabitacionNueva.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
         Me.SuspendLayout()
         '
         'brHabitacionNueva
@@ -318,172 +301,12 @@ Partial Class FormHabitaciones
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
         '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.txtedificio)
-        Me.GroupBox4.Controls.Add(Me.Label11)
-        Me.GroupBox4.Location = New System.Drawing.Point(14, 257)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(552, 129)
-        Me.GroupBox4.TabIndex = 34
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Dato edificio"
-        '
-        'txtedificio
-        '
-        Me.txtedificio.Location = New System.Drawing.Point(73, 57)
-        Me.txtedificio.Name = "txtedificio"
-        Me.txtedificio.Size = New System.Drawing.Size(410, 20)
-        Me.txtedificio.TabIndex = 10
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(70, 39)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(133, 15)
-        Me.Label11.TabIndex = 11
-        Me.Label11.Text = "Nombre del edificio"
-        '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.Label9)
-        Me.GroupBox5.Controls.Add(Me.Button9)
-        Me.GroupBox5.Controls.Add(Me.Button10)
-        Me.GroupBox5.Controls.Add(Me.Button11)
-        Me.GroupBox5.Controls.Add(Me.Button12)
-        Me.GroupBox5.Location = New System.Drawing.Point(14, 396)
-        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(1)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(1)
-        Me.GroupBox5.Size = New System.Drawing.Size(237, 68)
-        Me.GroupBox5.TabIndex = 36
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Navegacion"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(86, 34)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(36, 13)
-        Me.Label9.TabIndex = 4
-        Me.Label9.Text = "x de n"
-        '
-        'Button9
-        '
-        Me.Button9.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button9.Location = New System.Drawing.Point(173, 19)
-        Me.Button9.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(41, 39)
-        Me.Button9.TabIndex = 3
-        Me.Button9.Text = ">|"
-        Me.Button9.UseVisualStyleBackColor = True
-        '
-        'Button10
-        '
-        Me.Button10.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button10.Location = New System.Drawing.Point(134, 19)
-        Me.Button10.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(41, 39)
-        Me.Button10.TabIndex = 2
-        Me.Button10.Text = ">"
-        Me.Button10.UseVisualStyleBackColor = True
-        '
-        'Button11
-        '
-        Me.Button11.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button11.Location = New System.Drawing.Point(42, 19)
-        Me.Button11.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(41, 39)
-        Me.Button11.TabIndex = 1
-        Me.Button11.Text = "<"
-        Me.Button11.UseVisualStyleBackColor = True
-        '
-        'Button12
-        '
-        Me.Button12.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button12.Location = New System.Drawing.Point(2, 19)
-        Me.Button12.Margin = New System.Windows.Forms.Padding(1)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(41, 39)
-        Me.Button12.TabIndex = 0
-        Me.Button12.Text = "|<"
-        Me.Button12.UseVisualStyleBackColor = True
-        '
-        'GroupBox6
-        '
-        Me.GroupBox6.Controls.Add(Me.btnBuscarEdit)
-        Me.GroupBox6.Controls.Add(Me.btnEliminarEdit)
-        Me.GroupBox6.Controls.Add(Me.btnModificarEdit)
-        Me.GroupBox6.Controls.Add(Me.btnAgregarEdificios)
-        Me.GroupBox6.Location = New System.Drawing.Point(253, 396)
-        Me.GroupBox6.Margin = New System.Windows.Forms.Padding(1)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Padding = New System.Windows.Forms.Padding(1)
-        Me.GroupBox6.Size = New System.Drawing.Size(315, 68)
-        Me.GroupBox6.TabIndex = 35
-        Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Edicion"
-        '
-        'btnBuscarEdit
-        '
-        Me.btnBuscarEdit.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscarEdit.Location = New System.Drawing.Point(237, 19)
-        Me.btnBuscarEdit.Margin = New System.Windows.Forms.Padding(1)
-        Me.btnBuscarEdit.Name = "btnBuscarEdit"
-        Me.btnBuscarEdit.Size = New System.Drawing.Size(75, 39)
-        Me.btnBuscarEdit.TabIndex = 8
-        Me.btnBuscarEdit.Text = "Buscar"
-        Me.btnBuscarEdit.UseVisualStyleBackColor = True
-        '
-        'btnEliminarEdit
-        '
-        Me.btnEliminarEdit.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminarEdit.Location = New System.Drawing.Point(158, 19)
-        Me.btnEliminarEdit.Margin = New System.Windows.Forms.Padding(1)
-        Me.btnEliminarEdit.Name = "btnEliminarEdit"
-        Me.btnEliminarEdit.Size = New System.Drawing.Size(80, 39)
-        Me.btnEliminarEdit.TabIndex = 7
-        Me.btnEliminarEdit.Text = "Eliminar"
-        Me.btnEliminarEdit.UseVisualStyleBackColor = True
-        '
-        'btnModificarEdit
-        '
-        Me.btnModificarEdit.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModificarEdit.Location = New System.Drawing.Point(69, 19)
-        Me.btnModificarEdit.Margin = New System.Windows.Forms.Padding(1)
-        Me.btnModificarEdit.Name = "btnModificarEdit"
-        Me.btnModificarEdit.Size = New System.Drawing.Size(90, 39)
-        Me.btnModificarEdit.TabIndex = 6
-        Me.btnModificarEdit.Text = "Modificar"
-        Me.btnModificarEdit.UseVisualStyleBackColor = True
-        '
-        'btnAgregarEdificios
-        '
-        Me.btnAgregarEdificios.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregarEdificios.Location = New System.Drawing.Point(2, 19)
-        Me.btnAgregarEdificios.Margin = New System.Windows.Forms.Padding(1)
-        Me.btnAgregarEdificios.Name = "btnAgregarEdificios"
-        Me.btnAgregarEdificios.Size = New System.Drawing.Size(68, 39)
-        Me.btnAgregarEdificios.TabIndex = 5
-        Me.btnAgregarEdificios.Text = "Nuevo"
-        Me.btnAgregarEdificios.UseVisualStyleBackColor = True
-        '
         'FormHabitaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(580, 482)
-        Me.Controls.Add(Me.GroupBox4)
-        Me.Controls.Add(Me.GroupBox5)
+        Me.ClientSize = New System.Drawing.Size(580, 264)
         Me.Controls.Add(Me.brHabitacionNueva)
-        Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox3)
         Me.Name = "FormHabitaciones"
@@ -493,11 +316,6 @@ Partial Class FormHabitaciones
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
-        Me.GroupBox6.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -516,20 +334,6 @@ Partial Class FormHabitaciones
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnNuevo As Button
-    Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents txtedificio As TextBox
-    Friend WithEvents Label11 As Label
-    Friend WithEvents GroupBox5 As GroupBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Button9 As Button
-    Friend WithEvents Button10 As Button
-    Friend WithEvents Button11 As Button
-    Friend WithEvents Button12 As Button
-    Friend WithEvents GroupBox6 As GroupBox
-    Friend WithEvents btnBuscarEdit As Button
-    Friend WithEvents btnEliminarEdit As Button
-    Friend WithEvents btnModificarEdit As Button
-    Friend WithEvents btnAgregarEdificios As Button
     Friend WithEvents cboTipo As ComboBox
     Friend WithEvents cboEdificio As ComboBox
     Friend WithEvents Label5 As Label

@@ -4,15 +4,17 @@
     Dim Accion As String = "nuevo"
     Dim Posicion As Integer = 0
     Private Sub FormUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Posicion = 0
         obtenerDatosUsuarios()
+        cboNivelAcceso.DataSource = objConexion.obtenerDatosUsuarios().Tables("NivelAcceso").DefaultView()
+        cboNivelAcceso.DisplayMember = "Acceso"
+        cboNivelAcceso.ValueMember = "NivelAcceso.Acceso"
     End Sub
     Sub obtenerDatosUsuarios()
         dataTable = objConexion.obtenerDatosUsuarios().Tables("Usuarios")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idUsuario")}
 
-        cboNivelAcceso.DataSource = objConexion.obtenerDatosUsuarios().Tables("NivelAcceso").DefaultView()
-        cboNivelAcceso.DisplayMember = "Acceso"
-        cboNivelAcceso.ValueMember = "NivelAcceso.Acceso"
+
         HabDescontroles(True)
         mostrarDatosUsuarios()
     End Sub
@@ -99,17 +101,17 @@
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
-        If btnNuevo.Text = "Nuevo" Then 'Actualizar
+        If btnModificar.Text = "Modificar" Then 'Modificar
             btnNuevo.Text = "Guardar"
             btnModificar.Text = "Cancelar"
-            Accion = "actualizar"
-
+            Accion = "modificar"
             HabDescontroles(False)
         Else 'Cancelar
+            obtenerDatosUsuarios()
+
             HabDescontroles(True)
             btnNuevo.Text = "Nuevo"
             btnModificar.Text = "Modificar"
-            obtenerDatosUsuarios()
         End If
 
     End Sub

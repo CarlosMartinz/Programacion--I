@@ -112,10 +112,10 @@
     <Compile Include="FormPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTipoHabitaciones.Designer.vb">
+    <Compile Include="Registro\FormTipoHabitaciones.Designer.vb">
       <DependentUpon>FormTipoHabitaciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormTipoHabitaciones.vb">
+    <Compile Include="Registro\FormTipoHabitaciones.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -138,6 +138,12 @@
       <DependentUpon>FormClientes.vb</DependentUpon>
     </Compile>
     <Compile Include="Registro\FormClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro\FormEdificios.Designer.vb">
+      <DependentUpon>FormEdificios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\FormEdificios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Registro\FormHabitaciones.Designer.vb">
@@ -169,7 +175,7 @@
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTipoHabitaciones.resx">
+    <EmbeddedResource Include="Registro\FormTipoHabitaciones.resx">
       <DependentUpon>FormTipoHabitaciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registro\FormClientes.resx">
       <DependentUpon>FormClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro\FormEdificios.resx">
+      <DependentUpon>FormEdificios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registro\FormHabitaciones.resx">
       <DependentUpon>FormHabitaciones.vb</DependentUpon>

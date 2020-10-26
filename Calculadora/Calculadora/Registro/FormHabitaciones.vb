@@ -38,7 +38,7 @@
     Sub mostrarDatosEdificios()
         If dataTable.Rows.Count > 0 Then
             Me.Tag = dataTable.Rows(posicion).ItemArray(0).ToString() 'ID de tipo de habitacion 
-            txtedificio.Text = dataTable.Rows(posicion).ItemArray(3).ToString()
+            'txtedificio.Text = dataTable.Rows(posicion).ItemArray(3).ToString()
 
             lblRegistroHabitaciones.Text = posicion + 1 & " de " & dataTable.Rows.Count
         Else
@@ -47,33 +47,33 @@
         End If
     End Sub
     Private Sub limpiarDatos()
-        txtedificio.Text = ""
+        'txtedificio.Text = ""
         txtcodigohabitacion.Text = ""
-        txtedificio.Text = ""
+        'txtedificio.Text = ""
     End Sub
 
-    Private Sub btnAgregarEdificios_Click(sender As Object, e As EventArgs) Handles btnAgregarEdificios.Click
-        If btnAgregarEdificios.Text = "Nuevo" Then 'Nuevo
-            btnAgregarEdificios.Text = "Guardar"
-            btnAgregarEdificios.Text = "Cancelar"
-            accion = "nuevo"
+    Private Sub btnAgregarEdificios_Click(sender As Object, e As EventArgs)
+        'If btnAgregarEdificios.Text = "Nuevo" Then 'Nuevo
+        '    btnAgregarEdificios.Text = "Guardar"
+        '    btnAgregarEdificios.Text = "Cancelar"
+        '    accion = "nuevo"
 
-            'HabDescontroles(False)
-            'limpiarDatosCategoria()
-        Else 'Guardar
-            'Dim msg = objConexion.mantenimientoDatosEdificio(New String() {
-            '    Me.Tag, txtedificio.Text
-            '}, accion)
-            'If msg = "error" Then
-            '    MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Categorias",
-            '                    MessageBoxButtons.OK, MessageBoxIcon.Error)
-            'Else
-            '    obtenerDatosTipoHabitacion()
-            '    'HabDescontroles(True)
-            '    'btnAgregarTipHabitacion.Text = "Nuevo"
-            '    ' btnModificarTipHabitacion.Text = "Modificar"
-            'End If
-        End If
+        '    'HabDescontroles(False)
+        '    'limpiarDatosCategoria()
+        'Else 'Guardar
+        '    'Dim msg = objConexion.mantenimientoDatosEdificio(New String() {
+        '    '    Me.Tag, txtedificio.Text
+        '    '}, accion)
+        '    'If msg = "error" Then
+        '    '    MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Categorias",
+        '    '                    MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    'Else
+        '    '    obtenerDatosTipoHabitacion()
+        '    '    'HabDescontroles(True)
+        '    '    'btnAgregarTipHabitacion.Text = "Nuevo"
+        '    '    ' btnModificarTipHabitacion.Text = "Modificar"
+        '    'End If
+        'End If
     End Sub
 
     Private Sub ControlesTipoHab(ByVal Estado As Boolean)

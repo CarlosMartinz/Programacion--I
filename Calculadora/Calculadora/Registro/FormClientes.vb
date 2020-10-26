@@ -8,7 +8,7 @@
     End Sub
     Sub ObtenrDatosCliente()
         dataTable = objConexion.obtenerDatosUsuarios.Tables("Clientes")
-        dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idCliente")}
+        dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("IdCliente")}
 
         HabDescontroles(True)
         MostrarDatosCliente()

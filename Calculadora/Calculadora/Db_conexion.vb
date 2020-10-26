@@ -21,14 +21,14 @@ Public Class db_conexion
         'Tabla Usuarios
         miCommand.Parameters.Add("@idU", SqlDbType.Int).Value = 0
         miCommand.Parameters.Add("@acceso", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@usuario", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@pass", SqlDbType.VarChar).Value = ""
 
         'Tabla datos relacion Usuarios
         miCommand.Parameters.Add("@nombre", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@documento", SqlDbType.NChar).Value = ""
-        miCommand.Parameters.Add("@telefono", SqlDbType.NChar).Value = ""
+        miCommand.Parameters.Add("@documento", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@telefono", SqlDbType.VarChar).Value = ""
         miCommand.Parameters.Add("@email", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@usuario", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@pass", SqlDbType.VarChar).Value = ""
 
         'Tabla Clientes
         miCommand.Parameters.Add("@idC", SqlDbType.Int).Value = 0
@@ -49,32 +49,35 @@ Public Class db_conexion
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "TipoHabit")
 
-        miCommand.CommandText = "select Edificio from Edificio"
-        miAdapter.SelectCommand = miCommand
-        miAdapter.Fill(ds, "Edificio")
-
         miCommand.CommandText = "select Acceso from NivelAcceso"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "NivelAcceso")
 
         'mostrar datos de tablas relacionadas
         miCommand.CommandText = "
-            select Usuarios.idUsuario, Usuarios.Acceso, Datos.Nombre, Datos.Documento, Datos.Telefono, Datos.Email, Usuarios.Usuario, Usuarios.Password
+            select Usuarios.idUsuario, Usuarios.Acceso, Datos.Nombre, Datos.Documento, Datos.Telefono, Datos.Email, Datos.Usuario, Datos.Password
             from Usuarios
                 inner join Datos on(Datos.idPersona=Usuarios.idUsuario)
         "
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Usuarios")
 
+        miCommand.CommandText = "
+            select Clientes.idCliente, Clientes.Codigo, Clientes.Nombre, Clientes.Documento, Contactos.Telefono, Contactos.Email
+            from Clientes
+                inner join Contactos on(Contactos.idPersona=Clientes.idCliente)
+        "
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "Clientes")
+
         'Para CRUD
         miCommand.CommandText = "select * from Habitaciones"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Habitaciones")
 
-
-        miCommand.CommandText = "SELECT * FROM Clientes"
+        miCommand.CommandText = "SELECT * FROM Edificio"
         miAdapter.SelectCommand = miCommand
-        miAdapter.Fill(ds, "Clientes")
+        miAdapter.Fill(ds, "Edificio")
 
 
         Return ds
@@ -84,9 +87,9 @@ Public Class db_conexion
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
-                sql = "INSERT INTO Usuarios (Acceso,Usuario,Password) VALUES (@acceso,@usuario,@pass)"
+                sql = "INSERT INTO Usuarios (Acceso) VALUES (@acceso)"
             Case "actualizar"
-                sql = "UPDATE Usuarios SET Acceso=@acceso,Usuario=@usuario,Password=@pass WHERE idUsuario=@idU"
+                sql = "UPDATE Usuarios SET Acceso=@acceso WHERE idUsuario=@idU"
             Case "eliminar"
                 sql = "DELETE FROM Usuarios WHERE idUsuario=@idU"
         End Select
@@ -121,9 +124,9 @@ Public Class db_conexion
                 miCommand.CommandText = "select MAX(idUsuario) AS idUsuario from Usuarios"
                 datos(0) = miCommand.ExecuteScalar().ToString()
 
-                sql = "INSERT INTO Datos (idPersona,Nombre,Documento,Telefono,Email) VALUES(@idU,@nombre,@documento,@telefono,@email)"
+                sql = "INSERT INTO Datos (idPersona,Nombre,Documento,Telefono,Email,Usuario,Password) VALUES(@idU,@nombre,@documento,@telefono,@email,@usuario,@pass)"
             Case "modificar"
-                sql = "UPDATE Datos SET Nombre=@nombre,Documento=@documento,Telefono=@telefono,Email=@email WHERE idPersona=@idU"
+                sql = "UPDATE Datos SET Nombre=@nombre,Documento=@documento,Telefono=@telefono,Email=@email,Usuario,Password=@pass WHERE idPersona=@idU"
             Case "eliminar"
                 sql = "DELETE FROM Datos WHERE idPersona=@idU"
         End Select
@@ -133,6 +136,8 @@ Public Class db_conexion
             miCommand.Parameters("@documento").Value = datos(3)
             miCommand.Parameters("@telefono").Value = datos(4)
             miCommand.Parameters("@email").Value = datos(5)
+            miCommand.Parameters("@usuario").Value = datos(6)
+            miCommand.Parameters("@pass").Value = datos(7)
         End If
         executeSql(sql)
     End Function
@@ -141,9 +146,9 @@ Public Class db_conexion
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
-                sql = "INSERT INTO Clientes (Codigo,Nombre,Documento,Telefono,Email) VALUES (@code,@nombreC,@documentoC,@telefonoC,@emailC)"
+                sql = "INSERT INTO Clientes (Codigo,Nombre,Documento) VALUES (@code,@nombreC,@documentoC)"
             Case "actualizar"
-                sql = "UPDATE Clientes SET Codigo=@code WHERE idCliente=@idC"
+                sql = "UPDATE Clientes SET Codigo=@code,Nombre=@nombreC,Documento=@documentoC WHERE idCliente=@idC"
             Case "eliminar"
                 sql = "DELETE FROM Clientes WHERE idCliente=@idC"
         End Select
@@ -155,17 +160,39 @@ Public Class db_conexion
             miCommand.Parameters("@telefonoC").Value = datos(4)
             miCommand.Parameters("@emailC").Value = datos(5)
         Else 'Accion es eliminar
-            'mantenimientoDatos2(datos, accion)
+            mantenimientoDatosContacto(datos, accion)
         End If
         If (executeSql(sql) > 0) Then
-            'If accion IsNot "eliminar" Then
-            '    mantenimientoDatos2(datos, accion)
-            'End If
+            If accion IsNot "eliminar" Then
+                mantenimientoDatosContacto(datos, accion)
+            End If
             msg = "exito"
         Else
             msg = "error"
         End If
         Return msg
+    End Function
+    'CRUD Contactos relacion con  Clientes
+    Public Function mantenimientoDatosContacto(ByVal datos As String(), ByVal accion As String)
+        Dim sql, msg As String
+        Select Case accion
+            Case "nuevo"
+                miCommand.Connection = miConexion
+                miCommand.CommandText = "select MAX(IdCliente) AS IdCliente from Clientes"
+                datos(0) = miCommand.ExecuteScalar().ToString()
+
+                sql = "INSERT INTO Contactos (idPersona,Telefono,Email) VALUES(@idC,@telefonoC,@emailC)"
+            Case "modificar"
+                sql = "UPDATE Contactos SET Telefono=@telefonoC,Email=@emailC WHERE idPersona=@idC"
+            Case "eliminar"
+                sql = "DELETE FROM Contactos WHERE idPersona=@idC"
+        End Select
+        miCommand.Parameters("@idC").Value = datos(0)
+        If accion IsNot "eliminar" Then
+            miCommand.Parameters("@telefonoC").Value = datos(4)
+            miCommand.Parameters("@emailC").Value = datos(5)
+        End If
+        executeSql(sql)
     End Function
     ''CRUD edificio relacionada con habitaciones
     'Public Function mantenimientoDatosEdificio(ByVal datos As String(), ByVal accion As String)

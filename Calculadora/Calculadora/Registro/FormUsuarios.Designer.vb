@@ -159,7 +159,7 @@ Partial Class FormUsuarios
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(90, 46)
         Me.btnModificar.TabIndex = 1
-        Me.btnModificar.Text = "Actualizar"
+        Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
         'btnNuevo

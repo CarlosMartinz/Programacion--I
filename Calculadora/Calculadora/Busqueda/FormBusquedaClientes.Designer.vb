@@ -28,6 +28,7 @@ Partial Class FormBusquedaClientes
         Me.btnCancelarCliente = New System.Windows.Forms.Button()
         Me.btnSelecionarCliente = New System.Windows.Forms.Button()
         Me.idCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DUI = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,7 +62,7 @@ Partial Class FormBusquedaClientes
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grdBuscarCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grdBuscarCliente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idCliente, Me.Nombre, Me.DUI, Me.Telefono, Me.Email})
+        Me.grdBuscarCliente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idCliente, Me.Codigo, Me.Nombre, Me.DUI, Me.Telefono, Me.Email})
         Me.grdBuscarCliente.Location = New System.Drawing.Point(12, 32)
         Me.grdBuscarCliente.Name = "grdBuscarCliente"
         Me.grdBuscarCliente.ReadOnly = True
@@ -92,11 +93,18 @@ Partial Class FormBusquedaClientes
         '
         'idCliente
         '
-        Me.idCliente.DataPropertyName = "idCliente"
+        Me.idCliente.DataPropertyName = "IdCliente"
         Me.idCliente.HeaderText = "ID"
         Me.idCliente.Name = "idCliente"
         Me.idCliente.ReadOnly = True
         Me.idCliente.Visible = False
+        '
+        'Codigo
+        '
+        Me.Codigo.DataPropertyName = "Codigo"
+        Me.Codigo.HeaderText = "Codigo"
+        Me.Codigo.Name = "Codigo"
+        Me.Codigo.ReadOnly = True
         '
         'Nombre
         '
@@ -107,7 +115,7 @@ Partial Class FormBusquedaClientes
         '
         'DUI
         '
-        Me.DUI.DataPropertyName = "DUI"
+        Me.DUI.DataPropertyName = "Documento"
         Me.DUI.HeaderText = "DUI"
         Me.DUI.Name = "DUI"
         Me.DUI.ReadOnly = True
@@ -136,6 +144,8 @@ Partial Class FormBusquedaClientes
         Me.Controls.Add(Me.grdBuscarCliente)
         Me.Controls.Add(Me.txtBuscarCliente)
         Me.Controls.Add(Me.Label1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FormBusquedaClientes"
         Me.Text = "Busqueda de clientes"
         CType(Me.grdBuscarCliente, System.ComponentModel.ISupportInitialize).EndInit()
@@ -150,6 +160,7 @@ Partial Class FormBusquedaClientes
     Friend WithEvents btnCancelarCliente As Button
     Friend WithEvents btnSelecionarCliente As Button
     Friend WithEvents idCliente As DataGridViewTextBoxColumn
+    Friend WithEvents Codigo As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents DUI As DataGridViewTextBoxColumn
     Friend WithEvents Telefono As DataGridViewTextBoxColumn
