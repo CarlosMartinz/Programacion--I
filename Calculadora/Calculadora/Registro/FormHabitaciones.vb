@@ -37,7 +37,7 @@
     Sub mostrarDatosEdificios()
         If dataTable.Rows.Count > 0 Then
             Me.Tag = dataTable.Rows(posicion).ItemArray(0).ToString() 'ID de tipo de habitacion 
-            txtedificio.Text = dataTable.Rows(posicion).ItemArray(4).ToString()
+            txtedificio.Text = dataTable.Rows(posicion).ItemArray(3).ToString()
 
             lblRegistroTipoHab.Text = posicion + 1 & " de " & dataTable.Rows.Count
         Else
@@ -157,9 +157,4 @@
         End If
     End Sub
 
-
-
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-
-    End Sub
 End Class

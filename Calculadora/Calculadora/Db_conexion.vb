@@ -29,6 +29,15 @@ Public Class db_conexion
         miCommand.Parameters.Add("@telefono", SqlDbType.NChar).Value = ""
         miCommand.Parameters.Add("@email", SqlDbType.VarChar).Value = ""
 
+        'MantenimientoDatos2
+        miCommand.Parameters.Add("@idDat", SqlDbType.Int).Value = 0
+        miCommand.Parameters.Add("@idPer", SqlDbType.Int).Value = 0
+        miCommand.Parameters.Add("@nom", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@ed", SqlDbType.Int).Value = 0
+        miCommand.Parameters.Add("@doc", SqlDbType.NChar).Value = ""
+        miCommand.Parameters.Add("@tel", SqlDbType.NChar).Value = ""
+        miCommand.Parameters.Add("@Correo", SqlDbType.VarChar).Value = ""
+
         'Tabla de tipo de login
         miCommand.Parameters.Add("@idL", SqlDbType.Int).Value = 0
         miCommand.Parameters.Add("@usuario", SqlDbType.VarChar).Value = ""
@@ -37,9 +46,7 @@ Public Class db_conexion
         'Tabla Cliente
         miCommand.Parameters.Add("@idCliente", SqlDbType.Int).Value = 0
         miCommand.Parameters.Add("@NombreCliente", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@DuiCliente", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@TelefonoCliente", SqlDbType.VarChar).Value = ""
-        miCommand.Parameters.Add("@EmailCliente", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@Cod", SqlDbType.VarChar).Value = ""
     End Sub
     Public Function obtenerDatosHabit()
         miCommand.CommandText = "
@@ -59,7 +66,7 @@ Public Class db_conexion
         miCommand.Connection = miConexion
 
         'combobox's
-        miCommand.CommandText = "select idTipo from TipoHabit"
+        miCommand.CommandText = "select * from TipoHabit"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "TipoHabit")
 
@@ -80,15 +87,23 @@ Public Class db_conexion
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Usuarios")
 
+        miCommand.CommandText = "
+            select Clientes.idCliente, Clientes.Codigo, Datos.Nombre, Datos.Documento, Datos.Telefono, Datos.Email
+            from Usuarios
+                inner join Datos on(Datos.idPersona=Clientes.idCliente)
+        "
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "Clientes")
+
         'Para CRUD
         miCommand.CommandText = "select * from Habitaciones"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Habitaciones")
 
 
-        miCommand.CommandText = "SELECT * FROM Clientes"
-        miAdapter.SelectCommand = miCommand
-        miAdapter.Fill(ds, "Clientes")
+        'miCommand.CommandText = "SELECT * FROM Clientes"
+        'miAdapter.SelectCommand = miCommand
+        'miAdapter.Fill(ds, "Clientes")
 
         Return ds
     End Function
@@ -131,7 +146,7 @@ Public Class db_conexion
         Select Case accion
             Case "nuevo"
                 miCommand.Connection = miConexion
-                miCommand.CommandText = "select MAX(idUsuario) AS idUsuario from Usuarios"
+                miCommand.CommandText = "select MAX(idCliente) AS idCliente from Clientes"
                 datos(0) = miCommand.ExecuteScalar().ToString()
 
                 sql = "INSERT INTO Datos (idPersona,Nombre,Documento,Telefono,Email) VALUES(@idU,@nombre,@documento,@telefono,@email)"
@@ -146,6 +161,30 @@ Public Class db_conexion
             miCommand.Parameters("@documento").Value = datos(3)
             miCommand.Parameters("@telefono").Value = datos(4)
             miCommand.Parameters("@email").Value = datos(5)
+        End If
+        executeSql(sql)
+    End Function
+
+    Public Function mantenimientoDatos2(ByVal datos As String(), ByVal accion As String)
+        Dim sql, msg As String
+        Select Case accion
+            Case "nuevo"
+                miCommand.Connection = miConexion
+                miCommand.CommandText = "select MAX(idCliente) AS idCliente from Cliente"
+                datos(0) = miCommand.ExecuteScalar().ToString()
+
+                sql = "INSERT INTO Datos (idPersona,Nombre,Documento,Telefono,Email) VALUES(@idPer,@nom,@doc,@tel,@Correo)"
+            Case "modificar"
+                sql = "UPDATE Datos SET Nombre=@nom,Documento=@doc,Telefono=@tel,Email=@Correo WHERE idPersona=@idPer"
+            Case "eliminar"
+                sql = "DELETE FROM Datos WHERE idPersona=@idPer"
+        End Select
+        miCommand.Parameters("@idCliente").Value = datos(0)
+        If accion IsNot "eliminar" Then
+            miCommand.Parameters("@nom").Value = datos(2)
+            miCommand.Parameters("@doc").Value = datos(3)
+            miCommand.Parameters("@tel").Value = datos(4)
+            miCommand.Parameters("@Correo").Value = datos(5)
         End If
         executeSql(sql)
     End Function
@@ -194,15 +233,20 @@ Public Class db_conexion
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
-                sql = "INSERT INTO Clientes (Nombre,DUI,Telefono,Email) VALUES ('" + datos(1) + "','" + datos(2) + "','" + datos(3) + "','" + datos(4) + "')"
+                sql = "INSERT INTO Clientes (Cadigo, Nombre) VALUES (@Cod,@NombreCliente)"
             Case "actualizar"
-                sql = "UPDATE Clientes SET Nombre='" + datos(1) + "',DUI='" + datos(2) + "',Telefono='" + datos(3) + "',Email='" + datos(4) + "' WHERE idCliente='" + datos(0) + "'"
+                sql = "UPDATE Clientes SET Codigo=@Cod Nombre=@NombreCliente WHERE idCliente=@idCliente'"
             Case "eliminar"
-                sql = "DELETE FROM Clientes WHERE idCliente='" + datos(0) + "'"
+                sql = "DELETE FROM Clientes WHERE idCliente=@idCliente"
         End Select
+        miCommand.Parameters("@idCliente").Value = datos(0)
+        If accion IsNot "eliminar" Then
+            miCommand.Parameters("@Cod").Value = datos(1)
+        End If
+        executeSql(sql)
         If (executeSql(sql) > 0) Then
             If accion IsNot "eliminar" Then
-                ' mantenimientoDatosContacto(datos, accion)
+                mantenimientoDatos2(datos, accion)
             End If
             msg = "exito"
         Else
