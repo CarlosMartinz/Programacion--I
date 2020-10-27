@@ -44,6 +44,8 @@ Partial Class FormClientes
         Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.btnAnterior = New System.Windows.Forms.Button()
         Me.btnPrimero = New System.Windows.Forms.Button()
+        Me.txtedad = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.grbDatos.SuspendLayout()
         Me.grbEdicion.SuspendLayout()
         Me.grbPosicion.SuspendLayout()
@@ -51,6 +53,8 @@ Partial Class FormClientes
         '
         'grbDatos
         '
+        Me.grbDatos.Controls.Add(Me.txtedad)
+        Me.grbDatos.Controls.Add(Me.Label6)
         Me.grbDatos.Controls.Add(Me.txtcode)
         Me.grbDatos.Controls.Add(Me.Label5)
         Me.grbDatos.Controls.Add(Me.txtTelefono)
@@ -86,7 +90,7 @@ Partial Class FormClientes
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(325, 78)
+        Me.txtTelefono.Location = New System.Drawing.Point(325, 119)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(175, 20)
         Me.txtTelefono.TabIndex = 7
@@ -94,7 +98,7 @@ Partial Class FormClientes
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(265, 81)
+        Me.Label3.Location = New System.Drawing.Point(265, 122)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(49, 13)
         Me.Label3.TabIndex = 6
@@ -102,7 +106,7 @@ Partial Class FormClientes
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(325, 37)
+        Me.txtEmail.Location = New System.Drawing.Point(325, 78)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(175, 20)
         Me.txtEmail.TabIndex = 5
@@ -110,7 +114,7 @@ Partial Class FormClientes
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(265, 40)
+        Me.Label4.Location = New System.Drawing.Point(265, 81)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(32, 13)
         Me.Label4.TabIndex = 4
@@ -118,7 +122,7 @@ Partial Class FormClientes
         '
         'txtDUI
         '
-        Me.txtDUI.Location = New System.Drawing.Point(66, 122)
+        Me.txtDUI.Location = New System.Drawing.Point(325, 37)
         Me.txtDUI.Name = "txtDUI"
         Me.txtDUI.Size = New System.Drawing.Size(175, 20)
         Me.txtDUI.TabIndex = 3
@@ -126,7 +130,7 @@ Partial Class FormClientes
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(5, 122)
+        Me.Label2.Location = New System.Drawing.Point(264, 37)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(55, 13)
         Me.Label2.TabIndex = 2
@@ -265,6 +269,23 @@ Partial Class FormClientes
         Me.btnPrimero.Text = "|<"
         Me.btnPrimero.UseVisualStyleBackColor = True
         '
+        'txtedad
+        '
+        Me.txtedad.Location = New System.Drawing.Point(66, 119)
+        Me.txtedad.Name = "txtedad"
+        Me.txtedad.Size = New System.Drawing.Size(175, 20)
+        Me.txtedad.TabIndex = 11
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 122)
+        Me.Label6.Name = "Label6"
+        Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label6.Size = New System.Drawing.Size(32, 13)
+        Me.Label6.TabIndex = 10
+        Me.Label6.Text = "Edad"
+        '
         'FormClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -309,4 +330,6 @@ Partial Class FormClientes
     Friend WithEvents btnPrimero As Button
     Friend WithEvents txtcode As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents txtedad As TextBox
+    Friend WithEvents Label6 As Label
 End Class

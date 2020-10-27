@@ -4,23 +4,23 @@
     Dim posicion As Integer
     Dim accion As String = "nuevo"
     Private Sub FormHabitaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        obtenerDatosTipoHabitacion()
+        ''obtenerDatosTipoHabitacion()
     End Sub
-    Sub obtenerDatosTipoHabitacion()
-        dataTable = objConexion.obtenerDatosUsuarios().Tables("Habitaciones")
-        dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idHabitaciones")}
+    'Sub obtenerDatosTipoHabitacion()
+    '    dataTable = objConexion.obtenerDatosUsuarios().Tables("Habitaciones")
+    '    dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idHabitaciones")}
 
-        cboTipo.DataSource = objConexion.obtenerDatosUsuarios().Tables("TipoHabit").DefaultView()
-        cboTipo.DisplayMember = "idTipo"
-        cboTipo.ValueMember = "TipoHabit.idTipo"
+    '    cboTipo.DataSource = objConexion.obtenerDatosUsuarios().Tables("TipoHabit").DefaultView()
+    '    cboTipo.DisplayMember = "idTipo"
+    '    cboTipo.ValueMember = "TipoHabit.idTipo"
 
-        cboEdificio.DataSource = objConexion.obtenerDatosUsuarios().Tables("Edificio").DefaultView()
-        cboEdificio.DisplayMember = "Edificio"
-        cboEdificio.ValueMember = "Edificio.Edificio"
+    '    cboEdificio.DataSource = objConexion.obtenerDatosUsuarios().Tables("Edificio").DefaultView()
+    '    cboEdificio.DisplayMember = "Edificio"
+    '    cboEdificio.ValueMember = "Edificio.Edificio"
 
-        mostrarDatosHabit()
-        mostrarDatosEdificios()
-    End Sub
+    '    mostrarDatosHabit()
+    '    mostrarDatosEdificios()
+    'End Sub
 
     Sub mostrarDatosHabit()
         If dataTable.Rows.Count > 0 Then

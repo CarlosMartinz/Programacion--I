@@ -1,100 +1,107 @@
 ﻿Public Class FormUsuarios
-    Dim objConexion As New db_conexion
+    Dim objConexion As New db_conexion()
     Dim dataTable As New DataTable
-    Dim Accion As String = "nuevo"
-    Dim Posicion As Integer = 0
+    Dim posicion As Integer
+    Dim accion As String = "nuevo"
+    'carga de datos 
     Private Sub FormUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Posicion = 0
-        obtenerDatosUsuarios()
-        cboNivelAcceso.DataSource = objConexion.obtenerDatosUsuarios().Tables("NivelAcceso").DefaultView()
-        cboNivelAcceso.DisplayMember = "Acceso"
-        cboNivelAcceso.ValueMember = "NivelAcceso.Acceso"
+        posicion = 0
+        obtenerDatos()
+        HabDescontroles(True)
     End Sub
-    Sub obtenerDatosUsuarios()
-        dataTable = objConexion.obtenerDatosUsuarios().Tables("Usuarios")
+    'obtener datos 
+    Sub obtenerDatos()
+        dataTable = objConexion.obtenerDatosTablas().Tables("usuarios")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idUsuario")}
 
+        cboNivelAcceso.DataSource = objConexion.obtenerDatosTablas().Tables("nivelAcceso").DefaultView()
+        cboNivelAcceso.DisplayMember = "acceso"
+        cboNivelAcceso.ValueMember = "nivelAcceso.acceso"
 
-        HabDescontroles(True)
-        mostrarDatosUsuarios()
+        mostrarDatos()
     End Sub
-    Sub mostrarDatosUsuarios()
+    'mostrar datos
+    Sub mostrarDatos()
         If dataTable.Rows.Count > 0 Then
-            Me.Tag = dataTable.Rows(Posicion).ItemArray(0).ToString()
-            cboNivelAcceso.SelectedValue = dataTable.Rows(Posicion).ItemArray(1).ToString()
-            txtNombre.Text = dataTable.Rows(Posicion).ItemArray(2).ToString()
-            txtDUI.Text = dataTable.Rows(Posicion).ItemArray(3).ToString()
-            txtTelefono.Text = dataTable.Rows(Posicion).ItemArray(4).ToString()
-            txtEmail.Text = dataTable.Rows(Posicion).ItemArray(5).ToString()
-            txtUsuario.Text = dataTable.Rows(Posicion).ItemArray(6).ToString()
-            txtContra.Text = dataTable.Rows(Posicion).ItemArray(7).ToString()
+            Me.Tag = dataTable.Rows(posicion).ItemArray(0).ToString() 'ID de Usuario
+            txtNombre.Text = dataTable.Rows(posicion).ItemArray(1).ToString()
+            txtDUI.Text = dataTable.Rows(posicion).ItemArray(2).ToString()
+            txtTelefono.Text = dataTable.Rows(posicion).ItemArray(3).ToString()
+            txtEmail.Text = dataTable.Rows(posicion).ItemArray(4).ToString()
+            cboNivelAcceso.SelectedValue = dataTable.Rows(posicion).ItemArray(5).ToString()
+            txtUsuario.Text = dataTable.Rows(posicion).ItemArray(6).ToString()
+            txtContra.Text = dataTable.Rows(posicion).ItemArray(7).ToString()
 
-            lblPosicion.Text = Posicion + 1 & " de " & dataTable.Rows.Count
+            lblPosicion.Text = posicion + 1 & " de " & dataTable.Rows.Count
         Else
-            limpiarDatosUsuario()
-            MessageBox.Show("No hay registros que mostrar", "Registro de Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            limpiarDatosUsuarios()
+            MessageBox.Show("No hay registros que mostrar", "Registro de Clientes", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
+    'limpiar textbox
+    Private Sub limpiarDatosUsuarios()
+        txtNombre.Text = ""
+        txtDUI.Text = ""
+        txtTelefono.Text = ""
+        txtEmail.Text = ""
+        txtUsuario.Text = ""
+        txtContra.Text = ""
+    End Sub
+    'navegacion
+    Private Sub btnPrimero_Click(sender As Object, e As EventArgs) Handles btnPrimero.Click
+        posicion = 0
+        mostrarDatos()
+    End Sub
+
+    Private Sub btnAnterior_Click(sender As Object, e As EventArgs) Handles btnAnterior.Click
+        If posicion > 0 Then
+            posicion -= 1
+            mostrarDatos()
+        Else
+            MessageBox.Show("Ya te encuentras en el primer registro.", "Registro de Productos", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
+        If posicion < dataTable.Rows.Count - 1 Then
+            posicion += 1
+            mostrarDatos()
+        Else
+            MessageBox.Show("Ya te encuentras en el ultimo registro.", "Registro de Productos", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub btnUltimo_Click(sender As Object, e As EventArgs) Handles btnUltimo.Click
+        posicion = dataTable.Rows.Count - 1
+        mostrarDatos()
+    End Sub
+    'desabilita opciones
     Private Sub HabDescontroles(ByVal estado As Boolean)
         grbDatos.Enabled = Not estado
         grbPosicion.Enabled = estado
         btnEliminar.Enabled = estado
         btnBuscar.Enabled = estado
     End Sub
-    Private Sub limpiarDatosUsuario()
-        txtNombre.Text = ""
-        txtDUI.Text = ""
-        txtEmail.Text = ""
-        txtTelefono.Text = ""
-        txtUsuario.Text = ""
-        txtContra.Text = ""
-    End Sub
-    Private Sub btnPrimero_Click(sender As Object, e As EventArgs) Handles btnPrimero.Click
-        Posicion = 0
-        mostrarDatosUsuarios()
-    End Sub
-
-    Private Sub btnAnterior_Click(sender As Object, e As EventArgs) Handles btnAnterior.Click
-        If Posicion > 0 Then
-            Posicion -= 1
-            mostrarDatosUsuarios()
-        Else
-            MessageBox.Show("Ya te encuentras en el primer registro.", "Registro de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
-    End Sub
-
-    Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
-        If Posicion < dataTable.Rows.Count - 1 Then
-            Posicion += 1
-            mostrarDatosUsuarios()
-        Else
-            MessageBox.Show("Ya te encuentras en el ultimo registro.", "Registro de Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
-    End Sub
-    Private Sub btnUltimo_Click(sender As Object, e As EventArgs) Handles btnUltimo.Click
-        Posicion = dataTable.Rows.Count - 1
-        mostrarDatosUsuarios()
-    End Sub
-
-    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        If btnNuevo.Text = "Nuevo" Then 'Nuevo
-            btnNuevo.Text = "Guardar"
+    'CRUD manipulacionde datos
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        If btnAgregar.Text = "Nuevo" Then 'Nuevo
+            btnAgregar.Text = "Guardar"
             btnModificar.Text = "Cancelar"
-            Accion = "nuevo"
+            accion = "nuevo"
 
             HabDescontroles(False)
-            limpiarDatosUsuario()
+            limpiarDatosUsuarios()
         Else 'Guardar
             Dim msg = objConexion.mantenimientoDatosUsuarios(New String() {
-                Me.Tag, cboNivelAcceso.SelectedValue, txtNombre.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text, txtUsuario.Text, txtContra.Text
-            }, Accion)
+                Me.Tag, txtNombre.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text, cboNivelAcceso.SelectedValue, txtUsuario.Text, txtContra.Text
+            }, accion)
             If msg = "error" Then
-                MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Usuario",
+                MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Productos",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                obtenerDatosUsuarios()
+                obtenerDatos()
                 HabDescontroles(True)
-                btnNuevo.Text = "Nuevo"
+                btnAgregar.Text = "Nuevo"
                 btnModificar.Text = "Modificar"
             End If
         End If
@@ -102,37 +109,36 @@
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         If btnModificar.Text = "Modificar" Then 'Modificar
-            btnNuevo.Text = "Guardar"
+            btnAgregar.Text = "Guardar"
             btnModificar.Text = "Cancelar"
-            Accion = "modificar"
+            accion = "modificar"
             HabDescontroles(False)
         Else 'Cancelar
-            obtenerDatosUsuarios()
+            obtenerDatos()
 
             HabDescontroles(True)
-            btnNuevo.Text = "Nuevo"
+            btnAgregar.Text = "Nuevo"
             btnModificar.Text = "Modificar"
         End If
-
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        If (MessageBox.Show("¿Estas seguro de borrar este registro?", "Registro Usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+        If (MessageBox.Show("Esta seguro de borrar a " + txtNombre.Text, "Registro de cliente",
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
             objConexion.mantenimientoDatosUsuarios(New String() {Me.Tag}, "eliminar")
-            If Posicion > 0 Then
-                Posicion -= 1
+            If posicion > 0 Then
+                posicion -= 1 'Hemos borrado un registro
             End If
-            obtenerDatosUsuarios()
+            obtenerDatos()
         End If
     End Sub
-
+    'seleccion de datos sin navegacion
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        Dim objBuscarUsuario As New FormBusquedaUsuarios
-        objBuscarUsuario.ShowDialog()
-        If objBuscarUsuario._idU > 0 Then
-            Posicion = dataTable.Rows.IndexOf(dataTable.Rows.Find(objBuscarUsuario._idU))
-            mostrarDatosUsuarios()
+        Dim objBuscarCliente As New FormBusquedaUsuarios
+        objBuscarCliente.ShowDialog()
+        If objBuscarCliente._idU > 0 Then
+            posicion = dataTable.Rows.IndexOf(dataTable.Rows.Find(objBuscarCliente._idU))
+            mostrarDatos()
         End If
     End Sub
-
 End Class

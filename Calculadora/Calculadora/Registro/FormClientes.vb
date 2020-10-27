@@ -4,11 +4,11 @@
     Dim Accion As String = "nuevo"
     Dim Posicion As Integer = 0
     Private Sub FormClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ObtenrDatosCliente()
+        obtenerDatos()
     End Sub
-    Sub ObtenrDatosCliente()
-        dataTable = objConexion.obtenerDatosUsuarios.Tables("Clientes")
-        dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("IdCliente")}
+    Sub obtenerDatos()
+        dataTable = objConexion.obtenerDatosTablas.Tables("clientes")
+        dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idCliente")}
 
         HabDescontroles(True)
         MostrarDatosCliente()
@@ -19,9 +19,10 @@
             Me.Tag = dataTable.Rows(Posicion).ItemArray(0).ToString()
             txtcode.Text = dataTable.Rows(Posicion).ItemArray(1).ToString()
             txtNombre.Text = dataTable.Rows(Posicion).ItemArray(2).ToString()
-            txtDUI.Text = dataTable.Rows(Posicion).ItemArray(3).ToString()
-            txtTelefono.Text = dataTable.Rows(Posicion).ItemArray(4).ToString()
-            txtEmail.Text = dataTable.Rows(Posicion).ItemArray(5).ToString()
+            txtedad.Text = dataTable.Rows(Posicion).ItemArray(3).ToString()
+            txtDUI.Text = dataTable.Rows(Posicion).ItemArray(4).ToString()
+            txtTelefono.Text = dataTable.Rows(Posicion).ItemArray(5).ToString()
+            txtEmail.Text = dataTable.Rows(Posicion).ItemArray(6).ToString()
 
             lblPosicion.Text = Posicion + 1 & " de " & dataTable.Rows.Count
         Else
@@ -42,6 +43,8 @@
         txtDUI.Text = ""
         txtTelefono.Text = ""
         txtEmail.Text = ""
+        txtedad.Text = ""
+        txtcode.Text = ""
     End Sub
 
     Private Sub btnPrimero_Click(sender As Object, e As EventArgs) Handles btnPrimero.Click
@@ -81,12 +84,12 @@
             HabDescontroles(False)
             LimpiarDatosCliente()
         Else 'Guardar
-            Dim msg = objConexion.mantenimientoDatosClientes(New String() {Me.Tag, txtcode.Text, txtNombre.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text}, Accion)
+            Dim msg = objConexion.mantenimientoDatosClientes(New String() {Me.Tag, txtcode.Text, txtNombre.Text, txtedad.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text}, Accion)
             If msg = "error" Then
                 MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Usuario",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                ObtenrDatosCliente()
+                obtenerDatos()
                 HabDescontroles(True)
                 btnNuevo.Text = "Nuevo"
                 btnModificar.Text = "Modificar"
@@ -95,19 +98,18 @@
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
-        If btnNuevo.Text = "Nuevo" Then 'Actualizar
+        If btnModificar.Text = "Modificar" Then 'Modificar
             btnNuevo.Text = "Guardar"
             btnModificar.Text = "Cancelar"
-            Accion = "actualizar"
-
+            Accion = "modificar"
             HabDescontroles(False)
         Else 'Cancelar
+            obtenerDatos()
+
             HabDescontroles(True)
             btnNuevo.Text = "Nuevo"
             btnModificar.Text = "Modificar"
-            ObtenrDatosCliente()
         End If
-
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
@@ -116,7 +118,7 @@
             If Posicion > 0 Then
                 Posicion -= 1
             End If
-            ObtenrDatosCliente()
+            obtenerDatos()
         End If
     End Sub
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click

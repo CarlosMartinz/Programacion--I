@@ -30,6 +30,7 @@ Partial Class FormBusquedaClientes
         Me.idCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Edad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DUI = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Email = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -62,7 +63,7 @@ Partial Class FormBusquedaClientes
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grdBuscarCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grdBuscarCliente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idCliente, Me.Codigo, Me.Nombre, Me.DUI, Me.Telefono, Me.Email})
+        Me.grdBuscarCliente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idCliente, Me.Codigo, Me.Nombre, Me.Edad, Me.DUI, Me.Telefono, Me.Email})
         Me.grdBuscarCliente.Location = New System.Drawing.Point(12, 32)
         Me.grdBuscarCliente.Name = "grdBuscarCliente"
         Me.grdBuscarCliente.ReadOnly = True
@@ -113,10 +114,17 @@ Partial Class FormBusquedaClientes
         Me.Nombre.Name = "Nombre"
         Me.Nombre.ReadOnly = True
         '
+        'Edad
+        '
+        Me.Edad.DataPropertyName = "edad"
+        Me.Edad.HeaderText = "Edad"
+        Me.Edad.Name = "Edad"
+        Me.Edad.ReadOnly = True
+        '
         'DUI
         '
         Me.DUI.DataPropertyName = "Documento"
-        Me.DUI.HeaderText = "DUI"
+        Me.DUI.HeaderText = "Documento"
         Me.DUI.Name = "DUI"
         Me.DUI.ReadOnly = True
         '
@@ -162,6 +170,7 @@ Partial Class FormBusquedaClientes
     Friend WithEvents idCliente As DataGridViewTextBoxColumn
     Friend WithEvents Codigo As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents Edad As DataGridViewTextBoxColumn
     Friend WithEvents DUI As DataGridViewTextBoxColumn
     Friend WithEvents Telefono As DataGridViewTextBoxColumn
     Friend WithEvents Email As DataGridViewTextBoxColumn

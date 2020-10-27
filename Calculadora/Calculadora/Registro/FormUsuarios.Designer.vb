@@ -32,7 +32,7 @@ Partial Class FormUsuarios
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.btnAgregar = New System.Windows.Forms.Button()
         Me.grbDatos = New System.Windows.Forms.GroupBox()
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
@@ -124,7 +124,7 @@ Partial Class FormUsuarios
         Me.grbEdicion.Controls.Add(Me.btnBuscar)
         Me.grbEdicion.Controls.Add(Me.btnEliminar)
         Me.grbEdicion.Controls.Add(Me.btnModificar)
-        Me.grbEdicion.Controls.Add(Me.btnNuevo)
+        Me.grbEdicion.Controls.Add(Me.btnAgregar)
         Me.grbEdicion.Location = New System.Drawing.Point(12, 353)
         Me.grbEdicion.Name = "grbEdicion"
         Me.grbEdicion.Size = New System.Drawing.Size(535, 64)
@@ -162,15 +162,15 @@ Partial Class FormUsuarios
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
-        'btnNuevo
+        'btnAgregar
         '
-        Me.btnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNuevo.Location = New System.Drawing.Point(88, 12)
-        Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(75, 46)
-        Me.btnNuevo.TabIndex = 0
-        Me.btnNuevo.Text = "Nuevo"
-        Me.btnNuevo.UseVisualStyleBackColor = True
+        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.Location = New System.Drawing.Point(88, 12)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(75, 46)
+        Me.btnAgregar.TabIndex = 0
+        Me.btnAgregar.Text = "Nuevo"
+        Me.btnAgregar.UseVisualStyleBackColor = True
         '
         'grbDatos
         '
@@ -366,7 +366,7 @@ Partial Class FormUsuarios
     Friend WithEvents btnBuscar As Button
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnModificar As Button
-    Friend WithEvents btnNuevo As Button
+    Friend WithEvents btnAgregar As Button
     Friend WithEvents grbDatos As GroupBox
     Friend WithEvents txtUsuario As TextBox
     Friend WithEvents Label9 As Label

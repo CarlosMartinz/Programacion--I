@@ -124,7 +124,7 @@ Partial Class FormBusquedaUsuarios
         '
         'Nombre
         '
-        Me.Nombre.DataPropertyName = "Nombre"
+        Me.Nombre.DataPropertyName = "nombre"
         Me.Nombre.HeaderText = "NOMBRE"
         Me.Nombre.Name = "Nombre"
         Me.Nombre.ReadOnly = True
@@ -132,14 +132,14 @@ Partial Class FormBusquedaUsuarios
         '
         'DUI
         '
-        Me.DUI.DataPropertyName = "Documento"
-        Me.DUI.HeaderText = "Documento"
+        Me.DUI.DataPropertyName = "documento"
+        Me.DUI.HeaderText = "DOCUMENTO"
         Me.DUI.Name = "DUI"
         Me.DUI.ReadOnly = True
         '
         'Telefono
         '
-        Me.Telefono.DataPropertyName = "Telefono"
+        Me.Telefono.DataPropertyName = "telefono"
         Me.Telefono.HeaderText = "TELEFONO"
         Me.Telefono.Name = "Telefono"
         Me.Telefono.ReadOnly = True
@@ -147,7 +147,7 @@ Partial Class FormBusquedaUsuarios
         '
         'Email
         '
-        Me.Email.DataPropertyName = "Email"
+        Me.Email.DataPropertyName = "email"
         Me.Email.HeaderText = "EMAIL"
         Me.Email.Name = "Email"
         Me.Email.ReadOnly = True
@@ -155,7 +155,7 @@ Partial Class FormBusquedaUsuarios
         '
         'Acceso
         '
-        Me.Acceso.DataPropertyName = "Acceso"
+        Me.Acceso.DataPropertyName = "acceso"
         Me.Acceso.HeaderText = "ACCESO"
         Me.Acceso.Name = "Acceso"
         Me.Acceso.ReadOnly = True
@@ -163,14 +163,14 @@ Partial Class FormBusquedaUsuarios
         '
         'Usuario
         '
-        Me.Usuario.DataPropertyName = "Usuario"
+        Me.Usuario.DataPropertyName = "usuario"
         Me.Usuario.HeaderText = "USUARIO"
         Me.Usuario.Name = "Usuario"
         Me.Usuario.ReadOnly = True
         '
         'Password
         '
-        Me.Password.DataPropertyName = "Password"
+        Me.Password.DataPropertyName = "password"
         Me.Password.HeaderText = "CONTRASEÑA"
         Me.Password.Name = "Password"
         Me.Password.ReadOnly = True

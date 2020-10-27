@@ -5,7 +5,7 @@
         SeleccionCliente()
     End Sub
     Private Sub FormBusquedaClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        grdBuscarCliente.DataSource = objConexion.obtenerDatosUsuarios().Tables("Clientes").DefaultView
+        grdBuscarCliente.DataSource = objConexion.obtenerDatosTablas().Tables("clientes").DefaultView
     End Sub
     Private Sub txtBuscarCliente_KeyUp(sender As Object, e As KeyEventArgs) Handles txtBuscarCliente.KeyUp
         FiltrarDatosCliente(txtBuscarCliente.Text)
@@ -20,7 +20,9 @@
     Private Sub FiltrarDatosCliente(ByVal Valor As String)
         Dim bs As New BindingSource()
         bs.DataSource = grdBuscarCliente.DataSource
-        bs.Filter = "Nombre like '%" & Valor & "%' or DUI like '%" & Valor & "%' or Telefono like '%" & Valor & "%' or Email like'%" & Valor & "%'"
+        bs.Filter = "code like '%" & Valor & "%' or nombre like '%" & Valor &
+            "%' or documento like '%" & Valor & "%' or codigo like '%" & Valor &
+            "%' or telefono like '%" & Valor & "%' or email like'%" & Valor & "%'"
         grdBuscarCliente.DataSource = bs
     End Sub
     Private Sub btnCancelarCliente_Click(sender As Object, e As EventArgs) Handles btnCancelarCliente.Click
