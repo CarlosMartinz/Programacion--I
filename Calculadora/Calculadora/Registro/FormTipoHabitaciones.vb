@@ -8,7 +8,7 @@
     End Sub
 
     Sub obtenerDatos()
-        'dataTable = objConexion.obtenerDatosUsuarios().Tables("TipoHabit").DefaultView()
+        dataTable = objConexion.obtenerDatosTablas().Tables("TipoHabit")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idTipo")}
 
         mostrarDatos()
@@ -33,13 +33,22 @@
         txtprecio.Text = ""
     End Sub
 
+    Sub HabDescontroles(ByVal estado As Boolean)
+        grbDatosTipoHab.Enabled = Not estado
+        grbNavegacionTipoHab.Enabled = estado
+        btnBuscarTipHabitacion.Enabled = estado
+        btnEliminarTipHabitacion.Enabled = estado
+    End Sub
+
     Private Sub btnPrimeroCategoria_Click(sender As Object, e As EventArgs) Handles btnPrimeroCategoria.Click
         posicion = 0
+        mostrarDatos()
     End Sub
 
     Private Sub btnAnteriorCategoria_Click(sender As Object, e As EventArgs) Handles btnAnteriorCategoria.Click
         If posicion > 0 Then
             posicion -= 1
+            mostrarDatos()
         Else
             MessageBox.Show("Ya se encuentra en el primer registro", "Registro Habitacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
@@ -48,9 +57,15 @@
     Private Sub btnSiguienteCategoria_Click(sender As Object, e As EventArgs) Handles btnSiguienteCategoria.Click
         If posicion < dataTable.Rows.Count - 1 Then
             posicion += 1
+            mostrarDatos()
         Else
             MessageBox.Show("Ya se encuentra en el ultimo registro", "Registro Habitacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
+    End Sub
+
+    Private Sub btnUltimoCategoria_Click(sender As Object, e As EventArgs) Handles btnUltimoCategoria.Click
+        posicion = dataTable.Rows.Count - 1
+        mostrarDatos()
     End Sub
 
     Private Sub btnAgregarTipHabitacion_Click(sender As Object, e As EventArgs) Handles btnAgregarTipHabitacion.Click
@@ -59,21 +74,21 @@
             btnModificarTipHabitacion.Text = "Cancelar"
             accion = "nuevo"
 
-            'HabDescontroles(False)
-            'limpiarDatosCategoria()
+            HabDescontroles(False)
+            LimpiarDatos()
         Else 'Guardar
-            'Dim msg = objConexion.mantenimientoDatosTipoHabitacion(New String() {
-            '    Me.Tag, txtCapacidad.Text, txtprecio.Text
-            '}, accion)
-            'If msg = "error" Then
-            '    MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Categorias",
-            '                    MessageBoxButtons.OK, MessageBoxIcon.Error)
-            'Else
-            '    obtenerDatos()
-            '    'HabDescontroles(True)
-            '    btnAgregarTipHabitacion.Text = "Nuevo"
-            '    btnModificarTipHabitacion.Text = "Modificar"
-            'End If
+            Dim msg = objConexion.mantenimientoDatosTipoHabitacion(New String() {
+                Me.Tag, txtdescripcion.Text, txtCapacidad.Text, txtprecio.Text
+            }, accion)
+            If msg = "error" Then
+                MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Categorias",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                obtenerDatos()
+                HabDescontroles(True)
+                btnAgregarTipHabitacion.Text = "Nuevo"
+                btnModificarTipHabitacion.Text = "Modificar"
+            End If
         End If
     End Sub
 
@@ -82,11 +97,11 @@
             btnAgregarTipHabitacion.Text = "Guardar"
             btnModificarTipHabitacion.Text = "Cancelar"
             accion = "actualizar"
-            'ControlesTipoHab(False)
+            HabDescontroles(False)
         Else 'Cancelar
             obtenerDatos()
 
-            'ControlesTipoHab(True)
+            HabDescontroles(True)
             btnAgregarTipHabitacion.Text = "Nuevo"
             btnModificarTipHabitacion.Text = "Modificar"
         End If
@@ -102,4 +117,6 @@
         '    obtenerDatos()
         'End If
     End Sub
+
+
 End Class

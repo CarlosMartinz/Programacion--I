@@ -35,6 +35,12 @@ Public Class db_conexion
         miCommand.Parameters.Add("@docu", SqlDbType.VarChar).Value = ""
         miCommand.Parameters.Add("@tele", SqlDbType.VarChar).Value = ""
         miCommand.Parameters.Add("@emai", SqlDbType.VarChar).Value = ""
+
+        'Tabla TipoHabit
+        miCommand.Parameters.Add("@Tag", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@idTipo", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@Capacidad", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@Precio", SqlDbType.VarChar).Value = ""
     End Sub
     'traedatos de la tabla usuarios y relacionada
     Public Function obtenerDatosTablas()
@@ -62,6 +68,9 @@ Public Class db_conexion
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "clientes")
 
+        miCommand.CommandText = "SELECT * FROM TipoHabit"
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "TipoHabit")
         Return ds
     End Function
     'CRUD usuario 
@@ -196,24 +205,30 @@ Public Class db_conexion
 
     ''    Return msg
     ''End Function
-    ''Public Function mantenimientoDatosTipoHabitacion(ByVal datos As String(), ByVal accion As String)
-    ''    Dim sql, msg As String
-    ''    Select Case accion
-    ''        Case "nuevo"
-    ''            sql = "INSERT INTO TipoHabit (idTipo,Capacidad,Precio) VALUES ('" + datos(0) + "','" + datos(1) + "','" + datos(2) + "')"
-    ''        Case "actualizar"
-    ''            sql = "UPDATE TipoHabit SET idTipo='" + datos(0) + "',Capacidad='" + datos(1) + "',Precio='" + datos(2) + "' WHERE idTipo='" + datos(0) + "'"
-    ''        Case "eliminar"
-    ''            sql = "DELETE FROM TipoHabi WHERE idTipo='" + datos(0) + "'"
-    ''    End Select
-    ''    If (executeSql(sql) > 0) Then
-    ''        msg = "exito"
-    ''    Else
-    ''        msg = "error"
-    ''    End If
+    Public Function mantenimientoDatosTipoHabitacion(ByVal datos As String(), ByVal accion As String)
+        Dim sql, msg As String
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT INTO TipoHabit (idTipo,Capacidad,Precio) VALUES (@idTipo,@Capacidad,@Precio)"
+            Case "actualizar"
+                sql = "UPDATE TipoHabit SET idTipo='" + datos(0) + "',Capacidad='" + datos(1) + "',Precio='" + datos(2) + "' WHERE idTipo='" + datos(0) + "'"
+            Case "eliminar"
+                sql = "DELETE FROM TipoHabi WHERE idTipo='" + datos(0) + "'"
+        End Select
+        miCommand.Parameters("@Tag").Value = datos(0)
+        If accion IsNot "eliminar" Then
+            miCommand.Parameters("@idTipo").Value = datos(1)
+            miCommand.Parameters("@Capacidad").Value = datos(2)
+            miCommand.Parameters("@Precio").Value = datos(3)
+        End If
+        If (executeSql(sql) > 0) Then
+            msg = "exito"
+        Else
+            msg = "error"
+        End If
 
-    ''    Return msg
-    ''End Function
+        Return msg
+    End Function
     Private Function executeSql(ByVal sql As String)
         Try
             miCommand.Connection = miConexion

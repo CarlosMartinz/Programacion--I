@@ -51,3 +51,4 @@ C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormTipoHabitaciones.resources
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormEdificios.resources
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.vbprojAssemblyReference.cache
+C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormEdificios.resources
