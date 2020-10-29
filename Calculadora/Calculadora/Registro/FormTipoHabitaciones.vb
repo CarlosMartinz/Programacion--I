@@ -4,6 +4,7 @@
     Dim posicion As Integer
     Dim accion As String = "nuevo"
     Private Sub FormTipoHabitaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        HabDescontroles(True)
         obtenerDatos()
     End Sub
 
@@ -108,15 +109,22 @@
     End Sub
 
     Private Sub btnEliminarTipHabitacion_Click(sender As Object, e As EventArgs) Handles btnEliminarTipHabitacion.Click
-        'If (MessageBox.Show("Esta seguro de borrar Este REgistro", "Registro de Habitacion",
-        '                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
-        '    objConexion.mantenimientoDatosTipoHabitacion(New String() {Me.Tag}, "eliminar")
-        '    If posicion > 0 Then
-        '        posicion -= 1 'Hemos borrado un registro
-        '    End If
-        '    obtenerDatos()
-        'End If
+        If MessageBox.Show("Esta seguro de borrar Este Registro", "Registro de Habitacion",
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            objConexion.mantenimientoDatosTipoHabitacion(New String() {Me.Tag}, "eliminar")
+            If posicion > 0 Then
+                posicion -= 1 'Hemos borrado un registro
+            End If
+            obtenerDatos()
+            mostrarDatos()
+        End If
     End Sub
-
-
+    Private Sub btnBuscarTipHabitacion_Click(sender As Object, e As EventArgs) Handles btnBuscarTipHabitacion.Click
+        Dim objFormBUcarTipoHabit As New FormBusquedaTipoHabitaciones()
+        objFormBUcarTipoHabit.ShowDialog()
+        If objFormBUcarTipoHabit._idTipoHabit <> "" Then
+            posicion = dataTable.Rows.IndexOf(dataTable.Rows.Find(objFormBUcarTipoHabit._idTipoHabit))
+            mostrarDatos()
+        End If
+    End Sub
 End Class
