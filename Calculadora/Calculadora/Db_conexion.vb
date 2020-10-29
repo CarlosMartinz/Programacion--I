@@ -211,9 +211,9 @@ Public Class db_conexion
             Case "nuevo"
                 sql = "INSERT INTO TipoHabit (idTipo,Capacidad,Precio) VALUES (@idTipo,@Capacidad,@Precio)"
             Case "actualizar"
-                sql = "UPDATE TipoHabit SET idTipo='" + datos(0) + "',Capacidad='" + datos(1) + "',Precio='" + datos(2) + "' WHERE idTipo='" + datos(0) + "'"
+                sql = "UPDATE TipoHabit SET idTipo=@idTipo,Capacidad=@Capacidad,Precio=@Precio WHERE idTipo=@Tag"
             Case "eliminar"
-                sql = "DELETE FROM TipoHabi WHERE idTipo='" + datos(0) + "'"
+                sql = "DELETE FROM TipoHabit WHERE idTipo=@Tag"
         End Select
         miCommand.Parameters("@Tag").Value = datos(0)
         If accion IsNot "eliminar" Then
