@@ -7,14 +7,14 @@
         ''obtenerDatosTipoHabitacion()
     End Sub
     'Sub obtenerDatosTipoHabitacion()
-    '    dataTable = objConexion.obtenerDatosUsuarios().Tables("Habitaciones")
+    '    dataTable = objConexion.obtenerDatosTablas().Tables("Habitaciones")
     '    dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idHabitaciones")}
 
-    '    cboTipo.DataSource = objConexion.obtenerDatosUsuarios().Tables("TipoHabit").DefaultView()
+    '    cboTipo.DataSource = objConexion.obtenerDatosTablas().Tables("TipoHabit").DefaultView()
     '    cboTipo.DisplayMember = "idTipo"
     '    cboTipo.ValueMember = "TipoHabit.idTipo"
 
-    '    cboEdificio.DataSource = objConexion.obtenerDatosUsuarios().Tables("Edificio").DefaultView()
+    '    cboEdificio.DataSource = objConexion.obtenerDatosTablas().Tables("Edificio").DefaultView()
     '    cboEdificio.DisplayMember = "Edificio"
     '    cboEdificio.ValueMember = "Edificio.Edificio"
 
@@ -22,29 +22,29 @@
     '    mostrarDatosEdificios()
     'End Sub
 
-    Sub mostrarDatosHabit()
-        If dataTable.Rows.Count > 0 Then
-            Me.Tag = dataTable.Rows(posicion).ItemArray(0).ToString() 'ID de tipo de habitacion 
-            txtcodigohabitacion.Text = dataTable.Rows(posicion).ItemArray(1).ToString()
-            cboEdificio.SelectedValue = dataTable.Rows(posicion).ItemArray(2).ToString()
-            cboTipo.SelectedValue = dataTable.Rows(posicion).ItemArray(3).ToString()
+    Sub mostrardatoshabit()
+        '    If dataTable.Rows.Count > 0 Then
+        '        Me.Tag = dataTable.Rows(posicion).ItemArray(0).ToString() 'id de tipo de habitacion 
+        '        txtcodigohabitacion.Text = dataTable.Rows(posicion).ItemArray(1).ToString()
+        '        cboEdificio.SelectedValue = dataTable.Rows(posicion).ItemArray(2).ToString()
+        '        cboTipo.SelectedValue = dataTable.Rows(posicion).ItemArray(3).ToString()
 
-            lblRegistroHabitaciones.Text = posicion + 1 & " de " & dataTable.Rows.Count
-        Else
-            limpiarDatos()
-            MessageBox.Show("No hay registros que mostrar", "Registro de Productos", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
-    End Sub
-    Sub mostrarDatosEdificios()
-        If dataTable.Rows.Count > 0 Then
-            Me.Tag = dataTable.Rows(posicion).ItemArray(0).ToString() 'ID de tipo de habitacion 
-            'txtedificio.Text = dataTable.Rows(posicion).ItemArray(3).ToString()
+        '        lblRegistroHabitaciones.Text = posicion + 1 & " de " & dataTable.Rows.Count
+        '    Else
+        '        limpiarDatos()
+        '        MessageBox.Show("no hay registros que mostrar", "registro de productos", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '    End If
+        'End Sub
+        'Sub mostrarDatosEdificios()
+        '    If dataTable.Rows.Count > 0 Then
+        '        Me.Tag = dataTable.Rows(posicion).ItemArray(0).ToString() 'ID de tipo de habitacion 
+        '        txtedificio.Text = dataTable.Rows(posicion).ItemArray(3).ToString()
 
-            lblRegistroHabitaciones.Text = posicion + 1 & " de " & dataTable.Rows.Count
-        Else
-            limpiarDatos()
-            MessageBox.Show("No hay registros que mostrar", "Registro de Productos", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
+        '        lblRegistroHabitaciones.Text = posicion + 1 & " de " & dataTable.Rows.Count
+        '    Else
+        '        limpiarDatos()
+        '        MessageBox.Show("No hay registros que mostrar", "Registro de Productos", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '    End If
     End Sub
     Private Sub limpiarDatos()
         'txtedificio.Text = ""
