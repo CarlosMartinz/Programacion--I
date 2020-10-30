@@ -184,6 +184,9 @@
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Registro\FormReservaciones.resx">
+      <DependentUpon>FormReservaciones.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registro\FormTipoHabitaciones.resx">
       <DependentUpon>FormTipoHabitaciones.vb</DependentUpon>
     </EmbeddedResource>
