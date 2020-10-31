@@ -41,6 +41,10 @@ Public Class db_conexion
         miCommand.Parameters.Add("@idTipo", SqlDbType.VarChar).Value = ""
         miCommand.Parameters.Add("@Capacidad", SqlDbType.VarChar).Value = ""
         miCommand.Parameters.Add("@Precio", SqlDbType.VarChar).Value = ""
+
+        'Tabla Edificio
+        miCommand.Parameters.Add("@idEdi", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@Edi", SqlDbType.VarChar).Value = ""
     End Sub
     'traedatos de la tabla usuarios y relacionada
     Public Function obtenerDatosTablas()
@@ -71,6 +75,10 @@ Public Class db_conexion
         miCommand.CommandText = "SELECT * FROM TipoHabit"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "TipoHabit")
+
+        miCommand.CommandText = "SELECT * FROM Edificio"
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "Edificio")
         Return ds
     End Function
     'CRUD usuario 
@@ -178,6 +186,23 @@ Public Class db_conexion
         If accion IsNot "eliminar" Then
             miCommand.Parameters("@tele").Value = datos(5)
             miCommand.Parameters("@emai").Value = datos(6)
+        End If
+        executeSql(sql)
+    End Function
+
+    Public Function mantenimientoDatosEdificio(ByVal datos As String(), ByVal accion As String)
+        Dim sql, msg As String
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT INTO Edificio (Edificio) VALUES(@Edi)"
+            Case "actualizar"
+                sql = "UPDATE Edificio SET Edificio=@Edi WHERE Edificio=@idEdi"
+            Case "eliminar"
+                sql = "DELETE FROM Edificio WHERE Edificio=@idEdi"
+        End Select
+        miCommand.Parameters("@idEdi").Value = datos(0)
+        If accion IsNot "eliminar" Then
+            miCommand.Parameters("@Edi").Value = datos(1)
         End If
         executeSql(sql)
     End Function
