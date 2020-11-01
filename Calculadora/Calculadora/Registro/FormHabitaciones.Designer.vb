@@ -22,7 +22,7 @@ Partial Class FormHabitaciones
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.brHabitacionNueva = New System.Windows.Forms.GroupBox()
+        Me.grbDatosHabitacion = New System.Windows.Forms.GroupBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnMostrarTipo = New System.Windows.Forms.Button()
@@ -34,41 +34,41 @@ Partial Class FormHabitaciones
         Me.txtcodigohabitacion = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.grbNavegacion = New System.Windows.Forms.GroupBox()
         Me.lblRegistroHabitaciones = New System.Windows.Forms.Label()
         Me.btnUltimo = New System.Windows.Forms.Button()
         Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.btnAnterior = New System.Windows.Forms.Button()
         Me.btnPrimero = New System.Windows.Forms.Button()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.grbEdicion = New System.Windows.Forms.GroupBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
-        Me.brHabitacionNueva.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
+        Me.grbDatosHabitacion.SuspendLayout()
+        Me.grbNavegacion.SuspendLayout()
+        Me.grbEdicion.SuspendLayout()
         Me.SuspendLayout()
         '
-        'brHabitacionNueva
+        'grbDatosHabitacion
         '
-        Me.brHabitacionNueva.Controls.Add(Me.Button2)
-        Me.brHabitacionNueva.Controls.Add(Me.Button1)
-        Me.brHabitacionNueva.Controls.Add(Me.btnMostrarTipo)
-        Me.brHabitacionNueva.Controls.Add(Me.btnMostrarEdificio)
-        Me.brHabitacionNueva.Controls.Add(Me.cboTipo)
-        Me.brHabitacionNueva.Controls.Add(Me.cboEdificio)
-        Me.brHabitacionNueva.Controls.Add(Me.Label5)
-        Me.brHabitacionNueva.Controls.Add(Me.Label4)
-        Me.brHabitacionNueva.Controls.Add(Me.txtcodigohabitacion)
-        Me.brHabitacionNueva.Controls.Add(Me.Label1)
-        Me.brHabitacionNueva.Controls.Add(Me.TextBox3)
-        Me.brHabitacionNueva.Location = New System.Drawing.Point(12, 12)
-        Me.brHabitacionNueva.Name = "brHabitacionNueva"
-        Me.brHabitacionNueva.Size = New System.Drawing.Size(552, 169)
-        Me.brHabitacionNueva.TabIndex = 31
-        Me.brHabitacionNueva.TabStop = False
-        Me.brHabitacionNueva.Text = "Habitacion nueva"
+        Me.grbDatosHabitacion.Controls.Add(Me.Button2)
+        Me.grbDatosHabitacion.Controls.Add(Me.Button1)
+        Me.grbDatosHabitacion.Controls.Add(Me.btnMostrarTipo)
+        Me.grbDatosHabitacion.Controls.Add(Me.btnMostrarEdificio)
+        Me.grbDatosHabitacion.Controls.Add(Me.cboTipo)
+        Me.grbDatosHabitacion.Controls.Add(Me.cboEdificio)
+        Me.grbDatosHabitacion.Controls.Add(Me.Label5)
+        Me.grbDatosHabitacion.Controls.Add(Me.Label4)
+        Me.grbDatosHabitacion.Controls.Add(Me.txtcodigohabitacion)
+        Me.grbDatosHabitacion.Controls.Add(Me.Label1)
+        Me.grbDatosHabitacion.Controls.Add(Me.TextBox3)
+        Me.grbDatosHabitacion.Location = New System.Drawing.Point(12, 12)
+        Me.grbDatosHabitacion.Name = "grbDatosHabitacion"
+        Me.grbDatosHabitacion.Size = New System.Drawing.Size(552, 169)
+        Me.grbDatosHabitacion.TabIndex = 31
+        Me.grbDatosHabitacion.TabStop = False
+        Me.grbDatosHabitacion.Text = "Habitacion nueva"
         '
         'Button2
         '
@@ -172,21 +172,21 @@ Partial Class FormHabitaciones
         Me.TextBox3.Size = New System.Drawing.Size(100, 20)
         Me.TextBox3.TabIndex = 18
         '
-        'GroupBox2
+        'grbNavegacion
         '
-        Me.GroupBox2.Controls.Add(Me.lblRegistroHabitaciones)
-        Me.GroupBox2.Controls.Add(Me.btnUltimo)
-        Me.GroupBox2.Controls.Add(Me.btnSiguiente)
-        Me.GroupBox2.Controls.Add(Me.btnAnterior)
-        Me.GroupBox2.Controls.Add(Me.btnPrimero)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 185)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(1)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(1)
-        Me.GroupBox2.Size = New System.Drawing.Size(237, 68)
-        Me.GroupBox2.TabIndex = 33
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Navegacion"
+        Me.grbNavegacion.Controls.Add(Me.lblRegistroHabitaciones)
+        Me.grbNavegacion.Controls.Add(Me.btnUltimo)
+        Me.grbNavegacion.Controls.Add(Me.btnSiguiente)
+        Me.grbNavegacion.Controls.Add(Me.btnAnterior)
+        Me.grbNavegacion.Controls.Add(Me.btnPrimero)
+        Me.grbNavegacion.Location = New System.Drawing.Point(12, 185)
+        Me.grbNavegacion.Margin = New System.Windows.Forms.Padding(1)
+        Me.grbNavegacion.Name = "grbNavegacion"
+        Me.grbNavegacion.Padding = New System.Windows.Forms.Padding(1)
+        Me.grbNavegacion.Size = New System.Drawing.Size(237, 68)
+        Me.grbNavegacion.TabIndex = 33
+        Me.grbNavegacion.TabStop = False
+        Me.grbNavegacion.Text = "Navegacion"
         '
         'lblRegistroHabitaciones
         '
@@ -242,20 +242,20 @@ Partial Class FormHabitaciones
         Me.btnPrimero.Text = "|<"
         Me.btnPrimero.UseVisualStyleBackColor = True
         '
-        'GroupBox3
+        'grbEdicion
         '
-        Me.GroupBox3.Controls.Add(Me.btnBuscar)
-        Me.GroupBox3.Controls.Add(Me.btnEliminar)
-        Me.GroupBox3.Controls.Add(Me.btnModificar)
-        Me.GroupBox3.Controls.Add(Me.btnNuevo)
-        Me.GroupBox3.Location = New System.Drawing.Point(251, 185)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(1)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(1)
-        Me.GroupBox3.Size = New System.Drawing.Size(315, 68)
-        Me.GroupBox3.TabIndex = 32
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Edicion"
+        Me.grbEdicion.Controls.Add(Me.btnBuscar)
+        Me.grbEdicion.Controls.Add(Me.btnEliminar)
+        Me.grbEdicion.Controls.Add(Me.btnModificar)
+        Me.grbEdicion.Controls.Add(Me.btnNuevo)
+        Me.grbEdicion.Location = New System.Drawing.Point(251, 185)
+        Me.grbEdicion.Margin = New System.Windows.Forms.Padding(1)
+        Me.grbEdicion.Name = "grbEdicion"
+        Me.grbEdicion.Padding = New System.Windows.Forms.Padding(1)
+        Me.grbEdicion.Size = New System.Drawing.Size(315, 68)
+        Me.grbEdicion.TabIndex = 32
+        Me.grbEdicion.TabStop = False
+        Me.grbEdicion.Text = "Edicion"
         '
         'btnBuscar
         '
@@ -306,30 +306,30 @@ Partial Class FormHabitaciones
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(580, 264)
-        Me.Controls.Add(Me.brHabitacionNueva)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.grbDatosHabitacion)
+        Me.Controls.Add(Me.grbNavegacion)
+        Me.Controls.Add(Me.grbEdicion)
         Me.Name = "FormHabitaciones"
         Me.Text = "FormHabitaciones"
-        Me.brHabitacionNueva.ResumeLayout(False)
-        Me.brHabitacionNueva.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
+        Me.grbDatosHabitacion.ResumeLayout(False)
+        Me.grbDatosHabitacion.PerformLayout()
+        Me.grbNavegacion.ResumeLayout(False)
+        Me.grbNavegacion.PerformLayout()
+        Me.grbEdicion.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents brHabitacionNueva As GroupBox
+    Friend WithEvents grbDatosHabitacion As GroupBox
     Friend WithEvents txtcodigohabitacion As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents grbNavegacion As GroupBox
     Friend WithEvents lblRegistroHabitaciones As Label
     Friend WithEvents btnUltimo As Button
     Friend WithEvents btnSiguiente As Button
     Friend WithEvents btnAnterior As Button
     Friend WithEvents btnPrimero As Button
-    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents grbEdicion As GroupBox
     Friend WithEvents btnBuscar As Button
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnModificar As Button

@@ -4,23 +4,23 @@
     Dim posicion As Integer
     Dim accion As String = "nuevo"
     Private Sub FormHabitaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ''obtenerDatosTipoHabitacion()
+        obtenerDatosHabitaciones()
+        ControlesHabitacion(True)
     End Sub
-    'Sub obtenerDatosTipoHabitacion()
-    '    dataTable = objConexion.obtenerDatosUsuarios().Tables("Habitaciones")
-    '    dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idHabitaciones")}
+    Sub obtenerDatosHabitaciones()
+        dataTable = objConexion.obtenerDatosTablas().Tables("Habitaciones")
+        dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idHabitaciones")}
 
-    '    cboTipo.DataSource = objConexion.obtenerDatosUsuarios().Tables("TipoHabit").DefaultView()
-    '    cboTipo.DisplayMember = "idTipo"
-    '    cboTipo.ValueMember = "TipoHabit.idTipo"
+        cboTipo.DataSource = objConexion.obtenerDatosTablas().Tables("TipoHabit").DefaultView()
+        cboTipo.DisplayMember = "idTipo"
+        cboTipo.ValueMember = "TipoHabit.idTipo"
 
-    '    cboEdificio.DataSource = objConexion.obtenerDatosUsuarios().Tables("Edificio").DefaultView()
-    '    cboEdificio.DisplayMember = "Edificio"
-    '    cboEdificio.ValueMember = "Edificio.Edificio"
+        cboEdificio.DataSource = objConexion.obtenerDatosTablas().Tables("Edificio").DefaultView()
+        cboEdificio.DisplayMember = "Edificio"
+        cboEdificio.ValueMember = "Edificio.Edificio"
 
-    '    mostrarDatosHabit()
-    '    mostrarDatosEdificios()
-    'End Sub
+        mostrarDatosHabit()
+    End Sub
 
     Sub mostrarDatosHabit()
         If dataTable.Rows.Count > 0 Then
@@ -35,58 +35,24 @@
             MessageBox.Show("No hay registros que mostrar", "Registro de Productos", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
-    Sub mostrarDatosEdificios()
-        If dataTable.Rows.Count > 0 Then
-            Me.Tag = dataTable.Rows(posicion).ItemArray(0).ToString() 'ID de tipo de habitacion 
-            'txtedificio.Text = dataTable.Rows(posicion).ItemArray(3).ToString()
 
-            lblRegistroHabitaciones.Text = posicion + 1 & " de " & dataTable.Rows.Count
-        Else
-            limpiarDatos()
-            MessageBox.Show("No hay registros que mostrar", "Registro de Productos", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
-    End Sub
     Private Sub limpiarDatos()
-        'txtedificio.Text = ""
         txtcodigohabitacion.Text = ""
-        'txtedificio.Text = ""
     End Sub
 
-    Private Sub btnAgregarEdificios_Click(sender As Object, e As EventArgs)
-        'If btnAgregarEdificios.Text = "Nuevo" Then 'Nuevo
-        '    btnAgregarEdificios.Text = "Guardar"
-        '    btnAgregarEdificios.Text = "Cancelar"
-        '    accion = "nuevo"
-
-        '    'HabDescontroles(False)
-        '    'limpiarDatosCategoria()
-        'Else 'Guardar
-        '    'Dim msg = objConexion.mantenimientoDatosEdificio(New String() {
-        '    '    Me.Tag, txtedificio.Text
-        '    '}, accion)
-        '    'If msg = "error" Then
-        '    '    MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Categorias",
-        '    '                    MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    'Else
-        '    '    obtenerDatosTipoHabitacion()
-        '    '    'HabDescontroles(True)
-        '    '    'btnAgregarTipHabitacion.Text = "Nuevo"
-        '    '    ' btnModificarTipHabitacion.Text = "Modificar"
-        '    'End If
-        'End If
+    Private Sub ControlesHabitacion(ByVal Estado As Boolean)
+        grbDatosHabitacion.Enabled = Not Estado
+        grbNavegacion.Enabled = Estado
+        btnBuscar.Enabled = Estado
+        btnEliminar.Enabled = Estado
     End Sub
 
-    Private Sub ControlesTipoHab(ByVal Estado As Boolean)
-        'grbDatosTipoHab.Enabled = Not Estado
-        'grbNavegacionTipoHab.Enabled = Estado
-        'btnBuscarTipHabitacion.Enabled = Estado
-        'btnEliminarTipHabitacion.Enabled = Estado
-    End Sub
-    Private Sub btnPrimeroCategoria_Click(sender As Object, e As EventArgs) 
+    Private Sub btnPrimero_Click_1(sender As Object, e As EventArgs) Handles btnPrimero.Click
         posicion = 0
+        mostrarDatosHabit()
     End Sub
 
-    Private Sub btnAnteriorCategoria_Click(sender As Object, e As EventArgs) 
+    Private Sub btnAnterior_Click(sender As Object, e As EventArgs) Handles btnAnterior.Click
         If posicion > 0 Then
             posicion -= 1
             mostrarDatosHabit()
@@ -95,7 +61,7 @@
         End If
     End Sub
 
-    Private Sub btnSiguienteCategoria_Click(sender As Object, e As EventArgs) 
+    Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
         If posicion < dataTable.Rows.Count - 1 Then
             posicion += 1
             mostrarDatosHabit()
@@ -104,63 +70,57 @@
         End If
     End Sub
 
-    Private Sub btnUltimoCategoria_Click(sender As Object, e As EventArgs) 
+    Private Sub btnUltimo_Click(sender As Object, e As EventArgs) Handles btnUltimo.Click
         posicion = dataTable.Rows.Count - 1
         mostrarDatosHabit()
     End Sub
 
-    Private Sub btnAgregarTipHabitacion_Click(sender As Object, e As EventArgs)
-        'If btnAgregarTipHabitacion.Text = "Nuevo" Then 'Nuevo
-        '    btnAgregarTipHabitacion.Text = "Guardar"
-        '    btnModificarTipHabitacion.Text = "Cancelar"
-        '    accion = "nuevo"
+    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        If btnNuevo.Text = "Nuevo" Then 'Nuevo
+            btnNuevo.Text = "Guardar"
+            btnModificar.Text = "Cancelar"
+            accion = "nuevo"
 
-        '    ControlesTipoHab(False)
-        '    limpiarDatos()
-        'Else 'Guardar
-        '    Dim msg = objConexion.mantenimientoDatosTipoHabitacion(New String() {
-        '        Me.Tag, txtdescripcion.Text, txtcapacidad.Text, txtprecio.Text}, accion)
-        '    If msg = "error" Then
-        '        MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Clientes",
-        '                        MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    Else
-        '        obtenerDatosTipoHabitacion()
-        '        ControlesTipoHab(True)
-        '        btnAgregarTipHabitacion.Text = "Nuevo"
-        '        btnModificarTipHabitacion.Text = "Modificar"
-        '    End If
-        'End If
+            ControlesHabitacion(False)
+            limpiarDatos()
+        Else 'Guardar
+            Dim msg = objConexion.mantenimientoDatosHabitaciones(New String() {
+                Me.Tag, txtcodigohabitacion.Text, cboEdificio.SelectedValue, cboTipo.SelectedValue}, accion)
+            If msg = "error" Then
+                MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Clientes",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                obtenerDatosHabitaciones()
+                ControlesHabitacion(True)
+                btnNuevo.Text = "Nuevo"
+                btnModificar.Text = "Modificar"
+            End If
+        End If
     End Sub
 
-    Private Sub btnModificarTipHabitacion_Click(sender As Object, e As EventArgs)
-        'If btnModificarTipHabitacion.Text = "Modificar" Then 'Modificar
-        '    btnAgregarTipHabitacion.Text = "Guardar"
-        '    btnModificarTipHabitacion.Text = "Cancelar"
-        '    accion = "actualizar"
-        '    ControlesTipoHab(False)
-        'Else 'Cancelar
-        '    obtenerDatosTipoHabitacion()
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        If btnModificar.Text = "Modificar" Then 'Modificar
+            btnNuevo.Text = "Guardar"
+            btnModificar.Text = "Cancelar"
+            accion = "actualizar"
+            ControlesHabitacion(False)
+        Else 'Cancelar
+            obtenerDatosHabitaciones()
 
-        '    ControlesTipoHab(True)
-        '    btnAgregarTipHabitacion.Text = "Nuevo"
-        '    btnModificarTipHabitacion.Text = "Modificar"
-        'End If
+            ControlesHabitacion(True)
+            btnNuevo.Text = "Nuevo"
+            btnModificar.Text = "Modificar"
+        End If
     End Sub
 
-    Private Sub btnEliminarTipHabitacion_Click(sender As Object, e As EventArgs)
-        'If (MessageBox.Show("Esta seguro de borrar Este REgistro", "Registro de Habitacion",
-        '                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
-        '    objConexion.mantenimientoDatosTipoHabitacion(New String() {Me.Tag}, "eliminar")
-        '    If posicion > 0 Then
-        '        posicion -= 1 'Hemos borrado un registro
-        '    End If
-        '    obtenerDatosTipoHabitacion()
-        'End If
-    End Sub
-
-
-
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If (MessageBox.Show("Esta seguro de borrar Este Registro", "Registro de Habitacion",
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+            objConexion.mantenimientoDatosHabitaciones(New String() {Me.Tag}, "eliminar")
+            If posicion > 0 Then
+                posicion -= 1 'Hemos borrado un registro
+            End If
+            obtenerDatosHabitaciones()
+        End If
     End Sub
 End Class
