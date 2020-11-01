@@ -5,6 +5,7 @@
     Dim accion As String = "nuevo"
     Private Sub FormHabitaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         obtenerDatosHabitaciones()
+        ControlesHabitacion(True)
     End Sub
     Sub obtenerDatosHabitaciones()
         dataTable = objConexion.obtenerDatosTablas().Tables("Habitaciones")

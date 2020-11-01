@@ -85,10 +85,10 @@ Public Class db_conexion
         miAdapter.Fill(ds, "Edificio")
 
         miCommand.CommandText = "
-            select Habitaciones.Codigo, Edificio.Edificio, TipoHabit.idTipo
-            from Habtaciones
+            select Habitaciones.idHabitaciones, Habitaciones.Codigo, Edificio.Edificio, TipoHabit.idTipo
+            from Habitaciones
                 inner join Edificio on(Edificio.Edificio=Habitaciones.Edificio)
-                inner join TipoHanit on(TipoHabit.idTipo=Habitaciones.TipoHabit)"
+                inner join TipoHabit on(TipoHabit.idTipo=Habitaciones.TipoHabit)"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Habitaciones")
 
