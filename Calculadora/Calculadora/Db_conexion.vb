@@ -45,6 +45,10 @@ Public Class db_conexion
         'Tabla Edificio
         miCommand.Parameters.Add("@idEdi", SqlDbType.VarChar).Value = ""
         miCommand.Parameters.Add("@Edi", SqlDbType.VarChar).Value = ""
+
+        'Tabla Habitaciones
+        miCommand.Parameters.Add("@idHabitaciones", SqlDbType.Int).Value = 0
+        miCommand.Parameters.Add("@Cod", SqlDbType.VarChar).Value = ""
     End Sub
     'traedatos de la tabla usuarios y relacionada
     Public Function obtenerDatosTablas()
@@ -79,6 +83,15 @@ Public Class db_conexion
         miCommand.CommandText = "SELECT * FROM Edificio"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Edificio")
+
+        miCommand.CommandText = "
+            select Habitaciones.Codigo, Edificio.Edificio, TipoHabit.idTipo
+            from Habtaciones
+                inner join Edificio on(Edificio.Edificio=Habitaciones.Edificio)
+                inner join TipoHanit on(TipoHabit.idTipo=Habitaciones.TipoHabit)"
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "Habitaciones")
+
         Return ds
     End Function
     'CRUD usuario 
@@ -207,29 +220,6 @@ Public Class db_conexion
         executeSql(sql)
     End Function
 
-
-    '''CRUD edificio relacionada con habitaciones
-    ''Public Function mantenimientoDatosEdificio(ByVal datos As String(), ByVal accion As String)
-    ''    Dim sql, msg As String
-    ''    Select Case accion
-    ''        Case "nuevo"
-    ''            sql = "INSERT INTO Usuarios (Edificio) VALUES (@edificio)"
-    ''        Case "actualizar"
-    ''            sql = "UPDATE Usuarios SET Edificio WHERE Edificio=@edificio"
-    ''        Case "eliminar"
-    ''            sql = "DELETE FROM Usuarios WHERE idUsuario=@idU"
-    ''    End Select
-    ''    If accion IsNot "eliminar" Then
-    ''        miCommand.Parameters("@edificio").Value = datos(0)
-    ''    End If
-    ''    If (executeSql(sql) > 0) Then
-    ''        msg = "exito"
-    ''    Else
-    ''        msg = "error"
-    ''    End If
-
-    ''    Return msg
-    ''End Function
     Public Function mantenimientoDatosTipoHabitacion(ByVal datos As String(), ByVal accion As String)
         Dim sql, msg As String
         Select Case accion
@@ -247,6 +237,30 @@ Public Class db_conexion
             miCommand.Parameters("@Precio").Value = datos(3)
         End If
         If (executeSql(sql) > 0) Then
+            msg = "exito"
+        Else
+            msg = "error"
+        End If
+
+        Return msg
+    End Function
+    Public Function mantenimientoDatosHabitaciones(ByVal datos As String(), ByVal accion As String)
+        Dim sql, msg As String
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT INTO Habitaciones (Codigo,Edificio,TipoHabit) VALUES(@Cod,@Edi,@idTipo)"
+            Case "actualizar"
+                sql = "UPDATE Habitaciones SET Codigo=@Cod,Edificio=@Edi,TipoHabit=@idTipo WHERE idHabitaciones=@idHabitaciones"
+            Case "eliminar"
+                sql = "DELETE FROM Habitaciones WHERE idHabitaciones=@idHabitaciones"
+        End Select
+        miCommand.Parameters("@idHabitaciones").Value = datos(0)
+        If accion IsNot "eliminar" Then
+            miCommand.Parameters("@Cod").Value = datos(1)
+            miCommand.Parameters("@Edi").Value = datos(2)
+            miCommand.Parameters("@idTipo").Value = datos(3)
+        End If
+        If executeSql(sql) > 0 Then
             msg = "exito"
         Else
             msg = "error"
