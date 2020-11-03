@@ -100,6 +100,12 @@
     <Compile Include="Busqueda\FormBusquedaEdificio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Busqueda\FormBusquedaHabitaciones.Designer.vb">
+      <DependentUpon>FormBusquedaHabitaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda\FormBusquedaHabitaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Busqueda\FormBusquedaTipoHabitaciones.Designer.vb">
       <DependentUpon>FormBusquedaTipoHabitaciones.vb</DependentUpon>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Busqueda\FormBusquedaEdificio.resx">
       <DependentUpon>FormBusquedaEdificio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busqueda\FormBusquedaHabitaciones.resx">
+      <DependentUpon>FormBusquedaHabitaciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Busqueda\FormBusquedaTipoHabitaciones.resx">
       <DependentUpon>FormBusquedaTipoHabitaciones.vb</DependentUpon>
