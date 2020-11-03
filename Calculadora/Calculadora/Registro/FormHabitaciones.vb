@@ -123,4 +123,13 @@
             obtenerDatosHabitaciones()
         End If
     End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Dim objBuscarHabitacion As New FormBusquedaHabitaciones
+        objBuscarHabitacion.ShowDialog()
+        If objBuscarHabitacion._idHabit > 0 Then
+            posicion = dataTable.Rows.IndexOf(dataTable.Rows.Find(objBuscarHabitacion._idHabit))
+            mostrarDatosHabit()
+        End If
+    End Sub
 End Class
