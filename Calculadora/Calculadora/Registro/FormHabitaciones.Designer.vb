@@ -25,8 +25,8 @@ Partial Class FormHabitaciones
         Me.grbDatosHabitacion = New System.Windows.Forms.GroupBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.btnMostrarTipo = New System.Windows.Forms.Button()
-        Me.btnMostrarEdificio = New System.Windows.Forms.Button()
+        Me.btnBuscarTipo = New System.Windows.Forms.Button()
+        Me.btnBuscarEdificio = New System.Windows.Forms.Button()
         Me.cboTipo = New System.Windows.Forms.ComboBox()
         Me.cboEdificio = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -54,8 +54,8 @@ Partial Class FormHabitaciones
         '
         Me.grbDatosHabitacion.Controls.Add(Me.Button2)
         Me.grbDatosHabitacion.Controls.Add(Me.Button1)
-        Me.grbDatosHabitacion.Controls.Add(Me.btnMostrarTipo)
-        Me.grbDatosHabitacion.Controls.Add(Me.btnMostrarEdificio)
+        Me.grbDatosHabitacion.Controls.Add(Me.btnBuscarTipo)
+        Me.grbDatosHabitacion.Controls.Add(Me.btnBuscarEdificio)
         Me.grbDatosHabitacion.Controls.Add(Me.cboTipo)
         Me.grbDatosHabitacion.Controls.Add(Me.cboEdificio)
         Me.grbDatosHabitacion.Controls.Add(Me.Label5)
@@ -90,25 +90,25 @@ Partial Class FormHabitaciones
         Me.Button1.Text = "Detalles"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'btnMostrarTipo
+        'btnBuscarTipo
         '
-        Me.btnMostrarTipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMostrarTipo.Location = New System.Drawing.Point(388, 129)
-        Me.btnMostrarTipo.Name = "btnMostrarTipo"
-        Me.btnMostrarTipo.Size = New System.Drawing.Size(75, 23)
-        Me.btnMostrarTipo.TabIndex = 26
-        Me.btnMostrarTipo.Text = "Buscar"
-        Me.btnMostrarTipo.UseVisualStyleBackColor = True
+        Me.btnBuscarTipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarTipo.Location = New System.Drawing.Point(388, 129)
+        Me.btnBuscarTipo.Name = "btnBuscarTipo"
+        Me.btnBuscarTipo.Size = New System.Drawing.Size(75, 23)
+        Me.btnBuscarTipo.TabIndex = 26
+        Me.btnBuscarTipo.Text = "Buscar"
+        Me.btnBuscarTipo.UseVisualStyleBackColor = True
         '
-        'btnMostrarEdificio
+        'btnBuscarEdificio
         '
-        Me.btnMostrarEdificio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMostrarEdificio.Location = New System.Drawing.Point(388, 86)
-        Me.btnMostrarEdificio.Name = "btnMostrarEdificio"
-        Me.btnMostrarEdificio.Size = New System.Drawing.Size(75, 23)
-        Me.btnMostrarEdificio.TabIndex = 25
-        Me.btnMostrarEdificio.Text = "Buscar"
-        Me.btnMostrarEdificio.UseVisualStyleBackColor = True
+        Me.btnBuscarEdificio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarEdificio.Location = New System.Drawing.Point(388, 86)
+        Me.btnBuscarEdificio.Name = "btnBuscarEdificio"
+        Me.btnBuscarEdificio.Size = New System.Drawing.Size(75, 23)
+        Me.btnBuscarEdificio.TabIndex = 25
+        Me.btnBuscarEdificio.Text = "Buscar"
+        Me.btnBuscarEdificio.UseVisualStyleBackColor = True
         '
         'cboTipo
         '
@@ -338,8 +338,8 @@ Partial Class FormHabitaciones
     Friend WithEvents cboEdificio As ComboBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents btnMostrarTipo As Button
-    Friend WithEvents btnMostrarEdificio As Button
+    Friend WithEvents btnBuscarTipo As Button
+    Friend WithEvents btnBuscarEdificio As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
 End Class
