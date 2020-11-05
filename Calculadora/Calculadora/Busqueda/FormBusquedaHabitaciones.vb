@@ -13,7 +13,7 @@
     Private Sub FiltrarDatosHabit(ByVal Valor As String)
         Dim bs As New BindingSource()
         bs.DataSource = grdBuscarHabit.DataSource
-        'bs.Filter = "idhabitaciones like '%" & Valor & "%' or Codigo like '%" & Valor & "%' or Edificio like '%" & Valor & "%' or idTipo like '%" & Valor & "%'"
+        bs.Filter = "Codigo like '%" & Valor & "%' or Edificio like '%" & Valor & "%' or idTipo like '%" & Valor & "%'"
         grdBuscarHabit.DataSource = bs
     End Sub
 

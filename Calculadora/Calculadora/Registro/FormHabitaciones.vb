@@ -132,4 +132,20 @@
             mostrarDatosHabit()
         End If
     End Sub
+
+    Private Sub btnBuscarEdificio_Click(sender As Object, e As EventArgs) Handles btnBuscarEdificio.Click
+        Dim objBuscarEdificio As New FormBusquedaEdificio
+        objBuscarEdificio.ShowDialog()
+        If objBuscarEdificio._idEdificio <> "" Then
+            cboEdificio.SelectedValue = objBuscarEdificio._idEdificio
+        End If
+    End Sub
+
+    Private Sub btnBuscarTipo_Click(sender As Object, e As EventArgs) Handles btnBuscarTipo.Click
+        Dim objBuscarTipoHabit As New FormBusquedaTipoHabitaciones
+        objBuscarTipoHabit.ShowDialog()
+        If objBuscarTipoHabit._idTipoHabit <> "" Then
+            cboTipo.SelectedValue = objBuscarTipoHabit._idTipoHabit
+        End If
+    End Sub
 End Class
