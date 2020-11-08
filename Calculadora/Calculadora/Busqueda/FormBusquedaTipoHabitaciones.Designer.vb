@@ -22,6 +22,7 @@ Partial Class FormBusquedaTipoHabitaciones
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormBusquedaTipoHabitaciones))
         Me.btnSeleccionar = New System.Windows.Forms.Button()
         Me.lblBuscarTipoHabit = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
@@ -94,7 +95,9 @@ Partial Class FormBusquedaTipoHabitaciones
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.grdBuscarTipoHabit)
         Me.Controls.Add(Me.btnCancelar)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormBusquedaTipoHabitaciones"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormBusquedaTipoHabitaciones"
         CType(Me.grdBuscarTipoHabit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

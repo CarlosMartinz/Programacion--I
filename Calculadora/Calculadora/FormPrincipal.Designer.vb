@@ -22,6 +22,7 @@ Partial Class FormPrincipal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPrincipal))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -30,6 +31,8 @@ Partial Class FormPrincipal
         Me.RegistroDeUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistrosDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeHabitacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EnAlmacenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReservacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -52,8 +55,9 @@ Partial Class FormPrincipal
         '
         'SalirToolStripMenuItem
         '
+        Me.SalirToolStripMenuItem.Image = Global.Calculadora.My.Resources.Resources.cerrar_sesion
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'EmpresaToolStripMenuItem
@@ -64,13 +68,14 @@ Partial Class FormPrincipal
         '
         'RegistrosToolStripMenuItem
         '
-        Me.RegistrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistroDeUsuariosToolStripMenuItem, Me.RegistrosDeClientesToolStripMenuItem, Me.RegistroDeHabitacionesToolStripMenuItem})
+        Me.RegistrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistroDeUsuariosToolStripMenuItem, Me.RegistrosDeClientesToolStripMenuItem, Me.RegistroDeHabitacionesToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.EnAlmacenToolStripMenuItem})
         Me.RegistrosToolStripMenuItem.Name = "RegistrosToolStripMenuItem"
         Me.RegistrosToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
         Me.RegistrosToolStripMenuItem.Text = "Registros"
         '
         'RegistroDeUsuariosToolStripMenuItem
         '
+        Me.RegistroDeUsuariosToolStripMenuItem.Image = Global.Calculadora.My.Resources.Resources.Usuarios
         Me.RegistroDeUsuariosToolStripMenuItem.Name = "RegistroDeUsuariosToolStripMenuItem"
         Me.RegistroDeUsuariosToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.U), System.Windows.Forms.Keys)
         Me.RegistroDeUsuariosToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
@@ -78,6 +83,7 @@ Partial Class FormPrincipal
         '
         'RegistrosDeClientesToolStripMenuItem
         '
+        Me.RegistrosDeClientesToolStripMenuItem.Image = Global.Calculadora.My.Resources.Resources.Cliente
         Me.RegistrosDeClientesToolStripMenuItem.Name = "RegistrosDeClientesToolStripMenuItem"
         Me.RegistrosDeClientesToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
         Me.RegistrosDeClientesToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
@@ -85,10 +91,25 @@ Partial Class FormPrincipal
         '
         'RegistroDeHabitacionesToolStripMenuItem
         '
+        Me.RegistroDeHabitacionesToolStripMenuItem.Image = Global.Calculadora.My.Resources.Resources.Habitaciones
         Me.RegistroDeHabitacionesToolStripMenuItem.Name = "RegistroDeHabitacionesToolStripMenuItem"
         Me.RegistroDeHabitacionesToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.H), System.Windows.Forms.Keys)
         Me.RegistroDeHabitacionesToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
         Me.RegistroDeHabitacionesToolStripMenuItem.Text = "Registro de habitaciones"
+        '
+        'ProveedoresToolStripMenuItem
+        '
+        Me.ProveedoresToolStripMenuItem.Image = Global.Calculadora.My.Resources.Resources.Proveedor
+        Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
+        Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
+        '
+        'EnAlmacenToolStripMenuItem
+        '
+        Me.EnAlmacenToolStripMenuItem.Image = Global.Calculadora.My.Resources.Resources.Bodega
+        Me.EnAlmacenToolStripMenuItem.Name = "EnAlmacenToolStripMenuItem"
+        Me.EnAlmacenToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
+        Me.EnAlmacenToolStripMenuItem.Text = "En almacen"
         '
         'ReservacionesToolStripMenuItem
         '
@@ -102,10 +123,12 @@ Partial Class FormPrincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FormPrincipal"
-        Me.Text = "Principal"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Hotel"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -122,4 +145,6 @@ Partial Class FormPrincipal
     Friend WithEvents RegistrosDeClientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RegistroDeHabitacionesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReservacionesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProveedoresToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EnAlmacenToolStripMenuItem As ToolStripMenuItem
 End Class

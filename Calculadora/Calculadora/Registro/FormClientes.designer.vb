@@ -22,7 +22,10 @@ Partial Class FormClientes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormClientes))
         Me.grbDatos = New System.Windows.Forms.GroupBox()
+        Me.txtedad = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.txtcode = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtTelefono = New System.Windows.Forms.TextBox()
@@ -44,8 +47,6 @@ Partial Class FormClientes
         Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.btnAnterior = New System.Windows.Forms.Button()
         Me.btnPrimero = New System.Windows.Forms.Button()
-        Me.txtedad = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.grbDatos.SuspendLayout()
         Me.grbEdicion.SuspendLayout()
         Me.grbPosicion.SuspendLayout()
@@ -71,6 +72,23 @@ Partial Class FormClientes
         Me.grbDatos.TabIndex = 0
         Me.grbDatos.TabStop = False
         Me.grbDatos.Text = "Datos del cliente"
+        '
+        'txtedad
+        '
+        Me.txtedad.Location = New System.Drawing.Point(66, 119)
+        Me.txtedad.Name = "txtedad"
+        Me.txtedad.Size = New System.Drawing.Size(175, 20)
+        Me.txtedad.TabIndex = 11
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 122)
+        Me.Label6.Name = "Label6"
+        Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label6.Size = New System.Drawing.Size(32, 13)
+        Me.Label6.TabIndex = 10
+        Me.Label6.Text = "Edad"
         '
         'txtcode
         '
@@ -269,23 +287,6 @@ Partial Class FormClientes
         Me.btnPrimero.Text = "|<"
         Me.btnPrimero.UseVisualStyleBackColor = True
         '
-        'txtedad
-        '
-        Me.txtedad.Location = New System.Drawing.Point(66, 119)
-        Me.txtedad.Name = "txtedad"
-        Me.txtedad.Size = New System.Drawing.Size(175, 20)
-        Me.txtedad.TabIndex = 11
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 122)
-        Me.Label6.Name = "Label6"
-        Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label6.Size = New System.Drawing.Size(32, 13)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Edad"
-        '
         'FormClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -294,6 +295,7 @@ Partial Class FormClientes
         Me.Controls.Add(Me.grbPosicion)
         Me.Controls.Add(Me.grbEdicion)
         Me.Controls.Add(Me.grbDatos)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormClientes"

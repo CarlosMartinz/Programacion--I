@@ -22,6 +22,7 @@ Partial Class FormHabitaciones
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormHabitaciones))
         Me.grbDatosHabitacion = New System.Windows.Forms.GroupBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -309,7 +310,9 @@ Partial Class FormHabitaciones
         Me.Controls.Add(Me.grbDatosHabitacion)
         Me.Controls.Add(Me.grbNavegacion)
         Me.Controls.Add(Me.grbEdicion)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormHabitaciones"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormHabitaciones"
         Me.grbDatosHabitacion.ResumeLayout(False)
         Me.grbDatosHabitacion.PerformLayout()
