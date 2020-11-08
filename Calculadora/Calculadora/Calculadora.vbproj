@@ -251,6 +251,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\Recursos\cerrar sesion.png" />
+    <None Include="bin\Debug\Recursos\Cliente.png" />
+    <None Include="bin\Debug\Recursos\Usuarios.png" />
+    <None Include="bin\Debug\Recursos\Habitaciones.png" />
+    <None Include="bin\Debug\Recursos\Proveedor.png" />
+    <None Include="bin\Debug\Recursos\Bodega.png" />
     <Content Include="db_Hotel.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

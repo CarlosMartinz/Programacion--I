@@ -22,6 +22,7 @@ Partial Class FormTipoHabitaciones
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormTipoHabitaciones))
         Me.btnBuscarTipHabitacion = New System.Windows.Forms.Button()
         Me.btnEliminarTipHabitacion = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -257,8 +258,10 @@ Partial Class FormTipoHabitaciones
         Me.Controls.Add(Me.grbDatosTipoHab)
         Me.Controls.Add(Me.grbNavegacionTipoHab)
         Me.Controls.Add(Me.grbEdicion)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "FormTipoHabitaciones"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormTipoHabitaciones"
         Me.grbDatosTipoHab.ResumeLayout(False)
         Me.grbDatosTipoHab.PerformLayout()

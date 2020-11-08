@@ -22,11 +22,10 @@ Partial Class FormBusquedaClientes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormBusquedaClientes))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtBuscarCliente = New System.Windows.Forms.TextBox()
         Me.grdBuscarCliente = New System.Windows.Forms.DataGridView()
-        Me.btnCancelarCliente = New System.Windows.Forms.Button()
-        Me.btnSelecionarCliente = New System.Windows.Forms.Button()
         Me.idCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -34,6 +33,8 @@ Partial Class FormBusquedaClientes
         Me.DUI = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Email = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnCancelarCliente = New System.Windows.Forms.Button()
+        Me.btnSelecionarCliente = New System.Windows.Forms.Button()
         CType(Me.grdBuscarCliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -69,28 +70,6 @@ Partial Class FormBusquedaClientes
         Me.grdBuscarCliente.ReadOnly = True
         Me.grdBuscarCliente.Size = New System.Drawing.Size(707, 357)
         Me.grdBuscarCliente.TabIndex = 2
-        '
-        'btnCancelarCliente
-        '
-        Me.btnCancelarCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCancelarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelarCliente.Location = New System.Drawing.Point(614, 405)
-        Me.btnCancelarCliente.Name = "btnCancelarCliente"
-        Me.btnCancelarCliente.Size = New System.Drawing.Size(105, 33)
-        Me.btnCancelarCliente.TabIndex = 3
-        Me.btnCancelarCliente.Text = "Cancelar"
-        Me.btnCancelarCliente.UseVisualStyleBackColor = True
-        '
-        'btnSelecionarCliente
-        '
-        Me.btnSelecionarCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSelecionarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSelecionarCliente.Location = New System.Drawing.Point(481, 405)
-        Me.btnSelecionarCliente.Name = "btnSelecionarCliente"
-        Me.btnSelecionarCliente.Size = New System.Drawing.Size(127, 33)
-        Me.btnSelecionarCliente.TabIndex = 4
-        Me.btnSelecionarCliente.Text = "Seleccionar"
-        Me.btnSelecionarCliente.UseVisualStyleBackColor = True
         '
         'idCliente
         '
@@ -142,6 +121,28 @@ Partial Class FormBusquedaClientes
         Me.Email.Name = "Email"
         Me.Email.ReadOnly = True
         '
+        'btnCancelarCliente
+        '
+        Me.btnCancelarCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCancelarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelarCliente.Location = New System.Drawing.Point(614, 405)
+        Me.btnCancelarCliente.Name = "btnCancelarCliente"
+        Me.btnCancelarCliente.Size = New System.Drawing.Size(105, 33)
+        Me.btnCancelarCliente.TabIndex = 3
+        Me.btnCancelarCliente.Text = "Cancelar"
+        Me.btnCancelarCliente.UseVisualStyleBackColor = True
+        '
+        'btnSelecionarCliente
+        '
+        Me.btnSelecionarCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSelecionarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSelecionarCliente.Location = New System.Drawing.Point(481, 405)
+        Me.btnSelecionarCliente.Name = "btnSelecionarCliente"
+        Me.btnSelecionarCliente.Size = New System.Drawing.Size(127, 33)
+        Me.btnSelecionarCliente.TabIndex = 4
+        Me.btnSelecionarCliente.Text = "Seleccionar"
+        Me.btnSelecionarCliente.UseVisualStyleBackColor = True
+        '
         'FormBusquedaClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -152,9 +153,11 @@ Partial Class FormBusquedaClientes
         Me.Controls.Add(Me.grdBuscarCliente)
         Me.Controls.Add(Me.txtBuscarCliente)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormBusquedaClientes"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Busqueda de clientes"
         CType(Me.grdBuscarCliente, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
