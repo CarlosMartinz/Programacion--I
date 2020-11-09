@@ -299,7 +299,7 @@ Partial Class FormClientes
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormClientes"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Registro de clientes"
         Me.grbDatos.ResumeLayout(False)
         Me.grbDatos.PerformLayout()

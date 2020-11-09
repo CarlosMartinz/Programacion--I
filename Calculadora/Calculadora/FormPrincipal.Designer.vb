@@ -34,6 +34,7 @@ Partial Class FormPrincipal
         Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EnAlmacenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.pnlAtraeFrom = New System.Windows.Forms.Panel()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -61,7 +62,7 @@ Partial Class FormPrincipal
         '
         Me.SalirToolStripMenuItem.Image = Global.Calculadora.My.Resources.Resources.cerrar_sesion
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'EmpresaToolStripMenuItem
@@ -131,11 +132,21 @@ Partial Class FormPrincipal
         Me.ToolStripMenuItem2.Size = New System.Drawing.Size(139, 39)
         Me.ToolStripMenuItem2.Text = "Reservaciones"
         '
+        'pnlAtraeFrom
+        '
+        Me.pnlAtraeFrom.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.pnlAtraeFrom.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlAtraeFrom.Location = New System.Drawing.Point(0, 43)
+        Me.pnlAtraeFrom.Name = "pnlAtraeFrom"
+        Me.pnlAtraeFrom.Size = New System.Drawing.Size(808, 499)
+        Me.pnlAtraeFrom.TabIndex = 3
+        '
         'FormPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(808, 542)
+        Me.Controls.Add(Me.pnlAtraeFrom)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
@@ -161,4 +172,5 @@ Partial Class FormPrincipal
     Friend WithEvents ProveedoresToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EnAlmacenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents pnlAtraeFrom As Panel
 End Class
