@@ -17,4 +17,15 @@
         objReservacion.Show()
     End Sub
 
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        pnlReservacion.Visible = False
+    End Sub
+
+    Private Sub FormPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        pnlReservacion.Visible = False
+    End Sub
+
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        pnlReservacion.Visible = True
+    End Sub
 End Class
