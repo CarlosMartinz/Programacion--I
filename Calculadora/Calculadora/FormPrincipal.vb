@@ -23,9 +23,23 @@
 
     Private Sub FormPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         pnlReservacion.Visible = False
+        desabilitar()
     End Sub
+
+    Sub desabilitar()
+        btnBuscarCliente.Enabled = False
+        btnEditar.Enabled = True
+        btnAgregar.Enabled = True
+        btnCancelar.Enabled = True
+    End Sub
+
 
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
         pnlReservacion.Visible = True
     End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        btnBuscarCliente.Enabled = True
+    End Sub
+
 End Class
