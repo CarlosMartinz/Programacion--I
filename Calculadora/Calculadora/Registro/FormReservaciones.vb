@@ -14,10 +14,15 @@
         btnBuscarCliente.Enabled = True
         btnAgregarCliente.Visible = True
     End Sub
+    Private Sub btnBuscarCliente_Click(sender As Object, e As EventArgs) Handles btnBuscarCliente.Click
+        pnlBucar.Visible = True
+    End Sub
 
-    Private Sub btnAgregarCliente_Click(sender As Object, e As EventArgs) Handles btnAgregarCliente.Click
-        Dim objReservacion As New FormClientes
-        objReservacion.MdiParent = Me
-        objReservacion.Show()
+    Private Sub FormReservaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        pnlBucar.Visible = False
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        pnlBucar.Visible = False
     End Sub
 End Class

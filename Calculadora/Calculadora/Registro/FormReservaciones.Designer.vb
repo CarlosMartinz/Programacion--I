@@ -24,6 +24,9 @@ Partial Class FormReservaciones
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormReservaciones))
         Me.pnlReservacion = New System.Windows.Forms.Panel()
+        Me.pnlBucar = New System.Windows.Forms.Panel()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.grpReservacion = New System.Windows.Forms.GroupBox()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
@@ -62,6 +65,8 @@ Partial Class FormReservaciones
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.pnlReservacion.SuspendLayout()
+        Me.pnlBucar.SuspendLayout()
+        Me.Panel9.SuspendLayout()
         Me.grpReservacion.SuspendLayout()
         Me.MenuStrip5.SuspendLayout()
         Me.butttm.SuspendLayout()
@@ -76,6 +81,7 @@ Partial Class FormReservaciones
         'pnlReservacion
         '
         Me.pnlReservacion.BackColor = System.Drawing.Color.White
+        Me.pnlReservacion.Controls.Add(Me.pnlBucar)
         Me.pnlReservacion.Controls.Add(Me.grpReservacion)
         Me.pnlReservacion.Controls.Add(Me.grpMostrar)
         Me.pnlReservacion.Dock = System.Windows.Forms.DockStyle.Fill
@@ -83,6 +89,39 @@ Partial Class FormReservaciones
         Me.pnlReservacion.Name = "pnlReservacion"
         Me.pnlReservacion.Size = New System.Drawing.Size(848, 495)
         Me.pnlReservacion.TabIndex = 4
+        '
+        'pnlBucar
+        '
+        Me.pnlBucar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlBucar.Controls.Add(Me.Panel9)
+        Me.pnlBucar.Location = New System.Drawing.Point(377, 15)
+        Me.pnlBucar.Name = "pnlBucar"
+        Me.pnlBucar.Size = New System.Drawing.Size(437, 282)
+        Me.pnlBucar.TabIndex = 3
+        '
+        'Panel9
+        '
+        Me.Panel9.BackColor = System.Drawing.Color.Black
+        Me.Panel9.Controls.Add(Me.Button1)
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel9.Location = New System.Drawing.Point(0, 0)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(435, 37)
+        Me.Panel9.TabIndex = 0
+        '
+        'Button1
+        '
+        Me.Button1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(390, 0)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(45, 37)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "X"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'grpReservacion
         '
@@ -155,7 +194,7 @@ Partial Class FormReservaciones
         Me.MenuStrip5.BackColor = System.Drawing.Color.Transparent
         Me.MenuStrip5.Dock = System.Windows.Forms.DockStyle.None
         Me.MenuStrip5.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnAgregarCliente})
-        Me.MenuStrip5.Location = New System.Drawing.Point(319, 70)
+        Me.MenuStrip5.Location = New System.Drawing.Point(321, 70)
         Me.MenuStrip5.Name = "MenuStrip5"
         Me.MenuStrip5.Size = New System.Drawing.Size(34, 24)
         Me.MenuStrip5.TabIndex = 25
@@ -492,6 +531,8 @@ Partial Class FormReservaciones
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormReservaciones"
         Me.pnlReservacion.ResumeLayout(False)
+        Me.pnlBucar.ResumeLayout(False)
+        Me.Panel9.ResumeLayout(False)
         Me.grpReservacion.ResumeLayout(False)
         Me.grpReservacion.PerformLayout()
         Me.MenuStrip5.ResumeLayout(False)
@@ -551,4 +592,7 @@ Partial Class FormReservaciones
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents pnlBucar As Panel
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents Button1 As Button
 End Class
