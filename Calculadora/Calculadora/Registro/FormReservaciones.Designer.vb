@@ -31,10 +31,6 @@ Partial Class FormReservaciones
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.MenuStrip5 = New System.Windows.Forms.MenuStrip()
-        Me.btnAgregarCliente = New System.Windows.Forms.ToolStripMenuItem()
-        Me.butttm = New System.Windows.Forms.MenuStrip()
-        Me.btnEditar = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -64,24 +60,33 @@ Partial Class FormReservaciones
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.MenuStrip5 = New System.Windows.Forms.MenuStrip()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuStrip6 = New System.Windows.Forms.MenuStrip()
+        Me.btnEditar = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnlReservacion.SuspendLayout()
         Me.pnlBucar.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.grpReservacion.SuspendLayout()
-        Me.MenuStrip5.SuspendLayout()
-        Me.butttm.SuspendLayout()
         Me.MenuStrip3.SuspendLayout()
         Me.buttton.SuspendLayout()
         Me.MenuStrip4.SuspendLayout()
         Me.grpMostrar.SuspendLayout()
         Me.MenuStrip2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip5.SuspendLayout()
+        Me.MenuStrip6.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlReservacion
         '
         Me.pnlReservacion.BackColor = System.Drawing.Color.White
-        Me.pnlReservacion.Controls.Add(Me.pnlBucar)
         Me.pnlReservacion.Controls.Add(Me.grpReservacion)
         Me.pnlReservacion.Controls.Add(Me.grpMostrar)
         Me.pnlReservacion.Dock = System.Windows.Forms.DockStyle.Fill
@@ -93,10 +98,13 @@ Partial Class FormReservaciones
         'pnlBucar
         '
         Me.pnlBucar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlBucar.Controls.Add(Me.MenuStrip5)
+        Me.pnlBucar.Controls.Add(Me.TextBox8)
+        Me.pnlBucar.Controls.Add(Me.DataGridView2)
         Me.pnlBucar.Controls.Add(Me.Panel9)
-        Me.pnlBucar.Location = New System.Drawing.Point(377, 15)
+        Me.pnlBucar.Location = New System.Drawing.Point(0, 0)
         Me.pnlBucar.Name = "pnlBucar"
-        Me.pnlBucar.Size = New System.Drawing.Size(437, 282)
+        Me.pnlBucar.Size = New System.Drawing.Size(453, 471)
         Me.pnlBucar.TabIndex = 3
         '
         'Panel9
@@ -106,7 +114,7 @@ Partial Class FormReservaciones
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel9.Location = New System.Drawing.Point(0, 0)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(435, 37)
+        Me.Panel9.Size = New System.Drawing.Size(451, 37)
         Me.Panel9.TabIndex = 0
         '
         'Button1
@@ -116,7 +124,7 @@ Partial Class FormReservaciones
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(390, 0)
+        Me.Button1.Location = New System.Drawing.Point(406, 0)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(45, 37)
         Me.Button1.TabIndex = 0
@@ -127,11 +135,10 @@ Partial Class FormReservaciones
         '
         Me.grpReservacion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.grpReservacion.Controls.Add(Me.MenuStrip6)
         Me.grpReservacion.Controls.Add(Me.Panel8)
         Me.grpReservacion.Controls.Add(Me.TextBox7)
         Me.grpReservacion.Controls.Add(Me.Label8)
-        Me.grpReservacion.Controls.Add(Me.MenuStrip5)
-        Me.grpReservacion.Controls.Add(Me.butttm)
         Me.grpReservacion.Controls.Add(Me.Panel7)
         Me.grpReservacion.Controls.Add(Me.TextBox6)
         Me.grpReservacion.Controls.Add(Me.Label7)
@@ -187,49 +194,6 @@ Partial Class FormReservaciones
         Me.Label8.Size = New System.Drawing.Size(94, 20)
         Me.Label8.TabIndex = 26
         Me.Label8.Text = "Empleado:"
-        '
-        'MenuStrip5
-        '
-        Me.MenuStrip5.AutoSize = False
-        Me.MenuStrip5.BackColor = System.Drawing.Color.Transparent
-        Me.MenuStrip5.Dock = System.Windows.Forms.DockStyle.None
-        Me.MenuStrip5.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnAgregarCliente})
-        Me.MenuStrip5.Location = New System.Drawing.Point(321, 70)
-        Me.MenuStrip5.Name = "MenuStrip5"
-        Me.MenuStrip5.Size = New System.Drawing.Size(34, 24)
-        Me.MenuStrip5.TabIndex = 25
-        Me.MenuStrip5.Text = "MenuStrip5"
-        '
-        'btnAgregarCliente
-        '
-        Me.btnAgregarCliente.AutoSize = False
-        Me.btnAgregarCliente.Image = CType(resources.GetObject("btnAgregarCliente.Image"), System.Drawing.Image)
-        Me.btnAgregarCliente.Name = "btnAgregarCliente"
-        Me.btnAgregarCliente.Size = New System.Drawing.Size(28, 20)
-        '
-        'butttm
-        '
-        Me.butttm.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.butttm.AutoSize = False
-        Me.butttm.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.butttm.Dock = System.Windows.Forms.DockStyle.None
-        Me.butttm.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.butttm.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnEditar})
-        Me.butttm.Location = New System.Drawing.Point(123, 396)
-        Me.butttm.Name = "butttm"
-        Me.butttm.Size = New System.Drawing.Size(91, 28)
-        Me.butttm.TabIndex = 23
-        Me.butttm.Text = "Editar"
-        '
-        'btnEditar
-        '
-        Me.btnEditar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEditar.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
-        Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(72, 24)
-        Me.btnEditar.Text = "Editar"
         '
         'Panel7
         '
@@ -405,7 +369,7 @@ Partial Class FormReservaciones
         Me.MenuStrip3.BackColor = System.Drawing.Color.Transparent
         Me.MenuStrip3.Dock = System.Windows.Forms.DockStyle.None
         Me.MenuStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnBuscarCliente})
-        Me.MenuStrip3.Location = New System.Drawing.Point(271, 70)
+        Me.MenuStrip3.Location = New System.Drawing.Point(272, 70)
         Me.MenuStrip3.Name = "MenuStrip3"
         Me.MenuStrip3.Size = New System.Drawing.Size(38, 24)
         Me.MenuStrip3.TabIndex = 18
@@ -469,9 +433,11 @@ Partial Class FormReservaciones
         Me.grpMostrar.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grpMostrar.Controls.Add(Me.pnlBucar)
         Me.grpMostrar.Controls.Add(Me.MenuStrip2)
         Me.grpMostrar.Controls.Add(Me.TextBox1)
         Me.grpMostrar.Controls.Add(Me.DataGridView1)
+        Me.grpMostrar.Controls.Add(Me.MenuStrip1)
         Me.grpMostrar.Location = New System.Drawing.Point(379, 12)
         Me.grpMostrar.Name = "grpMostrar"
         Me.grpMostrar.Size = New System.Drawing.Size(453, 471)
@@ -520,6 +486,88 @@ Partial Class FormReservaciones
         Me.DataGridView1.Size = New System.Drawing.Size(419, 379)
         Me.DataGridView1.TabIndex = 0
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.MenuStrip1.AutoSize = False
+        Me.MenuStrip1.BackColor = System.Drawing.Color.Black
+        Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.None
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2})
+        Me.MenuStrip1.Location = New System.Drawing.Point(17, 435)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(131, 28)
+        Me.MenuStrip1.TabIndex = 25
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.BackColor = System.Drawing.Color.Black
+        Me.ToolStripMenuItem2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripMenuItem2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ToolStripMenuItem2.Image = CType(resources.GetObject("ToolStripMenuItem2.Image"), System.Drawing.Image)
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(123, 24)
+        Me.ToolStripMenuItem2.Text = " Realizar pago"
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.AllowUserToAddRows = False
+        Me.DataGridView2.AllowUserToDeleteRows = False
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Location = New System.Drawing.Point(10, 81)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.ReadOnly = True
+        Me.DataGridView2.Size = New System.Drawing.Size(436, 381)
+        Me.DataGridView2.TabIndex = 1
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(46, 48)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(285, 20)
+        Me.TextBox8.TabIndex = 2
+        '
+        'MenuStrip5
+        '
+        Me.MenuStrip5.AutoSize = False
+        Me.MenuStrip5.BackColor = System.Drawing.Color.Transparent
+        Me.MenuStrip5.Dock = System.Windows.Forms.DockStyle.None
+        Me.MenuStrip5.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem3})
+        Me.MenuStrip5.Location = New System.Drawing.Point(10, 47)
+        Me.MenuStrip5.Name = "MenuStrip5"
+        Me.MenuStrip5.Size = New System.Drawing.Size(35, 24)
+        Me.MenuStrip5.TabIndex = 29
+        Me.MenuStrip5.Text = "MenuStrip5"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.AutoSize = False
+        Me.ToolStripMenuItem3.Image = CType(resources.GetObject("ToolStripMenuItem3.Image"), System.Drawing.Image)
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(28, 20)
+        '
+        'MenuStrip6
+        '
+        Me.MenuStrip6.AutoSize = False
+        Me.MenuStrip6.BackColor = System.Drawing.Color.Black
+        Me.MenuStrip6.Dock = System.Windows.Forms.DockStyle.None
+        Me.MenuStrip6.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnEditar})
+        Me.MenuStrip6.Location = New System.Drawing.Point(126, 396)
+        Me.MenuStrip6.Name = "MenuStrip6"
+        Me.MenuStrip6.Size = New System.Drawing.Size(78, 28)
+        Me.MenuStrip6.TabIndex = 29
+        Me.MenuStrip6.Text = "MenuStrip6"
+        '
+        'btnEditar
+        '
+        Me.btnEditar.BackColor = System.Drawing.Color.Black
+        Me.btnEditar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(72, 24)
+        Me.btnEditar.Text = "Editar"
+        '
         'FormReservaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -529,16 +577,13 @@ Partial Class FormReservaciones
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormReservaciones"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FormReservaciones"
+        Me.Text = "Reservaciones"
         Me.pnlReservacion.ResumeLayout(False)
         Me.pnlBucar.ResumeLayout(False)
+        Me.pnlBucar.PerformLayout()
         Me.Panel9.ResumeLayout(False)
         Me.grpReservacion.ResumeLayout(False)
         Me.grpReservacion.PerformLayout()
-        Me.MenuStrip5.ResumeLayout(False)
-        Me.MenuStrip5.PerformLayout()
-        Me.butttm.ResumeLayout(False)
-        Me.butttm.PerformLayout()
         Me.MenuStrip3.ResumeLayout(False)
         Me.MenuStrip3.PerformLayout()
         Me.buttton.ResumeLayout(False)
@@ -550,6 +595,13 @@ Partial Class FormReservaciones
         Me.MenuStrip2.ResumeLayout(False)
         Me.MenuStrip2.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip5.ResumeLayout(False)
+        Me.MenuStrip5.PerformLayout()
+        Me.MenuStrip6.ResumeLayout(False)
+        Me.MenuStrip6.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -559,10 +611,6 @@ Partial Class FormReservaciones
     Friend WithEvents Panel8 As Panel
     Friend WithEvents TextBox7 As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents MenuStrip5 As MenuStrip
-    Friend WithEvents btnAgregarCliente As ToolStripMenuItem
-    Friend WithEvents butttm As MenuStrip
-    Friend WithEvents btnEditar As ToolStripMenuItem
     Friend WithEvents Panel7 As Panel
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents Label7 As Label
@@ -595,4 +643,12 @@ Partial Class FormReservaciones
     Friend WithEvents pnlBucar As Panel
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Button1 As Button
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents MenuStrip5 As MenuStrip
+    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
+    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents MenuStrip6 As MenuStrip
+    Friend WithEvents btnEditar As ToolStripMenuItem
 End Class
