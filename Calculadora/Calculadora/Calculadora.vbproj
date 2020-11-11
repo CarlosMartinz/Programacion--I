@@ -130,6 +130,12 @@
     <Compile Include="FormPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Registro\FormProductos.Designer.vb">
+      <DependentUpon>FormProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registro\FormProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Registro\FormTipoHabitaciones.Designer.vb">
       <DependentUpon>FormTipoHabitaciones.vb</DependentUpon>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro\FormProductos.resx">
+      <DependentUpon>FormProductos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registro\FormReservaciones.resx">
       <DependentUpon>FormReservaciones.vb</DependentUpon>

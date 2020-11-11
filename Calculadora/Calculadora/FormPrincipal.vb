@@ -26,6 +26,13 @@
         objCliente.Show()
     End Sub
 
+    Private Sub EnAlmacenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EnAlmacenToolStripMenuItem.Click
+        Dim objProductos As New FormProductos
+        objProductos.MdiParent = Me
+        objProductos.Dock = DockStyle.Fill
+        objProductos.Show()
+    End Sub
+
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Close()
     End Sub
