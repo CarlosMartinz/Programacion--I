@@ -50,12 +50,32 @@ Public Class db_conexion
         miCommand.Parameters.Add("@idHabitaciones", SqlDbType.Int).Value = 0
         miCommand.Parameters.Add("@Cod", SqlDbType.VarChar).Value = ""
     End Sub
-    Public Function Filtro()
+    Public Function FiltroHabitacionLibre()
+        ds.Clear()
+
+        miCommand.Connection = miConexion
+
+        miCommand.CommandText = "
+            select Habitacion.idHabitacion, Habitacion.Codigo, Habitacion.Estado, Habitacion.TipoHabit, TipoHabit.Capacidad, TipoHabit.Precio
+            from Habitacion
+                inner join TipoHabit on(Habitacion.TipoHabit=TipoHabit.idTipo)
+                where Estado = 'Libre'"
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "Habitacion")
+
+        Return ds
+    End Function
+    Public Function FiltroNombreCliente()
+        ds.Clear()
+
+        miCommand.Connection = miConexion
+
         miCommand.CommandText = "SELECT Nombre FROM clientes"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "clientes")
-    End Function
 
+        Return ds
+    End Function
     'traedatos de la tabla usuarios y relacionada
     Public Function obtenerDatosTablas()
         ds.Clear()
@@ -85,8 +105,7 @@ Public Class db_conexion
         miCommand.CommandText = "
             select Habitacion.idHabitacion, Habitacion.Codigo, Habitacion.Estado, Habitacion.TipoHabit, TipoHabit.Capacidad, TipoHabit.Precio
             from Habitacion
-                inner join TipoHabit on(Habitacion.TipoHabit=TipoHabit.idTipo)
-                where Estado = 'Libre'"
+                inner join TipoHabit on(Habitacion.TipoHabit=TipoHabit.idTipo)"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Habitacion")
 

@@ -9,23 +9,28 @@
     End Sub
     Private Sub FormReservaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         pnlBucar.Visible = False
-        obtenerDatos()
+
+        NombreCliente()
+        HabitacionesLibre()
+    End Sub
+    Sub HabitacionesLibre()
+        'Mostrar Datos de tabla habitaciones libre
+        dataTable = objConexion.FiltroHabitacionLibre().Tables("Habitacion")
+        dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idHabitacion")}
+
+        grdHabitaciones.DataSource = objConexion.FiltroHabitacionLibre().Tables("Habitacion").DefaultView
+    End Sub
+    Sub NombreCliente()
+        'Mostrar Datos de tabla clientes nombre
+        dataTable = objConexion.FiltroNombreCliente().Tables("clientes")
+        dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idCliente")}
+
+        grdCliente.DataSource = objConexion.FiltroNombreCliente().Tables("clientes").DefaultView
     End Sub
     Sub desabilitar()
         btnBuscarCliente.Enabled = False
-        'btnAgregarCliente.Visible = False
-        'btnEditar.Enabled = True
         btnAgregar.Enabled = True
         btnCancelar.Enabled = True
-    End Sub
-    Sub obtenerDatos()
-        dataTable = objConexion.obtenerDatosTablas().Tables("Habitacion")
-        dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idHabitacion")}
-
-        grdHabitaciones.DataSource = objConexion.obtenerDatosTablas().Tables("Habitacion").DefaultView
-
-        grdCliente.DataSource = objConexion.obtenerDatosTablas().Tables("clientes").DefaultView
-        'mostrarDatos()
     End Sub
     Sub mostrarDatos()
         If dataTable.Rows.Count > 0 Then
