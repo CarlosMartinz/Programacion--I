@@ -28,6 +28,7 @@
     Private Sub grdHabitaciones_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grdHabitaciones.CellDoubleClick
         Dim frm As FormReservaciones = CType(Owner, FormReservaciones)
         frm.txtHabitacion.Text = grdHabitaciones.CurrentRow.Cells(0).Value.ToString
+        frm.txtPrecioDia.Text = grdHabitaciones.CurrentRow.Cells(4).Value.ToString
         Me.Close()
     End Sub
 End Class
