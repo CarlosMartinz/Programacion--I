@@ -56,7 +56,7 @@ Public Class db_conexion
         miCommand.Connection = miConexion
 
         miCommand.CommandText = "
-            select Habitacion.idHabitacion, Habitacion.Codigo, Habitacion.Estado, Habitacion.TipoHabit, TipoHabit.Capacidad, TipoHabit.Precio
+            select Habitacion.idHabitacion, Habitacion.Estado, Habitacion.TipoHabit, TipoHabit.Capacidad, TipoHabit.Precio
             from Habitacion
                 inner join TipoHabit on(Habitacion.TipoHabit=TipoHabit.idTipo)
                 where Estado = 'Libre'"
@@ -70,7 +70,10 @@ Public Class db_conexion
 
         miCommand.Connection = miConexion
 
-        miCommand.CommandText = "SELECT Nombre FROM clientes"
+        miCommand.CommandText = "
+            select clientes.idCliente, clientes.Nombre, clientes.edad, clientes.documento, contactos.telefono, contactos.email
+            from clientes 
+                inner join contactos on(contactos.idPersona=clientes.idCliente)"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "clientes")
 

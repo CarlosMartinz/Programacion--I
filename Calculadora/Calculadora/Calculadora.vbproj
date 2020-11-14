@@ -170,16 +170,28 @@
     <Compile Include="Registro\FormHabitaciones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registro\FormReservaciones.Designer.vb">
+    <Compile Include="Reservacion\FormReservaciones.Designer.vb">
       <DependentUpon>FormReservaciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Registro\FormReservaciones.vb">
+    <Compile Include="Reservacion\FormReservaciones.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Registro\FormUsuarios.Designer.vb">
       <DependentUpon>FormUsuarios.vb</DependentUpon>
     </Compile>
     <Compile Include="Registro\FormUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservacion\Forms Hijos\FormCliente.Designer.vb">
+      <DependentUpon>FormCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reservacion\Forms Hijos\FormCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservacion\Forms Hijos\FormHabitacion.Designer.vb">
+      <DependentUpon>FormHabitacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reservacion\Forms Hijos\FormHabitacion.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -202,7 +214,7 @@
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registro\FormReservaciones.resx">
+    <EmbeddedResource Include="Reservacion\FormReservaciones.resx">
       <DependentUpon>FormReservaciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registro\FormTipoHabitaciones.resx">
@@ -225,6 +237,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registro\FormUsuarios.resx">
       <DependentUpon>FormUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservacion\Forms Hijos\FormCliente.resx">
+      <DependentUpon>FormCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservacion\Forms Hijos\FormHabitacion.resx">
+      <DependentUpon>FormHabitacion.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
