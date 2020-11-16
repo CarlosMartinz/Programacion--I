@@ -8,26 +8,25 @@
         ControlesHabitacion(True)
     End Sub
     Sub obtenerDatosHabitaciones()
-        dataTable = objConexion.obtenerDatosTablas().Tables("Habitaciones")
-        dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idHabitaciones")}
+        dataTable = objConexion.obtenerDatosTablas().Tables("Habitacion")
+        dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idHabitacion")}
 
         cboTipo.DataSource = objConexion.obtenerDatosTablas().Tables("TipoHabit").DefaultView()
         cboTipo.DisplayMember = "idTipo"
         cboTipo.ValueMember = "TipoHabit.idTipo"
 
-        cboEdificio.DataSource = objConexion.obtenerDatosTablas().Tables("Edificio").DefaultView()
-        cboEdificio.DisplayMember = "Edificio"
-        cboEdificio.ValueMember = "Edificio.Edificio"
-
+        cboEstado.DataSource = objConexion.obtenerDatosTablas.Tables("Estado").DefaultView()
+        cboEstado.DisplayMember = "Estado"
+        cboEstado.ValueMember = "Estado.Estado"
         mostrarDatosHabit()
     End Sub
 
     Sub mostrarDatosHabit()
         If dataTable.Rows.Count > 0 Then
             Me.Tag = dataTable.Rows(posicion).ItemArray(0).ToString() 'ID de tipo de habitacion 
-            txtcodigohabitacion.Text = dataTable.Rows(posicion).ItemArray(1).ToString()
-            cboEdificio.SelectedValue = dataTable.Rows(posicion).ItemArray(2).ToString()
-            cboTipo.SelectedValue = dataTable.Rows(posicion).ItemArray(3).ToString()
+            txtcodigohabitacion.Text = dataTable.Rows(posicion).ItemArray(0).ToString()
+            cboEstado.SelectedValue = dataTable.Rows(posicion).ItemArray(1).ToString()
+            cboTipo.SelectedValue = dataTable.Rows(posicion).ItemArray(2).ToString()
 
             lblRegistroHabitaciones.Text = posicion + 1 & " de " & dataTable.Rows.Count
         Else
@@ -85,7 +84,7 @@
             limpiarDatos()
         Else 'Guardar
             Dim msg = objConexion.mantenimientoDatosHabitaciones(New String() {
-                Me.Tag, txtcodigohabitacion.Text, cboEdificio.SelectedValue, cboTipo.SelectedValue}, accion)
+                Me.Tag, txtcodigohabitacion.Text, cboTipo.SelectedValue}, accion)
             If msg = "error" Then
                 MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Clientes",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -133,19 +132,15 @@
         End If
     End Sub
 
-    Private Sub btnBuscarEdificio_Click(sender As Object, e As EventArgs) Handles btnBuscarEdificio.Click
-        Dim objBuscarEdificio As New FormBusquedaEdificio
-        objBuscarEdificio.ShowDialog()
-        If objBuscarEdificio._idEdificio <> "" Then
-            cboEdificio.SelectedValue = objBuscarEdificio._idEdificio
-        End If
-    End Sub
-
     Private Sub btnBuscarTipo_Click(sender As Object, e As EventArgs) Handles btnBuscarTipo.Click
         Dim objBuscarTipoHabit As New FormBusquedaTipoHabitaciones
         objBuscarTipoHabit.ShowDialog()
         If objBuscarTipoHabit._idTipoHabit <> "" Then
             cboTipo.SelectedValue = objBuscarTipoHabit._idTipoHabit
         End If
+    End Sub
+
+    Private Sub btnBuscarEdificio_Click(sender As Object, e As EventArgs)
+
     End Sub
 End Class
