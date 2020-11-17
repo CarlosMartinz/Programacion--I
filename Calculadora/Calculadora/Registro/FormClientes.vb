@@ -17,12 +17,11 @@
     Sub MostrarDatosCliente()
         If dataTable.Rows.Count > 0 Then
             Me.Tag = dataTable.Rows(Posicion).ItemArray(0).ToString()
-            txtcode.Text = dataTable.Rows(Posicion).ItemArray(1).ToString()
-            txtNombre.Text = dataTable.Rows(Posicion).ItemArray(2).ToString()
-            txtedad.Text = dataTable.Rows(Posicion).ItemArray(3).ToString()
-            txtDUI.Text = dataTable.Rows(Posicion).ItemArray(4).ToString()
-            txtTelefono.Text = dataTable.Rows(Posicion).ItemArray(5).ToString()
-            txtEmail.Text = dataTable.Rows(Posicion).ItemArray(6).ToString()
+            txtNombre.Text = dataTable.Rows(Posicion).ItemArray(1).ToString()
+            txtedad.Text = dataTable.Rows(Posicion).ItemArray(2).ToString()
+            txtDUI.Text = dataTable.Rows(Posicion).ItemArray(3).ToString()
+            txtTelefono.Text = dataTable.Rows(Posicion).ItemArray(4).ToString()
+            txtEmail.Text = dataTable.Rows(Posicion).ItemArray(5).ToString()
 
             lblPosicion.Text = Posicion + 1 & " de " & dataTable.Rows.Count
         Else
@@ -44,7 +43,6 @@
         txtTelefono.Text = ""
         txtEmail.Text = ""
         txtedad.Text = ""
-        txtcode.Text = ""
     End Sub
 
     Private Sub btnPrimero_Click(sender As Object, e As EventArgs) Handles btnPrimero.Click
@@ -84,7 +82,7 @@
             HabDescontroles(False)
             LimpiarDatosCliente()
         Else 'Guardar
-            Dim msg = objConexion.mantenimientoDatosClientes(New String() {Me.Tag, txtcode.Text, txtNombre.Text, txtedad.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text}, Accion)
+            Dim msg = objConexion.mantenimientoDatosClientes(New String() {Me.Tag, txtNombre.Text, txtedad.Text, txtDUI.Text, txtTelefono.Text, txtEmail.Text}, Accion)
             If msg = "error" Then
                 MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Usuario",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
