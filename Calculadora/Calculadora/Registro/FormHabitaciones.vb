@@ -84,7 +84,7 @@
             limpiarDatos()
         Else 'Guardar
             Dim msg = objConexion.mantenimientoDatosHabitaciones(New String() {
-                Me.Tag, txtcodigohabitacion.Text, cboTipo.SelectedValue}, accion)
+                Me.Tag, txtcodigohabitacion.Text, cboEstado.SelectedValue, cboTipo.SelectedValue}, accion)
             If msg = "error" Then
                 MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Clientes",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)

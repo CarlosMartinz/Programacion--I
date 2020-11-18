@@ -45,6 +45,15 @@ Public Class db_conexion
         'Tabla Habitaciones
         miCommand.Parameters.Add("@idHabitaciones", SqlDbType.Int).Value = 0
         miCommand.Parameters.Add("@Cod", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@Estado", SqlDbType.VarChar).Value = ""
+
+        'Tabla Producto
+        miCommand.Parameters.Add("@idProducto", SqlDbType.Int).Value = 0
+        miCommand.Parameters.Add("@idCateg", SqlDbType.Int).Value = 0
+        miCommand.Parameters.Add("@Codig", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@Descrip", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@Cantidad", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@Costo", SqlDbType.VarChar).Value = ""
     End Sub
     Public Function FiltroHabitacionLibre()
         ds.Clear()
@@ -255,17 +264,18 @@ Public Class db_conexion
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
-                sql = "INSERT INTO Habitaciones (Codigo,TipoHabit) VALUES(@Cod,@idTipo)"
+                sql = "INSERT INTO Habitacion (idHabitacion,Estado,TipoHabit) VALUES(@Cod,@Estado,@idTipo)"
             Case "actualizar"
-                sql = "UPDATE Habitaciones SET Codigo=@Cod, TipoHabit=@idTipo WHERE idHabitaciones=@idHabitaciones"
+                sql = "UPDATE Habitacion SET idHabitacion=@Cod, Estado=@Estado, TipoHabit=@idTipo WHERE idHabitacion=@idHabitaciones"
             Case "eliminar"
-                sql = "DELETE FROM Habitaciones WHERE idHabitaciones=@idHabitaciones"
+                sql = "DELETE FROM Habitacion WHERE idHabitacion=@idHabitaciones"
         End Select
         miCommand.Parameters("@idHabitaciones").Value = datos(0)
         If accion IsNot "eliminar" Then
 
             miCommand.Parameters("@Cod").Value = datos(1)
-            miCommand.Parameters("@idTipo").Value = datos(2)
+            miCommand.Parameters("@Estado").Value = datos(2)
+            miCommand.Parameters("@idTipo").Value = datos(3)
         End If
         If executeSql(sql) > 0 Then
             msg = "exito"
