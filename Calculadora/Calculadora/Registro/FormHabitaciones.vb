@@ -24,7 +24,6 @@
     Sub mostrarDatosHabit()
         If dataTable.Rows.Count > 0 Then
             Me.Tag = dataTable.Rows(posicion).ItemArray(0).ToString() 'ID de tipo de habitacion 
-            txtcodigohabitacion.Text = dataTable.Rows(posicion).ItemArray(0).ToString()
             cboEstado.SelectedValue = dataTable.Rows(posicion).ItemArray(1).ToString()
             cboTipo.SelectedValue = dataTable.Rows(posicion).ItemArray(2).ToString()
 
@@ -36,7 +35,7 @@
     End Sub
 
     Private Sub limpiarDatos()
-        txtcodigohabitacion.Text = ""
+
     End Sub
 
     Private Sub ControlesHabitacion(ByVal Estado As Boolean)
@@ -84,7 +83,7 @@
             limpiarDatos()
         Else 'Guardar
             Dim msg = objConexion.mantenimientoDatosHabitaciones(New String() {
-                Me.Tag, txtcodigohabitacion.Text, cboEstado.SelectedValue, cboTipo.SelectedValue}, accion)
+                Me.Tag, cboEstado.SelectedValue, cboTipo.SelectedValue}, accion)
             If msg = "error" Then
                 MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Clientes",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)

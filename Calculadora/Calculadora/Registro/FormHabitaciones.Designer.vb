@@ -27,9 +27,9 @@ Partial Class FormHabitaciones
         Me.Button2 = New System.Windows.Forms.Button()
         Me.btnBuscarTipo = New System.Windows.Forms.Button()
         Me.cboTipo = New System.Windows.Forms.ComboBox()
+        Me.cboEstado = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtcodigohabitacion = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.grbNavegacion = New System.Windows.Forms.GroupBox()
         Me.lblRegistroHabitaciones = New System.Windows.Forms.Label()
@@ -42,8 +42,6 @@ Partial Class FormHabitaciones
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.cboEstado = New System.Windows.Forms.ComboBox()
         Me.grbDatosHabitacion.SuspendLayout()
         Me.grbNavegacion.SuspendLayout()
         Me.grbEdicion.SuspendLayout()
@@ -57,8 +55,6 @@ Partial Class FormHabitaciones
         Me.grbDatosHabitacion.Controls.Add(Me.cboEstado)
         Me.grbDatosHabitacion.Controls.Add(Me.Label5)
         Me.grbDatosHabitacion.Controls.Add(Me.Label4)
-        Me.grbDatosHabitacion.Controls.Add(Me.txtcodigohabitacion)
-        Me.grbDatosHabitacion.Controls.Add(Me.Label1)
         Me.grbDatosHabitacion.Controls.Add(Me.TextBox3)
         Me.grbDatosHabitacion.Location = New System.Drawing.Point(12, 12)
         Me.grbDatosHabitacion.Name = "grbDatosHabitacion"
@@ -70,7 +66,7 @@ Partial Class FormHabitaciones
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(471, 129)
+        Me.Button2.Location = New System.Drawing.Point(471, 112)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 28
@@ -80,7 +76,7 @@ Partial Class FormHabitaciones
         'btnBuscarTipo
         '
         Me.btnBuscarTipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscarTipo.Location = New System.Drawing.Point(388, 129)
+        Me.btnBuscarTipo.Location = New System.Drawing.Point(390, 112)
         Me.btnBuscarTipo.Name = "btnBuscarTipo"
         Me.btnBuscarTipo.Size = New System.Drawing.Size(75, 23)
         Me.btnBuscarTipo.TabIndex = 26
@@ -91,37 +87,39 @@ Partial Class FormHabitaciones
         '
         Me.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTipo.FormattingEnabled = True
-        Me.cboTipo.Location = New System.Drawing.Point(7, 132)
+        Me.cboTipo.Location = New System.Drawing.Point(7, 115)
         Me.cboTipo.Name = "cboTipo"
         Me.cboTipo.Size = New System.Drawing.Size(356, 21)
         Me.cboTipo.TabIndex = 24
+        '
+        'cboEstado
+        '
+        Me.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboEstado.FormattingEnabled = True
+        Me.cboEstado.Location = New System.Drawing.Point(7, 48)
+        Me.cboEstado.Name = "cboEstado"
+        Me.cboEstado.Size = New System.Drawing.Size(356, 21)
+        Me.cboEstado.TabIndex = 23
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(4, 111)
+        Me.Label5.Location = New System.Drawing.Point(4, 94)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(146, 18)
         Me.Label5.TabIndex = 22
         Me.Label5.Text = "Tipo de habitacion"
         '
-        'txtcodigohabitacion
+        'Label4
         '
-        Me.txtcodigohabitacion.Location = New System.Drawing.Point(6, 40)
-        Me.txtcodigohabitacion.Name = "txtcodigohabitacion"
-        Me.txtcodigohabitacion.Size = New System.Drawing.Size(357, 20)
-        Me.txtcodigohabitacion.TabIndex = 4
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(3, 19)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(62, 18)
-        Me.Label1.TabIndex = 5
-        Me.Label1.Text = "Codigo"
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(3, 26)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(61, 18)
+        Me.Label4.TabIndex = 20
+        Me.Label4.Text = "Estado"
         '
         'TextBox3
         '
@@ -259,25 +257,6 @@ Partial Class FormHabitaciones
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(3, 67)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(61, 18)
-        Me.Label4.TabIndex = 20
-        Me.Label4.Text = "Estado"
-        '
-        'cboEstado
-        '
-        Me.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboEstado.FormattingEnabled = True
-        Me.cboEstado.Location = New System.Drawing.Point(7, 89)
-        Me.cboEstado.Name = "cboEstado"
-        Me.cboEstado.Size = New System.Drawing.Size(356, 21)
-        Me.cboEstado.TabIndex = 23
-        '
         'FormHabitaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -315,8 +294,6 @@ Partial Class FormHabitaciones
     Friend WithEvents Label5 As Label
     Friend WithEvents btnBuscarTipo As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents txtcodigohabitacion As TextBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents cboEstado As ComboBox
     Friend WithEvents Label4 As Label
 End Class

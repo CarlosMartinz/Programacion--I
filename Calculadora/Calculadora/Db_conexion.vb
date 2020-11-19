@@ -264,18 +264,16 @@ Public Class db_conexion
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
-                sql = "INSERT INTO Habitacion (idHabitacion,Estado,TipoHabit) VALUES(@Cod,@Estado,@idTipo)"
+                sql = "INSERT INTO Habitacion (Estado,TipoHabit) VALUES(@Estado,@idTipo)"
             Case "actualizar"
-                sql = "UPDATE Habitacion SET idHabitacion=@Cod, Estado=@Estado, TipoHabit=@idTipo WHERE idHabitacion=@idHabitaciones"
+                sql = "UPDATE Habitacion SET Estado=@Estado, TipoHabit=@idTipo WHERE idHabitacion=@idHabitaciones"
             Case "eliminar"
                 sql = "DELETE FROM Habitacion WHERE idHabitacion=@idHabitaciones"
         End Select
         miCommand.Parameters("@idHabitaciones").Value = datos(0)
         If accion IsNot "eliminar" Then
-
-            miCommand.Parameters("@Cod").Value = datos(1)
-            miCommand.Parameters("@Estado").Value = datos(2)
-            miCommand.Parameters("@idTipo").Value = datos(3)
+            miCommand.Parameters("@Estado").Value = datos(1)
+            miCommand.Parameters("@idTipo").Value = datos(2)
         End If
         If executeSql(sql) > 0 Then
             msg = "exito"

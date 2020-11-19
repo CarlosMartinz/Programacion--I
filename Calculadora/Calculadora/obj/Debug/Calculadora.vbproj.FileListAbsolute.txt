@@ -62,3 +62,28 @@ C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormCliente.resources
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormCliente.resources
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormHabitacion.resources
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaClientes.resources
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaHabitaciones.resources
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaTipoHabitaciones.resources
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaUsuarios.resources
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormPrincipal.resources
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormProductos.resources
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormReservaciones.resources
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormTipoHabitaciones.resources
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.Resources.resources
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormClientes.resources
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormHabitaciones.resources
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormUsuarios.resources
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormCliente.resources
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormHabitacion.resources
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.vbproj.GenerateResource.cache
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.vbproj.CoreCompileInputs.cache
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.exe
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.xml
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.pdb
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\bin\Debug\db_Hotel.mdf
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\bin\Debug\db_Hotel_log.ldf
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\bin\Debug\Calculadora.exe.config
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\bin\Debug\Calculadora.exe
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\bin\Debug\Calculadora.pdb
+C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\bin\Debug\Calculadora.xml
