@@ -83,7 +83,7 @@
             ControlesHabitacion(False)
             limpiarDatos()
         Else 'Guardar
-            Dim msg = objConexion.mantenimientoDatosHabitaciones(New String() {
+            Dim msg = objConexion.mantenimientoDatosHabitacion(New String() {
                 Me.Tag, txtcodigohabitacion.Text, cboEstado.SelectedValue, cboTipo.SelectedValue}, accion)
             If msg = "error" Then
                 MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro de Clientes",
@@ -115,7 +115,7 @@
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         If (MessageBox.Show("Esta seguro de borrar Este Registro", "Registro de Habitacion",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
-            objConexion.mantenimientoDatosHabitaciones(New String() {Me.Tag}, "eliminar")
+            objConexion.mantenimientoDatosHabitacion(New String() {Me.Tag}, "eliminar")
             If posicion > 0 Then
                 posicion -= 1 'Hemos borrado un registro
             End If
@@ -140,7 +140,8 @@
         End If
     End Sub
 
-    Private Sub btnBuscarEdificio_Click(sender As Object, e As EventArgs)
-
+    Private Sub Ir_Click(sender As Object, e As EventArgs) Handles Ir.Click
+        Dim objFormTipoHabit As New FormTipoHabitaciones
+        objFormTipoHabit.ShowDialog()
     End Sub
 End Class
