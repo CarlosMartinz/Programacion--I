@@ -62,6 +62,9 @@ Partial Class FormReservaciones
         Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Capacidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lblNumReservacion = New System.Windows.Forms.Label()
         Me.pnlReservacion.SuspendLayout()
         Me.grpReservacion.SuspendLayout()
         CType(Me.btnClientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,6 +88,9 @@ Partial Class FormReservaciones
         '
         Me.grpReservacion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.grpReservacion.Controls.Add(Me.lblNumReservacion)
+        Me.grpReservacion.Controls.Add(Me.Panel9)
+        Me.grpReservacion.Controls.Add(Me.Label9)
         Me.grpReservacion.Controls.Add(Me.txtTotal)
         Me.grpReservacion.Controls.Add(Me.txtDias)
         Me.grpReservacion.Controls.Add(Me.btnClientes)
@@ -121,7 +127,7 @@ Partial Class FormReservaciones
         'txtTotal
         '
         Me.txtTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotal.Location = New System.Drawing.Point(134, 332)
+        Me.txtTotal.Location = New System.Drawing.Point(134, 375)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.Size = New System.Drawing.Size(165, 18)
         Me.txtTotal.TabIndex = 49
@@ -130,7 +136,7 @@ Partial Class FormReservaciones
         'txtDias
         '
         Me.txtDias.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDias.Location = New System.Drawing.Point(134, 239)
+        Me.txtDias.Location = New System.Drawing.Point(134, 282)
         Me.txtDias.Name = "txtDias"
         Me.txtDias.Size = New System.Drawing.Size(166, 23)
         Me.txtDias.TabIndex = 48
@@ -139,7 +145,7 @@ Partial Class FormReservaciones
         'btnClientes
         '
         Me.btnClientes.Image = CType(resources.GetObject("btnClientes.Image"), System.Drawing.Image)
-        Me.btnClientes.Location = New System.Drawing.Point(320, 15)
+        Me.btnClientes.Location = New System.Drawing.Point(320, 63)
         Me.btnClientes.Name = "btnClientes"
         Me.btnClientes.Size = New System.Drawing.Size(25, 25)
         Me.btnClientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -149,7 +155,7 @@ Partial Class FormReservaciones
         'btnHabitaciones
         '
         Me.btnHabitaciones.Image = CType(resources.GetObject("btnHabitaciones.Image"), System.Drawing.Image)
-        Me.btnHabitaciones.Location = New System.Drawing.Point(320, 105)
+        Me.btnHabitaciones.Location = New System.Drawing.Point(320, 148)
         Me.btnHabitaciones.Name = "btnHabitaciones"
         Me.btnHabitaciones.Size = New System.Drawing.Size(25, 25)
         Me.btnHabitaciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -159,7 +165,7 @@ Partial Class FormReservaciones
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Black
-        Me.Panel2.Location = New System.Drawing.Point(135, 353)
+        Me.Panel2.Location = New System.Drawing.Point(135, 396)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(165, 1)
         Me.Panel2.TabIndex = 39
@@ -168,7 +174,7 @@ Partial Class FormReservaciones
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(74, 332)
+        Me.Label2.Location = New System.Drawing.Point(74, 375)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(54, 20)
         Me.Label2.TabIndex = 37
@@ -178,7 +184,7 @@ Partial Class FormReservaciones
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(28, 115)
+        Me.Label4.Location = New System.Drawing.Point(28, 158)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(100, 20)
         Me.Label4.TabIndex = 34
@@ -187,7 +193,7 @@ Partial Class FormReservaciones
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Black
-        Me.Panel3.Location = New System.Drawing.Point(135, 134)
+        Me.Panel3.Location = New System.Drawing.Point(135, 177)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(165, 1)
         Me.Panel3.TabIndex = 33
@@ -197,21 +203,21 @@ Partial Class FormReservaciones
         Me.txtHabitacion.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtHabitacion.Enabled = False
         Me.txtHabitacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHabitacion.Location = New System.Drawing.Point(135, 113)
+        Me.txtHabitacion.Location = New System.Drawing.Point(135, 156)
         Me.txtHabitacion.Name = "txtHabitacion"
         Me.txtHabitacion.Size = New System.Drawing.Size(165, 17)
         Me.txtHabitacion.TabIndex = 32
         '
         'DateEntrada
         '
-        Me.DateEntrada.Location = New System.Drawing.Point(135, 159)
+        Me.DateEntrada.Location = New System.Drawing.Point(135, 202)
         Me.DateEntrada.Name = "DateEntrada"
         Me.DateEntrada.Size = New System.Drawing.Size(165, 20)
         Me.DateEntrada.TabIndex = 31
         '
         'DateSalida
         '
-        Me.DateSalida.Location = New System.Drawing.Point(135, 201)
+        Me.DateSalida.Location = New System.Drawing.Point(135, 244)
         Me.DateSalida.Name = "DateSalida"
         Me.DateSalida.Size = New System.Drawing.Size(165, 20)
         Me.DateSalida.TabIndex = 30
@@ -219,7 +225,7 @@ Partial Class FormReservaciones
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Black
-        Me.Panel1.Location = New System.Drawing.Point(135, 223)
+        Me.Panel1.Location = New System.Drawing.Point(135, 266)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(165, 1)
         Me.Panel1.TabIndex = 13
@@ -228,7 +234,7 @@ Partial Class FormReservaciones
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(64, 204)
+        Me.Label1.Location = New System.Drawing.Point(64, 247)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(64, 20)
         Me.Label1.TabIndex = 11
@@ -237,7 +243,7 @@ Partial Class FormReservaciones
         'Panel8
         '
         Me.Panel8.BackColor = System.Drawing.Color.Black
-        Me.Panel8.Location = New System.Drawing.Point(135, 91)
+        Me.Panel8.Location = New System.Drawing.Point(135, 134)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(165, 1)
         Me.Panel8.TabIndex = 28
@@ -247,7 +253,7 @@ Partial Class FormReservaciones
         Me.txtEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtEmpleado.Enabled = False
         Me.txtEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmpleado.Location = New System.Drawing.Point(135, 70)
+        Me.txtEmpleado.Location = New System.Drawing.Point(135, 113)
         Me.txtEmpleado.Name = "txtEmpleado"
         Me.txtEmpleado.Size = New System.Drawing.Size(165, 17)
         Me.txtEmpleado.TabIndex = 27
@@ -256,7 +262,7 @@ Partial Class FormReservaciones
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(34, 70)
+        Me.Label8.Location = New System.Drawing.Point(34, 113)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(94, 20)
         Me.Label8.TabIndex = 26
@@ -265,7 +271,7 @@ Partial Class FormReservaciones
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.Black
-        Me.Panel7.Location = New System.Drawing.Point(134, 44)
+        Me.Panel7.Location = New System.Drawing.Point(134, 87)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(165, 1)
         Me.Panel7.TabIndex = 17
@@ -275,7 +281,7 @@ Partial Class FormReservaciones
         Me.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCliente.Enabled = False
         Me.txtCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCliente.Location = New System.Drawing.Point(134, 23)
+        Me.txtCliente.Location = New System.Drawing.Point(134, 66)
         Me.txtCliente.Name = "txtCliente"
         Me.txtCliente.Size = New System.Drawing.Size(165, 17)
         Me.txtCliente.TabIndex = 16
@@ -284,7 +290,7 @@ Partial Class FormReservaciones
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(58, 25)
+        Me.Label7.Location = New System.Drawing.Point(58, 68)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(70, 20)
         Me.Label7.TabIndex = 15
@@ -293,7 +299,7 @@ Partial Class FormReservaciones
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.Black
-        Me.Panel6.Location = New System.Drawing.Point(135, 307)
+        Me.Panel6.Location = New System.Drawing.Point(135, 350)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(165, 1)
         Me.Panel6.TabIndex = 14
@@ -303,7 +309,7 @@ Partial Class FormReservaciones
         Me.txtPrecioDia.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtPrecioDia.Enabled = False
         Me.txtPrecioDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrecioDia.Location = New System.Drawing.Point(135, 286)
+        Me.txtPrecioDia.Location = New System.Drawing.Point(135, 329)
         Me.txtPrecioDia.Name = "txtPrecioDia"
         Me.txtPrecioDia.Size = New System.Drawing.Size(165, 17)
         Me.txtPrecioDia.TabIndex = 13
@@ -311,7 +317,7 @@ Partial Class FormReservaciones
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.Black
-        Me.Panel5.Location = New System.Drawing.Point(135, 265)
+        Me.Panel5.Location = New System.Drawing.Point(135, 308)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(165, 1)
         Me.Panel5.TabIndex = 12
@@ -319,7 +325,7 @@ Partial Class FormReservaciones
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.Black
-        Me.Panel4.Location = New System.Drawing.Point(135, 181)
+        Me.Panel4.Location = New System.Drawing.Point(135, 224)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(165, 1)
         Me.Panel4.TabIndex = 10
@@ -328,7 +334,7 @@ Partial Class FormReservaciones
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(4, 288)
+        Me.Label6.Location = New System.Drawing.Point(4, 331)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(124, 20)
         Me.Label6.TabIndex = 8
@@ -338,7 +344,7 @@ Partial Class FormReservaciones
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(78, 243)
+        Me.Label5.Location = New System.Drawing.Point(78, 286)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(50, 20)
         Me.Label5.TabIndex = 7
@@ -348,7 +354,7 @@ Partial Class FormReservaciones
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(50, 162)
+        Me.Label3.Location = New System.Drawing.Point(50, 205)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(78, 20)
         Me.Label3.TabIndex = 5
@@ -455,6 +461,34 @@ Partial Class FormReservaciones
         Me.Precio.Name = "Precio"
         Me.Precio.ReadOnly = True
         '
+        'Panel9
+        '
+        Me.Panel9.BackColor = System.Drawing.Color.Black
+        Me.Panel9.Location = New System.Drawing.Point(134, 48)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(165, 1)
+        Me.Panel9.TabIndex = 52
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(15, 27)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(113, 20)
+        Me.Label9.TabIndex = 50
+        Me.Label9.Text = "Reservacion:"
+        '
+        'lblNumReservacion
+        '
+        Me.lblNumReservacion.Enabled = False
+        Me.lblNumReservacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNumReservacion.Location = New System.Drawing.Point(134, 22)
+        Me.lblNumReservacion.Name = "lblNumReservacion"
+        Me.lblNumReservacion.Size = New System.Drawing.Size(166, 23)
+        Me.lblNumReservacion.TabIndex = 53
+        Me.lblNumReservacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'FormReservaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -516,4 +550,7 @@ Partial Class FormReservaciones
     Friend WithEvents btnClientes As PictureBox
     Friend WithEvents txtDias As Label
     Friend WithEvents txtTotal As Label
+    Friend WithEvents lblNumReservacion As Label
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents Label9 As Label
 End Class
