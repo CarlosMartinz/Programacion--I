@@ -24,7 +24,9 @@ Partial Class FormReservaciones
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormReservaciones))
         Me.pnlReservacion = New System.Windows.Forms.Panel()
-        Me.grpReservacion = New System.Windows.Forms.GroupBox()
+        Me.grbReservacion = New System.Windows.Forms.GroupBox()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.txtTotal = New System.Windows.Forms.Label()
         Me.txtDias = New System.Windows.Forms.Label()
         Me.btnClientes = New System.Windows.Forms.PictureBox()
@@ -51,7 +53,7 @@ Partial Class FormReservaciones
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.grpMostrar = New System.Windows.Forms.GroupBox()
+        Me.grbMostrar = New System.Windows.Forms.GroupBox()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.grdHabitaciones = New System.Windows.Forms.DataGridView()
         Me.idHabitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -62,67 +64,89 @@ Partial Class FormReservaciones
         Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Capacidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.btnElimar = New System.Windows.Forms.Button()
+        Me.btnAgregar = New System.Windows.Forms.Button()
         Me.lblNumReservacion = New System.Windows.Forms.Label()
         Me.pnlReservacion.SuspendLayout()
-        Me.grpReservacion.SuspendLayout()
+        Me.grbReservacion.SuspendLayout()
         CType(Me.btnClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnHabitaciones, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.grpMostrar.SuspendLayout()
+        Me.grbMostrar.SuspendLayout()
         CType(Me.grdHabitaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlReservacion
         '
         Me.pnlReservacion.BackColor = System.Drawing.Color.White
-        Me.pnlReservacion.Controls.Add(Me.grpReservacion)
-        Me.pnlReservacion.Controls.Add(Me.grpMostrar)
+        Me.pnlReservacion.Controls.Add(Me.btnModificar)
+        Me.pnlReservacion.Controls.Add(Me.btnElimar)
+        Me.pnlReservacion.Controls.Add(Me.grbReservacion)
+        Me.pnlReservacion.Controls.Add(Me.btnAgregar)
+        Me.pnlReservacion.Controls.Add(Me.grbMostrar)
         Me.pnlReservacion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlReservacion.Location = New System.Drawing.Point(0, 0)
         Me.pnlReservacion.Name = "pnlReservacion"
         Me.pnlReservacion.Size = New System.Drawing.Size(848, 495)
         Me.pnlReservacion.TabIndex = 4
         '
-        'grpReservacion
+        'grbReservacion
         '
-        Me.grpReservacion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.grbReservacion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.grpReservacion.Controls.Add(Me.lblNumReservacion)
-        Me.grpReservacion.Controls.Add(Me.Panel9)
-        Me.grpReservacion.Controls.Add(Me.Label9)
-        Me.grpReservacion.Controls.Add(Me.txtTotal)
-        Me.grpReservacion.Controls.Add(Me.txtDias)
-        Me.grpReservacion.Controls.Add(Me.btnClientes)
-        Me.grpReservacion.Controls.Add(Me.btnHabitaciones)
-        Me.grpReservacion.Controls.Add(Me.Panel2)
-        Me.grpReservacion.Controls.Add(Me.Label2)
-        Me.grpReservacion.Controls.Add(Me.Label4)
-        Me.grpReservacion.Controls.Add(Me.Panel3)
-        Me.grpReservacion.Controls.Add(Me.txtHabitacion)
-        Me.grpReservacion.Controls.Add(Me.DateEntrada)
-        Me.grpReservacion.Controls.Add(Me.DateSalida)
-        Me.grpReservacion.Controls.Add(Me.Panel1)
-        Me.grpReservacion.Controls.Add(Me.Label1)
-        Me.grpReservacion.Controls.Add(Me.Panel8)
-        Me.grpReservacion.Controls.Add(Me.txtEmpleado)
-        Me.grpReservacion.Controls.Add(Me.Label8)
-        Me.grpReservacion.Controls.Add(Me.Panel7)
-        Me.grpReservacion.Controls.Add(Me.txtCliente)
-        Me.grpReservacion.Controls.Add(Me.Label7)
-        Me.grpReservacion.Controls.Add(Me.Panel6)
-        Me.grpReservacion.Controls.Add(Me.txtPrecioDia)
-        Me.grpReservacion.Controls.Add(Me.Panel5)
-        Me.grpReservacion.Controls.Add(Me.Panel4)
-        Me.grpReservacion.Controls.Add(Me.Label6)
-        Me.grpReservacion.Controls.Add(Me.Label5)
-        Me.grpReservacion.Controls.Add(Me.Label3)
-        Me.grpReservacion.Location = New System.Drawing.Point(15, 12)
-        Me.grpReservacion.Name = "grpReservacion"
-        Me.grpReservacion.Size = New System.Drawing.Size(358, 471)
-        Me.grpReservacion.TabIndex = 2
-        Me.grpReservacion.TabStop = False
-        Me.grpReservacion.Text = "Datos de reservacion"
+        Me.grbReservacion.Controls.Add(Me.lblNumReservacion)
+        Me.grbReservacion.Controls.Add(Me.Panel9)
+        Me.grbReservacion.Controls.Add(Me.Label9)
+        Me.grbReservacion.Controls.Add(Me.txtTotal)
+        Me.grbReservacion.Controls.Add(Me.txtDias)
+        Me.grbReservacion.Controls.Add(Me.btnClientes)
+        Me.grbReservacion.Controls.Add(Me.btnHabitaciones)
+        Me.grbReservacion.Controls.Add(Me.Panel2)
+        Me.grbReservacion.Controls.Add(Me.Label2)
+        Me.grbReservacion.Controls.Add(Me.Label4)
+        Me.grbReservacion.Controls.Add(Me.Panel3)
+        Me.grbReservacion.Controls.Add(Me.txtHabitacion)
+        Me.grbReservacion.Controls.Add(Me.DateEntrada)
+        Me.grbReservacion.Controls.Add(Me.DateSalida)
+        Me.grbReservacion.Controls.Add(Me.Panel1)
+        Me.grbReservacion.Controls.Add(Me.Label1)
+        Me.grbReservacion.Controls.Add(Me.Panel8)
+        Me.grbReservacion.Controls.Add(Me.txtEmpleado)
+        Me.grbReservacion.Controls.Add(Me.Label8)
+        Me.grbReservacion.Controls.Add(Me.Panel7)
+        Me.grbReservacion.Controls.Add(Me.txtCliente)
+        Me.grbReservacion.Controls.Add(Me.Label7)
+        Me.grbReservacion.Controls.Add(Me.Panel6)
+        Me.grbReservacion.Controls.Add(Me.txtPrecioDia)
+        Me.grbReservacion.Controls.Add(Me.Panel5)
+        Me.grbReservacion.Controls.Add(Me.Panel4)
+        Me.grbReservacion.Controls.Add(Me.Label6)
+        Me.grbReservacion.Controls.Add(Me.Label5)
+        Me.grbReservacion.Controls.Add(Me.Label3)
+        Me.grbReservacion.Location = New System.Drawing.Point(15, 12)
+        Me.grbReservacion.Name = "grbReservacion"
+        Me.grbReservacion.Size = New System.Drawing.Size(358, 418)
+        Me.grbReservacion.TabIndex = 2
+        Me.grbReservacion.TabStop = False
+        Me.grbReservacion.Text = "Datos de reservacion"
+        '
+        'Panel9
+        '
+        Me.Panel9.BackColor = System.Drawing.Color.Black
+        Me.Panel9.Location = New System.Drawing.Point(134, 48)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(165, 1)
+        Me.Panel9.TabIndex = 52
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(15, 27)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(113, 20)
+        Me.Label9.TabIndex = 50
+        Me.Label9.Text = "Reservacion:"
         '
         'txtTotal
         '
@@ -360,19 +384,19 @@ Partial Class FormReservaciones
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Entrada:"
         '
-        'grpMostrar
+        'grbMostrar
         '
-        Me.grpMostrar.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.grbMostrar.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.grpMostrar.Controls.Add(Me.txtBuscar)
-        Me.grpMostrar.Controls.Add(Me.grdHabitaciones)
-        Me.grpMostrar.Location = New System.Drawing.Point(379, 12)
-        Me.grpMostrar.Name = "grpMostrar"
-        Me.grpMostrar.Size = New System.Drawing.Size(453, 471)
-        Me.grpMostrar.TabIndex = 1
-        Me.grpMostrar.TabStop = False
-        Me.grpMostrar.Text = "Listado de reservaciones"
+        Me.grbMostrar.Controls.Add(Me.txtBuscar)
+        Me.grbMostrar.Controls.Add(Me.grdHabitaciones)
+        Me.grbMostrar.Location = New System.Drawing.Point(379, 12)
+        Me.grbMostrar.Name = "grbMostrar"
+        Me.grbMostrar.Size = New System.Drawing.Size(453, 471)
+        Me.grbMostrar.TabIndex = 1
+        Me.grbMostrar.TabStop = False
+        Me.grbMostrar.Text = "Listado de reservaciones"
         '
         'txtBuscar
         '
@@ -461,23 +485,35 @@ Partial Class FormReservaciones
         Me.Precio.Name = "Precio"
         Me.Precio.ReadOnly = True
         '
-        'Panel9
+        'btnModificar
         '
-        Me.Panel9.BackColor = System.Drawing.Color.Black
-        Me.Panel9.Location = New System.Drawing.Point(134, 48)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(165, 1)
-        Me.Panel9.TabIndex = 52
+        Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.Location = New System.Drawing.Point(153, 436)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(79, 27)
+        Me.btnModificar.TabIndex = 60
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
         '
-        'Label9
+        'btnElimar
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(15, 27)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(113, 20)
-        Me.Label9.TabIndex = 50
-        Me.Label9.Text = "Reservacion:"
+        Me.btnElimar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnElimar.Location = New System.Drawing.Point(238, 436)
+        Me.btnElimar.Name = "btnElimar"
+        Me.btnElimar.Size = New System.Drawing.Size(64, 27)
+        Me.btnElimar.TabIndex = 59
+        Me.btnElimar.Text = "Eliminar"
+        Me.btnElimar.UseVisualStyleBackColor = True
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.Location = New System.Drawing.Point(79, 436)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(64, 27)
+        Me.btnAgregar.TabIndex = 58
+        Me.btnAgregar.Text = "Nuevo"
+        Me.btnAgregar.UseVisualStyleBackColor = True
         '
         'lblNumReservacion
         '
@@ -500,19 +536,19 @@ Partial Class FormReservaciones
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reservaciones"
         Me.pnlReservacion.ResumeLayout(False)
-        Me.grpReservacion.ResumeLayout(False)
-        Me.grpReservacion.PerformLayout()
+        Me.grbReservacion.ResumeLayout(False)
+        Me.grbReservacion.PerformLayout()
         CType(Me.btnClientes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnHabitaciones, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.grpMostrar.ResumeLayout(False)
-        Me.grpMostrar.PerformLayout()
+        Me.grbMostrar.ResumeLayout(False)
+        Me.grbMostrar.PerformLayout()
         CType(Me.grdHabitaciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents pnlReservacion As Panel
-    Friend WithEvents grpMostrar As GroupBox
+    Friend WithEvents grbMostrar As GroupBox
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents grdHabitaciones As DataGridView
     Friend WithEvents idHabitacion As DataGridViewTextBoxColumn
@@ -523,7 +559,7 @@ Partial Class FormReservaciones
     Friend WithEvents Tipo As DataGridViewTextBoxColumn
     Friend WithEvents Capacidad As DataGridViewTextBoxColumn
     Friend WithEvents Precio As DataGridViewTextBoxColumn
-    Friend WithEvents grpReservacion As GroupBox
+    Friend WithEvents grbReservacion As GroupBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
@@ -550,7 +586,10 @@ Partial Class FormReservaciones
     Friend WithEvents btnClientes As PictureBox
     Friend WithEvents txtDias As Label
     Friend WithEvents txtTotal As Label
-    Friend WithEvents lblNumReservacion As Label
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Label9 As Label
+    Friend WithEvents btnModificar As Button
+    Friend WithEvents btnElimar As Button
+    Friend WithEvents btnAgregar As Button
+    Friend WithEvents lblNumReservacion As Label
 End Class

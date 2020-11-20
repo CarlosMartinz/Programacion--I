@@ -126,6 +126,14 @@ Public Class db_conexion
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Estado")
 
+        miCommand.CommandText = "SELECT Reservaciones.idReservaiones, Reservaciones.idCliente, Reservaciones.idUsuario, Reservaciones.idHabitaciones, Reservaciones.Entrada, Reservaciones.Salida,
+                                  Reservaciones.PrecioDia FROM Reservaciones
+                                    inner join clientes on(Reservaciones.idCliente=clientes.idCliente)
+                                    inner join usuarios on(Reservaciones.idUsuario=usuarios.idUsuario)
+                                    inner join Habitacion on(Reservaciones.idHabitaciones=Habitacion.idHabitacion)"
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "Reservaciones")
+
         Return ds
     End Function
     'CRUD usuario 
