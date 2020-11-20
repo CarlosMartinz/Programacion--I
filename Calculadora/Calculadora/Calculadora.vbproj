@@ -88,28 +88,28 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Busqueda\FormBusquedaClientes.Designer.vb">
+    <Compile Include="Modulos\Busqueda\FormBusquedaClientes.Designer.vb">
       <DependentUpon>FormBusquedaClientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="Busqueda\FormBusquedaClientes.vb">
+    <Compile Include="Modulos\Busqueda\FormBusquedaClientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Busqueda\FormBusquedaHabitaciones.Designer.vb">
+    <Compile Include="Modulos\Busqueda\FormBusquedaHabitaciones.Designer.vb">
       <DependentUpon>FormBusquedaHabitaciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Busqueda\FormBusquedaHabitaciones.vb">
+    <Compile Include="Modulos\Busqueda\FormBusquedaHabitaciones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Busqueda\FormBusquedaTipoHabitaciones.Designer.vb">
+    <Compile Include="Modulos\Busqueda\FormBusquedaTipoHabitaciones.Designer.vb">
       <DependentUpon>FormBusquedaTipoHabitaciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Busqueda\FormBusquedaTipoHabitaciones.vb">
+    <Compile Include="Modulos\Busqueda\FormBusquedaTipoHabitaciones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Busqueda\FormBusquedaUsuarios.Designer.vb">
+    <Compile Include="Modulos\Busqueda\FormBusquedaUsuarios.Designer.vb">
       <DependentUpon>FormBusquedaUsuarios.vb</DependentUpon>
     </Compile>
-    <Compile Include="Busqueda\FormBusquedaUsuarios.vb">
+    <Compile Include="Modulos\Busqueda\FormBusquedaUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="db_conexion.vb" />
@@ -124,16 +124,28 @@
     <Compile Include="FormPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registro\FormProductos.Designer.vb">
+    <Compile Include="Modulos\Registro\FormProductos.Designer.vb">
       <DependentUpon>FormProductos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Registro\FormProductos.vb">
+    <Compile Include="Modulos\Registro\FormProductos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registro\FormTipoHabitaciones.Designer.vb">
+    <Compile Include="Modulos\Registro\FormTipoHabitaciones.Designer.vb">
       <DependentUpon>FormTipoHabitaciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Registro\FormTipoHabitaciones.vb">
+    <Compile Include="Modulos\Registro\FormTipoHabitaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Reservacion\RealizarPago\FormPago.Designer.vb">
+      <DependentUpon>FormPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Reservacion\RealizarPago\FormPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Reservacion\Venta\FormVenta.Designer.vb">
+      <DependentUpon>FormVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Reservacion\Venta\FormVenta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -152,66 +164,66 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Registro\FormClientes.designer.vb">
+    <Compile Include="Modulos\Registro\FormClientes.designer.vb">
       <DependentUpon>FormClientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="Registro\FormClientes.vb">
+    <Compile Include="Modulos\Registro\FormClientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registro\FormHabitaciones.Designer.vb">
+    <Compile Include="Modulos\Registro\FormHabitaciones.Designer.vb">
       <DependentUpon>FormHabitaciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Registro\FormHabitaciones.vb">
+    <Compile Include="Modulos\Registro\FormHabitaciones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reservacion\FormReservaciones.Designer.vb">
+    <Compile Include="Modulos\Reservacion\FormReservaciones.Designer.vb">
       <DependentUpon>FormReservaciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reservacion\FormReservaciones.vb">
+    <Compile Include="Modulos\Reservacion\FormReservaciones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registro\FormUsuarios.Designer.vb">
+    <Compile Include="Modulos\Registro\FormUsuarios.Designer.vb">
       <DependentUpon>FormUsuarios.vb</DependentUpon>
     </Compile>
-    <Compile Include="Registro\FormUsuarios.vb">
+    <Compile Include="Modulos\Registro\FormUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reservacion\Forms Hijos\FormCliente.Designer.vb">
+    <Compile Include="Modulos\Reservacion\Forms Hijos\FormCliente.Designer.vb">
       <DependentUpon>FormCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reservacion\Forms Hijos\FormCliente.vb">
+    <Compile Include="Modulos\Reservacion\Forms Hijos\FormCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reservacion\Forms Hijos\FormHabitacion.Designer.vb">
+    <Compile Include="Modulos\Reservacion\Forms Hijos\FormHabitacion.Designer.vb">
       <DependentUpon>FormHabitacion.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reservacion\Forms Hijos\FormHabitacion.vb">
+    <Compile Include="Modulos\Reservacion\Forms Hijos\FormHabitacion.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Busqueda\FormBusquedaClientes.resx">
+    <EmbeddedResource Include="Modulos\Busqueda\FormBusquedaClientes.resx">
       <DependentUpon>FormBusquedaClientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Busqueda\FormBusquedaHabitaciones.resx">
+    <EmbeddedResource Include="Modulos\Busqueda\FormBusquedaHabitaciones.resx">
       <DependentUpon>FormBusquedaHabitaciones.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Busqueda\FormBusquedaTipoHabitaciones.resx">
+    <EmbeddedResource Include="Modulos\Busqueda\FormBusquedaTipoHabitaciones.resx">
       <DependentUpon>FormBusquedaTipoHabitaciones.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Busqueda\FormBusquedaUsuarios.resx">
+    <EmbeddedResource Include="Modulos\Busqueda\FormBusquedaUsuarios.resx">
       <DependentUpon>FormBusquedaUsuarios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registro\FormProductos.resx">
+    <EmbeddedResource Include="Modulos\Registro\FormProductos.resx">
       <DependentUpon>FormProductos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reservacion\FormReservaciones.resx">
+    <EmbeddedResource Include="Modulos\Reservacion\FormReservaciones.resx">
       <DependentUpon>FormReservaciones.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registro\FormTipoHabitaciones.resx">
+    <EmbeddedResource Include="Modulos\Registro\FormTipoHabitaciones.resx">
       <DependentUpon>FormTipoHabitaciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -220,19 +232,19 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registro\FormClientes.resx">
+    <EmbeddedResource Include="Modulos\Registro\FormClientes.resx">
       <DependentUpon>FormClientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registro\FormHabitaciones.resx">
+    <EmbeddedResource Include="Modulos\Registro\FormHabitaciones.resx">
       <DependentUpon>FormHabitaciones.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registro\FormUsuarios.resx">
+    <EmbeddedResource Include="Modulos\Registro\FormUsuarios.resx">
       <DependentUpon>FormUsuarios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reservacion\Forms Hijos\FormCliente.resx">
+    <EmbeddedResource Include="Modulos\Reservacion\Forms Hijos\FormCliente.resx">
       <DependentUpon>FormCliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reservacion\Forms Hijos\FormHabitacion.resx">
+    <EmbeddedResource Include="Modulos\Reservacion\Forms Hijos\FormHabitacion.resx">
       <DependentUpon>FormHabitacion.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
