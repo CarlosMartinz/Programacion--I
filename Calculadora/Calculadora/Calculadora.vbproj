@@ -226,6 +226,12 @@
     <EmbeddedResource Include="Modulos\Registro\FormTipoHabitaciones.resx">
       <DependentUpon>FormTipoHabitaciones.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Reservacion\RealizarPago\FormPago.resx">
+      <DependentUpon>FormPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Reservacion\Venta\FormVenta.resx">
+      <DependentUpon>FormVenta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
