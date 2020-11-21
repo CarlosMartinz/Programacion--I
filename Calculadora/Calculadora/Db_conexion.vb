@@ -126,6 +126,12 @@ Public Class db_conexion
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Estado")
 
+        'miCommand.CommandText = "select Producto.idProducto, Producto.idCategoria, Producto.Codigo, Producto.Descripcion, Producto.Precio 
+        '                            form Producto
+        '                                inner join Cetegoria on(Producto.idCategoria=Cetgoria.idCategoria)"
+        'miAdapter.SelectCommand = miCommand
+        'miAdapter.Fill(ds, "Producto")
+
         miCommand.CommandText = "SELECT Reservaciones.idReservaiones, Reservaciones.idCliente, Reservaciones.idUsuario, Reservaciones.idHabitaciones, Reservaciones.Entrada, Reservaciones.Salida,
                                   Reservaciones.PrecioDia FROM Reservaciones
                                     inner join clientes on(Reservaciones.idCliente=clientes.idCliente)

@@ -26,7 +26,14 @@
         objCliente.Show()
     End Sub
 
+    Private Sub ProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductosToolStripMenuItem.Click
+        Dim objProductos As New FormProductos
+        objProductos.MdiParent = Me
+        objProductos.Show()
+    End Sub
+
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Close()
     End Sub
+
 End Class

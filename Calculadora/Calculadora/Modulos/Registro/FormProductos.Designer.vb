@@ -35,18 +35,14 @@ Partial Class FormProductos
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.grbDatos = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.lblPrecio = New System.Windows.Forms.Label()
-        Me.txtCategoria = New System.Windows.Forms.TextBox()
         Me.lblCategoria = New System.Windows.Forms.Label()
-        Me.txtTelefono = New System.Windows.Forms.TextBox()
-        Me.lblCant = New System.Windows.Forms.Label()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
-        Me.lblDescripcion = New System.Windows.Forms.Label()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.lblCodigo = New System.Windows.Forms.Label()
-        Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.cboCategoria = New System.Windows.Forms.ComboBox()
         Me.grbPosicion.SuspendLayout()
         Me.grbEdicion.SuspendLayout()
         Me.grbDatos.SuspendLayout()
@@ -171,17 +167,13 @@ Partial Class FormProductos
         '
         'grbDatos
         '
-        Me.grbDatos.Controls.Add(Me.TextBox1)
+        Me.grbDatos.Controls.Add(Me.cboCategoria)
+        Me.grbDatos.Controls.Add(Me.txtPrecio)
         Me.grbDatos.Controls.Add(Me.lblPrecio)
-        Me.grbDatos.Controls.Add(Me.txtCategoria)
         Me.grbDatos.Controls.Add(Me.lblCategoria)
-        Me.grbDatos.Controls.Add(Me.txtTelefono)
-        Me.grbDatos.Controls.Add(Me.lblCant)
         Me.grbDatos.Controls.Add(Me.txtDescripcion)
-        Me.grbDatos.Controls.Add(Me.lblDescripcion)
         Me.grbDatos.Controls.Add(Me.txtCodigo)
         Me.grbDatos.Controls.Add(Me.lblCodigo)
-        Me.grbDatos.Controls.Add(Me.txtNombre)
         Me.grbDatos.Controls.Add(Me.Label1)
         Me.grbDatos.Location = New System.Drawing.Point(12, 12)
         Me.grbDatos.Name = "grbDatos"
@@ -190,75 +182,42 @@ Partial Class FormProductos
         Me.grbDatos.TabStop = False
         Me.grbDatos.Text = "Datos del cliente"
         '
-        'TextBox1
+        'txtPrecio
         '
-        Me.TextBox1.Location = New System.Drawing.Point(71, 152)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(175, 20)
-        Me.TextBox1.TabIndex = 13
+        Me.txtPrecio.Location = New System.Drawing.Point(167, 137)
+        Me.txtPrecio.Name = "txtPrecio"
+        Me.txtPrecio.Size = New System.Drawing.Size(175, 20)
+        Me.txtPrecio.TabIndex = 13
         '
         'lblPrecio
         '
         Me.lblPrecio.AutoSize = True
-        Me.lblPrecio.Location = New System.Drawing.Point(8, 152)
+        Me.lblPrecio.Location = New System.Drawing.Point(104, 137)
         Me.lblPrecio.Name = "lblPrecio"
         Me.lblPrecio.Size = New System.Drawing.Size(37, 13)
         Me.lblPrecio.TabIndex = 12
         Me.lblPrecio.Text = "Precio"
         '
-        'txtCategoria
-        '
-        Me.txtCategoria.Location = New System.Drawing.Point(71, 78)
-        Me.txtCategoria.Name = "txtCategoria"
-        Me.txtCategoria.Size = New System.Drawing.Size(175, 20)
-        Me.txtCategoria.TabIndex = 11
-        '
         'lblCategoria
         '
         Me.lblCategoria.AutoSize = True
-        Me.lblCategoria.Location = New System.Drawing.Point(11, 81)
+        Me.lblCategoria.Location = New System.Drawing.Point(107, 66)
         Me.lblCategoria.Name = "lblCategoria"
         Me.lblCategoria.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.lblCategoria.Size = New System.Drawing.Size(52, 13)
         Me.lblCategoria.TabIndex = 10
         Me.lblCategoria.Text = "Categoria"
         '
-        'txtTelefono
-        '
-        Me.txtTelefono.Location = New System.Drawing.Point(325, 112)
-        Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(175, 20)
-        Me.txtTelefono.TabIndex = 7
-        '
-        'lblCant
-        '
-        Me.lblCant.AutoSize = True
-        Me.lblCant.Location = New System.Drawing.Point(265, 115)
-        Me.lblCant.Name = "lblCant"
-        Me.lblCant.Size = New System.Drawing.Size(49, 13)
-        Me.lblCant.TabIndex = 6
-        Me.lblCant.Text = "Cantidad"
-        '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(324, 40)
-        Me.txtDescripcion.Multiline = True
+        Me.txtDescripcion.Location = New System.Drawing.Point(167, 22)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(175, 58)
+        Me.txtDescripcion.Size = New System.Drawing.Size(175, 20)
         Me.txtDescripcion.TabIndex = 5
-        '
-        'lblDescripcion
-        '
-        Me.lblDescripcion.AutoSize = True
-        Me.lblDescripcion.Location = New System.Drawing.Point(264, 43)
-        Me.lblDescripcion.Name = "lblDescripcion"
-        Me.lblDescripcion.Size = New System.Drawing.Size(63, 13)
-        Me.lblDescripcion.TabIndex = 4
-        Me.lblDescripcion.Text = "Descripcion"
         '
         'txtCodigo
         '
-        Me.txtCodigo.Location = New System.Drawing.Point(71, 115)
+        Me.txtCodigo.Location = New System.Drawing.Point(167, 100)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(175, 20)
         Me.txtCodigo.TabIndex = 3
@@ -266,27 +225,28 @@ Partial Class FormProductos
         'lblCodigo
         '
         Me.lblCodigo.AutoSize = True
-        Me.lblCodigo.Location = New System.Drawing.Point(10, 115)
+        Me.lblCodigo.Location = New System.Drawing.Point(106, 100)
         Me.lblCodigo.Name = "lblCodigo"
         Me.lblCodigo.Size = New System.Drawing.Size(40, 13)
         Me.lblCodigo.TabIndex = 2
         Me.lblCodigo.Text = "Codigo"
         '
-        'txtNombre
-        '
-        Me.txtNombre.Location = New System.Drawing.Point(71, 37)
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(175, 20)
-        Me.txtNombre.TabIndex = 1
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 40)
+        Me.Label1.Location = New System.Drawing.Point(107, 25)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nombre"
+        '
+        'cboCategoria
+        '
+        Me.cboCategoria.FormattingEnabled = True
+        Me.cboCategoria.Location = New System.Drawing.Point(167, 63)
+        Me.cboCategoria.Name = "cboCategoria"
+        Me.cboCategoria.Size = New System.Drawing.Size(175, 21)
+        Me.cboCategoria.TabIndex = 14
         '
         'FormProductos
         '
@@ -321,16 +281,12 @@ Partial Class FormProductos
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnNuevo As Button
     Friend WithEvents grbDatos As GroupBox
-    Friend WithEvents txtCategoria As TextBox
     Friend WithEvents lblCategoria As Label
-    Friend WithEvents txtTelefono As TextBox
-    Friend WithEvents lblCant As Label
     Friend WithEvents txtDescripcion As TextBox
-    Friend WithEvents lblDescripcion As Label
     Friend WithEvents txtCodigo As TextBox
     Friend WithEvents lblCodigo As Label
-    Friend WithEvents txtNombre As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtPrecio As TextBox
     Friend WithEvents lblPrecio As Label
+    Friend WithEvents cboCategoria As ComboBox
 End Class

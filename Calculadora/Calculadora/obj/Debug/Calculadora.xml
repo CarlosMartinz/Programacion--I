@@ -22,6 +22,11 @@ Calculadora
   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
 </summary>
 </member>
+<member name="P:Calculadora.My.Resources.Resources.Beer_Bottle_icon_icons_com_68782">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Calculadora.My.Resources.Resources.Bodega">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
