@@ -295,6 +295,7 @@
     <None Include="bin\Debug\Recursos\Habitaciones.png" />
     <None Include="bin\Debug\Recursos\Proveedor.png" />
     <None Include="bin\Debug\Recursos\Bodega.png" />
+    <None Include="bin\Debug\Recursos\Beer_Bottle_icon-icons.com_68782.png" />
     <Content Include="db_Hotel.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
