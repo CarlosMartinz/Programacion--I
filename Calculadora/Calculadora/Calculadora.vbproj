@@ -102,6 +102,12 @@
     <Compile Include="Modulos\Busqueda\FormBusquedaHabitaciones.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modulos\Busqueda\FormBusquedaProductos.Designer.vb">
+      <DependentUpon>FormBusquedaProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Busqueda\FormBusquedaProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulos\Busqueda\FormBusquedaTipoHabitaciones.Designer.vb">
       <DependentUpon>FormBusquedaTipoHabitaciones.vb</DependentUpon>
     </Compile>
@@ -124,6 +130,12 @@
       <DependentUpon>FormPrincipal.vb</DependentUpon>
     </Compile>
     <Compile Include="FormPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Registro\FormCategoria.Designer.vb">
+      <DependentUpon>FormCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Registro\FormCategoria.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos\Registro\FormProductos.Designer.vb">
@@ -216,6 +228,9 @@
     <EmbeddedResource Include="Modulos\Busqueda\FormBusquedaHabitaciones.resx">
       <DependentUpon>FormBusquedaHabitaciones.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Busqueda\FormBusquedaProductos.resx">
+      <DependentUpon>FormBusquedaProductos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Busqueda\FormBusquedaTipoHabitaciones.resx">
       <DependentUpon>FormBusquedaTipoHabitaciones.vb</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Registro\FormCategoria.resx">
+      <DependentUpon>FormCategoria.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Registro\FormProductos.resx">
       <DependentUpon>FormProductos.vb</DependentUpon>

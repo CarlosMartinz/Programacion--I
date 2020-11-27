@@ -35,6 +35,7 @@ Partial Class FormProductos
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.grbDatos = New System.Windows.Forms.GroupBox()
+        Me.cboCategoria = New System.Windows.Forms.ComboBox()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.lblPrecio = New System.Windows.Forms.Label()
         Me.lblCategoria = New System.Windows.Forms.Label()
@@ -42,7 +43,8 @@ Partial Class FormProductos
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.lblCodigo = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.cboCategoria = New System.Windows.Forms.ComboBox()
+        Me.btnAgregarCat = New System.Windows.Forms.Button()
+        Me.btnBuscarCat = New System.Windows.Forms.Button()
         Me.grbPosicion.SuspendLayout()
         Me.grbEdicion.SuspendLayout()
         Me.grbDatos.SuspendLayout()
@@ -167,6 +169,8 @@ Partial Class FormProductos
         '
         'grbDatos
         '
+        Me.grbDatos.Controls.Add(Me.btnBuscarCat)
+        Me.grbDatos.Controls.Add(Me.btnAgregarCat)
         Me.grbDatos.Controls.Add(Me.cboCategoria)
         Me.grbDatos.Controls.Add(Me.txtPrecio)
         Me.grbDatos.Controls.Add(Me.lblPrecio)
@@ -181,6 +185,14 @@ Partial Class FormProductos
         Me.grbDatos.TabIndex = 28
         Me.grbDatos.TabStop = False
         Me.grbDatos.Text = "Datos del cliente"
+        '
+        'cboCategoria
+        '
+        Me.cboCategoria.FormattingEnabled = True
+        Me.cboCategoria.Location = New System.Drawing.Point(167, 63)
+        Me.cboCategoria.Name = "cboCategoria"
+        Me.cboCategoria.Size = New System.Drawing.Size(175, 21)
+        Me.cboCategoria.TabIndex = 14
         '
         'txtPrecio
         '
@@ -240,13 +252,25 @@ Partial Class FormProductos
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nombre"
         '
-        'cboCategoria
+        'btnAgregarCat
         '
-        Me.cboCategoria.FormattingEnabled = True
-        Me.cboCategoria.Location = New System.Drawing.Point(167, 63)
-        Me.cboCategoria.Name = "cboCategoria"
-        Me.cboCategoria.Size = New System.Drawing.Size(175, 21)
-        Me.cboCategoria.TabIndex = 14
+        Me.btnAgregarCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarCat.Location = New System.Drawing.Point(348, 63)
+        Me.btnAgregarCat.Name = "btnAgregarCat"
+        Me.btnAgregarCat.Size = New System.Drawing.Size(64, 23)
+        Me.btnAgregarCat.TabIndex = 6
+        Me.btnAgregarCat.Text = "Nuevo"
+        Me.btnAgregarCat.UseVisualStyleBackColor = True
+        '
+        'btnBuscarCat
+        '
+        Me.btnBuscarCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarCat.Location = New System.Drawing.Point(418, 63)
+        Me.btnBuscarCat.Name = "btnBuscarCat"
+        Me.btnBuscarCat.Size = New System.Drawing.Size(64, 23)
+        Me.btnBuscarCat.TabIndex = 15
+        Me.btnBuscarCat.Text = "Buscar"
+        Me.btnBuscarCat.UseVisualStyleBackColor = True
         '
         'FormProductos
         '
@@ -289,4 +313,6 @@ Partial Class FormProductos
     Friend WithEvents txtPrecio As TextBox
     Friend WithEvents lblPrecio As Label
     Friend WithEvents cboCategoria As ComboBox
+    Friend WithEvents btnBuscarCat As Button
+    Friend WithEvents btnAgregarCat As Button
 End Class
