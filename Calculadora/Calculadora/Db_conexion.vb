@@ -126,11 +126,15 @@ Public Class db_conexion
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Estado")
 
-        'miCommand.CommandText = "select Producto.idProducto, Producto.idCategoria, Producto.Codigo, Producto.Descripcion, Producto.Precio 
-        '                            form Producto
-        '                                inner join Cetegoria on(Producto.idCategoria=Cetgoria.idCategoria)"
-        'miAdapter.SelectCommand = miCommand
-        'miAdapter.Fill(ds, "Producto")
+        miCommand.CommandText = "SELECT * FROM Categoria"
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "Categoria")
+
+        miCommand.CommandText = "select Producto.idProducto, Producto.idCategoria, Producto.Codigo, Producto.Descripcion, Producto.Precio 
+                                    from Producto
+                                        inner join Categoria on(Producto.idCategoria=Categoria.idCategoria)"
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "Producto")
 
         miCommand.CommandText = "SELECT Reservaciones.idReservaiones, Reservaciones.idCliente, Reservaciones.idUsuario, Reservaciones.idHabitaciones, Reservaciones.Entrada, Reservaciones.Salida,
                                   Reservaciones.PrecioDia FROM Reservaciones
@@ -297,6 +301,33 @@ Public Class db_conexion
 
         Return msg
     End Function
+
+    Public Function mantenimientoDatosProductos(ByVal datos As String(), ByVal accion As String)
+        Dim sql, msg As String
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT INTO Producto (idCategoria,Codigo,Descripcion,Precio) VALUES(@idCateg,@Codig,@Descrip,@Costo)"
+            Case "actualizar"
+                sql = "UPDATE Producto SET idCategoria=@idCateg, Codigo=@Codig, Descripcion=@Descrip, Precio=@Costo WHERE idProducto=@idProducto"
+            Case "eliminar"
+                sql = "DELETE FROM Producto WHERE idProducto=@idProducto"
+        End Select
+        miCommand.Parameters("@idProducto").Value = datos(0)
+        If accion IsNot "eliminar" Then
+            miCommand.Parameters("@idCateg").Value = datos(1)
+            miCommand.Parameters("@Codig").Value = datos(2)
+            miCommand.Parameters("@Descrip").Value = datos(3)
+            miCommand.Parameters("@Costo").Value = datos(4)
+        End If
+        If executeSql(sql) > 0 Then
+            msg = "exito"
+        Else
+            msg = "error"
+        End If
+
+        Return msg
+    End Function
+
     Private Function executeSql(ByVal sql As String)
         Try
             miCommand.Connection = miConexion

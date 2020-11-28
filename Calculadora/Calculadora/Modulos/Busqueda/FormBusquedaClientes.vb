@@ -29,4 +29,5 @@
         _idC = 0
         Close()
     End Sub
+
 End Class
