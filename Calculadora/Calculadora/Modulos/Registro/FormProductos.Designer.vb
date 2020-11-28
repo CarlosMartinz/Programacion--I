@@ -35,6 +35,8 @@ Partial Class FormProductos
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.grbDatos = New System.Windows.Forms.GroupBox()
+        Me.btnBuscarCat = New System.Windows.Forms.Button()
+        Me.btnAgregarCat = New System.Windows.Forms.Button()
         Me.cboCategoria = New System.Windows.Forms.ComboBox()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.lblPrecio = New System.Windows.Forms.Label()
@@ -43,8 +45,6 @@ Partial Class FormProductos
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.lblCodigo = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnAgregarCat = New System.Windows.Forms.Button()
-        Me.btnBuscarCat = New System.Windows.Forms.Button()
         Me.grbPosicion.SuspendLayout()
         Me.grbEdicion.SuspendLayout()
         Me.grbDatos.SuspendLayout()
@@ -184,7 +184,27 @@ Partial Class FormProductos
         Me.grbDatos.Size = New System.Drawing.Size(506, 197)
         Me.grbDatos.TabIndex = 28
         Me.grbDatos.TabStop = False
-        Me.grbDatos.Text = "Datos del cliente"
+        Me.grbDatos.Text = "Datos Productos"
+        '
+        'btnBuscarCat
+        '
+        Me.btnBuscarCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarCat.Location = New System.Drawing.Point(418, 63)
+        Me.btnBuscarCat.Name = "btnBuscarCat"
+        Me.btnBuscarCat.Size = New System.Drawing.Size(64, 23)
+        Me.btnBuscarCat.TabIndex = 15
+        Me.btnBuscarCat.Text = "Buscar"
+        Me.btnBuscarCat.UseVisualStyleBackColor = True
+        '
+        'btnAgregarCat
+        '
+        Me.btnAgregarCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarCat.Location = New System.Drawing.Point(348, 63)
+        Me.btnAgregarCat.Name = "btnAgregarCat"
+        Me.btnAgregarCat.Size = New System.Drawing.Size(64, 23)
+        Me.btnAgregarCat.TabIndex = 6
+        Me.btnAgregarCat.Text = "Nuevo"
+        Me.btnAgregarCat.UseVisualStyleBackColor = True
         '
         'cboCategoria
         '
@@ -251,26 +271,6 @@ Partial Class FormProductos
         Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nombre"
-        '
-        'btnAgregarCat
-        '
-        Me.btnAgregarCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregarCat.Location = New System.Drawing.Point(348, 63)
-        Me.btnAgregarCat.Name = "btnAgregarCat"
-        Me.btnAgregarCat.Size = New System.Drawing.Size(64, 23)
-        Me.btnAgregarCat.TabIndex = 6
-        Me.btnAgregarCat.Text = "Nuevo"
-        Me.btnAgregarCat.UseVisualStyleBackColor = True
-        '
-        'btnBuscarCat
-        '
-        Me.btnBuscarCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscarCat.Location = New System.Drawing.Point(418, 63)
-        Me.btnBuscarCat.Name = "btnBuscarCat"
-        Me.btnBuscarCat.Size = New System.Drawing.Size(64, 23)
-        Me.btnBuscarCat.TabIndex = 15
-        Me.btnBuscarCat.Text = "Buscar"
-        Me.btnBuscarCat.UseVisualStyleBackColor = True
         '
         'FormProductos
         '
