@@ -139,8 +139,11 @@
     End Sub
 
     Private Sub btnBuscarCat_Click(sender As Object, e As EventArgs) Handles btnBuscarCat.Click
-
+        Dim objBuscarCaterigra As New FormBusquedaCategoria
+        objBuscarCaterigra.ShowDialog()
+        If objBuscarCaterigra._idCat > 0 Then
+            Posicion = dataTable.Rows.IndexOf(dataTable.Rows.Find(objBuscarCaterigra._idCat))
+            MostrarDatos()
+        End If
     End Sub
-
- 
 End Class

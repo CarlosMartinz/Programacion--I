@@ -35,8 +35,8 @@ Partial Class FormCategoria
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.grbDatos = New System.Windows.Forms.GroupBox()
-        Me.lblCategoria = New System.Windows.Forms.Label()
         Me.txtCategoria = New System.Windows.Forms.TextBox()
+        Me.lblCategoria = New System.Windows.Forms.Label()
         Me.grbPosicion.SuspendLayout()
         Me.grbEdicion.SuspendLayout()
         Me.grbDatos.SuspendLayout()
@@ -168,7 +168,14 @@ Partial Class FormCategoria
         Me.grbDatos.Size = New System.Drawing.Size(371, 64)
         Me.grbDatos.TabIndex = 31
         Me.grbDatos.TabStop = False
-        Me.grbDatos.Text = "Datos del cliente"
+        Me.grbDatos.Text = "Datos Categorias de Productos"
+        '
+        'txtCategoria
+        '
+        Me.txtCategoria.Location = New System.Drawing.Point(117, 19)
+        Me.txtCategoria.Name = "txtCategoria"
+        Me.txtCategoria.Size = New System.Drawing.Size(154, 20)
+        Me.txtCategoria.TabIndex = 11
         '
         'lblCategoria
         '
@@ -179,13 +186,6 @@ Partial Class FormCategoria
         Me.lblCategoria.Size = New System.Drawing.Size(52, 13)
         Me.lblCategoria.TabIndex = 10
         Me.lblCategoria.Text = "Categoria"
-        '
-        'txtCategoria
-        '
-        Me.txtCategoria.Location = New System.Drawing.Point(117, 19)
-        Me.txtCategoria.Name = "txtCategoria"
-        Me.txtCategoria.Size = New System.Drawing.Size(154, 20)
-        Me.txtCategoria.TabIndex = 11
         '
         'FormCategoria
         '

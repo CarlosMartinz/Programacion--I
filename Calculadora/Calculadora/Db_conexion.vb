@@ -50,6 +50,7 @@ Public Class db_conexion
         'Tabla Producto
         miCommand.Parameters.Add("@idProducto", SqlDbType.Int).Value = 0
         miCommand.Parameters.Add("@idCateg", SqlDbType.Int).Value = 0
+        miCommand.Parameters.Add("@Categ", SqlDbType.VarChar).Value = ""
         miCommand.Parameters.Add("@Codig", SqlDbType.VarChar).Value = ""
         miCommand.Parameters.Add("@Descrip", SqlDbType.VarChar).Value = ""
         miCommand.Parameters.Add("@Cantidad", SqlDbType.VarChar).Value = ""
@@ -325,6 +326,28 @@ Public Class db_conexion
             msg = "error"
         End If
 
+        Return msg
+    End Function
+
+    Public Function mantenimientoDatosCategorias(ByVal datos As String(), ByVal accion As String)
+        Dim sql, msg As String
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT INTO Categoria (Categoria) VALUES(@Categ)"
+            Case "actualizar"
+                sql = "UPDATE Categoria SET Categoria=@Categ WHERE idCategoria=@idCateg"
+            Case "eliminar"
+                sql = "DELETE FROM Categoria WHERE idCategoria=@idCateg"
+        End Select
+        miCommand.Parameters("@idCateg").Value = datos(0)
+        If accion IsNot "eliminar" Then
+            miCommand.Parameters("@Categ").Value = datos(1)
+        End If
+        If executeSql(sql) > 0 Then
+            msg = "exito"
+        Else
+            msg = "error"
+        End If
         Return msg
     End Function
 

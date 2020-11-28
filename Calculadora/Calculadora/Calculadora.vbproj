@@ -90,6 +90,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulos\Busqueda\FormBusquedaCategoria.Designer.vb">
+      <DependentUpon>FormBusquedaCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Busqueda\FormBusquedaCategoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulos\Busqueda\FormBusquedaClientes.Designer.vb">
       <DependentUpon>FormBusquedaClientes.vb</DependentUpon>
     </Compile>
@@ -222,6 +228,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Modulos\Busqueda\FormBusquedaCategoria.resx">
+      <DependentUpon>FormBusquedaCategoria.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Busqueda\FormBusquedaClientes.resx">
       <DependentUpon>FormBusquedaClientes.vb</DependentUpon>
     </EmbeddedResource>
