@@ -136,14 +136,15 @@
     Private Sub btnAgregarCat_Click(sender As Object, e As EventArgs) Handles btnAgregarCat.Click
         Dim objCategoria As New FormCategoria
         objCategoria.ShowDialog()
+        ObtenerDatos()
+        LimpiarDatos()
     End Sub
 
     Private Sub btnBuscarCat_Click(sender As Object, e As EventArgs) Handles btnBuscarCat.Click
-        Dim objBuscarCaterigra As New FormBusquedaCategoria
-        objBuscarCaterigra.ShowDialog()
-        If objBuscarCaterigra._idCat > 0 Then
-            Posicion = dataTable.Rows.IndexOf(dataTable.Rows.Find(objBuscarCaterigra._idCat))
-            MostrarDatos()
+        Dim objBuscarCategoria As New FormBusquedaCategoria
+        objBuscarCategoria.ShowDialog()
+        If objBuscarCategoria._idCat > 0 Then
+            cboCategoria.SelectedValue = objBuscarCategoria._idCat
         End If
     End Sub
 End Class
