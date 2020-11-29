@@ -3,7 +3,6 @@
     Dim dataTable As New DataTable
     Dim Accion As String = "nuevo"
     Dim Posicion As Integer = 0
-    Public _Pos As Integer
 
     Private Sub FormCategoria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ObtenerDatos()
@@ -27,7 +26,6 @@
         If DataTable.Rows.Count > 0 Then
             Me.Tag = DataTable.Rows(Posicion).ItemArray(0).ToString()
             txtCategoria.Text = dataTable.Rows(Posicion).ItemArray(1).ToString()
-            _Pos = Posicion
             lblPosicion.Text = Posicion + 1 & " de " & dataTable.Rows.Count
 
         Else
