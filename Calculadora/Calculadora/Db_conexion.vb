@@ -55,6 +55,14 @@ Public Class db_conexion
         miCommand.Parameters.Add("@Descrip", SqlDbType.VarChar).Value = ""
         miCommand.Parameters.Add("@Cantidad", SqlDbType.VarChar).Value = ""
         miCommand.Parameters.Add("@Costo", SqlDbType.VarChar).Value = ""
+
+        'Tabla Reservaciones
+        miCommand.Parameters.Add("@idReserva", SqlDbType.Int).Value = 0
+        miCommand.Parameters.Add("@Entrada", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@Salida", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@Estadia", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@PrecioDia", SqlDbType.VarChar).Value = ""
+        miCommand.Parameters.Add("@Suma", SqlDbType.VarChar).Value = ""
     End Sub
     Public Function FiltroHabitacionLibre()
         ds.Clear()
@@ -348,6 +356,37 @@ Public Class db_conexion
         Else
             msg = "error"
         End If
+        Return msg
+    End Function
+
+    Public Function mantenimientoDatosReservaciones(ByVal datos As String(), ByVal accion As String)
+        Dim sql, msg As String
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT INTO Reservaciones (idCliente,idUsuario,idHabitaciones,Entrada,Salida,Estadia,PrecioDia,Total) 
+                        VALUES(@idC,@idU,@idHabitaciones,@Entrada,@Salida,@Estadia,@PrecioDia,@Suma)"
+            Case "actualizar"
+                sql = "UPDATE Reservaciones SET Entrada=,Salida=, Estadia=, PrecioDia=, Total= WHERE idReservaiones="
+            Case "eliminar"
+                sql = "DELETE FROM Reservaciones WHERE idReservaiones="
+        End Select
+        miCommand.Parameters("@idReserva").Value = datos(0)
+        If accion IsNot "eliminar" Then
+            miCommand.Parameters("@idC").Value = datos(1)
+            miCommand.Parameters("@idU").Value = datos(2)
+            miCommand.Parameters("@idHabitaciones").Value = datos(3)
+            miCommand.Parameters("@Entrada").Value = datos(4)
+            miCommand.Parameters("@Salida").Value = datos(5)
+            miCommand.Parameters("@Estadia").Value = datos(6)
+            miCommand.Parameters("@PrecioDia").Value = datos(7)
+            miCommand.Parameters("@Suma").Value = datos(8)
+        End If
+        If executeSql(sql) > 0 Then
+            msg = "exito"
+        Else
+            msg = "error"
+        End If
+
         Return msg
     End Function
 
