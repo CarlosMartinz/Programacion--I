@@ -127,7 +127,7 @@
             'lblNumReservacion.Text = NumReservacion + 1
         Else 'Guardar
             Dim msg = objConexion.mantenimientoDatosReservaciones(New String() {
-                Me.Tag, txtCliente.Text, txtEmpleado.Text, txtHabitacion.Text, DateEntrada.Value, DateSalida.Value, txtDias.Text, txtPrecioDia.Text, txtTotal.Text
+                lblNumReservacion.Text, txtCliente.Text, txtEmpleado.Text, txtHabitacion.Text, DateEntrada.Value, DateSalida.Value, txtDias.Text, txtPrecioDia.Text, txtTotal.Text
             }, accion)
 
             If msg = "error" Then
