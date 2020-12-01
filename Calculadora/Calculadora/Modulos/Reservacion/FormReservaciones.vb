@@ -9,7 +9,7 @@
         ObtenerDatos()
         btnAgregar.Visible = True
 
-        grdHabitaciones.DataSource = objConexion.obtenerDatosTablas.Tables("Reservaciones").DefaultView()
+        grdHabitaciones.DataSource = objConexion.FiltroReservaciones.Tables("Reservaciones").DefaultView()
     End Sub
 
     Sub ObtenerDatos()

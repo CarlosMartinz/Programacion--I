@@ -30,12 +30,12 @@ Partial Class FormReservaciones
         Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.btnAnterior = New System.Windows.Forms.Button()
         Me.btnPrimero = New System.Windows.Forms.Button()
-        Me.btnAgregar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnElimar = New System.Windows.Forms.Button()
         Me.grbReservacion = New System.Windows.Forms.GroupBox()
         Me.lblNumReservacion = New System.Windows.Forms.Label()
+        Me.btnAgregar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
         Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.btnElimar = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtTotal = New System.Windows.Forms.Label()
         Me.txtDias = New System.Windows.Forms.Label()
@@ -67,14 +67,16 @@ Partial Class FormReservaciones
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.grdHabitaciones = New System.Windows.Forms.DataGridView()
         Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.empleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clien = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.emple = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idHabitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Entrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Salida = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Capacidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.empleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnlReservacion.SuspendLayout()
         Me.grbPosicion.SuspendLayout()
         Me.grbReservacion.SuspendLayout()
@@ -88,9 +90,6 @@ Partial Class FormReservaciones
         '
         Me.pnlReservacion.BackColor = System.Drawing.Color.White
         Me.pnlReservacion.Controls.Add(Me.grbPosicion)
-        Me.pnlReservacion.Controls.Add(Me.btnAgregar)
-        Me.pnlReservacion.Controls.Add(Me.btnModificar)
-        Me.pnlReservacion.Controls.Add(Me.btnElimar)
         Me.pnlReservacion.Controls.Add(Me.grbReservacion)
         Me.pnlReservacion.Controls.Add(Me.grbMostrar)
         Me.pnlReservacion.Dock = System.Windows.Forms.DockStyle.Fill
@@ -107,9 +106,9 @@ Partial Class FormReservaciones
         Me.grbPosicion.Controls.Add(Me.btnSiguiente)
         Me.grbPosicion.Controls.Add(Me.btnAnterior)
         Me.grbPosicion.Controls.Add(Me.btnPrimero)
-        Me.grbPosicion.Location = New System.Drawing.Point(47, 462)
+        Me.grbPosicion.Location = New System.Drawing.Point(15, 462)
         Me.grbPosicion.Name = "grbPosicion"
-        Me.grbPosicion.Size = New System.Drawing.Size(290, 48)
+        Me.grbPosicion.Size = New System.Drawing.Size(358, 48)
         Me.grbPosicion.TabIndex = 62
         Me.grbPosicion.TabStop = False
         Me.grbPosicion.Text = "Posicion"
@@ -118,7 +117,7 @@ Partial Class FormReservaciones
         '
         Me.lblPosicion.AutoSize = True
         Me.lblPosicion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPosicion.Location = New System.Drawing.Point(138, 18)
+        Me.lblPosicion.Location = New System.Drawing.Point(164, 18)
         Me.lblPosicion.Name = "lblPosicion"
         Me.lblPosicion.Size = New System.Drawing.Size(44, 16)
         Me.lblPosicion.TabIndex = 5
@@ -127,7 +126,7 @@ Partial Class FormReservaciones
         'btnUltimo
         '
         Me.btnUltimo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUltimo.Location = New System.Drawing.Point(235, 13)
+        Me.btnUltimo.Location = New System.Drawing.Point(261, 13)
         Me.btnUltimo.Name = "btnUltimo"
         Me.btnUltimo.Size = New System.Drawing.Size(43, 28)
         Me.btnUltimo.TabIndex = 3
@@ -137,7 +136,7 @@ Partial Class FormReservaciones
         'btnSiguiente
         '
         Me.btnSiguiente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSiguiente.Location = New System.Drawing.Point(188, 12)
+        Me.btnSiguiente.Location = New System.Drawing.Point(214, 12)
         Me.btnSiguiente.Name = "btnSiguiente"
         Me.btnSiguiente.Size = New System.Drawing.Size(41, 28)
         Me.btnSiguiente.TabIndex = 2
@@ -147,7 +146,7 @@ Partial Class FormReservaciones
         'btnAnterior
         '
         Me.btnAnterior.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAnterior.Location = New System.Drawing.Point(92, 12)
+        Me.btnAnterior.Location = New System.Drawing.Point(118, 12)
         Me.btnAnterior.Name = "btnAnterior"
         Me.btnAnterior.Size = New System.Drawing.Size(40, 28)
         Me.btnAnterior.TabIndex = 1
@@ -157,52 +156,22 @@ Partial Class FormReservaciones
         'btnPrimero
         '
         Me.btnPrimero.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPrimero.Location = New System.Drawing.Point(36, 12)
+        Me.btnPrimero.Location = New System.Drawing.Point(62, 12)
         Me.btnPrimero.Name = "btnPrimero"
         Me.btnPrimero.Size = New System.Drawing.Size(50, 28)
         Me.btnPrimero.TabIndex = 0
         Me.btnPrimero.Text = "|<"
         Me.btnPrimero.UseVisualStyleBackColor = True
         '
-        'btnAgregar
-        '
-        Me.btnAgregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregar.Location = New System.Drawing.Point(387, 476)
-        Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(64, 27)
-        Me.btnAgregar.TabIndex = 61
-        Me.btnAgregar.Text = "Nuevo"
-        Me.btnAgregar.UseVisualStyleBackColor = True
-        '
-        'btnModificar
-        '
-        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModificar.Location = New System.Drawing.Point(457, 476)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(79, 27)
-        Me.btnModificar.TabIndex = 60
-        Me.btnModificar.Text = "Modificar"
-        Me.btnModificar.UseVisualStyleBackColor = True
-        '
-        'btnElimar
-        '
-        Me.btnElimar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnElimar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnElimar.Location = New System.Drawing.Point(542, 476)
-        Me.btnElimar.Name = "btnElimar"
-        Me.btnElimar.Size = New System.Drawing.Size(64, 27)
-        Me.btnElimar.TabIndex = 59
-        Me.btnElimar.Text = "Eliminar"
-        Me.btnElimar.UseVisualStyleBackColor = True
-        '
         'grbReservacion
         '
         Me.grbReservacion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.grbReservacion.Controls.Add(Me.lblNumReservacion)
+        Me.grbReservacion.Controls.Add(Me.btnAgregar)
+        Me.grbReservacion.Controls.Add(Me.btnModificar)
         Me.grbReservacion.Controls.Add(Me.Panel9)
+        Me.grbReservacion.Controls.Add(Me.btnElimar)
         Me.grbReservacion.Controls.Add(Me.Label9)
         Me.grbReservacion.Controls.Add(Me.txtTotal)
         Me.grbReservacion.Controls.Add(Me.txtDias)
@@ -247,6 +216,28 @@ Partial Class FormReservaciones
         Me.lblNumReservacion.TabIndex = 53
         Me.lblNumReservacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'btnAgregar
+        '
+        Me.btnAgregar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.Location = New System.Drawing.Point(82, 403)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(64, 27)
+        Me.btnAgregar.TabIndex = 61
+        Me.btnAgregar.Text = "Nuevo"
+        Me.btnAgregar.UseVisualStyleBackColor = True
+        '
+        'btnModificar
+        '
+        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.Location = New System.Drawing.Point(152, 403)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(79, 27)
+        Me.btnModificar.TabIndex = 60
+        Me.btnModificar.Text = "Modificar"
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
         'Panel9
         '
         Me.Panel9.BackColor = System.Drawing.Color.Black
@@ -254,6 +245,17 @@ Partial Class FormReservaciones
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(165, 1)
         Me.Panel9.TabIndex = 52
+        '
+        'btnElimar
+        '
+        Me.btnElimar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnElimar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnElimar.Location = New System.Drawing.Point(237, 403)
+        Me.btnElimar.Name = "btnElimar"
+        Me.btnElimar.Size = New System.Drawing.Size(64, 27)
+        Me.btnElimar.TabIndex = 59
+        Me.btnElimar.Text = "Eliminar"
+        Me.btnElimar.UseVisualStyleBackColor = True
         '
         'Label9
         '
@@ -351,6 +353,7 @@ Partial Class FormReservaciones
         '
         'DateEntrada
         '
+        Me.DateEntrada.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateEntrada.Location = New System.Drawing.Point(135, 202)
         Me.DateEntrada.Name = "DateEntrada"
         Me.DateEntrada.Size = New System.Drawing.Size(165, 20)
@@ -358,6 +361,7 @@ Partial Class FormReservaciones
         '
         'DateSalida
         '
+        Me.DateSalida.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateSalida.Location = New System.Drawing.Point(135, 244)
         Me.DateSalida.Name = "DateSalida"
         Me.DateSalida.Size = New System.Drawing.Size(165, 20)
@@ -511,7 +515,7 @@ Partial Class FormReservaciones
         Me.grbMostrar.Controls.Add(Me.grdHabitaciones)
         Me.grbMostrar.Location = New System.Drawing.Point(379, 12)
         Me.grbMostrar.Name = "grbMostrar"
-        Me.grbMostrar.Size = New System.Drawing.Size(453, 445)
+        Me.grbMostrar.Size = New System.Drawing.Size(453, 498)
         Me.grbMostrar.TabIndex = 1
         Me.grbMostrar.TabStop = False
         Me.grbMostrar.Text = "Listado de reservaciones"
@@ -535,13 +539,13 @@ Partial Class FormReservaciones
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grdHabitaciones.BackgroundColor = System.Drawing.Color.White
         Me.grdHabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grdHabitaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.cliente, Me.empleado, Me.idHabitacion, Me.Entrada, Me.Salida, Me.Estado, Me.Tipo, Me.Capacidad})
+        Me.grdHabitaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.clien, Me.emple, Me.idHabitacion, Me.Entrada, Me.Salida, Me.Estado, Me.Tipo, Me.Capacidad, Me.empleado, Me.cliente})
         Me.grdHabitaciones.Location = New System.Drawing.Point(17, 48)
         Me.grdHabitaciones.Name = "grdHabitaciones"
         Me.grdHabitaciones.ReadOnly = True
         Me.grdHabitaciones.RowHeadersVisible = False
         Me.grdHabitaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grdHabitaciones.Size = New System.Drawing.Size(419, 353)
+        Me.grdHabitaciones.Size = New System.Drawing.Size(419, 436)
         Me.grdHabitaciones.TabIndex = 0
         '
         'Codigo
@@ -551,19 +555,19 @@ Partial Class FormReservaciones
         Me.Codigo.Name = "Codigo"
         Me.Codigo.ReadOnly = True
         '
-        'cliente
+        'clien
         '
-        Me.cliente.DataPropertyName = "idCliente"
-        Me.cliente.HeaderText = "Cliente"
-        Me.cliente.Name = "cliente"
-        Me.cliente.ReadOnly = True
+        Me.clien.DataPropertyName = "Nombre"
+        Me.clien.HeaderText = "Cliente"
+        Me.clien.Name = "clien"
+        Me.clien.ReadOnly = True
         '
-        'empleado
+        'emple
         '
-        Me.empleado.DataPropertyName = "idUsuario"
-        Me.empleado.HeaderText = "Empleado"
-        Me.empleado.Name = "empleado"
-        Me.empleado.ReadOnly = True
+        Me.emple.DataPropertyName = "nombre1"
+        Me.emple.HeaderText = "Empleado"
+        Me.emple.Name = "emple"
+        Me.emple.ReadOnly = True
         '
         'idHabitacion
         '
@@ -606,6 +610,22 @@ Partial Class FormReservaciones
         Me.Capacidad.HeaderText = "Total"
         Me.Capacidad.Name = "Capacidad"
         Me.Capacidad.ReadOnly = True
+        '
+        'empleado
+        '
+        Me.empleado.DataPropertyName = "idUsuario"
+        Me.empleado.HeaderText = "idEmpleado"
+        Me.empleado.Name = "empleado"
+        Me.empleado.ReadOnly = True
+        Me.empleado.Visible = False
+        '
+        'cliente
+        '
+        Me.cliente.DataPropertyName = "idCliente"
+        Me.cliente.HeaderText = "idCliente"
+        Me.cliente.Name = "cliente"
+        Me.cliente.ReadOnly = True
+        Me.cliente.Visible = False
         '
         'FormReservaciones
         '
@@ -675,12 +695,14 @@ Partial Class FormReservaciones
     Friend WithEvents btnAnterior As Button
     Friend WithEvents btnPrimero As Button
     Friend WithEvents Codigo As DataGridViewTextBoxColumn
-    Friend WithEvents cliente As DataGridViewTextBoxColumn
-    Friend WithEvents empleado As DataGridViewTextBoxColumn
+    Friend WithEvents clien As DataGridViewTextBoxColumn
+    Friend WithEvents emple As DataGridViewTextBoxColumn
     Friend WithEvents idHabitacion As DataGridViewTextBoxColumn
     Friend WithEvents Entrada As DataGridViewTextBoxColumn
     Friend WithEvents Salida As DataGridViewTextBoxColumn
     Friend WithEvents Estado As DataGridViewTextBoxColumn
     Friend WithEvents Tipo As DataGridViewTextBoxColumn
     Friend WithEvents Capacidad As DataGridViewTextBoxColumn
+    Friend WithEvents empleado As DataGridViewTextBoxColumn
+    Friend WithEvents cliente As DataGridViewTextBoxColumn
 End Class
