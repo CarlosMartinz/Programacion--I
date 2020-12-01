@@ -8,13 +8,14 @@
         'dias()
         ObtenerDatos()
         btnAgregar.Visible = True
-
-        grdHabitaciones.DataSource = objConexion.FiltroReservaciones.Tables("Reservaciones").DefaultView()
     End Sub
 
     Sub ObtenerDatos()
         dataTable = objConexion.obtenerDatosTablas.Tables("Reservaciones")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idReservaciones")}
+
+        grdHabitaciones.DataSource = objConexion.FiltroReservaciones.Tables("Reservaciones").DefaultView()
+
         MostrarDatos()
     End Sub
 
@@ -47,12 +48,14 @@
     End Sub
 
     Sub HabDescontroles(ByVal estado As Boolean)
-        grbReservacion.Enabled = Not estado
         txtCliente.Enabled = Not estado
-        'txtEmpleado.Enabled = Not estado
         txtHabitacion.Enabled = Not estado
         txtPrecioDia.Enabled = Not estado
-        btnElimar.Enabled = estado
+        txtTotal.Enabled = Not estado
+        grbReservacion.Enabled = Not estado
+        DateEntrada.Enabled = Not estado
+        DateSalida.Enabled = Not estado
+        txtDias.Enabled = Not estado
     End Sub
     Private Sub btnHabitaciones_Click(sender As Object, e As EventArgs) Handles btnHabitaciones.Click
         Dim frm As New FormHabitacion
@@ -77,7 +80,7 @@
         Dim dia As Double = txtDias.Text
         Dim precioDia As Double = txtPrecioDia.Text
         total = (precioDia * dia)
-        txtTotal.Text = "$" & total
+        txtTotal.Text = "$ " & total
     End Sub
 
     Private Sub txtDias_Click(sender As Object, e As EventArgs) Handles txtDias.Click
@@ -123,7 +126,7 @@
             accion = "nuevo"
 
             LimpiarDatos()
-            'HabDescontroles(False)
+            HabDescontroles(False)
             'lblNumReservacion.Text = NumReservacion + 1
         Else 'Guardarsdvmidfj
             Dim msg = objConexion.mantenimientoDatosReservaciones(New String() {
