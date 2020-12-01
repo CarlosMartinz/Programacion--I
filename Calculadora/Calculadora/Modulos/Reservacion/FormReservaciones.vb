@@ -1,38 +1,39 @@
 ﻿Public Class FormReservaciones
     Dim objConexion As New db_conexion()
     Dim dataTable As New DataTable
-    Dim posicion As Integer = 0
-    Dim accion As String
+    Dim posicion As Integer
+    Dim accion As String = "nuevo"
     Dim NumReservacion As Integer = 0
     Private Sub FormReservaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dias()
         ObtenerDatos()
         btnAgregar.Visible = True
+
+        grdHabitaciones.DataSource = objConexion.obtenerDatosTablas.Tables("Reservaciones").DefaultView()
     End Sub
 
     Sub ObtenerDatos()
         dataTable = objConexion.obtenerDatosTablas.Tables("Reservaciones")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idReservaciones")}
-
-        grdHabitaciones.DataSource = objConexion.obtenerDatosTablas.Tables("Reservaciones").DefaultView()
         MostrarDatos()
     End Sub
 
     Sub MostrarDatos()
         If dataTable.Rows.Count > 0 Then
             Me.Tag = dataTable.Rows(posicion).ItemArray(0).ToString()
-            lblNumReservacion.Text = dataTable.Rows(posicion).ItemArray(0).ToString()
             txtCliente.Text = dataTable.Rows(posicion).ItemArray(1).ToString()
             txtEmpleado.Text = dataTable.Rows(posicion).ItemArray(2).ToString()
             txtHabitacion.Text = dataTable.Rows(posicion).ItemArray(3).ToString()
             DateEntrada.Value = dataTable.Rows(posicion).ItemArray(4).ToString()
             DateSalida.Value = dataTable.Rows(posicion).ItemArray(5).ToString()
-            txtPrecioDia.Text = dataTable.Rows(posicion).ItemArray(6).ToString()
+            txtDias.Text = dataTable.Rows(posicion).ItemArray(6).ToString()
+            txtPrecioDia.Text = dataTable.Rows(posicion).ItemArray(7).ToString()
+            txtTotal.Text = dataTable.Rows(posicion).ItemArray(8).ToString()
 
             lblPosicion.Text = posicion + 1 & " de " & dataTable.Rows.Count
         Else
             LimpiarDatos()
-            MessageBox.Show("No hay registros que mostrar", "Registro Reservaciones", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            'MessageBox.Show("No hay registros que mostrar", "Registro Reservaciones", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
@@ -48,7 +49,7 @@
     Sub HabDescontroles(ByVal estado As Boolean)
         grbReservacion.Enabled = Not estado
         txtCliente.Enabled = Not estado
-        txtEmpleado.Enabled = Not estado
+        'txtEmpleado.Enabled = Not estado
         txtHabitacion.Enabled = Not estado
         txtPrecioDia.Enabled = Not estado
         btnElimar.Enabled = estado
@@ -122,15 +123,15 @@
             accion = "nuevo"
 
             LimpiarDatos()
-            HabDescontroles(False)
-            lblNumReservacion.Text = NumReservacion + 1
+            'HabDescontroles(False)
+            'lblNumReservacion.Text = NumReservacion + 1
         Else 'Guardar
-            Dim msg = objConexion.mantenimientoDatosReservaciones(New String() {lblNumReservacion.Text, txtCliente.Text,
-                                                                  txtEmpleado.Text, txtHabitacion.Text, DateEntrada.Value,
-                                                                  DateSalida.Value, txtDias.Text, txtPrecioDia.Text,
-                                                                  txtTotal.Text}, accion)
+            Dim msg = objConexion.mantenimientoDatosReservaciones(New String() {
+                Me.Tag, txtCliente.Text, txtEmpleado.Text, txtHabitacion.Text, DateEntrada.Value, DateSalida.Value, txtDias.Text, txtPrecioDia.Text, txtTotal.Text
+            }, accion)
+
             If msg = "error" Then
-                MessageBox.Show("Error al intentar guardar el registro, por favor intente nuevamente.", "Registro Producto",
+                MessageBox.Show("Error " & msg, "Registro reservaciones",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 ObtenerDatos()

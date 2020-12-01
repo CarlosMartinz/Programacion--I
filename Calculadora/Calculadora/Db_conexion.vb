@@ -58,6 +58,9 @@ Public Class db_conexion
 
         'Tabla Reservaciones
         miCommand.Parameters.Add("@idReserva", SqlDbType.Int).Value = 0
+        miCommand.Parameters.Add("@idUsu", SqlDbType.Int).Value = 0
+        miCommand.Parameters.Add("@idCli", SqlDbType.Int).Value = 0
+        miCommand.Parameters.Add("@idHab", SqlDbType.Int).Value = 0
         miCommand.Parameters.Add("@Entrada", SqlDbType.VarChar).Value = ""
         miCommand.Parameters.Add("@Salida", SqlDbType.VarChar).Value = ""
         miCommand.Parameters.Add("@Estadia", SqlDbType.VarChar).Value = ""
@@ -127,6 +130,14 @@ Public Class db_conexion
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Habitacion")
 
+        miCommand.CommandText = "SELECT Reservaciones.idReservaiones, Reservaciones.idCliente, Reservaciones.idUsuario, Reservaciones.idHabitaciones, Reservaciones.Entrada, Reservaciones.Salida, Reservaciones.Estadia, Reservaciones.PrecioDia, Reservaciones.Total
+                                 FROM Reservaciones
+               inner join clientes on(Reservaciones.idCliente=clientes.idCliente)
+               inner join usuarios on(Reservaciones.idUsuario=usuarios.idUsuario)
+               inner join Habitacion on(Reservaciones.idHabitaciones=Habitacion.idHabitacion)"
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "Reservaciones")
+
         miCommand.CommandText = "SELECT * FROM TipoHabit"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "TipoHabit")
@@ -145,15 +156,37 @@ Public Class db_conexion
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Producto")
 
-        miCommand.CommandText = "SELECT Reservaciones.idReservaiones, Reservaciones.idCliente, Reservaciones.idUsuario, Reservaciones.idHabitaciones, Reservaciones.Entrada, Reservaciones.Salida,
-                                  Reservaciones.PrecioDia FROM Reservaciones
-                                    inner join clientes on(Reservaciones.idCliente=clientes.idCliente)
-                                    inner join usuarios on(Reservaciones.idUsuario=usuarios.idUsuario)
-                                    inner join Habitacion on(Reservaciones.idHabitaciones=Habitacion.idHabitacion)"
-        miAdapter.SelectCommand = miCommand
-        miAdapter.Fill(ds, "Reservaciones")
-
         Return ds
+    End Function
+    Public Function mantenimientoDatosReservaciones(ByVal datos As String(), ByVal accion As String)
+        Dim sql, msg As String
+        Select Case accion
+            Case "nuevo"
+                sql = "INSERT INTO Reservaciones (idCliente,idUsuario,idHabitaciones,Entrada,Salida,Estadia,PrecioDia,Total) 
+                        VALUES (@idCli,@idUsu,@idHab,@Entrada,@Salida,@Estadia,@PrecioDia,@Suma)"
+            Case "actualizar"
+                sql = "UPDATE Reservaciones SET Entrada=,Salida=, Estadia=, PrecioDia=, Total= WHERE idReservaiones="
+            Case "eliminar"
+                sql = "DELETE FROM Reservaciones WHERE idReservaiones="
+        End Select
+        miCommand.Parameters("@idReserva").Value = datos(0)
+        If accion IsNot "eliminar" Then
+            miCommand.Parameters("@idCli").Value = datos(1)
+            miCommand.Parameters("@idUsu").Value = datos(2)
+            miCommand.Parameters("@idHab").Value = datos(3)
+            miCommand.Parameters("@Entrada").Value = datos(4)
+            miCommand.Parameters("@Salida").Value = datos(5)
+            miCommand.Parameters("@Estadia").Value = datos(6)
+            miCommand.Parameters("@PrecioDia").Value = datos(7)
+            miCommand.Parameters("@Suma").Value = datos(8)
+        End If
+        If (executeSql(sql) > 0) Then
+            msg = "exito"
+        Else
+            msg = "error"
+        End If
+
+        Return msg
     End Function
     'CRUD usuario 
     Public Function mantenimientoDatosUsuarios(ByVal datos As String(), ByVal accion As String)
@@ -356,37 +389,6 @@ Public Class db_conexion
         Else
             msg = "error"
         End If
-        Return msg
-    End Function
-
-    Public Function mantenimientoDatosReservaciones(ByVal datos As String(), ByVal accion As String)
-        Dim sql, msg As String
-        Select Case accion
-            Case "nuevo"
-                sql = "INSERT INTO Reservaciones (idCliente,idUsuario,idHabitaciones,Entrada,Salida,Estadia,PrecioDia,Total) 
-                        VALUES(@idC,@idU,@idHabitaciones,@Entrada,@Salida,@Estadia,@PrecioDia,@Suma)"
-            Case "actualizar"
-                sql = "UPDATE Reservaciones SET Entrada=,Salida=, Estadia=, PrecioDia=, Total= WHERE idReservaiones="
-            Case "eliminar"
-                sql = "DELETE FROM Reservaciones WHERE idReservaiones="
-        End Select
-        miCommand.Parameters("@idReserva").Value = datos(0)
-        If accion IsNot "eliminar" Then
-            miCommand.Parameters("@idC").Value = datos(1)
-            miCommand.Parameters("@idU").Value = datos(2)
-            miCommand.Parameters("@idHabitaciones").Value = datos(3)
-            miCommand.Parameters("@Entrada").Value = datos(4)
-            miCommand.Parameters("@Salida").Value = datos(5)
-            miCommand.Parameters("@Estadia").Value = datos(6)
-            miCommand.Parameters("@PrecioDia").Value = datos(7)
-            miCommand.Parameters("@Suma").Value = datos(8)
-        End If
-        If executeSql(sql) > 0 Then
-            msg = "exito"
-        Else
-            msg = "error"
-        End If
-
         Return msg
     End Function
 
