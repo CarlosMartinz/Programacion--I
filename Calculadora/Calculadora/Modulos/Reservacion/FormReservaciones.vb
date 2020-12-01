@@ -5,7 +5,7 @@
     Dim accion As String = "nuevo"
     Dim NumReservacion As Integer = 0
     Private Sub FormReservaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        dias()
+        'dias()
         ObtenerDatos()
         btnAgregar.Visible = True
 
@@ -125,9 +125,17 @@
             LimpiarDatos()
             'HabDescontroles(False)
             'lblNumReservacion.Text = NumReservacion + 1
-        Else 'Guardar
+        Else 'Guardarsdvmidfj
             Dim msg = objConexion.mantenimientoDatosReservaciones(New String() {
-                Me.Tag, txtCliente.Text, txtEmpleado.Text, txtHabitacion.Text, DateEntrada.Value, DateSalida.Value, txtDias.Text, txtPrecioDia.Text, txtTotal.Text
+                Me.Tag,
+                txtCliente.Text,
+                txtEmpleado.Text,
+                txtHabitacion.Text,
+                DateEntrada.Value,
+                DateSalida.Value,
+                txtDias.Text,
+                txtPrecioDia.Text,
+                txtTotal.Text
             }, accion)
 
             If msg = "error" Then

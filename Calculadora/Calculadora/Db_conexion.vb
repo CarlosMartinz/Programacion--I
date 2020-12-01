@@ -130,7 +130,17 @@ Public Class db_conexion
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Habitacion")
 
-        miCommand.CommandText = "SELECT Reservaciones.idReservaiones, Reservaciones.idCliente, Reservaciones.idUsuario, Reservaciones.idHabitaciones, Reservaciones.Entrada, Reservaciones.Salida, Reservaciones.Estadia, Reservaciones.PrecioDia, Reservaciones.Total
+        miCommand.CommandText = "SELECT 
+            Reservaciones.idReservaiones, 
+            Reservaciones.idCliente, 
+            Reservaciones.idUsuario, 
+            Reservaciones.idHabitaciones, 
+            Reservaciones.Entrada, 
+            Reservaciones.Salida, 
+            Reservaciones.Estadia, 
+            Reservaciones.PrecioDia, 
+            Reservaciones.Total
+            
             FROM Reservaciones
                inner join clientes on(Reservaciones.idCliente=clientes.idCliente)
                inner join usuarios on(Reservaciones.idUsuario=usuarios.idUsuario)
@@ -165,10 +175,10 @@ Public Class db_conexion
                 sql = "INSERT INTO Reservaciones (idCliente,idUsuario,idHabitaciones,Entrada,Salida,Estadia,PrecioDia,Total) 
                         VALUES (@idCli,@idUsu,@idHab,@entrada,@salida,@estadia,@precioDia,@total)"
 
-                'Case "actualizar"
-                '    sql = "UPDATE Reservaciones SET Entrada=,Salida=, Estadia=, PrecioDia=, Total= WHERE idReservaiones="
-                'Case "eliminar"
-                '    sql = "DELETE FROM Reservaciones WHERE idReservaiones="
+            Case "actualizar"
+                sql = "UPDATE Reservaciones SET Entrada=,Salida=, Estadia=, PrecioDia=, Total= WHERE idReservaiones="
+            Case "eliminar"
+                sql = "DELETE FROM Reservaciones WHERE idReservaiones="
         End Select
         miCommand.Parameters("@idRes").Value = datos(0)
         If accion IsNot "eliminar" Then

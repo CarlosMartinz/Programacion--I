@@ -342,7 +342,6 @@ Partial Class FormReservaciones
         'txtHabitacion
         '
         Me.txtHabitacion.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtHabitacion.Enabled = False
         Me.txtHabitacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtHabitacion.Location = New System.Drawing.Point(135, 156)
         Me.txtHabitacion.Name = "txtHabitacion"
@@ -421,7 +420,6 @@ Partial Class FormReservaciones
         'txtCliente
         '
         Me.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCliente.Enabled = False
         Me.txtCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCliente.Location = New System.Drawing.Point(134, 66)
         Me.txtCliente.Name = "txtCliente"
