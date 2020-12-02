@@ -2,7 +2,9 @@
     Dim objConexion As New db_conexion()
     Dim dataTable As New DataTable
     Dim posicion As Integer
+    Dim estadoReserva As String = "Reservado"
     Dim accion As String = "nuevo"
+    Dim accionHabitacion As String = "actuliazar"
     Dim NumReservacion As Integer = 0
     Private Sub FormReservaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'dias()
@@ -30,6 +32,7 @@
             txtDias.Text = dataTable.Rows(posicion).ItemArray(6).ToString()
             txtPrecioDia.Text = dataTable.Rows(posicion).ItemArray(7).ToString()
             txtTotal.Text = dataTable.Rows(posicion).ItemArray(8).ToString()
+            estadoReserva = dataTable.Rows(posicion).ItemArray(9).ToString()
 
             lblPosicion.Text = posicion + 1 & " de " & dataTable.Rows.Count
         Else
@@ -129,6 +132,7 @@
             HabDescontroles(False)
             'lblNumReservacion.Text = NumReservacion + 1
         Else 'Guardarsdvmidfj
+            estadoReserva = "Reservado"
             Dim msg = objConexion.mantenimientoDatosReservaciones(New String() {
                 Me.Tag,
                 txtCliente.Text,
@@ -138,11 +142,12 @@
                 DateSalida.Value,
                 txtDias.Text,
                 txtPrecioDia.Text,
-                txtTotal.Text
+                txtTotal.Text,
+                estadoReserva
             }, accion)
 
             If msg = "error" Then
-                MessageBox.Show("Error " & msg, "Registro reservaciones",
+                MessageBox.Show("Debes completar todos los campos", "Registro reservaciones",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 ObtenerDatos()
@@ -151,5 +156,38 @@
                 btnModificar.Text = "Modificar"
             End If
         End If
+    End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        If btnModificar.Text = "Modificar" Then 'Modificar
+            btnAgregar.Text = "Guardar"
+            btnModificar.Text = "Cancelar"
+            accion = "modificar"
+            btnElimar.Enabled = False
+            HabDescontroles(False)
+        Else 'Cancelar
+            accion = "modificar"
+            ObtenerDatos()
+
+            HabDescontroles(True)
+            btnAgregar.Text = "Nuevo"
+            btnModificar.Text = "Modificar"
+        End If
+    End Sub
+
+    Private Sub btnElimar_Click(sender As Object, e As EventArgs) Handles btnElimar.Click
+        If (MessageBox.Show("Esta seguro de borrar a " + txtDias.Text, "Registro de cliente",
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
+            objConexion.mantenimientoDatosUsuarios(New String() {Me.Tag}, "eliminar")
+            If posicion > 0 Then
+                posicion -= 1 'Hemos borrado un registro
+            End If
+            ObtenerDatos()
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim objReservacion As New FormPago
+        objReservacion.Show()
     End Sub
 End Class

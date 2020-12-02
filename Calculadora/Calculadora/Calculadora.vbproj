@@ -156,22 +156,10 @@
     <Compile Include="Modulos\Registro\FormTipoHabitaciones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulos\Reservacion\Forms Hijos\FormProducto.Designer.vb">
-      <DependentUpon>FormProducto.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos\Reservacion\Forms Hijos\FormProducto.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Modulos\Reservacion\RealizarPago\FormPago.Designer.vb">
       <DependentUpon>FormPago.vb</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Reservacion\RealizarPago\FormPago.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos\Reservacion\Venta\FormVenta.Designer.vb">
-      <DependentUpon>FormVenta.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos\Reservacion\Venta\FormVenta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -261,14 +249,8 @@
     <EmbeddedResource Include="Modulos\Registro\FormTipoHabitaciones.resx">
       <DependentUpon>FormTipoHabitaciones.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\Reservacion\Forms Hijos\FormProducto.resx">
-      <DependentUpon>FormProducto.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Reservacion\RealizarPago\FormPago.resx">
       <DependentUpon>FormPago.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\Reservacion\Venta\FormVenta.resx">
-      <DependentUpon>FormVenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

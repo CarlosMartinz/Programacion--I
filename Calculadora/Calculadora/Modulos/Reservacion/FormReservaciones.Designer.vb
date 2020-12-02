@@ -62,6 +62,7 @@ Partial Class FormReservaciones
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.grbMostrar = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.grdHabitaciones = New System.Windows.Forms.DataGridView()
         Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -70,11 +71,12 @@ Partial Class FormReservaciones
         Me.idHabitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Entrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Salida = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estados = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Capacidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.empleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnlReservacion.SuspendLayout()
         Me.grpEdicion.SuspendLayout()
         Me.grbPosicion.SuspendLayout()
@@ -496,6 +498,7 @@ Partial Class FormReservaciones
         Me.grbMostrar.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grbMostrar.Controls.Add(Me.Button1)
         Me.grbMostrar.Controls.Add(Me.txtBuscar)
         Me.grbMostrar.Controls.Add(Me.grdHabitaciones)
         Me.grbMostrar.Location = New System.Drawing.Point(379, 12)
@@ -504,6 +507,18 @@ Partial Class FormReservaciones
         Me.grbMostrar.TabIndex = 1
         Me.grbMostrar.TabStop = False
         Me.grbMostrar.Text = "Listado de reservaciones"
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.Black
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(17, 456)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(91, 29)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "Realizar apago"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'txtBuscar
         '
@@ -524,13 +539,13 @@ Partial Class FormReservaciones
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grdHabitaciones.BackgroundColor = System.Drawing.Color.White
         Me.grdHabitaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grdHabitaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.clien, Me.emple, Me.idHabitacion, Me.Entrada, Me.Salida, Me.Estado, Me.Tipo, Me.Capacidad, Me.empleado, Me.cliente})
+        Me.grdHabitaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.clien, Me.emple, Me.idHabitacion, Me.Entrada, Me.Salida, Me.Estados, Me.Tipo, Me.Capacidad, Me.empleado, Me.cliente, Me.estado})
         Me.grdHabitaciones.Location = New System.Drawing.Point(17, 48)
         Me.grdHabitaciones.Name = "grdHabitaciones"
         Me.grdHabitaciones.ReadOnly = True
         Me.grdHabitaciones.RowHeadersVisible = False
         Me.grdHabitaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grdHabitaciones.Size = New System.Drawing.Size(419, 436)
+        Me.grdHabitaciones.Size = New System.Drawing.Size(419, 396)
         Me.grdHabitaciones.TabIndex = 0
         '
         'Codigo
@@ -575,12 +590,12 @@ Partial Class FormReservaciones
         Me.Salida.Name = "Salida"
         Me.Salida.ReadOnly = True
         '
-        'Estado
+        'Estados
         '
-        Me.Estado.DataPropertyName = "Estadia"
-        Me.Estado.HeaderText = "Estadia"
-        Me.Estado.Name = "Estado"
-        Me.Estado.ReadOnly = True
+        Me.Estados.DataPropertyName = "Estadia"
+        Me.Estados.HeaderText = "Estadia"
+        Me.Estados.Name = "Estados"
+        Me.Estados.ReadOnly = True
         '
         'Tipo
         '
@@ -611,6 +626,14 @@ Partial Class FormReservaciones
         Me.cliente.Name = "cliente"
         Me.cliente.ReadOnly = True
         Me.cliente.Visible = False
+        '
+        'estado
+        '
+        Me.estado.DataPropertyName = "estadoReserva"
+        Me.estado.HeaderText = "estado"
+        Me.estado.Name = "estado"
+        Me.estado.ReadOnly = True
+        Me.estado.Visible = False
         '
         'FormReservaciones
         '
@@ -677,16 +700,18 @@ Partial Class FormReservaciones
     Friend WithEvents btnSiguiente As Button
     Friend WithEvents btnAnterior As Button
     Friend WithEvents btnPrimero As Button
+    Friend WithEvents grpEdicion As GroupBox
+    Friend WithEvents Button1 As Button
     Friend WithEvents Codigo As DataGridViewTextBoxColumn
     Friend WithEvents clien As DataGridViewTextBoxColumn
     Friend WithEvents emple As DataGridViewTextBoxColumn
     Friend WithEvents idHabitacion As DataGridViewTextBoxColumn
     Friend WithEvents Entrada As DataGridViewTextBoxColumn
     Friend WithEvents Salida As DataGridViewTextBoxColumn
-    Friend WithEvents Estado As DataGridViewTextBoxColumn
+    Friend WithEvents Estados As DataGridViewTextBoxColumn
     Friend WithEvents Tipo As DataGridViewTextBoxColumn
     Friend WithEvents Capacidad As DataGridViewTextBoxColumn
     Friend WithEvents empleado As DataGridViewTextBoxColumn
     Friend WithEvents cliente As DataGridViewTextBoxColumn
-    Friend WithEvents grpEdicion As GroupBox
+    Friend WithEvents estado As DataGridViewTextBoxColumn
 End Class

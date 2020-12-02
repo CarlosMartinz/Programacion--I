@@ -112,10 +112,11 @@
             btnAgregar.Text = "Guardar"
             btnModificar.Text = "Cancelar"
             accion = "modificar"
+
             HabDescontroles(False)
         Else 'Cancelar
             obtenerDatos()
-
+            accion = "modificar"
             HabDescontroles(True)
             btnAgregar.Text = "Nuevo"
             btnModificar.Text = "Modificar"
