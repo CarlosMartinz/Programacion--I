@@ -138,6 +138,10 @@ Public Class db_conexion
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "NivelAcceso")
 
+        miCommand.CommandText = "SELECT TipoFactura FROM TipoFactu"
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "TipoFactu")
+
         'CRUD con relacion
         miCommand.CommandText = "
             select usuarios.idUsuario, usuarios.nombre, usuarios.documento, usuarios.telefono, usuarios.email, usuarios.acceso, login.usuario, login.password
