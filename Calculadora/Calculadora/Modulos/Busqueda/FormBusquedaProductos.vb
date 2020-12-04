@@ -4,6 +4,9 @@
 
     Private Sub FormBusquedaProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         grdBuscarProducto.DataSource = objConexion.obtenerDatosTablas().Tables("Producto").DefaultView
+        grdBuscarProducto.Columns("idCategoria").Visible = False
+        grdBuscarProducto.Columns("idProducto").Visible = False
+        grdBuscarProducto.Columns("Descripcion").HeaderText = "Nombre"
     End Sub
 
     Private Sub SeleccionProducto()
@@ -14,9 +17,9 @@
     Private Sub FiltrarDatosProducto(ByVal Valor As String)
         Dim bs As New BindingSource()
         bs.DataSource = grdBuscarProducto.DataSource
-        bs.Filter = "idProducto like '%" & Valor & "%' or idCategoria like '%" & Valor &
-            "%' or Codigo like '%" & Valor & "%' or Descripcion like '%" & Valor &
-            "%' or Precio like '%" & Valor & "%'"
+        bs.Filter = "Categoria like '%" + Valor +
+            "%' or Codigo like '%" + Valor + "%' or Descripcion like '%" + Valor +
+            "%' or Precio like '%" + Valor + "%'"
         grdBuscarProducto.DataSource = bs
     End Sub
 

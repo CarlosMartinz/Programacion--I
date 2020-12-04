@@ -197,7 +197,7 @@ Public Class db_conexion
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Categoria")
 
-        miCommand.CommandText = "select Producto.idProducto, Producto.idCategoria, Producto.Codigo, Producto.Descripcion, Producto.Precio 
+        miCommand.CommandText = "select Producto.idProducto, Categoria.Categoria, Producto.idCategoria, Producto.Codigo, Producto.Descripcion, Producto.Precio 
                                     from Producto
                                         inner join Categoria on(Producto.idCategoria=Categoria.idCategoria)"
         miAdapter.SelectCommand = miCommand

@@ -86,9 +86,7 @@ C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculad
 C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\bin\Debug\Calculadora.pdb
 C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\bin\Debug\Calculadora.xml
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormProductos.resources
-C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormProducto.resources
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormPago.resources
-C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormVenta.resources
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaProductos.resources
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormCategoria.resources
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaCategoria.resources
@@ -97,3 +95,6 @@ C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormCategoria.resources
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormProductos.resources
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormPago.resources
+C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormReporteListadoHabitacioens.resources
+C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\RdlCompile.cache
+C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\RdlCompile.compiled

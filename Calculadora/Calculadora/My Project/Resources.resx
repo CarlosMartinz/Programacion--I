@@ -133,10 +133,13 @@
   <data name="Proveedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Recursos\Proveedor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Beer_Bottle_icon-icons.com_68782" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Recursos\Beer_Bottle_icon-icons.com_68782.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Habitaciones" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Recursos\Habitaciones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Beer_Bottle_icon-icons.com_68782" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Beer_Bottle_icon-icons1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Recursos\Beer_Bottle_icon-icons.com_68782.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
