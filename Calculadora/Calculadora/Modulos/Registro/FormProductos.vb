@@ -23,10 +23,10 @@
     Sub MostrarDatos()
         If dataTable.Rows.Count > 0 Then
             Me.Tag = dataTable.Rows(Posicion).ItemArray(0).ToString()
-            cboCategoria.SelectedValue = dataTable.Rows(Posicion).ItemArray(1).ToString()
-            txtCodigo.Text = dataTable.Rows(Posicion).ItemArray(2).ToString()
-            txtDescripcion.Text = dataTable.Rows(Posicion).ItemArray(3).ToString()
-            txtPrecio.Text = dataTable.Rows(Posicion).ItemArray(4).ToString()
+            cboCategoria.SelectedValue = dataTable.Rows(Posicion).ItemArray(2).ToString()
+            txtCodigo.Text = dataTable.Rows(Posicion).ItemArray(3).ToString()
+            txtDescripcion.Text = dataTable.Rows(Posicion).ItemArray(4).ToString()
+            txtPrecio.Text = dataTable.Rows(Posicion).ItemArray(5).ToString()
 
             lblPosicion.Text = Posicion + 1 & " de " & dataTable.Rows.Count
         Else

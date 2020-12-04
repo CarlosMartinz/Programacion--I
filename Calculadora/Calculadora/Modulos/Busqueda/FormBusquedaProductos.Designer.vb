@@ -35,7 +35,7 @@ Partial Class FormBusquedaProductos
         '
         Me.btnSelecionarProducto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnSelecionarProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSelecionarProducto.Location = New System.Drawing.Point(516, 408)
+        Me.btnSelecionarProducto.Location = New System.Drawing.Point(244, 408)
         Me.btnSelecionarProducto.Name = "btnSelecionarProducto"
         Me.btnSelecionarProducto.Size = New System.Drawing.Size(127, 33)
         Me.btnSelecionarProducto.TabIndex = 9
@@ -46,7 +46,7 @@ Partial Class FormBusquedaProductos
         '
         Me.btnCancelarProducto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCancelarProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelarProducto.Location = New System.Drawing.Point(649, 408)
+        Me.btnCancelarProducto.Location = New System.Drawing.Point(377, 408)
         Me.btnCancelarProducto.Name = "btnCancelarProducto"
         Me.btnCancelarProducto.Size = New System.Drawing.Size(105, 33)
         Me.btnCancelarProducto.TabIndex = 8
@@ -64,7 +64,7 @@ Partial Class FormBusquedaProductos
         Me.grdBuscarProducto.Location = New System.Drawing.Point(47, 35)
         Me.grdBuscarProducto.Name = "grdBuscarProducto"
         Me.grdBuscarProducto.ReadOnly = True
-        Me.grdBuscarProducto.Size = New System.Drawing.Size(707, 357)
+        Me.grdBuscarProducto.Size = New System.Drawing.Size(435, 357)
         Me.grdBuscarProducto.TabIndex = 7
         '
         'txtBuscarProducto
@@ -73,7 +73,7 @@ Partial Class FormBusquedaProductos
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtBuscarProducto.Location = New System.Drawing.Point(92, 9)
         Me.txtBuscarProducto.Name = "txtBuscarProducto"
-        Me.txtBuscarProducto.Size = New System.Drawing.Size(662, 20)
+        Me.txtBuscarProducto.Size = New System.Drawing.Size(390, 20)
         Me.txtBuscarProducto.TabIndex = 6
         '
         'Label1
@@ -89,7 +89,7 @@ Partial Class FormBusquedaProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(528, 450)
         Me.Controls.Add(Me.btnSelecionarProducto)
         Me.Controls.Add(Me.btnCancelarProducto)
         Me.Controls.Add(Me.grdBuscarProducto)
