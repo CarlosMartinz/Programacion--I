@@ -24,7 +24,7 @@ Partial Class FormHabitaciones
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormHabitaciones))
         Me.grbDatosHabitacion = New System.Windows.Forms.GroupBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnNuevoTipo = New System.Windows.Forms.Button()
         Me.btnBuscarTipo = New System.Windows.Forms.Button()
         Me.cboTipo = New System.Windows.Forms.ComboBox()
         Me.cboEstado = New System.Windows.Forms.ComboBox()
@@ -49,7 +49,7 @@ Partial Class FormHabitaciones
         '
         'grbDatosHabitacion
         '
-        Me.grbDatosHabitacion.Controls.Add(Me.Button2)
+        Me.grbDatosHabitacion.Controls.Add(Me.btnNuevoTipo)
         Me.grbDatosHabitacion.Controls.Add(Me.btnBuscarTipo)
         Me.grbDatosHabitacion.Controls.Add(Me.cboTipo)
         Me.grbDatosHabitacion.Controls.Add(Me.cboEstado)
@@ -63,15 +63,15 @@ Partial Class FormHabitaciones
         Me.grbDatosHabitacion.TabStop = False
         Me.grbDatosHabitacion.Text = "Habitacion nueva"
         '
-        'Button2
+        'btnNuevoTipo
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(471, 112)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 28
-        Me.Button2.Text = "Detalles"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnNuevoTipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNuevoTipo.Location = New System.Drawing.Point(471, 112)
+        Me.btnNuevoTipo.Name = "btnNuevoTipo"
+        Me.btnNuevoTipo.Size = New System.Drawing.Size(75, 23)
+        Me.btnNuevoTipo.TabIndex = 28
+        Me.btnNuevoTipo.Text = "Nuevo"
+        Me.btnNuevoTipo.UseVisualStyleBackColor = True
         '
         'btnBuscarTipo
         '
@@ -293,7 +293,7 @@ Partial Class FormHabitaciones
     Friend WithEvents cboTipo As ComboBox
     Friend WithEvents Label5 As Label
     Friend WithEvents btnBuscarTipo As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnNuevoTipo As Button
     Friend WithEvents cboEstado As ComboBox
     Friend WithEvents Label4 As Label
 End Class

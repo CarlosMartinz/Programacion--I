@@ -20,8 +20,8 @@
     Private Sub FiltrarDatosCliente(ByVal Valor As String)
         Dim bs As New BindingSource()
         bs.DataSource = grdBuscarCliente.DataSource
-        bs.Filter = "code like '%" & Valor & "%' or nombre like '%" & Valor &
-            "%' or documento like '%" & Valor & "%' or codigo like '%" & Valor &
+        bs.Filter = "nombre like '%" & Valor & "%' or edad like '%" & Valor &
+            "%' or documento like '%" & Valor &
             "%' or telefono like '%" & Valor & "%' or email like'%" & Valor & "%'"
         grdBuscarCliente.DataSource = bs
     End Sub

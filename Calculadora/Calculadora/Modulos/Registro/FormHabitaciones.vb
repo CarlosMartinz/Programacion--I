@@ -139,7 +139,10 @@
         End If
     End Sub
 
-    Private Sub btnBuscarEdificio_Click(sender As Object, e As EventArgs)
-
+    Private Sub btnNuevoTipo_Click(sender As Object, e As EventArgs) Handles btnNuevoTipo.Click
+        Dim objTipoHabitacion As New FormTipoHabitaciones
+        objTipoHabitacion.ShowDialog()
+        obtenerDatosHabitaciones()
+        limpiarDatos()
     End Sub
 End Class

@@ -296,7 +296,7 @@ Public Class db_conexion
         Dim sql, msg As String
         Select Case accion
             Case "nuevo"
-                sql = "INSERT INTO clientes (Nombre,edad,documento) VALUES (,@nomb,@edad,@docu)"
+                sql = "INSERT INTO clientes (Nombre,edad,documento) VALUES (@nomb,@edad,@docu)"
             Case "modificar"
                 sql = "UPDATE clientes SET nombre=@nomb,edad=@edad,documento=@docu WHERE idCliente=@idC"
             Case "eliminar"
@@ -339,8 +339,8 @@ Public Class db_conexion
         End Select
         miCommand.Parameters("@idC").Value = datos(0)
         If accion IsNot "eliminar" Then
-            miCommand.Parameters("@tele").Value = datos(5)
-            miCommand.Parameters("@emai").Value = datos(6)
+            miCommand.Parameters("@tele").Value = datos(4)
+            miCommand.Parameters("@emai").Value = datos(5)
         End If
         executeSql(sql)
     End Function
