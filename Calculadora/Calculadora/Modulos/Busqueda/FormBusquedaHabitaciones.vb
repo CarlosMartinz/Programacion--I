@@ -3,6 +3,7 @@
     Public _idHabit As String
     Private Sub FormBusquedaHabitaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         grdBuscarHabit.DataSource = objConexion.obtenerDatosTablas.Tables("Habitacion").DefaultView()
+        grdBuscarHabit.Columns("TipoHabit").HeaderText = "Tipo Habitacion"
     End Sub
 
     Private Sub SeleccionTipoHabit()
@@ -13,7 +14,8 @@
     Private Sub FiltrarDatosHabit(ByVal Valor As String)
         Dim bs As New BindingSource()
         bs.DataSource = grdBuscarHabit.DataSource
-        bs.Filter = "idHabitacion like '%" & Valor & "%' or Estado like '%" & Valor & "%' or idTipo like '%" & Valor & "%'"
+        bs.Filter = "Estado like '%" & Valor & "%' or TipoHabit like '%" & Valor &
+                    "%' or Capacidad like '%" & Valor & "%' or Precio like '%" & Valor & "%'"
         grdBuscarHabit.DataSource = bs
     End Sub
 

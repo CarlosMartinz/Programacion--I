@@ -26,15 +26,14 @@ Partial Class FormBusquedaClientes
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtBuscarCliente = New System.Windows.Forms.TextBox()
         Me.grdBuscarCliente = New System.Windows.Forms.DataGridView()
+        Me.btnCancelarCliente = New System.Windows.Forms.Button()
+        Me.btnSelecionarCliente = New System.Windows.Forms.Button()
         Me.idCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Edad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DUI = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Email = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnCancelarCliente = New System.Windows.Forms.Button()
-        Me.btnSelecionarCliente = New System.Windows.Forms.Button()
         CType(Me.grdBuscarCliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -64,12 +63,34 @@ Partial Class FormBusquedaClientes
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grdBuscarCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grdBuscarCliente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idCliente, Me.Codigo, Me.Nombre, Me.Edad, Me.DUI, Me.Telefono, Me.Email})
+        Me.grdBuscarCliente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idCliente, Me.Nombre, Me.Edad, Me.DUI, Me.Telefono, Me.Email})
         Me.grdBuscarCliente.Location = New System.Drawing.Point(12, 32)
         Me.grdBuscarCliente.Name = "grdBuscarCliente"
         Me.grdBuscarCliente.ReadOnly = True
         Me.grdBuscarCliente.Size = New System.Drawing.Size(707, 357)
         Me.grdBuscarCliente.TabIndex = 2
+        '
+        'btnCancelarCliente
+        '
+        Me.btnCancelarCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCancelarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelarCliente.Location = New System.Drawing.Point(614, 405)
+        Me.btnCancelarCliente.Name = "btnCancelarCliente"
+        Me.btnCancelarCliente.Size = New System.Drawing.Size(105, 33)
+        Me.btnCancelarCliente.TabIndex = 3
+        Me.btnCancelarCliente.Text = "Cancelar"
+        Me.btnCancelarCliente.UseVisualStyleBackColor = True
+        '
+        'btnSelecionarCliente
+        '
+        Me.btnSelecionarCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSelecionarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSelecionarCliente.Location = New System.Drawing.Point(481, 405)
+        Me.btnSelecionarCliente.Name = "btnSelecionarCliente"
+        Me.btnSelecionarCliente.Size = New System.Drawing.Size(127, 33)
+        Me.btnSelecionarCliente.TabIndex = 4
+        Me.btnSelecionarCliente.Text = "Seleccionar"
+        Me.btnSelecionarCliente.UseVisualStyleBackColor = True
         '
         'idCliente
         '
@@ -78,13 +99,6 @@ Partial Class FormBusquedaClientes
         Me.idCliente.Name = "idCliente"
         Me.idCliente.ReadOnly = True
         Me.idCliente.Visible = False
-        '
-        'Codigo
-        '
-        Me.Codigo.DataPropertyName = "Codigo"
-        Me.Codigo.HeaderText = "Codigo"
-        Me.Codigo.Name = "Codigo"
-        Me.Codigo.ReadOnly = True
         '
         'Nombre
         '
@@ -121,28 +135,6 @@ Partial Class FormBusquedaClientes
         Me.Email.Name = "Email"
         Me.Email.ReadOnly = True
         '
-        'btnCancelarCliente
-        '
-        Me.btnCancelarCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCancelarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancelarCliente.Location = New System.Drawing.Point(614, 405)
-        Me.btnCancelarCliente.Name = "btnCancelarCliente"
-        Me.btnCancelarCliente.Size = New System.Drawing.Size(105, 33)
-        Me.btnCancelarCliente.TabIndex = 3
-        Me.btnCancelarCliente.Text = "Cancelar"
-        Me.btnCancelarCliente.UseVisualStyleBackColor = True
-        '
-        'btnSelecionarCliente
-        '
-        Me.btnSelecionarCliente.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSelecionarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSelecionarCliente.Location = New System.Drawing.Point(481, 405)
-        Me.btnSelecionarCliente.Name = "btnSelecionarCliente"
-        Me.btnSelecionarCliente.Size = New System.Drawing.Size(127, 33)
-        Me.btnSelecionarCliente.TabIndex = 4
-        Me.btnSelecionarCliente.Text = "Seleccionar"
-        Me.btnSelecionarCliente.UseVisualStyleBackColor = True
-        '
         'FormBusquedaClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -171,7 +163,6 @@ Partial Class FormBusquedaClientes
     Friend WithEvents btnCancelarCliente As Button
     Friend WithEvents btnSelecionarCliente As Button
     Friend WithEvents idCliente As DataGridViewTextBoxColumn
-    Friend WithEvents Codigo As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents Edad As DataGridViewTextBoxColumn
     Friend WithEvents DUI As DataGridViewTextBoxColumn
