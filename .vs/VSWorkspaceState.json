@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Calculadora"
+    "\\Calculadora",
+    "\\Calculadora\\Calculadora"
   ],
-  "SelectedNode": "\\Calculadora\\Calculadora.sln",
+  "SelectedNode": "\\Calculadora\\Calculadora\\Calculadora.vbproj",
   "PreviewInSolutionExplorer": false
 }
