@@ -36,4 +36,9 @@
         Close()
     End Sub
 
+    Private Sub ListaHabitacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListaHabitacionesToolStripMenuItem.Click
+        Dim objProductos As New FormReporteListadoHabitacioens
+        objProductos.MdiParent = Me
+        objProductos.Show()
+    End Sub
 End Class

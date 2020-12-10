@@ -29,8 +29,8 @@ Partial Class FormPrincipal
         Me.EmpresaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListaDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListaEmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListaHabitacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListaDeProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListaHabitacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistrosDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -94,19 +94,19 @@ Partial Class FormPrincipal
         Me.ListaEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
         Me.ListaEmpleadosToolStripMenuItem.Text = "Lista Empleados"
         '
-        'ListaHabitacionesToolStripMenuItem
-        '
-        Me.ListaHabitacionesToolStripMenuItem.Image = Global.Calculadora.My.Resources.Resources.Habitaciones
-        Me.ListaHabitacionesToolStripMenuItem.Name = "ListaHabitacionesToolStripMenuItem"
-        Me.ListaHabitacionesToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
-        Me.ListaHabitacionesToolStripMenuItem.Text = "Estado habitaciones"
-        '
         'ListaDeProductosToolStripMenuItem
         '
         Me.ListaDeProductosToolStripMenuItem.Image = Global.Calculadora.My.Resources.Resources.Beer_Bottle_icon_icons1
         Me.ListaDeProductosToolStripMenuItem.Name = "ListaDeProductosToolStripMenuItem"
         Me.ListaDeProductosToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
         Me.ListaDeProductosToolStripMenuItem.Text = "Lista de productos"
+        '
+        'ListaHabitacionesToolStripMenuItem
+        '
+        Me.ListaHabitacionesToolStripMenuItem.Image = Global.Calculadora.My.Resources.Resources.Habitaciones
+        Me.ListaHabitacionesToolStripMenuItem.Name = "ListaHabitacionesToolStripMenuItem"
+        Me.ListaHabitacionesToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.ListaHabitacionesToolStripMenuItem.Text = "Estado habitaciones"
         '
         'RegistrosToolStripMenuItem
         '
