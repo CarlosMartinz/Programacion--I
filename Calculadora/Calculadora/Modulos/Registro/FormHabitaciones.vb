@@ -8,14 +8,14 @@
         ControlesHabitacion(True)
     End Sub
     Sub obtenerDatosHabitaciones()
-        dataTable = objConexion.obtenerDatosTablas().Tables("Habitacion")
+        dataTable = objConexion.insercionDatos().Tables("Habitacion")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idHabitacion")}
 
-        cboTipo.DataSource = objConexion.obtenerDatosTablas().Tables("TipoHabit").DefaultView()
+        cboTipo.DataSource = objConexion.insercionDatos().Tables("TipoHabit").DefaultView()
         cboTipo.DisplayMember = "idTipo"
         cboTipo.ValueMember = "TipoHabit.idTipo"
 
-        cboEstado.DataSource = objConexion.obtenerDatosTablas.Tables("Estado").DefaultView()
+        cboEstado.DataSource = objConexion.insercionDatos.Tables("Estado").DefaultView()
         cboEstado.DisplayMember = "Estado"
         cboEstado.ValueMember = "Estado.Estado"
         mostrarDatosHabit()

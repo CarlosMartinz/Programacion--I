@@ -5,7 +5,7 @@
         SeleccionUsuario()
     End Sub
     Private Sub FormBusquedaUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        grdBuscarUsuario.DataSource = objConexion.obtenerDatosTablas().Tables("usuarios").DefaultView
+        grdBuscarUsuario.DataSource = objConexion.insercionDatos().Tables("usuarios").DefaultView
     End Sub
     Private Sub txtBuscar_KeyUp(sender As Object, e As KeyEventArgs) Handles txtBuscar.KeyUp
         FiltrarDatosUsuario(txtBuscar.Text)

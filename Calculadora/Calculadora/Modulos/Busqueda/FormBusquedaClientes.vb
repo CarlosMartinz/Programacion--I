@@ -5,7 +5,7 @@
         SeleccionCliente()
     End Sub
     Private Sub FormBusquedaClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        grdBuscarCliente.DataSource = objConexion.obtenerDatosTablas().Tables("clientes").DefaultView
+        grdBuscarCliente.DataSource = objConexion.insercionDatos().Tables("clientes").DefaultView
     End Sub
     Private Sub txtBuscarCliente_KeyUp(sender As Object, e As KeyEventArgs) Handles txtBuscarCliente.KeyUp
         FiltrarDatosCliente(txtBuscarCliente.Text)

@@ -2,7 +2,7 @@
     Dim objConexion As New db_conexion
     Public _idCat As Integer
     Private Sub FormBusquedaCategoria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        grdBuscarCategoria.DataSource = objConexion.obtenerDatosTablas().Tables("Categoria").DefaultView()
+        grdBuscarCategoria.DataSource = objConexion.insercionDatos().Tables("Categoria").DefaultView()
     End Sub
 
     Private Sub SeleccionCategoria()

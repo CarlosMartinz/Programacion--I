@@ -11,10 +11,10 @@
     End Sub
     'obtener datos 
     Sub obtenerDatos()
-        dataTable = objConexion.obtenerDatosTablas().Tables("usuarios")
+        dataTable = objConexion.insercionDatos().Tables("usuarios")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idUsuario")}
 
-        cboNivelAcceso.DataSource = objConexion.obtenerDatosTablas().Tables("nivelAcceso").DefaultView()
+        cboNivelAcceso.DataSource = objConexion.insercionDatos().Tables("nivelAcceso").DefaultView()
         cboNivelAcceso.DisplayMember = "acceso"
         cboNivelAcceso.ValueMember = "nivelAcceso.acceso"
 

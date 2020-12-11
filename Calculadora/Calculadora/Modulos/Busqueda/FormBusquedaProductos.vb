@@ -3,7 +3,7 @@
     Public _idP As String
 
     Private Sub FormBusquedaProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        grdBuscarProducto.DataSource = objConexion.obtenerDatosTablas().Tables("Producto").DefaultView
+        grdBuscarProducto.DataSource = objConexion.insercionDatos().Tables("Producto").DefaultView
         grdBuscarProducto.Columns("idCategoria").Visible = False
         grdBuscarProducto.Columns("idProducto").Visible = False
         grdBuscarProducto.Columns("Descripcion").HeaderText = "Nombre"

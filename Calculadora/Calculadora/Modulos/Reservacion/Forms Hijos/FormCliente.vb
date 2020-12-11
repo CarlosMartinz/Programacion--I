@@ -11,10 +11,10 @@
     'End Sub
     Sub Cliente()
         'Mostrar Datos de tabla habitaciones libre
-        dataTable = objConexion.FiltroNombreCliente().Tables("clientes")
+        dataTable = objConexion.obtenerDatos().Tables("clientes")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idcliente")}
 
-        grdCliente.DataSource = objConexion.FiltroNombreCliente().Tables("clientes").DefaultView
+        grdCliente.DataSource = objConexion.obtenerDatos().Tables("clientes").DefaultView
     End Sub
 
     Private Sub FormCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load

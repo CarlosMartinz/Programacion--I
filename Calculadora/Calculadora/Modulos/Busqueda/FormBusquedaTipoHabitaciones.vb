@@ -3,7 +3,7 @@
     Public _idTipoHabit As String
 
     Private Sub FormBusquedaTipoHabitaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        grdBuscarTipoHabit.DataSource = objConexion.obtenerDatosTablas.Tables("TipoHabit").DefaultView()
+        grdBuscarTipoHabit.DataSource = objConexion.insercionDatos.Tables("TipoHabit").DefaultView()
         grdBuscarTipoHabit.Columns("idTipo").HeaderText = "Tipo Habitacion"
     End Sub
     Private Sub SeleccionTipoHabit()

@@ -10,23 +10,6 @@ C:\Users\Charly\source\repos\Calculadora\Calculadora\obj\Debug\Calculadora.vbpro
 C:\Users\Charly\source\repos\Calculadora\Calculadora\obj\Debug\Calculadora.exe
 C:\Users\Charly\source\repos\Calculadora\Calculadora\obj\Debug\Calculadora.xml
 C:\Users\Charly\source\repos\Calculadora\Calculadora\obj\Debug\Calculadora.pdb
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\Calculadora.exe.config
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\Calculadora.exe
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\Calculadora.pdb
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\Calculadora.xml
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormPrincipal.resources
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.Resources.resources
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.vbproj.GenerateResource.cache
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.vbproj.CoreCompileInputs.cache
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.exe
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.xml
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.pdb
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaClientes.resources
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormClientes.resources
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormUsuarios.resources
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\db_Hotel.mdf
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\db_Hotel_log.ldf
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaUsuarios.resources
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\bin\Debug\db_Hotel.mdf
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\bin\Debug\db_Hotel_log.ldf
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\bin\Debug\Calculadora.exe.config
@@ -45,19 +28,11 @@ C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.exe
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.xml
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.pdb
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormHabitaciones.resources
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormHabitaciones.resources
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormTipoHabitaciones.resources
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormTipoHabitaciones.resources
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.vbprojAssemblyReference.cache
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaTipoHabitaciones.resources
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaTipoHabitaciones.resources
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormReservaciones.resources
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormReservaciones.resources
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaHabitaciones.resources
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaHabitaciones.resources
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormHabitacion.resources
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormCliente.resources
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormCliente.resources
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormHabitacion.resources
 C:\Users\Charly\Documents\GitHub\Escritorio\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaClientes.resources
@@ -90,21 +65,44 @@ C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaProductos.resources
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormCategoria.resources
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaCategoria.resources
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaCategoria.resources
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaProductos.resources
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormCategoria.resources
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormProductos.resources
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormPago.resources
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormReporteListadoHabitacioens.resources
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\RdlCompile.cache
 C:\Users\core i7\Source\Repos\Programacion--I\Calculadora\Calculadora\obj\Debug\RdlCompile.compiled
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.vbprojAssemblyReference.cache
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaCategoria.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaClientes.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaHabitaciones.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaProductos.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaTipoHabitaciones.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormBusquedaUsuarios.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormPrincipal.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormCategoria.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormProductos.resources
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormReporteListadoHabitacioens.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormReservaciones.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormTipoHabitaciones.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormPago.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.Resources.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormClientes.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormHabitaciones.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormUsuarios.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormCliente.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormHabitacion.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.vbproj.GenerateResource.cache
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.exe.licenses
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\RdlCompile.cache
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\RdlCompile.compiled
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.vbproj.CoreCompileInputs.cache
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\SqlServerTypes\x86\msvcr120.dll
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\db_Hotel.mdf
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\db_Hotel_log.ldf
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\Calculadora.exe.config
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\Calculadora.exe
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\Calculadora.pdb
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\Calculadora.xml
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\Microsoft.ReportViewer.Design.dll
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\Microsoft.ReportViewer.WinForms.dll
@@ -165,5 +163,7 @@ C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.exe.licenses
 C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.vbproj.CopyComplete
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.exe
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.xml
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.pdb

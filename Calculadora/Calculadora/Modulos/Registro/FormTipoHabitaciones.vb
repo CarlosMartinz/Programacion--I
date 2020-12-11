@@ -9,7 +9,7 @@
     End Sub
 
     Sub obtenerDatos()
-        dataTable = objConexion.obtenerDatosTablas().Tables("TipoHabit")
+        dataTable = objConexion.insercionDatos().Tables("TipoHabit")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idTipo")}
 
         mostrarDatos()

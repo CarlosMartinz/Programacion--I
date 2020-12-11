@@ -7,7 +7,7 @@
         obtenerDatos()
     End Sub
     Sub obtenerDatos()
-        dataTable = objConexion.obtenerDatosTablas.Tables("clientes")
+        dataTable = objConexion.insercionDatos.Tables("clientes")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idCliente")}
 
         HabDescontroles(True)

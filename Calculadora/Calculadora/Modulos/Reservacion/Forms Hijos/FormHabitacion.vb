@@ -6,10 +6,10 @@
     End Sub
     Sub HabitacionesLibre()
         'Mostrar Datos de tabla habitaciones libre
-        DataTable = objConexion.FiltroHabitacionLibre().Tables("Habitacion")
-        DataTable.PrimaryKey = New DataColumn() {DataTable.Columns("idHabitacion")}
+        dataTable = objConexion.obtenerDatos().Tables("Habitacion")
+        dataTable.PrimaryKey = New DataColumn() {DataTable.Columns("idHabitacion")}
 
-        grdHabitaciones.DataSource = objConexion.FiltroHabitacionLibre().Tables("Habitacion").DefaultView
+        grdHabitaciones.DataSource = objConexion.obtenerDatos().Tables("Habitacion").DefaultView
     End Sub
     Private Sub TextBox1_KeyUp(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyUp
         FiltrarDatos(TextBox1.Text)

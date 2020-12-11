@@ -10,10 +10,10 @@
     End Sub
 
     Sub ObtenerDatos()
-        dataTable = objConexion.obtenerDatosTablas().tables("Producto")
+        dataTable = objConexion.insercionDatos().tables("Producto")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idProducto")}
 
-        cboCategoria.DataSource = objConexion.obtenerDatosTablas().Tables("Categoria").DefaultView()
+        cboCategoria.DataSource = objConexion.insercionDatos().Tables("Categoria").DefaultView()
         cboCategoria.DisplayMember = "Categoria"
         cboCategoria.ValueMember = "Categoria.idCategoria"
 

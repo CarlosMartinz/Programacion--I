@@ -10,7 +10,7 @@
     End Sub
 
     Sub ObtenerDatos()
-        dataTable = objConexion.obtenerDatosTablas().tables("Categoria")
+        dataTable = objConexion.insercionDatos().tables("Categoria")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idCategoria")}
         MostrarDatos()
     End Sub

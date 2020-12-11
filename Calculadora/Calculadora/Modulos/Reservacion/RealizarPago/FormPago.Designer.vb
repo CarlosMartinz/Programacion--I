@@ -22,22 +22,16 @@ Partial Class FormPago
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPago))
         Dim Fecha_vtaLabel As System.Windows.Forms.Label
         Dim IdTipofacturaLabel As System.Windows.Forms.Label
         Dim NfacturaLabel As System.Windows.Forms.Label
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPago))
+        Me.dataProductos = New System.Windows.Forms.DataGridView()
         Me.cboFactu = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblNumReser = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Fecha_vtaDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.IdTipofacturaComboBox = New System.Windows.Forms.ComboBox()
-        Me.NfacturaTextBox = New System.Windows.Forms.TextBox()
         Me.grbdVentasProductos = New System.Windows.Forms.GroupBox()
         Me.btnQuitarProducto = New System.Windows.Forms.Button()
         Me.btnAgregarProducto = New System.Windows.Forms.Button()
@@ -54,6 +48,7 @@ Partial Class FormPago
         Me.btnAnterior = New System.Windows.Forms.Button()
         Me.btnPrimero = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.lblRespuestaTotal = New System.Windows.Forms.Label()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.lblRespuestaIva = New System.Windows.Forms.Label()
@@ -61,43 +56,83 @@ Partial Class FormPago
         Me.lblRespuestaSuma = New System.Windows.Forms.Label()
         Me.lblsuma = New System.Windows.Forms.Label()
         Me.lblReservacionTotal = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.NfacturaTextBox = New System.Windows.Forms.TextBox()
+        Me.IdTipofacturaComboBox = New System.Windows.Forms.ComboBox()
+        Me.Fecha_vtaDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.dataReservacion = New System.Windows.Forms.DataGridView()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.pnlPago = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         Fecha_vtaLabel = New System.Windows.Forms.Label()
         IdTipofacturaLabel = New System.Windows.Forms.Label()
         NfacturaLabel = New System.Windows.Forms.Label()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dataProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grbdVentasProductos.SuspendLayout()
         Me.grbEdicion.SuspendLayout()
         Me.grbNavegacion.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
+        CType(Me.dataReservacion, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlPago.SuspendLayout()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'Fecha_vtaLabel
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Fecha_vtaLabel.AutoSize = True
+        Fecha_vtaLabel.Location = New System.Drawing.Point(12, 82)
+        Fecha_vtaLabel.Name = "Fecha_vtaLabel"
+        Fecha_vtaLabel.Size = New System.Drawing.Size(59, 13)
+        Fecha_vtaLabel.TabIndex = 7
+        Fecha_vtaLabel.Text = "Fecha Vta:"
+        '
+        'IdTipofacturaLabel
+        '
+        IdTipofacturaLabel.AutoSize = True
+        IdTipofacturaLabel.Location = New System.Drawing.Point(330, 83)
+        IdTipofacturaLabel.Name = "IdTipofacturaLabel"
+        IdTipofacturaLabel.Size = New System.Drawing.Size(67, 13)
+        IdTipofacturaLabel.TabIndex = 11
+        IdTipofacturaLabel.Text = "Tipo factura:"
+        '
+        'NfacturaLabel
+        '
+        NfacturaLabel.AutoSize = True
+        NfacturaLabel.Location = New System.Drawing.Point(615, 43)
+        NfacturaLabel.Name = "NfacturaLabel"
+        NfacturaLabel.Size = New System.Drawing.Size(69, 13)
+        NfacturaLabel.TabIndex = 6
+        NfacturaLabel.Text = "Factura: No.:"
+        '
+        'dataProductos
+        '
+        Me.dataProductos.AllowUserToAddRows = False
+        Me.dataProductos.AllowUserToDeleteRows = False
+        Me.dataProductos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 119)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(750, 228)
-        Me.DataGridView1.TabIndex = 0
+        Me.dataProductos.BackgroundColor = System.Drawing.Color.White
+        Me.dataProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dataProductos.Location = New System.Drawing.Point(12, 179)
+        Me.dataProductos.Name = "dataProductos"
+        Me.dataProductos.ReadOnly = True
+        Me.dataProductos.Size = New System.Drawing.Size(784, 160)
+        Me.dataProductos.TabIndex = 0
         '
         'cboFactu
         '
         Me.cboFactu.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cboFactu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFactu.FormattingEnabled = True
-        Me.cboFactu.Location = New System.Drawing.Point(639, 78)
+        Me.cboFactu.Location = New System.Drawing.Point(675, 79)
         Me.cboFactu.Name = "cboFactu"
         Me.cboFactu.Size = New System.Drawing.Size(121, 21)
         Me.cboFactu.TabIndex = 1
@@ -106,7 +141,7 @@ Partial Class FormPago
         '
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(556, 81)
+        Me.Label1.Location = New System.Drawing.Point(592, 82)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(81, 13)
         Me.Label1.TabIndex = 2
@@ -132,6 +167,10 @@ Partial Class FormPago
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Controls.Add(Me.pnlPago)
+        Me.Panel1.Controls.Add(Me.dataReservacion)
+        Me.Panel1.Controls.Add(Me.dataProductos)
         Me.Panel1.Controls.Add(Me.grbdVentasProductos)
         Me.Panel1.Controls.Add(Me.grbEdicion)
         Me.Panel1.Controls.Add(NfacturaLabel)
@@ -143,7 +182,6 @@ Partial Class FormPago
         Me.Panel1.Controls.Add(Fecha_vtaLabel)
         Me.Panel1.Controls.Add(Me.Fecha_vtaDateTimePicker)
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.cboFactu)
@@ -151,97 +189,14 @@ Partial Class FormPago
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(774, 511)
+        Me.Panel1.Size = New System.Drawing.Size(805, 511)
         Me.Panel1.TabIndex = 5
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.Black
-        Me.Panel2.Controls.Add(Me.Button1)
-        Me.Panel2.Controls.Add(Me.Label3)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(772, 31)
-        Me.Panel2.TabIndex = 4
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(103, 40)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 5
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(209, 36)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(29, 27)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 6
-        Me.PictureBox1.TabStop = False
-        '
-        'Fecha_vtaLabel
-        '
-        Fecha_vtaLabel.AutoSize = True
-        Fecha_vtaLabel.Location = New System.Drawing.Point(12, 82)
-        Fecha_vtaLabel.Name = "Fecha_vtaLabel"
-        Fecha_vtaLabel.Size = New System.Drawing.Size(59, 13)
-        Fecha_vtaLabel.TabIndex = 7
-        Fecha_vtaLabel.Text = "Fecha Vta:"
-        '
-        'Fecha_vtaDateTimePicker
-        '
-        Me.Fecha_vtaDateTimePicker.Enabled = False
-        Me.Fecha_vtaDateTimePicker.Location = New System.Drawing.Point(75, 79)
-        Me.Fecha_vtaDateTimePicker.Name = "Fecha_vtaDateTimePicker"
-        Me.Fecha_vtaDateTimePicker.Size = New System.Drawing.Size(213, 20)
-        Me.Fecha_vtaDateTimePicker.TabIndex = 8
-        '
-        'IdTipofacturaLabel
-        '
-        IdTipofacturaLabel.AutoSize = True
-        IdTipofacturaLabel.Location = New System.Drawing.Point(305, 82)
-        IdTipofacturaLabel.Name = "IdTipofacturaLabel"
-        IdTipofacturaLabel.Size = New System.Drawing.Size(67, 13)
-        IdTipofacturaLabel.TabIndex = 11
-        IdTipofacturaLabel.Text = "Tipo factura:"
-        '
-        'IdTipofacturaComboBox
-        '
-        Me.IdTipofacturaComboBox.DisplayMember = "tipofactura"
-        Me.IdTipofacturaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.IdTipofacturaComboBox.Enabled = False
-        Me.IdTipofacturaComboBox.FormattingEnabled = True
-        Me.IdTipofacturaComboBox.Location = New System.Drawing.Point(375, 78)
-        Me.IdTipofacturaComboBox.Name = "IdTipofacturaComboBox"
-        Me.IdTipofacturaComboBox.Size = New System.Drawing.Size(152, 21)
-        Me.IdTipofacturaComboBox.TabIndex = 12
-        Me.IdTipofacturaComboBox.ValueMember = "idTipofactura"
-        '
-        'NfacturaLabel
-        '
-        NfacturaLabel.AutoSize = True
-        NfacturaLabel.Location = New System.Drawing.Point(581, 43)
-        NfacturaLabel.Name = "NfacturaLabel"
-        NfacturaLabel.Size = New System.Drawing.Size(69, 13)
-        NfacturaLabel.TabIndex = 6
-        NfacturaLabel.Text = "Factura: No.:"
-        '
-        'NfacturaTextBox
-        '
-        Me.NfacturaTextBox.Location = New System.Drawing.Point(656, 40)
-        Me.NfacturaTextBox.Name = "NfacturaTextBox"
-        Me.NfacturaTextBox.ReadOnly = True
-        Me.NfacturaTextBox.Size = New System.Drawing.Size(106, 20)
-        Me.NfacturaTextBox.TabIndex = 7
         '
         'grbdVentasProductos
         '
         Me.grbdVentasProductos.Controls.Add(Me.btnQuitarProducto)
         Me.grbdVentasProductos.Controls.Add(Me.btnAgregarProducto)
-        Me.grbdVentasProductos.Location = New System.Drawing.Point(12, 373)
+        Me.grbdVentasProductos.Location = New System.Drawing.Point(12, 345)
         Me.grbdVentasProductos.Name = "grbdVentasProductos"
         Me.grbdVentasProductos.Size = New System.Drawing.Size(352, 50)
         Me.grbdVentasProductos.TabIndex = 22
@@ -275,9 +230,9 @@ Partial Class FormPago
         Me.grbEdicion.Controls.Add(Me.btnEliminar)
         Me.grbEdicion.Controls.Add(Me.btnModificar)
         Me.grbEdicion.Controls.Add(Me.btnAgregar)
-        Me.grbEdicion.Location = New System.Drawing.Point(218, 452)
+        Me.grbEdicion.Location = New System.Drawing.Point(12, 399)
         Me.grbEdicion.Name = "grbEdicion"
-        Me.grbEdicion.Size = New System.Drawing.Size(375, 47)
+        Me.grbEdicion.Size = New System.Drawing.Size(412, 47)
         Me.grbEdicion.TabIndex = 21
         Me.grbEdicion.TabStop = False
         Me.grbEdicion.Text = "Edicion"
@@ -285,7 +240,7 @@ Partial Class FormPago
         'btnImprimir
         '
         Me.btnImprimir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnImprimir.Location = New System.Drawing.Point(299, 12)
+        Me.btnImprimir.Location = New System.Drawing.Point(331, 12)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(75, 31)
         Me.btnImprimir.TabIndex = 9
@@ -295,7 +250,7 @@ Partial Class FormPago
         'btnBuscar
         '
         Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscar.Location = New System.Drawing.Point(231, 12)
+        Me.btnBuscar.Location = New System.Drawing.Point(252, 12)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(69, 31)
         Me.btnBuscar.TabIndex = 8
@@ -305,7 +260,7 @@ Partial Class FormPago
         'btnEliminar
         '
         Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminar.Location = New System.Drawing.Point(157, 12)
+        Me.btnEliminar.Location = New System.Drawing.Point(167, 12)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(75, 31)
         Me.btnEliminar.TabIndex = 7
@@ -315,7 +270,7 @@ Partial Class FormPago
         'btnModificar
         '
         Me.btnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModificar.Location = New System.Drawing.Point(77, 12)
+        Me.btnModificar.Location = New System.Drawing.Point(80, 12)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(81, 31)
         Me.btnModificar.TabIndex = 6
@@ -327,7 +282,7 @@ Partial Class FormPago
         Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.Location = New System.Drawing.Point(2, 12)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(76, 31)
+        Me.btnAgregar.Size = New System.Drawing.Size(68, 31)
         Me.btnAgregar.TabIndex = 5
         Me.btnAgregar.Text = "Nuevo"
         Me.btnAgregar.UseVisualStyleBackColor = True
@@ -405,10 +360,20 @@ Partial Class FormPago
         Me.Panel3.Controls.Add(Me.lblRespuestaSuma)
         Me.Panel3.Controls.Add(Me.lblsuma)
         Me.Panel3.Controls.Add(Me.lblReservacionTotal)
-        Me.Panel3.Location = New System.Drawing.Point(603, 356)
+        Me.Panel3.Location = New System.Drawing.Point(637, 356)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(159, 143)
         Me.Panel3.TabIndex = 19
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(8, 82)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(78, 16)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "RESERV.:"
         '
         'lblRespuestaTotal
         '
@@ -484,15 +449,68 @@ Partial Class FormPago
         Me.lblReservacionTotal.Text = "00.00"
         Me.lblReservacionTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'Label4
+        'NfacturaTextBox
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(8, 82)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(78, 16)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "RESERV.:"
+        Me.NfacturaTextBox.Location = New System.Drawing.Point(690, 40)
+        Me.NfacturaTextBox.Name = "NfacturaTextBox"
+        Me.NfacturaTextBox.ReadOnly = True
+        Me.NfacturaTextBox.Size = New System.Drawing.Size(106, 20)
+        Me.NfacturaTextBox.TabIndex = 7
+        '
+        'IdTipofacturaComboBox
+        '
+        Me.IdTipofacturaComboBox.DisplayMember = "tipofactura"
+        Me.IdTipofacturaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.IdTipofacturaComboBox.Enabled = False
+        Me.IdTipofacturaComboBox.FormattingEnabled = True
+        Me.IdTipofacturaComboBox.Location = New System.Drawing.Point(400, 79)
+        Me.IdTipofacturaComboBox.Name = "IdTipofacturaComboBox"
+        Me.IdTipofacturaComboBox.Size = New System.Drawing.Size(152, 21)
+        Me.IdTipofacturaComboBox.TabIndex = 12
+        Me.IdTipofacturaComboBox.ValueMember = "idTipofactura"
+        '
+        'Fecha_vtaDateTimePicker
+        '
+        Me.Fecha_vtaDateTimePicker.Enabled = False
+        Me.Fecha_vtaDateTimePicker.Location = New System.Drawing.Point(75, 79)
+        Me.Fecha_vtaDateTimePicker.Name = "Fecha_vtaDateTimePicker"
+        Me.Fecha_vtaDateTimePicker.Size = New System.Drawing.Size(213, 20)
+        Me.Fecha_vtaDateTimePicker.TabIndex = 8
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(106, 37)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(29, 27)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabStop = False
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.Black
+        Me.Panel2.Controls.Add(Me.Button1)
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(803, 31)
+        Me.Panel2.TabIndex = 4
+        '
+        'Button1
+        '
+        Me.Button1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(758, 0)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(45, 31)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "X"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -506,56 +524,120 @@ Partial Class FormPago
         Me.Label3.Text = "Facturacion"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Button1
+        'dataReservacion
         '
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(727, 0)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(45, 31)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "X"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.dataReservacion.AllowUserToAddRows = False
+        Me.dataReservacion.AllowUserToDeleteRows = False
+        Me.dataReservacion.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dataReservacion.BackgroundColor = System.Drawing.Color.White
+        Me.dataReservacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dataReservacion.Location = New System.Drawing.Point(12, 115)
+        Me.dataReservacion.Name = "dataReservacion"
+        Me.dataReservacion.ReadOnly = True
+        Me.dataReservacion.Size = New System.Drawing.Size(784, 58)
+        Me.dataReservacion.TabIndex = 6
+        '
+        'Label6
+        '
+        Me.Label6.Location = New System.Drawing.Point(19, 63)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(128, 18)
+        Me.Label6.TabIndex = 24
+        Me.Label6.Text = "Vuelto"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.Black
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.Color.Chartreuse
+        Me.TextBox1.Location = New System.Drawing.Point(22, 40)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(125, 22)
+        Me.TextBox1.TabIndex = 25
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox2
+        '
+        Me.TextBox2.BackColor = System.Drawing.Color.Black
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.ForeColor = System.Drawing.Color.Red
+        Me.TextBox2.Location = New System.Drawing.Point(22, 84)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(125, 22)
+        Me.TextBox2.TabIndex = 26
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'pnlPago
+        '
+        Me.pnlPago.Controls.Add(Me.TextBox2)
+        Me.pnlPago.Controls.Add(Me.Label5)
+        Me.pnlPago.Controls.Add(Me.TextBox1)
+        Me.pnlPago.Controls.Add(Me.Label6)
+        Me.pnlPago.Location = New System.Drawing.Point(464, 356)
+        Me.pnlPago.Name = "pnlPago"
+        Me.pnlPago.Size = New System.Drawing.Size(167, 143)
+        Me.pnlPago.TabIndex = 27
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(301, 465)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(96, 31)
+        Me.Button2.TabIndex = 10
+        Me.Button2.Text = "Cancelado"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.Location = New System.Drawing.Point(22, 23)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(125, 16)
+        Me.Label5.TabIndex = 23
+        Me.Label5.Text = "Paga"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(774, 511)
+        Me.ClientSize = New System.Drawing.Size(805, 511)
         Me.Controls.Add(Me.lblNumReser)
-        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FormPago"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormPago"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dataProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grbdVentasProductos.ResumeLayout(False)
         Me.grbEdicion.ResumeLayout(False)
         Me.grbNavegacion.ResumeLayout(False)
         Me.grbNavegacion.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        CType(Me.dataReservacion, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlPago.ResumeLayout(False)
+        Me.pnlPago.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dataProductos As DataGridView
     Friend WithEvents cboFactu As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents lblNumReser As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents grbdVentasProductos As GroupBox
     Friend WithEvents btnQuitarProducto As Button
@@ -587,4 +669,11 @@ Partial Class FormPago
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Label3 As Label
+    Friend WithEvents dataReservacion As DataGridView
+    Friend WithEvents pnlPago As Panel
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Label5 As Label
 End Class

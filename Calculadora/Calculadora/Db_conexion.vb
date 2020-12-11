@@ -68,7 +68,7 @@ Public Class db_conexion
         miCommand.Parameters.Add("@total", SqlDbType.VarChar).Value = ""
         miCommand.Parameters.Add("@estadoReserva", SqlDbType.VarChar).Value = ""
     End Sub
-    Public Function FiltroHabitacionLibre()
+    Public Function obtenerDatos()
         ds.Clear()
 
         miCommand.Connection = miConexion
@@ -80,13 +80,6 @@ Public Class db_conexion
                 where Estado = 'Libre'"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Habitacion")
-
-        Return ds
-    End Function
-    Public Function FiltroReservaciones()
-        ds.Clear()
-
-        miCommand.Connection = miConexion
 
         miCommand.CommandText = "SELECT 
             Reservaciones.idReservaiones, 
@@ -110,28 +103,12 @@ Public Class db_conexion
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "Reservaciones")
 
-        Return ds
-    End Function
-    Public Function FiltroNombreCliente()
-        ds.Clear()
-
-        miCommand.Connection = miConexion
-
         miCommand.CommandText = "
             select clientes.idCliente, clientes.Nombre, clientes.edad, clientes.documento, contactos.telefono, contactos.email
             from clientes 
                 inner join contactos on(contactos.idPersona=clientes.idCliente)"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "clientes")
-
-        Return ds
-    End Function
-
-    'traedatos de la tabla usuarios y relacionada
-    Public Function obtenerDatosTablas()
-        ds.Clear()
-
-        miCommand.Connection = miConexion
 
         'rellenar combobox
         miCommand.CommandText = "SELECT acceso FROM NivelAcceso"
@@ -141,6 +118,15 @@ Public Class db_conexion
         miCommand.CommandText = "SELECT TipoFactura FROM TipoFactu"
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "TipoFactu")
+
+        Return ds
+    End Function
+
+    'traedatos de la tabla usuarios y relacionada
+    Public Function insercionDatos()
+        ds.Clear()
+
+        miCommand.Connection = miConexion
 
         'CRUD con relacion
         miCommand.CommandText = "

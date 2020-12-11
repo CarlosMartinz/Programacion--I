@@ -13,10 +13,10 @@
     End Sub
 
     Sub ObtenerDatos()
-        dataTable = objConexion.obtenerDatosTablas.Tables("Reservaciones")
+        dataTable = objConexion.insercionDatos.Tables("Reservaciones")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idReservaciones")}
 
-        grdHabitaciones.DataSource = objConexion.FiltroReservaciones.Tables("Reservaciones").DefaultView()
+        grdHabitaciones.DataSource = objConexion.insercionDatos.Tables("Reservaciones").DefaultView()
 
         MostrarDatos()
     End Sub

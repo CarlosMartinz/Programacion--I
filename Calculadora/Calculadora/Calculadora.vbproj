@@ -81,6 +81,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -104,6 +105,14 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="db_HotelDataSet.vb">
+      <DependentUpon>db_HotelDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Busqueda\FormBusquedaCategoria.Designer.vb">
       <DependentUpon>FormBusquedaCategoria.vb</DependentUpon>
     </Compile>
@@ -174,6 +183,12 @@
       <DependentUpon>FormReporteListadoHabitacioens.vb</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Reportes\FormReporteListadoHabitacioens.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Reservacion\RealizarPago\FormBuscarProducto.Designer.vb">
+      <DependentUpon>FormBuscarProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Reservacion\RealizarPago\FormBuscarProducto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos\Reservacion\RealizarPago\FormPago.Designer.vb">
@@ -301,6 +316,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="db_HotelDataSet.xsc">
       <DependentUpon>db_HotelDataSet.xsd</DependentUpon>
     </None>

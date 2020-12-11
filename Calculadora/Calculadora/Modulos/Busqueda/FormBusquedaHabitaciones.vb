@@ -2,7 +2,7 @@
     Dim objConexion As New db_conexion
     Public _idHabit As String
     Private Sub FormBusquedaHabitaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        grdBuscarHabit.DataSource = objConexion.obtenerDatosTablas.Tables("Habitacion").DefaultView()
+        grdBuscarHabit.DataSource = objConexion.insercionDatos.Tables("Habitacion").DefaultView()
         grdBuscarHabit.Columns("TipoHabit").HeaderText = "Tipo Habitacion"
     End Sub
 
