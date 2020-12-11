@@ -28,7 +28,66 @@
     End Sub
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        grbdVentasProductos.Visible = True
+        If btnAgregar.Text = "Nuevo" Then
+            btnAgregar.Text = "Guardar"
+            btnModificar.Text = "Cancelar"
+
+            '    habdesh_controles(False)
+            '    VentasBindingSource.AddNew()
+
+            '    IdClienteComboBox.SelectedValue = 1 'Cliente por default Ventas a Publico
+            '    IdTipofacturaComboBox.SelectedValue = 3 'Tipo de factura por default consumidor final 
+            '    IdPagoComboBox.SelectedValue = 1 'Tipo de Pago por default efectivo
+            '    Fecha_vtaDateTimePicker.Value = Date.Now
+            'Else 'Guardar
+            '    Try
+            '        _idVta = Integer.Parse(lblIdVenta.Text)
+            '        Me.Validate()
+            '        VentasBindingSource.EndEdit()
+
+            '        If _idVta > 0 Then 'Modificanco
+            '            eliminarDetalle()
+            '        Else 'Agregando Nuevas Facturas
+            '            VentasTableAdapter.Connection.Open()
+            '            Dim comando As New SqlCommand
+            '            comando.Connection = VentasTableAdapter.Connection
+            '            comando.CommandText = "SELECT ident_current('ventas') + 1 AS idVenta"
+            '            _idVta = Integer.Parse(comando.ExecuteScalar().ToString())
+            '            VentasTableAdapter.Connection.Close()
+            '        End If
+
+            '        Dim nfilas As Integer = DventasProductosDataGridView.Rows.Count
+            '        Dim valores(nfilas, 3) As String
+            '        Dim fila As New DataGridViewRow
+
+            '        For i = 0 To nfilas - 1
+            '            fila = DventasProductosDataGridView.Rows(i)
+
+            '            valores(i, 0) = fila.Cells("idProducto").Value.ToString()
+            '            valores(i, 1) = fila.Cells("cantidad").Value.ToString()
+            '            valores(i, 2) = fila.Cells("precio").Value.ToString()
+            '        Next
+            '        TableAdapterManager.UpdateAll(Db_sistemaDataSet)
+
+            '        For i = 0 To nfilas - 1
+            '            DventasTableAdapter1.Insert(
+            '                _idVta,
+            '                valores(i, 0),
+            '                valores(i, 1),
+            '                valores(i, 2)
+            '            )
+            '        Next
+            '        actualizarDs()
+            '        VentasBindingSource.MoveLast()
+
+            '        habdesh_controles(True)
+            btnAgregar.Text = "Nuevo"
+                btnModificar.Text = "Modificar"
+            Catch ex As Exception
+                MessageBox.Show("Error al intentar guardar: " + ex.Message,
+                    "Registro de Facturas de Venta", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
     End Sub
 
     Private Sub btnAgregarProducto_Click(sender As Object, e As EventArgs) Handles btnAgregarProducto.Click
@@ -79,5 +138,9 @@
         Catch ex As Exception
             MessageBox.Show("Error al intentar quitar la fila: " + ex.Message)
         End Try
+    End Sub
+
+    Sub habdesh_controles()
+
     End Sub
 End Class
