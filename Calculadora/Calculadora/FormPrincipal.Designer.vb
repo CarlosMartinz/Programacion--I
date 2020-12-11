@@ -35,7 +35,6 @@ Partial Class FormPrincipal
         Me.RegistroDeUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistrosDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeHabitacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EnAlmacenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
@@ -110,7 +109,7 @@ Partial Class FormPrincipal
         '
         'RegistrosToolStripMenuItem
         '
-        Me.RegistrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistroDeUsuariosToolStripMenuItem, Me.RegistrosDeClientesToolStripMenuItem, Me.RegistroDeHabitacionesToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.EnAlmacenToolStripMenuItem})
+        Me.RegistrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistroDeUsuariosToolStripMenuItem, Me.RegistrosDeClientesToolStripMenuItem, Me.RegistroDeHabitacionesToolStripMenuItem, Me.EnAlmacenToolStripMenuItem})
         Me.RegistrosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RegistrosToolStripMenuItem.Image = CType(resources.GetObject("RegistrosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RegistrosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -141,13 +140,6 @@ Partial Class FormPrincipal
         Me.RegistroDeHabitacionesToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.H), System.Windows.Forms.Keys)
         Me.RegistroDeHabitacionesToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
         Me.RegistroDeHabitacionesToolStripMenuItem.Text = "Registro de habitaciones"
-        '
-        'ProveedoresToolStripMenuItem
-        '
-        Me.ProveedoresToolStripMenuItem.Image = Global.Calculadora.My.Resources.Resources.Proveedor
-        Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
-        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(277, 22)
-        Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
         '
         'EnAlmacenToolStripMenuItem
         '
@@ -201,7 +193,6 @@ Partial Class FormPrincipal
     Friend WithEvents RegistroDeUsuariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RegistrosDeClientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RegistroDeHabitacionesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ProveedoresToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EnAlmacenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents ProductosToolStripMenuItem As ToolStripMenuItem

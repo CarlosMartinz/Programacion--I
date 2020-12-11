@@ -104,6 +104,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="db_HotelDataSet.vb">
+      <DependentUpon>db_HotelDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Busqueda\FormBusquedaCategoria.Designer.vb">
       <DependentUpon>FormBusquedaCategoria.vb</DependentUpon>
     </Compile>
@@ -168,6 +171,12 @@
       <DependentUpon>FormTipoHabitaciones.vb</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Registro\FormTipoHabitaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Reportes\FormListaClientes.Designer.vb">
+      <DependentUpon>FormListaClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Reportes\FormListaClientes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos\Reportes\FormReporteListadoHabitacioens.Designer.vb">
@@ -263,11 +272,14 @@
     <EmbeddedResource Include="Modulos\Registro\FormProductos.resx">
       <DependentUpon>FormProductos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\Reportes\EstadoHabitaciones.rdlc" />
+    <EmbeddedResource Include="Modulos\Reportes\FormListaClientes.resx">
+      <DependentUpon>FormListaClientes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Reportes\FormReporteListadoHabitacioens.resx">
       <DependentUpon>FormReporteListadoHabitacioens.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\Reportes\ListadoClientes.rdlc" />
+    <EmbeddedResource Include="Modulos\Reportes\ReportHabitaciones.rdlc" />
+    <EmbeddedResource Include="Modulos\Reportes\ReportListaClinetes.rdlc" />
     <EmbeddedResource Include="Modulos\Reservacion\FormReservaciones.resx">
       <DependentUpon>FormReservaciones.vb</DependentUpon>
     </EmbeddedResource>

@@ -77,27 +77,12 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:Calculadora.db_HotelDataSet.clientesDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
 <member name="T:Calculadora.db_HotelDataSet.contactosDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
 </member>
 <member name="T:Calculadora.db_HotelDataSet.EdificioDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
-<member name="T:Calculadora.db_HotelDataSet.EstadoDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
-<member name="T:Calculadora.db_HotelDataSet.HabitacionDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -132,6 +117,26 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:Calculadora.db_HotelDataSet.clientesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.HabitacionDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.HabitacionesInfoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.clientesInfoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:Calculadora.db_HotelDataSet.UsuariosRow">
 <summary>
 Represents strongly named DataRow class.
@@ -142,27 +147,12 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:Calculadora.db_HotelDataSet.clientesRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
 <member name="T:Calculadora.db_HotelDataSet.contactosRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:Calculadora.db_HotelDataSet.EdificioRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
-<member name="T:Calculadora.db_HotelDataSet.EstadoRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
-<member name="T:Calculadora.db_HotelDataSet.HabitacionRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -197,6 +187,26 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
+<member name="T:Calculadora.db_HotelDataSet.clientesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.HabitacionRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.HabitacionesInfoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.clientesInfoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
 <member name="T:Calculadora.db_HotelDataSet.UsuariosRowChangeEvent">
 <summary>
 Row event argument class
@@ -207,27 +217,12 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
-<member name="T:Calculadora.db_HotelDataSet.clientesRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
 <member name="T:Calculadora.db_HotelDataSet.contactosRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
 </member>
 <member name="T:Calculadora.db_HotelDataSet.EdificioRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
-<member name="T:Calculadora.db_HotelDataSet.EstadoRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
-<member name="T:Calculadora.db_HotelDataSet.HabitacionRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -262,6 +257,26 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:Calculadora.db_HotelDataSet.clientesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.HabitacionRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.HabitacionesInfoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.clientesInfoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:Calculadora.db_HotelDataSetTableAdapters.UsuariosTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -272,27 +287,12 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:Calculadora.db_HotelDataSetTableAdapters.clientesTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
 <member name="T:Calculadora.db_HotelDataSetTableAdapters.contactosTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:Calculadora.db_HotelDataSetTableAdapters.EdificioTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
-<member name="T:Calculadora.db_HotelDataSetTableAdapters.EstadoTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
-<member name="T:Calculadora.db_HotelDataSetTableAdapters.HabitacionTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
@@ -323,6 +323,26 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:Calculadora.db_HotelDataSetTableAdapters.TipoHabitTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSetTableAdapters.clientesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSetTableAdapters.HabitacionTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSetTableAdapters.HabitacionesInfoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSetTableAdapters.clientesInfoTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
