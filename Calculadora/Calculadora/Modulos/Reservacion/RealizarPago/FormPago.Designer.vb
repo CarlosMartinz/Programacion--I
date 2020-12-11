@@ -246,6 +246,7 @@ Partial Class FormPago
         Me.grbdVentasProductos.Size = New System.Drawing.Size(352, 50)
         Me.grbdVentasProductos.TabIndex = 22
         Me.grbdVentasProductos.TabStop = False
+        Me.grbdVentasProductos.Visible = False
         '
         'btnQuitarProducto
         '

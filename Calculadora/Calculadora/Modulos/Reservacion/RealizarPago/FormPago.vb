@@ -26,4 +26,8 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Close()
     End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        grbdVentasProductos.Visible = True
+    End Sub
 End Class
