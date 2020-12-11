@@ -83,10 +83,10 @@
             '        habdesh_controles(True)
             btnAgregar.Text = "Nuevo"
                 btnModificar.Text = "Modificar"
-            Catch ex As Exception
-                MessageBox.Show("Error al intentar guardar: " + ex.Message,
-                    "Registro de Facturas de Venta", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
+            'Catch ex As Exception
+            '    MessageBox.Show("Error al intentar guardar: " + ex.Message,
+            '        "Registro de Facturas de Venta", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'End Try
         End If
     End Sub
 
