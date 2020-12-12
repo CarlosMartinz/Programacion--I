@@ -119,6 +119,10 @@ Public Class db_conexion
         miAdapter.SelectCommand = miCommand
         miAdapter.Fill(ds, "TipoFactu")
 
+        miCommand.CommandText = "SELECT FormaPago FROM TipoPago"
+        miAdapter.SelectCommand = miCommand
+        miAdapter.Fill(ds, "TipoPago")
+
         Return ds
     End Function
 
