@@ -180,6 +180,18 @@
     <Compile Include="Modulos\Reportes\FormListaClienntes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modulos\Reportes\FormListaEmpleados.Designer.vb">
+      <DependentUpon>FormListaEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Reportes\FormListaEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Reportes\FormListaReservaciones.Designer.vb">
+      <DependentUpon>FormListaReservaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Reportes\FormListaReservaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulos\Reportes\FormReporteListadoHabitacioens.Designer.vb">
       <DependentUpon>FormReporteListadoHabitacioens.vb</DependentUpon>
     </Compile>
@@ -279,14 +291,23 @@
     <EmbeddedResource Include="Modulos\Registro\FormProductos.resx">
       <DependentUpon>FormProductos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Reportes\FormListaReservaciones.resx">
+      <DependentUpon>FormListaReservaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Reportes\ReportReservaciones.rdlc" />
     <EmbeddedResource Include="Modulos\Reportes\EstadoHabitaciones.rdlc" />
     <EmbeddedResource Include="Modulos\Reportes\FormListaClienntes.resx">
       <DependentUpon>FormListaClienntes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Reportes\FormListaEmpleados.resx">
+      <DependentUpon>FormListaEmpleados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Reportes\FormReporteListadoHabitacioens.resx">
       <DependentUpon>FormReporteListadoHabitacioens.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Reportes\ListadoClientes.rdlc" />
+    <EmbeddedResource Include="Modulos\Reportes\ReportListaEmpleados.rdlc" />
+    <EmbeddedResource Include="Modulos\Reportes\ReportNivelAcceso.rdlc" />
     <EmbeddedResource Include="Modulos\Reservacion\FormReservaciones.resx">
       <DependentUpon>FormReservaciones.vb</DependentUpon>
     </EmbeddedResource>
@@ -344,6 +365,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\Recursos\3592827-access-general-house-key-key-lock-key-login-office_107758.png" />
+    <None Include="bin\Debug\Recursos\Reporte.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
