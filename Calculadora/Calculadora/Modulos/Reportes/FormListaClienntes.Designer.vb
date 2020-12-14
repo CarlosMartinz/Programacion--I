@@ -25,13 +25,23 @@ Partial Class FormListaClienntes
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormListaClienntes))
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.db_HotelDataSet = New Calculadora.db_HotelDataSet()
         Me.InfoClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.db_HotelDataSet = New Calculadora.db_HotelDataSet()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.InfoClienteTableAdapter = New Calculadora.db_HotelDataSetTableAdapters.InfoClienteTableAdapter()
-        CType(Me.db_HotelDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InfoClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.db_HotelDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'InfoClienteBindingSource
+        '
+        Me.InfoClienteBindingSource.DataMember = "InfoCliente"
+        Me.InfoClienteBindingSource.DataSource = Me.db_HotelDataSet
+        '
+        'db_HotelDataSet
+        '
+        Me.db_HotelDataSet.DataSetName = "db_HotelDataSet"
+        Me.db_HotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -45,16 +55,6 @@ Partial Class FormListaClienntes
         Me.ReportViewer1.Size = New System.Drawing.Size(776, 426)
         Me.ReportViewer1.TabIndex = 0
         '
-        'db_HotelDataSet
-        '
-        Me.db_HotelDataSet.DataSetName = "db_HotelDataSet"
-        Me.db_HotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'InfoClienteBindingSource
-        '
-        Me.InfoClienteBindingSource.DataMember = "InfoCliente"
-        Me.InfoClienteBindingSource.DataSource = Me.db_HotelDataSet
-        '
         'InfoClienteTableAdapter
         '
         Me.InfoClienteTableAdapter.ClearBeforeFill = True
@@ -66,11 +66,12 @@ Partial Class FormListaClienntes
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "FormListaClienntes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reporte - Lista Clienntes"
-        CType(Me.db_HotelDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.InfoClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.db_HotelDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -47,4 +47,40 @@
         objListaClientes.MdiParent = Me
         objListaClientes.Show()
     End Sub
+
+    Private Sub ReservacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReservacionesToolStripMenuItem.Click
+        Dim objListaReserva As New FormReporteReservaciones
+        objListaReserva.MdiParent = Me
+        objListaReserva.Show()
+    End Sub
+
+    Private Sub ListaDeProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListaDeProductosToolStripMenuItem.Click
+        Dim objListaProductos As New FormListaProductos
+        objListaProductos.MdiParent = Me
+        objListaProductos.Show()
+    End Sub
+
+    Private Sub ListaEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListaEmpleadosToolStripMenuItem.Click
+        Dim objListaEmpleados As New FormReporteListaEmpleados
+        objListaEmpleados.MdiParent = Me
+        objListaEmpleados.Show()
+    End Sub
+
+    Private Sub ListaUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListaUsuariosToolStripMenuItem.Click
+        Dim objListaUsuarios As New FormReporteListaUsuarios
+        objListaUsuarios.MdiParent = Me
+        objListaUsuarios.Show()
+    End Sub
+
+    Private Sub VentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentasToolStripMenuItem.Click
+        Dim objListaVentas As New FormReporteVentas
+        objListaVentas.MdiParent = Me
+        objListaVentas.Show()
+    End Sub
+
+    Private Sub TiposDeFacturasPorClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TiposDeFacturasPorClienteToolStripMenuItem.Click
+        Dim objFacturas As New FormFacturas
+        objFacturas.MdiParent = Me
+        objFacturas.Show()
+    End Sub
 End Class

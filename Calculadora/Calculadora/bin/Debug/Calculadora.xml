@@ -22,6 +22,11 @@ Calculadora
   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
 </summary>
 </member>
+<member name="P:Calculadora.My.Resources.Resources._330275_moril">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Calculadora.My.Resources.Resources.Beer_Bottle_icon_icons_com_68782">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -53,6 +58,11 @@ Calculadora
 </summary>
 </member>
 <member name="P:Calculadora.My.Resources.Resources.Proveedor">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Calculadora.My.Resources.Resources.Reporte">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -157,6 +167,31 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:Calculadora.db_HotelDataSet.InfoReservacionesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.InfoProductosDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.InfoEmpleadoUsuariosDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.InfoVentasDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.InfoFacturasDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:Calculadora.db_HotelDataSet.CategoriaRow">
 <summary>
 Represents strongly named DataRow class.
@@ -243,6 +278,31 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:Calculadora.db_HotelDataSet.InfoHabitacionesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.InfoReservacionesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.InfoProductosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.InfoEmpleadoUsuariosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.InfoVentasRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.InfoFacturasRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -337,6 +397,31 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:Calculadora.db_HotelDataSet.InfoReservacionesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.InfoProductosRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.InfoEmpleadoUsuariosRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.InfoVentasRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSet.InfoFacturasRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:Calculadora.db_HotelDataSetTableAdapters.CategoriaTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -423,6 +508,31 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:Calculadora.db_HotelDataSetTableAdapters.InfoHabitacionesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSetTableAdapters.InfoReservacionesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSetTableAdapters.InfoProductosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSetTableAdapters.InfoEmpleadoUsuariosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSetTableAdapters.InfoVentasTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Calculadora.db_HotelDataSetTableAdapters.InfoFacturasTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
