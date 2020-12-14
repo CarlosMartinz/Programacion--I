@@ -336,3 +336,5 @@ C:\Users\core i7\Desktop\repo\Calculadora\Calculadora\bin\Debug\zh-CHT\Microsoft
 C:\Users\core i7\Desktop\repo\Calculadora\Calculadora\obj\Debug\Calculadora.FormReportReservaciones.resources
 C:\Users\core i7\Desktop\repo\Calculadora\Calculadora\obj\Debug\Calculadora.vbproj.CopyComplete
 C:\Users\core i7\Desktop\repo\Calculadora\Calculadora\obj\Debug\Calculadora.FormReportUsuarios.resources
+C:\Users\core i7\Desktop\repo\Calculadora\Calculadora\obj\Debug\Calculadora.FormReporProductos.resources
+C:\Users\core i7\Desktop\repo\Calculadora\Calculadora\obj\Debug\Calculadora.FormReporFacturaClientes.resources

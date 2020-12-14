@@ -73,10 +73,14 @@
     End Sub
 
     Private Sub ListaDeProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListaDeProductosToolStripMenuItem.Click
-
+        Dim objProductos As New FormReporProductos
+        objProductos.MdiParent = Me
+        objProductos.Show()
     End Sub
 
     Private Sub TiposDeFacturasPorClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TiposDeFacturasPorClientesToolStripMenuItem.Click
-
+        Dim objFactura As New FormReporFacturaClientes
+        objFactura.MdiParent = Me
+        objFactura.Show()
     End Sub
 End Class

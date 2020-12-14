@@ -1252,6 +1252,62 @@ FROM            usuarios INNER JOIN
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="InfoProductosTableAdapter" GeneratorDataComponentClassName="InfoProductosTableAdapter" Name="InfoProductos" UserDataComponentName="InfoProductosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_HotelConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillProductos" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="FillProductos" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="FillProductos">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        Producto.idProducto, Categoria.idCategoria, Categoria.Categoria, Producto.Codigo, Producto.Descripcion
+FROM            Categoria INNER JOIN
+                         Producto ON Categoria.idCategoria = Producto.idCategoria</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idProducto" DataSetColumn="idProducto" />
+              <Mapping SourceColumn="idCategoria" DataSetColumn="idCategoria" />
+              <Mapping SourceColumn="Categoria" DataSetColumn="Categoria" />
+              <Mapping SourceColumn="Codigo" DataSetColumn="Codigo" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="InfoFacturasTableAdapter" GeneratorDataComponentClassName="InfoFacturasTableAdapter" Name="InfoFacturas" UserDataComponentName="InfoFacturasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_HotelConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillFacturas" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="FillFacturas" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillFacturas">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        DetalleVenta.idDetalle, TipoFactu.idTipoFactu, TipoFactu.TipoFactura, clientes.Nombre, clientes.idCliente, clientes.documento, clientes.edad, contactos.telefono, contactos.email, contactos.idPersona, 
+                         Reservaciones.idReservaiones, Reservaciones.idCliente AS Expr1, DetalleVenta.fecha
+FROM            TipoFactu INNER JOIN
+                         DetalleVenta ON TipoFactu.idTipoFactu = DetalleVenta.idTipoFactura INNER JOIN
+                         Reservaciones ON DetalleVenta.idReservacion = Reservaciones.idReservaiones INNER JOIN
+                         clientes ON Reservaciones.idCliente = clientes.idCliente INNER JOIN
+                         contactos ON clientes.idCliente = contactos.idPersona</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idDetalle" DataSetColumn="idDetalle" />
+              <Mapping SourceColumn="idTipoFactu" DataSetColumn="idTipoFactu" />
+              <Mapping SourceColumn="TipoFactura" DataSetColumn="TipoFactura" />
+              <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
+              <Mapping SourceColumn="idCliente" DataSetColumn="idCliente" />
+              <Mapping SourceColumn="documento" DataSetColumn="documento" />
+              <Mapping SourceColumn="edad" DataSetColumn="edad" />
+              <Mapping SourceColumn="telefono" DataSetColumn="telefono" />
+              <Mapping SourceColumn="email" DataSetColumn="email" />
+              <Mapping SourceColumn="idPersona" DataSetColumn="idPersona" />
+              <Mapping SourceColumn="idReservaiones" DataSetColumn="idReservaiones" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1902,6 +1958,93 @@ FROM            usuarios INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="InfoEmpleadoUsuarios" msprop:Generator_TableClassName="InfoEmpleadoUsuariosDataTable" msprop:Generator_TableVarName="tableInfoEmpleadoUsuarios" msprop:Generator_TablePropName="InfoEmpleadoUsuarios" msprop:Generator_RowDeletingName="InfoEmpleadoUsuariosRowDeleting" msprop:Generator_RowChangingName="InfoEmpleadoUsuariosRowChanging" msprop:Generator_RowEvHandlerName="InfoEmpleadoUsuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="InfoEmpleadoUsuariosRowDeleted" msprop:Generator_UserTableName="InfoEmpleadoUsuarios" msprop:Generator_RowChangedName="InfoEmpleadoUsuariosRowChanged" msprop:Generator_RowEvArgName="InfoEmpleadoUsuariosRowChangeEvent" msprop:Generator_RowClassName="InfoEmpleadoUsuariosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="documento" msprop:Generator_ColumnVarNameInTable="columndocumento" msprop:Generator_ColumnPropNameInRow="documento" msprop:Generator_ColumnPropNameInTable="documentoColumn" msprop:Generator_UserColumnName="documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefono" msprop:Generator_ColumnVarNameInTable="columntelefono" msprop:Generator_ColumnPropNameInRow="telefono" msprop:Generator_ColumnPropNameInTable="telefonoColumn" msprop:Generator_UserColumnName="telefono" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="email" msprop:Generator_ColumnVarNameInTable="columnemail" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_UserColumnName="email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="acceso" msprop:Generator_ColumnVarNameInTable="columnacceso" msprop:Generator_ColumnPropNameInRow="acceso" msprop:Generator_ColumnPropNameInTable="accesoColumn" msprop:Generator_UserColumnName="acceso" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idLogin" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidLogin" msprop:Generator_ColumnPropNameInRow="idLogin" msprop:Generator_ColumnPropNameInTable="idLoginColumn" msprop:Generator_UserColumnName="idLogin" type="xs:int" />
+              <xs:element name="idPersona" msprop:Generator_ColumnVarNameInTable="columnidPersona" msprop:Generator_ColumnPropNameInRow="idPersona" msprop:Generator_ColumnPropNameInTable="idPersonaColumn" msprop:Generator_UserColumnName="idPersona" type="xs:int" minOccurs="0" />
+              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="password" msprop:Generator_ColumnVarNameInTable="columnpassword" msprop:Generator_ColumnPropNameInRow="password" msprop:Generator_ColumnPropNameInTable="passwordColumn" msprop:Generator_UserColumnName="password" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idUsuario" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidUsuario" msprop:Generator_ColumnPropNameInRow="idUsuario" msprop:Generator_ColumnPropNameInTable="idUsuarioColumn" msprop:Generator_UserColumnName="idUsuario" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="InfoProductos" msprop:Generator_TableClassName="InfoProductosDataTable" msprop:Generator_TableVarName="tableInfoProductos" msprop:Generator_TablePropName="InfoProductos" msprop:Generator_RowDeletingName="InfoProductosRowDeleting" msprop:Generator_RowChangingName="InfoProductosRowChanging" msprop:Generator_RowEvHandlerName="InfoProductosRowChangeEventHandler" msprop:Generator_RowDeletedName="InfoProductosRowDeleted" msprop:Generator_UserTableName="InfoProductos" msprop:Generator_RowChangedName="InfoProductosRowChanged" msprop:Generator_RowEvArgName="InfoProductosRowChangeEvent" msprop:Generator_RowClassName="InfoProductosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idProducto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidProducto" msprop:Generator_ColumnPropNameInRow="idProducto" msprop:Generator_ColumnPropNameInTable="idProductoColumn" msprop:Generator_UserColumnName="idProducto" type="xs:int" />
+              <xs:element name="idCategoria" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidCategoria" msprop:Generator_ColumnPropNameInRow="idCategoria" msprop:Generator_ColumnPropNameInTable="idCategoriaColumn" msprop:Generator_UserColumnName="idCategoria" type="xs:int" />
+              <xs:element name="Categoria" msprop:Generator_ColumnVarNameInTable="columnCategoria" msprop:Generator_ColumnPropNameInRow="Categoria" msprop:Generator_ColumnPropNameInTable="CategoriaColumn" msprop:Generator_UserColumnName="Categoria" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Codigo" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_UserColumnName="Codigo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
           <xs:complexType>
             <xs:sequence>
@@ -2145,17 +2288,34 @@ FROM            usuarios INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="InfoEmpleadoUsuarios" msprop:Generator_TableClassName="InfoEmpleadoUsuariosDataTable" msprop:Generator_TableVarName="tableInfoEmpleadoUsuarios" msprop:Generator_TablePropName="InfoEmpleadoUsuarios" msprop:Generator_RowDeletingName="InfoEmpleadoUsuariosRowDeleting" msprop:Generator_RowChangingName="InfoEmpleadoUsuariosRowChanging" msprop:Generator_RowEvHandlerName="InfoEmpleadoUsuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="InfoEmpleadoUsuariosRowDeleted" msprop:Generator_UserTableName="InfoEmpleadoUsuarios" msprop:Generator_RowChangedName="InfoEmpleadoUsuariosRowChanged" msprop:Generator_RowEvArgName="InfoEmpleadoUsuariosRowChangeEvent" msprop:Generator_RowClassName="InfoEmpleadoUsuariosRow">
+        <xs:element name="InfoFacturas" msprop:Generator_TableClassName="InfoFacturasDataTable" msprop:Generator_TableVarName="tableInfoFacturas" msprop:Generator_TablePropName="InfoFacturas" msprop:Generator_RowDeletingName="InfoFacturasRowDeleting" msprop:Generator_RowChangingName="InfoFacturasRowChanging" msprop:Generator_RowEvHandlerName="InfoFacturasRowChangeEventHandler" msprop:Generator_RowDeletedName="InfoFacturasRowDeleted" msprop:Generator_UserTableName="InfoFacturas" msprop:Generator_RowChangedName="InfoFacturasRowChanged" msprop:Generator_RowEvArgName="InfoFacturasRowChangeEvent" msprop:Generator_RowClassName="InfoFacturasRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
+              <xs:element name="idDetalle" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidDetalle" msprop:Generator_ColumnPropNameInRow="idDetalle" msprop:Generator_ColumnPropNameInTable="idDetalleColumn" msprop:Generator_UserColumnName="idDetalle" type="xs:int" />
+              <xs:element name="idTipoFactu" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidTipoFactu" msprop:Generator_ColumnPropNameInRow="idTipoFactu" msprop:Generator_ColumnPropNameInTable="idTipoFactuColumn" msprop:Generator_UserColumnName="idTipoFactu" type="xs:int" />
+              <xs:element name="TipoFactura" msprop:Generator_ColumnVarNameInTable="columnTipoFactura" msprop:Generator_ColumnPropNameInRow="TipoFactura" msprop:Generator_ColumnPropNameInTable="TipoFacturaColumn" msprop:Generator_UserColumnName="TipoFactura" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idCliente" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidCliente" msprop:Generator_ColumnPropNameInRow="idCliente" msprop:Generator_ColumnPropNameInTable="idClienteColumn" msprop:Generator_UserColumnName="idCliente" type="xs:int" />
               <xs:element name="documento" msprop:Generator_ColumnVarNameInTable="columndocumento" msprop:Generator_ColumnPropNameInRow="documento" msprop:Generator_ColumnPropNameInTable="documentoColumn" msprop:Generator_UserColumnName="documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="edad" msprop:Generator_ColumnVarNameInTable="columnedad" msprop:Generator_ColumnPropNameInRow="edad" msprop:Generator_ColumnPropNameInTable="edadColumn" msprop:Generator_UserColumnName="edad" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -2176,30 +2336,16 @@ FROM            usuarios INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="acceso" msprop:Generator_ColumnVarNameInTable="columnacceso" msprop:Generator_ColumnPropNameInRow="acceso" msprop:Generator_ColumnPropNameInTable="accesoColumn" msprop:Generator_UserColumnName="acceso" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="idLogin" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidLogin" msprop:Generator_ColumnPropNameInRow="idLogin" msprop:Generator_ColumnPropNameInTable="idLoginColumn" msprop:Generator_UserColumnName="idLogin" type="xs:int" />
               <xs:element name="idPersona" msprop:Generator_ColumnVarNameInTable="columnidPersona" msprop:Generator_ColumnPropNameInRow="idPersona" msprop:Generator_ColumnPropNameInTable="idPersonaColumn" msprop:Generator_UserColumnName="idPersona" type="xs:int" minOccurs="0" />
-              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" minOccurs="0">
+              <xs:element name="idReservaiones" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidReservaiones" msprop:Generator_ColumnPropNameInRow="idReservaiones" msprop:Generator_ColumnPropNameInTable="idReservaionesColumn" msprop:Generator_UserColumnName="idReservaiones" type="xs:int" />
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="password" msprop:Generator_ColumnVarNameInTable="columnpassword" msprop:Generator_ColumnPropNameInRow="password" msprop:Generator_ColumnPropNameInTable="passwordColumn" msprop:Generator_UserColumnName="password" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="idUsuario" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidUsuario" msprop:Generator_ColumnPropNameInRow="idUsuario" msprop:Generator_ColumnPropNameInTable="idUsuarioColumn" msprop:Generator_UserColumnName="idUsuario" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2274,6 +2420,16 @@ FROM            usuarios INNER JOIN
       <xs:field xpath="mstns:idHabitacion" />
       <xs:field xpath="mstns:idTipo" />
     </xs:unique>
+    <xs:unique name="InfoEmpleadoUsuarios_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:InfoEmpleadoUsuarios" />
+      <xs:field xpath="mstns:idLogin" />
+      <xs:field xpath="mstns:idUsuario" />
+    </xs:unique>
+    <xs:unique name="InfoProductos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:InfoProductos" />
+      <xs:field xpath="mstns:idProducto" />
+      <xs:field xpath="mstns:idCategoria" />
+    </xs:unique>
     <xs:unique name="DataTable1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:DataTable1" />
       <xs:field xpath="mstns:idHabitacion" />
@@ -2287,11 +2443,6 @@ FROM            usuarios INNER JOIN
       <xs:field xpath="mstns:idReservaiones" />
       <xs:field xpath="mstns:idHabitacion1" />
       <xs:field xpath="mstns:idContacto" />
-    </xs:unique>
-    <xs:unique name="InfoEmpleadoUsuarios_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:InfoEmpleadoUsuarios" />
-      <xs:field xpath="mstns:idLogin" />
-      <xs:field xpath="mstns:idUsuario" />
     </xs:unique>
   </xs:element>
   <xs:annotation>
@@ -2315,10 +2466,11 @@ FROM            usuarios INNER JOIN
       <msdata:Relationship name="FK_DetalleVenta_reservacion1" msdata:parent="Reservaciones" msdata:child="InfoVentas" msdata:parentkey="idReservaiones" msdata:childkey="idReservacion" msprop:Generator_UserChildTable="InfoVentas" msprop:Generator_ChildPropName="GetInfoVentasRows" msprop:Generator_UserRelationName="FK_DetalleVenta_reservacion1" msprop:Generator_RelationVarName="relationFK_DetalleVenta_reservacion1" msprop:Generator_UserParentTable="Reservaciones" msprop:Generator_ParentPropName="ReservacionesRow" />
       <msdata:Relationship name="FK_DetalleVenta_tipoFactura1" msdata:parent="TipoFactu" msdata:child="InfoVentas" msdata:parentkey="idTipoFactu" msdata:childkey="idTipoFactura" msprop:Generator_UserChildTable="InfoVentas" msprop:Generator_ChildPropName="GetInfoVentasRows" msprop:Generator_UserRelationName="FK_DetalleVenta_tipoFactura1" msprop:Generator_RelationVarName="relationFK_DetalleVenta_tipoFactura1" msprop:Generator_UserParentTable="TipoFactu" msprop:Generator_ParentPropName="TipoFactuRow" />
       <msdata:Relationship name="FK_DetalleVenta_usuario1" msdata:parent="usuarios" msdata:child="InfoVentas" msdata:parentkey="idUsuario" msdata:childkey="idUsuario" msprop:Generator_UserChildTable="InfoVentas" msprop:Generator_ChildPropName="GetInfoVentasRows" msprop:Generator_UserRelationName="FK_DetalleVenta_usuario1" msprop:Generator_RelationVarName="relationFK_DetalleVenta_usuario1" msprop:Generator_UserParentTable="usuarios" msprop:Generator_ParentPropName="usuariosRow" />
-      <msdata:Relationship name="FK_Reservaciones_Habitaciones3" msdata:parent="DataTable1" msdata:child="Reservaciones" msdata:parentkey="idHabitacion" msdata:childkey="idHabitaciones" msprop:Generator_UserChildTable="Reservaciones" msprop:Generator_ChildPropName="GetReservacionesRows" msprop:Generator_UserRelationName="FK_Reservaciones_Habitaciones3" msprop:Generator_RelationVarName="relationFK_Reservaciones_Habitaciones3" msprop:Generator_UserParentTable="DataTable1" msprop:Generator_ParentPropName="DataTable1Row" />
-      <msdata:Relationship name="FK_Habitacion_Estado3" msdata:parent="Estado" msdata:child="DataTable1" msdata:parentkey="Estado" msdata:childkey="Estado" msprop:Generator_UserChildTable="DataTable1" msprop:Generator_ChildPropName="GetDataTable1Rows" msprop:Generator_UserRelationName="FK_Habitacion_Estado3" msprop:Generator_ParentPropName="EstadoRow" msprop:Generator_RelationVarName="relationFK_Habitacion_Estado3" msprop:Generator_UserParentTable="Estado" />
-      <msdata:Relationship name="FK_Habitacion_Tipo1" msdata:parent="TipoHabit" msdata:child="DataTable1" msdata:parentkey="idTipo" msdata:childkey="TipoHabit" msprop:Generator_UserChildTable="DataTable1" msprop:Generator_ChildPropName="GetDataTable1Rows" msprop:Generator_UserRelationName="FK_Habitacion_Tipo1" msprop:Generator_ParentPropName="TipoHabitRow" msprop:Generator_RelationVarName="relationFK_Habitacion_Tipo1" msprop:Generator_UserParentTable="TipoHabit" />
       <msdata:Relationship name="FK_login_usuarios1" msdata:parent="usuarios" msdata:child="InfoEmpleadoUsuarios" msdata:parentkey="idUsuario" msdata:childkey="idPersona" msprop:Generator_UserChildTable="InfoEmpleadoUsuarios" msprop:Generator_ChildPropName="GetInfoEmpleadoUsuariosRows" msprop:Generator_UserRelationName="FK_login_usuarios1" msprop:Generator_ParentPropName="usuariosRow" msprop:Generator_RelationVarName="relationFK_login_usuarios1" msprop:Generator_UserParentTable="usuarios" />
+      <msdata:Relationship name="FK_Producto_Categoria1" msdata:parent="InfoProductos" msdata:child="Producto" msdata:parentkey="idCategoria" msdata:childkey="idCategoria" msprop:Generator_UserChildTable="Producto" msprop:Generator_ChildPropName="GetProductoRows" msprop:Generator_UserRelationName="FK_Producto_Categoria1" msprop:Generator_RelationVarName="relationFK_Producto_Categoria1" msprop:Generator_UserParentTable="InfoProductos" msprop:Generator_ParentPropName="InfoProductosRow" />
+      <msdata:Relationship name="FK_Habitacion_Tipo1" msdata:parent="TipoHabit" msdata:child="DataTable1" msdata:parentkey="idTipo" msdata:childkey="TipoHabit" msprop:Generator_UserChildTable="DataTable1" msprop:Generator_ChildPropName="GetDataTable1Rows" msprop:Generator_UserRelationName="FK_Habitacion_Tipo1" msprop:Generator_ParentPropName="TipoHabitRow" msprop:Generator_RelationVarName="relationFK_Habitacion_Tipo1" msprop:Generator_UserParentTable="TipoHabit" />
+      <msdata:Relationship name="FK_Habitacion_Estado3" msdata:parent="Estado" msdata:child="DataTable1" msdata:parentkey="Estado" msdata:childkey="Estado" msprop:Generator_UserChildTable="DataTable1" msprop:Generator_ChildPropName="GetDataTable1Rows" msprop:Generator_UserRelationName="FK_Habitacion_Estado3" msprop:Generator_ParentPropName="EstadoRow" msprop:Generator_RelationVarName="relationFK_Habitacion_Estado3" msprop:Generator_UserParentTable="Estado" />
+      <msdata:Relationship name="FK_Reservaciones_Habitaciones3" msdata:parent="DataTable1" msdata:child="Reservaciones" msdata:parentkey="idHabitacion" msdata:childkey="idHabitaciones" msprop:Generator_UserChildTable="Reservaciones" msprop:Generator_ChildPropName="GetReservacionesRows" msprop:Generator_UserRelationName="FK_Reservaciones_Habitaciones3" msprop:Generator_RelationVarName="relationFK_Reservaciones_Habitaciones3" msprop:Generator_UserParentTable="DataTable1" msprop:Generator_ParentPropName="DataTable1Row" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
