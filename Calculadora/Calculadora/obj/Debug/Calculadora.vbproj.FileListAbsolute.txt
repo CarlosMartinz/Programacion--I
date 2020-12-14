@@ -338,3 +338,10 @@ C:\Users\core i7\Desktop\repo\Calculadora\Calculadora\obj\Debug\Calculadora.vbpr
 C:\Users\core i7\Desktop\repo\Calculadora\Calculadora\obj\Debug\Calculadora.FormReportUsuarios.resources
 C:\Users\core i7\Desktop\repo\Calculadora\Calculadora\obj\Debug\Calculadora.FormReporProductos.resources
 C:\Users\core i7\Desktop\repo\Calculadora\Calculadora\obj\Debug\Calculadora.FormReporFacturaClientes.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormReporFacturaClientes.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormReporProductos.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormReportReservaciones.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormReportUsuarios.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormReportVentas.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormListaClienntes.resources
+C:\Users\Charly\Source\Repos\USIS044220\Programacion--I\Calculadora\Calculadora\obj\Debug\Calculadora.FormListaEmpleados.resources

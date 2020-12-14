@@ -202,7 +202,7 @@ Public Class db_conexion
                 sql = "INSERT INTO Reservaciones (idCliente,idUsuario,idHabitaciones,Entrada,Salida,Estadia,PrecioDia,Total,estadoReserva) 
                         VALUES (@idCli,@idUsu,@idHab,@entrada,@salida,@estadia,@precioDia,@total,@estadoReserva)"
 
-            Case "actualizar"
+            Case "modificar"
                 sql = "UPDATE Reservaciones SET idCliente=@idCli,idUsu=@idUsu,idHabitaciones=@idHabt,Entrada=@entrada,Salida=@salida, Estadia=@estadia, PrecioDia=@precioDia, Total=@total WHERE idReservaiones=@idRes"
             Case "eliminar"
                 sql = "DELETE FROM Reservaciones WHERE idReservaiones=@idRes"

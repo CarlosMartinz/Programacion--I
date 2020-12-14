@@ -16,12 +16,13 @@
         dataTable = objConexion.insercionDatos.Tables("Reservaciones")
         dataTable.PrimaryKey = New DataColumn() {dataTable.Columns("idReservaciones")}
 
-        grdHabitaciones.DataSource = objConexion.insercionDatos.Tables("Reservaciones").DefaultView()
+        grdHabitaciones.DataSource = objConexion.obtenerDatos.Tables("Reservaciones").DefaultView()
 
         MostrarDatos()
     End Sub
 
     Sub MostrarDatos()
+
         If dataTable.Rows.Count > 0 Then
             Me.Tag = dataTable.Rows(posicion).ItemArray(0).ToString()
             txtCliente.Text = dataTable.Rows(posicion).ItemArray(1).ToString()
@@ -166,7 +167,7 @@
             btnElimar.Enabled = False
             HabDescontroles(False)
         Else 'Cancelar
-            accion = "modificar"
+            'accion = "modificar"
             ObtenerDatos()
 
             HabDescontroles(True)
@@ -176,9 +177,9 @@
     End Sub
 
     Private Sub btnElimar_Click(sender As Object, e As EventArgs) Handles btnElimar.Click
-        If (MessageBox.Show("Esta seguro de borrar a " + txtDias.Text, "Registro de cliente",
+        If (MessageBox.Show("Esta seguro de borrar a " + txtCliente.Text, "Registro de cliente",
                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
-            objConexion.mantenimientoDatosUsuarios(New String() {Me.Tag}, "eliminar")
+            objConexion.mantenimientoDatosReservaciones(New String() {Me.Tag}, "eliminar")
             If posicion > 0 Then
                 posicion -= 1 'Hemos borrado un registro
             End If
