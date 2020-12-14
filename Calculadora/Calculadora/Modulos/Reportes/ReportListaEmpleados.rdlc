@@ -20,7 +20,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.60537cm</Top>
-        <Left>8.38412cm</Left>
+        <Left>7.96079cm</Left>
         <Height>0.75875cm</Height>
         <Width>6.33646cm</Width>
         <Style>
@@ -367,7 +367,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -397,7 +396,7 @@
         <Top>2.03412cm</Top>
         <Left>0.47307cm</Left>
         <Height>1.2cm</Height>
-        <Width>20.35875cm</Width>
+        <Width>20.35874cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>

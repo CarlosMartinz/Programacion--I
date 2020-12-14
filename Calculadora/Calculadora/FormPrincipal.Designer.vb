@@ -30,17 +30,15 @@ Partial Class FormPrincipal
         Me.ListaDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ListaEmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NivelDeAcceoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AdminToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LobbyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GerenteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MantenimientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator()
         Me.ListaDeProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator()
         Me.ListaHabitacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ReservacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TiposDeFacturasPorClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistrosDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -81,7 +79,7 @@ Partial Class FormPrincipal
         '
         'EmpresaToolStripMenuItem
         '
-        Me.EmpresaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListaDeClientesToolStripMenuItem, Me.ToolStripMenuItem1, Me.ListaEmpleadosToolStripMenuItem, Me.NivelDeAcceoToolStripMenuItem, Me.ToolStripMenuItem3, Me.ListaDeProductosToolStripMenuItem, Me.ToolStripMenuItem4, Me.ListaHabitacionesToolStripMenuItem, Me.ToolStripMenuItem5, Me.ReservacionesToolStripMenuItem})
+        Me.EmpresaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListaDeClientesToolStripMenuItem, Me.ToolStripMenuItem1, Me.ListaEmpleadosToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.ToolStripMenuItem3, Me.ListaDeProductosToolStripMenuItem, Me.ToolStripMenuItem4, Me.ListaHabitacionesToolStripMenuItem, Me.ToolStripMenuItem5, Me.ReservacionesToolStripMenuItem, Me.VentasToolStripMenuItem, Me.TiposDeFacturasPorClientesToolStripMenuItem})
         Me.EmpresaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EmpresaToolStripMenuItem.Image = CType(resources.GetObject("EmpresaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.EmpresaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -93,88 +91,74 @@ Partial Class FormPrincipal
         '
         Me.ListaDeClientesToolStripMenuItem.Image = Global.Calculadora.My.Resources.Resources.Cliente
         Me.ListaDeClientesToolStripMenuItem.Name = "ListaDeClientesToolStripMenuItem"
-        Me.ListaDeClientesToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.ListaDeClientesToolStripMenuItem.Size = New System.Drawing.Size(262, 22)
         Me.ListaDeClientesToolStripMenuItem.Text = "Lista de Clientes"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(196, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(259, 6)
         '
         'ListaEmpleadosToolStripMenuItem
         '
         Me.ListaEmpleadosToolStripMenuItem.Image = Global.Calculadora.My.Resources.Resources.Usuarios
         Me.ListaEmpleadosToolStripMenuItem.Name = "ListaEmpleadosToolStripMenuItem"
-        Me.ListaEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.ListaEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(262, 22)
         Me.ListaEmpleadosToolStripMenuItem.Text = "Lista Empleados"
         '
-        'NivelDeAcceoToolStripMenuItem
+        'UsuariosToolStripMenuItem
         '
-        Me.NivelDeAcceoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdminToolStripMenuItem, Me.LobbyToolStripMenuItem, Me.GerenteToolStripMenuItem, Me.MantenimientoToolStripMenuItem})
-        Me.NivelDeAcceoToolStripMenuItem.Image = Global.Calculadora.My.Resources.Resources._3592827_access_general_house_key_key_lock_key_login_office_107758
-        Me.NivelDeAcceoToolStripMenuItem.Name = "NivelDeAcceoToolStripMenuItem"
-        Me.NivelDeAcceoToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
-        Me.NivelDeAcceoToolStripMenuItem.Text = "Nivel de Acceo"
-        '
-        'AdminToolStripMenuItem
-        '
-        Me.AdminToolStripMenuItem.Name = "AdminToolStripMenuItem"
-        Me.AdminToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
-        Me.AdminToolStripMenuItem.Text = "Admin"
-        '
-        'LobbyToolStripMenuItem
-        '
-        Me.LobbyToolStripMenuItem.Name = "LobbyToolStripMenuItem"
-        Me.LobbyToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
-        Me.LobbyToolStripMenuItem.Text = "Lobby"
-        '
-        'GerenteToolStripMenuItem
-        '
-        Me.GerenteToolStripMenuItem.Name = "GerenteToolStripMenuItem"
-        Me.GerenteToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
-        Me.GerenteToolStripMenuItem.Text = "Gerente"
-        '
-        'MantenimientoToolStripMenuItem
-        '
-        Me.MantenimientoToolStripMenuItem.Name = "MantenimientoToolStripMenuItem"
-        Me.MantenimientoToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
-        Me.MantenimientoToolStripMenuItem.Text = "Mantenimiento"
+        Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(262, 22)
+        Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(196, 6)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(259, 6)
         '
         'ListaDeProductosToolStripMenuItem
         '
         Me.ListaDeProductosToolStripMenuItem.Image = Global.Calculadora.My.Resources.Resources.Beer_Bottle_icon_icons1
         Me.ListaDeProductosToolStripMenuItem.Name = "ListaDeProductosToolStripMenuItem"
-        Me.ListaDeProductosToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.ListaDeProductosToolStripMenuItem.Size = New System.Drawing.Size(262, 22)
         Me.ListaDeProductosToolStripMenuItem.Text = "Lista de productos"
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(196, 6)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(259, 6)
         '
         'ListaHabitacionesToolStripMenuItem
         '
         Me.ListaHabitacionesToolStripMenuItem.Image = Global.Calculadora.My.Resources.Resources.Habitaciones
         Me.ListaHabitacionesToolStripMenuItem.Name = "ListaHabitacionesToolStripMenuItem"
-        Me.ListaHabitacionesToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.ListaHabitacionesToolStripMenuItem.Size = New System.Drawing.Size(262, 22)
         Me.ListaHabitacionesToolStripMenuItem.Text = "Estado habitaciones"
         '
         'ToolStripMenuItem5
         '
         Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(196, 6)
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(259, 6)
         '
         'ReservacionesToolStripMenuItem
         '
         Me.ReservacionesToolStripMenuItem.Image = Global.Calculadora.My.Resources.Resources.Reporte
         Me.ReservacionesToolStripMenuItem.Name = "ReservacionesToolStripMenuItem"
-        Me.ReservacionesToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.ReservacionesToolStripMenuItem.Size = New System.Drawing.Size(262, 22)
         Me.ReservacionesToolStripMenuItem.Text = "Reservaciones"
+        '
+        'VentasToolStripMenuItem
+        '
+        Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
+        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(262, 22)
+        Me.VentasToolStripMenuItem.Text = "Ventas"
+        '
+        'TiposDeFacturasPorClientesToolStripMenuItem
+        '
+        Me.TiposDeFacturasPorClientesToolStripMenuItem.Name = "TiposDeFacturasPorClientesToolStripMenuItem"
+        Me.TiposDeFacturasPorClientesToolStripMenuItem.Size = New System.Drawing.Size(262, 22)
+        Me.TiposDeFacturasPorClientesToolStripMenuItem.Text = "Tipos de Facturas por Clientes"
         '
         'RegistrosToolStripMenuItem
         '
@@ -270,13 +254,11 @@ Partial Class FormPrincipal
     Friend WithEvents ListaHabitacionesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ListaDeProductosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
-    Friend WithEvents NivelDeAcceoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As ToolStripSeparator
     Friend WithEvents ToolStripMenuItem4 As ToolStripSeparator
-    Friend WithEvents AdminToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LobbyToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GerenteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MantenimientoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem5 As ToolStripSeparator
     Friend WithEvents ReservacionesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VentasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TiposDeFacturasPorClientesToolStripMenuItem As ToolStripMenuItem
 End Class
