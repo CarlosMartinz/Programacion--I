@@ -1,5 +1,4 @@
 ﻿Public Class FormPrincipal
-    Public Acceso = ""
     Private Sub RegistroDeUsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroDeUsuariosToolStripMenuItem.Click
         Dim objUsuario As New FormUsuarios
         objUsuario.MdiParent = Me
@@ -55,25 +54,29 @@
         objListaEmpleados.Show()
     End Sub
 
-    Private Sub AdminToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdminToolStripMenuItem.Click
-        Acceso = "Admin"
-    End Sub
-
-    Private Sub LobbyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LobbyToolStripMenuItem.Click
-        Acceso = "Lobby"
-    End Sub
-
-    Private Sub GerenteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GerenteToolStripMenuItem.Click
-        Acceso = "Gerente"
-    End Sub
-
-    Private Sub MantenimientoToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        Acceso = "Mantenimiento"
-    End Sub
-
     Private Sub ReservacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReservacionesToolStripMenuItem.Click
-        Dim objListaReservaciones As New FormListaReservaciones
+        Dim objListaReservaciones As New FormReportReservaciones
         objListaReservaciones.MdiParent = Me
         objListaReservaciones.Show()
+    End Sub
+
+    Private Sub VentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentasToolStripMenuItem.Click
+        Dim objVentas As New FormReportVentas
+        objVentas.MdiParent = Me
+        objVentas.Show()
+    End Sub
+
+    Private Sub UsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuariosToolStripMenuItem.Click
+        Dim objUsuarios As New FormReportUsuarios
+        objUsuarios.MdiParent = Me
+        objUsuarios.Show()
+    End Sub
+
+    Private Sub ListaDeProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListaDeProductosToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub TiposDeFacturasPorClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TiposDeFacturasPorClientesToolStripMenuItem.Click
+
     End Sub
 End Class

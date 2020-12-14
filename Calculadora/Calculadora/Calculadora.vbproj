@@ -186,16 +186,28 @@
     <Compile Include="Modulos\Reportes\FormListaEmpleados.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulos\Reportes\FormListaReservaciones.Designer.vb">
-      <DependentUpon>FormListaReservaciones.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos\Reportes\FormListaReservaciones.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Modulos\Reportes\FormReporteListadoHabitacioens.Designer.vb">
       <DependentUpon>FormReporteListadoHabitacioens.vb</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Reportes\FormReporteListadoHabitacioens.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Reportes\FormReportReservaciones.Designer.vb">
+      <DependentUpon>FormReportReservaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Reportes\FormReportReservaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Reportes\FormReportUsuarios.Designer.vb">
+      <DependentUpon>FormReportUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Reportes\FormReportUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Reportes\FormReportVentas.Designer.vb">
+      <DependentUpon>FormReportVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Reportes\FormReportVentas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos\Reservacion\RealizarPago\FormBuscarProducto.Designer.vb">
@@ -291,8 +303,14 @@
     <EmbeddedResource Include="Modulos\Registro\FormProductos.resx">
       <DependentUpon>FormProductos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\Reportes\FormListaReservaciones.resx">
-      <DependentUpon>FormListaReservaciones.vb</DependentUpon>
+    <EmbeddedResource Include="Modulos\Reportes\FormReportReservaciones.resx">
+      <DependentUpon>FormReportReservaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Reportes\FormReportUsuarios.resx">
+      <DependentUpon>FormReportUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Reportes\FormReportVentas.resx">
+      <DependentUpon>FormReportVentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Reportes\ReportReservaciones.rdlc" />
     <EmbeddedResource Include="Modulos\Reportes\EstadoHabitaciones.rdlc" />
@@ -307,6 +325,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Reportes\ListadoClientes.rdlc" />
     <EmbeddedResource Include="Modulos\Reportes\ReportListaEmpleados.rdlc" />
+    <EmbeddedResource Include="Modulos\Reportes\ReportUsuarios.rdlc" />
+    <EmbeddedResource Include="Modulos\Reportes\ReportVentas.rdlc" />
     <EmbeddedResource Include="Modulos\Reservacion\FormReservaciones.resx">
       <DependentUpon>FormReservaciones.vb</DependentUpon>
     </EmbeddedResource>
