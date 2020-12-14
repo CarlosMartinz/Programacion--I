@@ -307,7 +307,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Reportes\ListadoClientes.rdlc" />
     <EmbeddedResource Include="Modulos\Reportes\ReportListaEmpleados.rdlc" />
-    <EmbeddedResource Include="Modulos\Reportes\ReportNivelAcceso.rdlc" />
     <EmbeddedResource Include="Modulos\Reservacion\FormReservaciones.resx">
       <DependentUpon>FormReservaciones.vb</DependentUpon>
     </EmbeddedResource>
